@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Units 5–6 — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6}
+:root{--teal:#1A7A8A;--teal-dk:#115966;--teal-lt:#D6EEF1;--teal-pl:#EEF8FA;--gold:#C9930A;--gold-lt:#FDF3D8;--gold-pl:#FFFBF0;--sf:#FFFFFF;--bg:#F3F7F8;--bd:#DDE5E8;--tx:#1C2B33;--mu:#5A7280;--ok-bg:#E1F5EE;--ok:#0F6E56;--er-bg:#FCEBEB;--er:#A32D2D}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(22px,5vw,36px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-units{font-size:18px;font-weight:600;color:#FFD97D;margin-bottom:.4rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:0 auto;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--bd);background:var(--sf);font-size:14px;font-weight:500;cursor:pointer;color:var(--mu);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dk) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--bd);background:var(--sf);font-size:13px;cursor:pointer;color:var(--mu);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pl);color:var(--teal);border-color:var(--teal-lt)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.part-panel{display:none}
+.part-panel.active{display:block}
+.card{background:var(--sf);border:1px solid var(--bd);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.vi{border:1px solid var(--bd);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vi:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vh{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none}
+.vh:hover{background:var(--teal-pl)}
+.vw{font-size:15px;font-weight:600;color:var(--teal);min-width:120px}
+.vp{font-size:11px;color:var(--mu);background:var(--sf);border:1px solid var(--bd);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.vc{font-size:13px;color:var(--mu);flex:1}
+.vt{font-size:11px;color:var(--mu);margin-left:auto;flex-shrink:0}
+.vb{display:none;padding:.75rem 1rem;border-top:1px solid var(--bd)}
+.vb.open{display:block}
+.vm{font-size:13px;color:var(--mu);margin-bottom:.5rem}
+.ve{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pl);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--tx)}
+.story-box{background:var(--gold-pl);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--tx)}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-lt);padding:.05rem .3rem;border-radius:4px}
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--bd)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--bd);background:var(--sf);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.tf-btn.wrong{background:var(--er-bg);border-color:var(--er);color:var(--er)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-res{font-size:12px;font-weight:500;flex-shrink:0}
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--bd)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--bd);background:var(--sf);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--tx)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pl);border-color:var(--teal-lt)}
+.mc-opt.correct{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.mc-opt.wrong{background:var(--er-bg);border-color:var(--er);color:var(--er)}
+.mc-opt:disabled{pointer-events:none}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--bd)}
+.score-bar.good{background:var(--ok-bg);border-color:var(--ok)}
+.score-n{font-size:20px;font-weight:600;color:var(--teal)}
+.score-l{font-size:13px;color:var(--mu)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+@media(max-width:500px){.match-grid{grid-template-columns:1fr}}
+.mw{padding:.5rem .75rem;background:var(--teal-pl);border:1px solid var(--teal-lt);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.mw:hover:not(:disabled){background:var(--teal-lt)}
+.mw.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.mw.done{background:var(--ok-bg);border-color:var(--ok);color:var(--ok);pointer-events:none}
+.md{padding:.5rem .75rem;background:var(--sf);border:1px solid var(--bd);border-radius:8px;font-size:13px;cursor:pointer;color:var(--tx);transition:all .15s;text-align:left;width:100%}
+.md:hover:not(.done){background:var(--gold-pl);border-color:#E8D08A}
+.md.done{background:var(--ok-bg);border-color:var(--ok);color:var(--ok);pointer-events:none}
+.md.err{background:var(--er-bg);border-color:var(--er)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pl);border-radius:8px;border:1px solid var(--teal-lt)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--sf);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-lt);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--bd)}
+.fib-row:last-child{border-bottom:none}
+.fib-n{font-weight:500;color:var(--mu);min-width:1.4rem;flex-shrink:0}
+.fib-i{border:none;border-bottom:2px solid var(--bd);background:transparent;font-size:14px;color:var(--tx);padding:.1rem .2rem;width:120px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-i:focus{border-color:var(--teal)}
+.fib-i.correct{border-color:var(--ok);color:var(--ok)}
+.fib-i.wrong{border-color:var(--er);color:var(--er)}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-p{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-p:hover{background:var(--teal-dk)}
+.btn-g{background:var(--sf);color:var(--mu);border:1px solid var(--bd)}
+.btn-g:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;gap:.6rem;color:var(--tx)}
+.speak-n{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--mu);background:var(--gold-pl);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+.wp{font-size:14px;color:var(--tx);margin-bottom:.4rem}
+.wp-cn{font-size:13px;color:var(--mu);margin-bottom:.75rem}
+.wa{width:100%;border:1px solid var(--bd);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--tx);background:var(--sf);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.wa:focus{border-color:var(--teal)}
+.wc{font-size:12px;color:var(--mu);margin-top:.3rem;text-align:right}
+.rev-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.rev-cols{grid-template-columns:1fr}}
+.rev-col-lbl{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.ri{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--bd);font-size:13px}
+.ri:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--tx)}
+.r-cn{color:var(--mu);font-size:12px}
+.ci{padding:.35rem 0;border-bottom:1px solid var(--bd);font-size:13px}
+.ci:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--mu);font-size:12px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+  <span>IELTS Vocabulary Workbook — Units 5–6</span>
+</div>
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-units">Units 5–6</div>
+  <div class="cover-sub">Technology &nbsp;·&nbsp; Environment &nbsp;|&nbsp; 科技 · 环境</div>
+  <div class="cover-badges">
+    <span class="badge">Level 2</span>
+    <span class="badge">20 target words</span>
+    <span class="badge">Interactive exercises</span>
+  </div>
+  <div class="cover-tip"><strong>How to use</strong>Study vocabulary → Read the story → Complete the exercises. Click any word card to see its meaning. Answers are checked instantly.</div>
+</div>
+
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="sU(0)">Unit 5 — Technology</button>
+    <button class="unit-btn" onclick="sU(1)">Unit 6 — Environment</button>
+  </div>
+
+  <!-- UNIT 5 -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div><div class="unit-hdr-title">Unit 5 &nbsp;·&nbsp; Technology &nbsp; 科技</div><div class="unit-hdr-meta">10 target words &nbsp;·&nbsp; 7 parts</div></div>
+      <span class="unit-level">Level 2 — Foundation</span>
+    </div>
+    <div class="part-nav" id="pn0">
+      <button class="part-btn active" onclick="sP(0,0)">1 · Vocabulary</button>
+      <button class="part-btn" onclick="sP(0,1)">2 · Story</button>
+      <button class="part-btn" onclick="sP(0,2)">3 · Comprehension</button>
+      <button class="part-btn" onclick="sP(0,3)">4 · Practice</button>
+      <button class="part-btn" onclick="sP(0,4)">5 · Speaking</button>
+      <button class="part-btn" onclick="sP(0,5)">6 · Writing</button>
+      <button class="part-btn" onclick="sP(0,6)">7 · Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0"><div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div></div>
+    <div class="part-panel" id="u0p1"><div class="card"><div class="card-title">Mini story — target words are highlighted</div><div class="story-box"><div class="story-title">Lily's New Tablet</div><div class="story-text" id="st0"></div></div></div></div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A — True or False &nbsp; 判断对错</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B — Multiple Choice &nbsp; 选择题</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A — Match words with meanings</div><p style="font-size:13px;color:var(--mu);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B — Fill in the blanks</div><p style="font-size:13px;color:var(--mu);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-p" onclick="chkFib(0)">Check answers</button><button class="btn btn-g" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4"><div class="card"><div class="card-title">Speaking practice — answer aloud</div><div id="spk0"></div><div class="hint">Useful phrases: <strong>I use…to…</strong> &nbsp;|&nbsp; <strong>I communicate by…</strong> &nbsp;|&nbsp; <strong>In the future, I think…</strong></div></div></div>
+    <div class="part-panel" id="u0p5"><div class="card"><div class="card-title">Writing practice</div><p class="wp">Describe how technology helps you in your daily life. Use at least 5 words from today's unit.</p><p class="wp-cn">描述科技如何帮助你的日常生活。尽量用5个今天学过的单词。</p><textarea class="wa" id="wr0" placeholder="Start writing here…"></textarea><div class="wc" id="wc0">0 words</div></div></div>
+    <div class="part-panel" id="u0p6"><div class="card"><div class="rev-cols"><div><div class="rev-col-lbl" style="color:var(--teal)">Today's words 今日单词</div><div id="rev0"></div></div><div><div class="rev-col-lbl" style="color:var(--gold)">Collocations 常见搭配</div><div id="col0"></div></div></div></div></div>
+  </div>
+
+  <!-- UNIT 6 -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div><div class="unit-hdr-title">Unit 6 &nbsp;·&nbsp; Environment &nbsp; 环境</div><div class="unit-hdr-meta">10 target words &nbsp;·&nbsp; 7 parts</div></div>
+      <span class="unit-level">Level 2 — Foundation</span>
+    </div>
+    <div class="part-nav" id="pn1">
+      <button class="part-btn active" onclick="sP(1,0)">1 · Vocabulary</button>
+      <button class="part-btn" onclick="sP(1,1)">2 · Story</button>
+      <button class="part-btn" onclick="sP(1,2)">3 · Comprehension</button>
+      <button class="part-btn" onclick="sP(1,3)">4 · Practice</button>
+      <button class="part-btn" onclick="sP(1,4)">5 · Speaking</button>
+      <button class="part-btn" onclick="sP(1,5)">6 · Writing</button>
+      <button class="part-btn" onclick="sP(1,6)">7 · Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0"><div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div></div>
+    <div class="part-panel" id="u1p1"><div class="card"><div class="card-title">Mini story — target words are highlighted</div><div class="story-box"><div class="story-title">The River Field Trip</div><div class="story-text" id="st1"></div></div></div></div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A — True or False &nbsp; 判断对错</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B — Multiple Choice &nbsp; 选择题</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A — Match words with meanings</div><p style="font-size:13px;color:var(--mu);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B — Fill in the blanks</div><p style="font-size:13px;color:var(--mu);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-p" onclick="chkFib(1)">Check answers</button><button class="btn btn-g" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4"><div class="card"><div class="card-title">Speaking practice — answer aloud</div><div id="spk1"></div><div class="hint">Useful phrases: <strong>To protect the environment, I…</strong> &nbsp;|&nbsp; <strong>I recycle…</strong> &nbsp;|&nbsp; <strong>One way to conserve energy is…</strong></div></div></div>
+    <div class="part-panel" id="u1p5"><div class="card"><div class="card-title">Writing practice</div><p class="wp">Describe one thing you could do to help the environment this week. Use at least 5 words from today's unit.</p><p class="wp-cn">描述本周你可以为环境做的一件事。尽量用5个今天学过的单词。</p><textarea class="wa" id="wr1" placeholder="Start writing here…"></textarea><div class="wc" id="wc1">0 words</div></div></div>
+    <div class="part-panel" id="u1p6"><div class="card"><div class="rev-cols"><div><div class="rev-col-lbl" style="color:var(--teal)">Today's words 今日单词</div><div id="rev1"></div></div><div><div class="rev-col-lbl" style="color:var(--gold)">Collocations 常见搭配</div><div id="col1"></div></div></div></div></div>
+  </div>
+</div>
+
+<script>
+const D=[
+  {
+    words:[
+      {w:"technology",p:"n.",cn:"科技；技术",m:"the use of science and machines to do tasks",eg:"New technology helps people communicate easily."},
+      {w:"device",p:"n.",cn:"装置；设备",m:"a small machine or tool that does a specific job",eg:"My phone is a useful device for taking photos."},
+      {w:"digital",p:"adj.",cn:"数字的；数码的",m:"using computer technology rather than paper or older methods",eg:"Most students now use digital textbooks."},
+      {w:"software",p:"n.",cn:"软件",m:"programs that run on a computer or device",eg:"She downloaded new software to edit videos."},
+      {w:"network",p:"n.",cn:"网络",m:"a system of connected computers or people",eg:"The school has a fast Wi-Fi network."},
+      {w:"communicate",p:"v.",cn:"交流；沟通",m:"to share information or ideas with someone",eg:"We communicate with friends through messaging apps."},
+      {w:"application",p:"n.",cn:"应用程序；应用",m:"a computer program, often called an 'app'",eg:"This application helps you learn new words."},
+      {w:"virtual",p:"adj.",cn:"虚拟的",m:"made by computer technology to look real",eg:"We took a virtual tour of the museum online."},
+      {w:"update",p:"v./n.",cn:"更新；升级",m:"to make something more modern or add new information",eg:"Please update your app to the newest version."},
+      {w:"innovation",p:"n.",cn:"创新；革新",m:"a new idea, method, or invention",eg:"Smartphones were a major innovation in technology."},
+    ],
+    story:[
+      ["Lily was excited. Her school had just introduced a new ",{h:"technology"}," programme. Every student would receive a small ",{h:"device"}," — a tablet — to use in class."],
+      ["The tablet was completely ",{h:"digital"},". Instead of paper textbooks, all of Lily's lessons were stored as files. Her teacher installed special ",{h:"software"}," that let students complete homework directly on the screen."],
+      ["The school also connected every classroom to a fast ",{h:"network"},". This meant Lily could ",{h:"communicate"}," with her classmates instantly, even during group projects at home."],
+      ["One day, Lily downloaded a language-learning ",{h:"application"},". It used ",{h:"virtual"}," characters to help her practise English conversations. Every week, the app would ",{h:"update"}," with new lessons and features."],
+      ["Lily's teacher told the class: \"This is just the beginning. Every year brings new ",{h:"innovation"},". The most important thing is learning how to use technology wisely — not just to play games, but to learn and grow.\" Lily smiled and opened her tablet, ready for class."],
+    ],
+    tf:[
+      {q:"Lily's school gave every student a new device.",a:true},
+      {q:"Lily's tablet used only paper textbooks.",a:false},
+      {q:"The school's network helped students communicate.",a:true},
+      {q:"Lily downloaded a cooking application.",a:false},
+      {q:"Lily's teacher said technology should only be used for games.",a:false},
+    ],
+    mc:[
+      {q:"What device did Lily's school give to students?",o:["A laptop","A tablet","A phone","A camera"],a:1},
+      {q:"What does 'digital' mean in this story?",o:["Made of paper","Using computer technology","Very old","Very expensive"],a:1},
+      {q:"What did the language application use to help Lily practise?",o:["Real teachers","Virtual characters","Paper cards","Video games"],a:1},
+      {q:"How often did the app update with new lessons?",o:["Every day","Every month","Every week","Every year"],a:2},
+      {q:"What did Lily's teacher say was most important?",o:["Playing games","Buying new devices","Using technology wisely","Avoiding technology"],a:2},
+    ],
+    match:{words:["device","network","application","virtual","innovation"],defs:["a new idea, method, or invention","a system of connected computers","made by computer technology to look real","a small machine that does a specific job","a computer program, often called an app"],correct:[3,1,2,0,4]},
+    fib:{chips:["technology","digital","software","communicate","update"],rows:[
+      {pre:"Modern ",suf:" has changed the way people live and work.",ans:"technology"},
+      {pre:"This ",suf:" photo album stores all your pictures on a computer.",ans:"digital"},
+      {pre:"You need to install new ",suf:" before you can use this programme.",ans:"software"},
+      {pre:"Students can ",suf:" with their teacher through email.",ans:"communicate"},
+      {pre:"Remember to ",suf:" your phone so it works correctly.",ans:"update"},
+    ]},
+    speak:["What devices do you use every day?","How do you communicate with your friends — apps, calls, or messages?","Have you ever used a virtual tour or virtual classroom? What was it like?","What is one piece of technology you cannot live without?","What new innovation do you think will be important in the future?"],
+    rev:[["technology","科技；技术"],["device","装置；设备"],["digital","数字的；数码的"],["software","软件"],["network","网络"],["communicate","交流；沟通"],["application","应用程序"],["virtual","虚拟的"],["update","更新；升级"],["innovation","创新；革新"]],
+    col:[["modern / new technology","现代/新科技"],["electronic device","电子设备"],["digital photo / file","数字照片/文件"],["install software","安装软件"],["social network","社交网络"],["communicate with someone","与某人交流"],["download an application","下载应用程序"],["virtual reality / tour","虚拟现实/参观"],["update a system / app","更新系统/应用"],["technological innovation","技术创新"]]
+  },
+  {
+    words:[
+      {w:"environment",p:"n.",cn:"环境",m:"the natural world — air, water, land, and living things",eg:"We must protect the environment for future generations."},
+      {w:"pollution",p:"n.",cn:"污染",m:"harmful substances that damage air, water, or land",eg:"Air pollution in big cities can affect people's health."},
+      {w:"recycle",p:"v.",cn:"回收利用",m:"to turn old materials into new products instead of throwing them away",eg:"We recycle paper, plastic, and glass at school."},
+      {w:"energy",p:"n.",cn:"能源；能量",m:"power used to do work, such as electricity or fuel",eg:"Solar panels produce clean energy from sunlight."},
+      {w:"resource",p:"n.",cn:"资源",m:"a useful material or supply that can be used",eg:"Water is a precious natural resource."},
+      {w:"climate",p:"n.",cn:"气候",m:"the usual weather conditions of a place over time",eg:"The climate in this region is hot and dry."},
+      {w:"renewable",p:"adj.",cn:"可再生的",m:"describes energy sources that never run out, like sun or wind",eg:"Wind power is a renewable source of energy."},
+      {w:"conserve",p:"v.",cn:"节约；保护",m:"to use something carefully so it does not run out",eg:"We should conserve water, especially in dry seasons."},
+      {w:"waste",p:"n./v.",cn:"浪费；废物",m:"materials no longer needed, or to use something carelessly",eg:"Try not to waste food — eat what you need."},
+      {w:"ecosystem",p:"n.",cn:"生态系统",m:"all the living things in an area and how they interact",eg:"A forest is a complex ecosystem with many species."},
+    ],
+    story:[
+      ["Mr. Chen's class went on a field trip to a local river. He wanted his students to see how the ",{h:"environment"}," around them was changing."],
+      ["When they arrived, some students were surprised. The river had visible ",{h:"pollution"}," — plastic bottles and bags floating in the water. \"This wasn't here ten years ago,\" said Mr. Chen sadly."],
+      ["He explained that everything was connected. The river was part of a delicate ",{h:"ecosystem"},". Fish, birds, and plants all depended on clean water to survive."],
+      ["\"What can we do?\" asked one student. Mr. Chen smiled. \"Many small things. We can ",{h:"recycle"}," plastic instead of throwing it away. We can ",{h:"conserve"}," ",{h:"energy"}," at home and use ",{h:"renewable"}," sources like solar power. We can reduce ",{h:"waste"}," by buying only what we need.\""],
+      ["He added: \"Natural ",{h:"resources"}," and a stable ",{h:"climate"}," are not unlimited. Every choice we make matters.\" The students nodded. On the way back, they collected the plastic bottles from the riverbank — their first small step."],
+    ],
+    tf:[
+      {q:"Mr. Chen's class visited a local river.",a:true},
+      {q:"The river had no pollution at all.",a:false},
+      {q:"A river can be part of a larger ecosystem.",a:true},
+      {q:"Mr. Chen said students should waste more energy.",a:false},
+      {q:"The students collected plastic bottles from the riverbank.",a:true},
+    ],
+    mc:[
+      {q:"Where did Mr. Chen's class go on their field trip?",o:["A forest","A river","A factory","A farm"],a:1},
+      {q:"What did the students see in the river?",o:["Fish only","Clean water","Plastic pollution","Boats"],a:2},
+      {q:"What is an example of renewable energy mentioned?",o:["Coal","Oil","Solar power","Gas"],a:2},
+      {q:"What does 'conserve' mean in this story?",o:["To waste something","To use something carefully","To throw something away","To buy more"],a:1},
+      {q:"What was the students' first small step at the end?",o:["Planting trees","Cleaning the school","Collecting plastic bottles","Writing a report"],a:2},
+    ],
+    match:{words:["pollution","ecosystem","renewable","resource","conserve"],defs:["to use something carefully so it does not run out","harmful substances that damage the environment","a useful material or supply","energy that never runs out","living things in an area and how they interact"],correct:[1,4,3,2,0]},
+    fib:{chips:["environment","recycle","climate","waste","energy"],rows:[
+      {pre:"It is important to protect the ",suf:" for future generations.",ans:"environment"},
+      {pre:"We should ",suf:" paper and plastic instead of throwing them away.",ans:"recycle"},
+      {pre:"The ",suf:" in this area is cold in winter and warm in summer.",ans:"climate"},
+      {pre:"Turning off lights when you leave a room saves ",suf:".",ans:"energy"},
+      {pre:"Try not to ",suf:" food — only buy what you will eat.",ans:"waste"},
+    ]},
+    speak:["What do you do to help protect the environment?","Do you recycle at home or at school? What do you recycle?","What is the climate like in your hometown?","Can you name a renewable energy source? Have you seen it used near you?","What is one way you could conserve more energy or resources?"],
+    rev:[["environment","环境"],["pollution","污染"],["recycle","回收利用"],["energy","能源；能量"],["resource","资源"],["climate","气候"],["renewable","可再生的"],["conserve","节约；保护"],["waste","浪费；废物"],["ecosystem","生态系统"]],
+    col:[["protect / damage the environment","保护/破坏环境"],["air / water pollution","空气/水污染"],["recycle paper / plastic","回收纸张/塑料"],["save / produce energy","节约/产生能源"],["natural resources","自然资源"],["climate change","气候变化"],["renewable energy source","可再生能源"],["conserve water / energy","节约用水/能源"],["reduce waste","减少浪费"],["fragile / local ecosystem","脆弱的/当地的生态系统"]]
+  }
+];
+
+const MS=[{sel:null,done:[]},{sel:null,done:[]}];
+const FI=[[],[]];
+let SH=[null,null];
+
+function sU(u){
+  document.querySelectorAll('.unit-btn').forEach((b,i)=>b.classList.toggle('active',i===u));
+  document.querySelectorAll('.unit-panel').forEach((p,i)=>p.classList.toggle('active',i===u));
+}
+function sP(u,p){
+  document.querySelectorAll(`#pn${u} .part-btn`).forEach((b,i)=>b.classList.toggle('active',i===p));
+  for(let i=0;i<7;i++){const e=document.getElementById(`u${u}p${i}`);if(e)e.classList.toggle('active',i===p);}
+}
+
+function bVocab(u){
+  const g=document.getElementById('vg'+u);if(g.children.length)return;
+  D[u].words.forEach((w,i)=>{
+    const d=document.createElement('div');d.className='vi';
+    d.innerHTML=`<div class="vh" onclick="tV(${u},${i})"><span class="vw">${w.w}</span><span class="vp">${w.p}</span><span class="vc">${w.cn}</span><span class="vt" id="vt${u}${i}">+ more</span></div><div class="vb" id="vb${u}${i}"><div class="vm">${w.m}</div><div class="ve">"${w.eg}"</div></div>`;
+    g.appendChild(d);
+  });
+}
+function tV(u,i){
+  const b=document.getElementById(`vb${u}${i}`),t=document.getElementById(`vt${u}${i}`);
+  const o=b.classList.toggle('open');t.textContent=o?'– less':'+ more';
+}
+
+function bStory(u){
+  const el=document.getElementById('st'+u);if(el.innerHTML)return;
+  let h='';
+  D[u].story.forEach(para=>{
+    if(h)h+='<br><br>';
+    para.forEach(s=>{if(typeof s==='string')h+=s;else h+=`<span class="hw">${s.h}</span>`;});
+  });
+  el.innerHTML=h;
+}
+
+function bTF(u){
+  const el=document.getElementById('tf'+u);if(el.innerHTML)return;
+  D[u].tf.forEach((x,i)=>{
+    const r=document.createElement('div');r.className='tf-row';
+    r.innerHTML=`<span class="tf-q">${i+1}. ${x.q}</span><div class="tf-btns"><button class="tf-btn" id="tT${u}${i}" onclick="dTF(${u},${i},true)">T</button><button class="tf-btn" id="tF${u}${i}" onclick="dTF(${u},${i},false)">F</button></div><span class="tf-res" id="tR${u}${i}"></span>`;
+    el.appendChild(r);
+  });
+}
+function dTF(u,i,v){
+  const c=D[u].tf[i].a;
+  const tB=document.getElementById(`tT${u}${i}`),fB=document.getElementById(`tF${u}${i}`),r=document.getElementById(`tR${u}${i}`);
+  tB.disabled=fB.disabled=true;
+  if(v===c){(v?tB:fB).classList.add('correct');r.textContent='✓ Correct';r.style.color='var(--ok)';}
+  else{(v?tB:fB).classList.add('wrong');(c?tB:fB).classList.add('correct');r.textContent='✗ Incorrect';r.style.color='var(--er)';}
+}
+
+function bMC(u){
+  const el=document.getElementById('mc'+u);if(el.innerHTML)return;
+  D[u].mc.forEach((x,qi)=>{
+    const b=document.createElement('div');b.className='mc-block';
+    b.innerHTML=`<div class="mc-q">${qi+1}. ${x.q}</div><div class="mc-opts">${x.o.map((o,oi)=>`<button class="mc-opt" id="mc${u}${qi}${oi}" onclick="dMC(${u},${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</button>`).join('')}</div>`;
+    el.appendChild(b);
+  });
+}
+function dMC(u,qi,oi){
+  const c=D[u].mc[qi].a;
+  for(let i=0;i<4;i++){const b=document.getElementById(`mc${u}${qi}${i}`);if(b){b.disabled=true;if(i===c)b.classList.add('correct');else if(i===oi)b.classList.add('wrong');}}
+}
+
+function bMatch(u){
+  const el=document.getElementById('match'+u);if(el.innerHTML)return;
+  const m=D[u].match;
+  const sh=[...m.defs].sort(()=>Math.random()-.5);
+  SH[u]=sh;
+  const g=document.createElement('div');g.className='match-grid';
+  m.words.forEach((w,i)=>{
+    const wb=document.createElement('button');wb.className='mw';wb.id=`mw${u}${i}`;wb.textContent=w;wb.onclick=()=>pW(u,i);g.appendChild(wb);
+    const db=document.createElement('button');db.className='md';db.id=`md${u}${i}`;db.textContent=sh[i];db.onclick=()=>pD(u,i);g.appendChild(db);
+  });
+  el.appendChild(g);
+}
+function pW(u,i){
+  if(document.getElementById(`mw${u}${i}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="mw${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel');});
+  document.getElementById(`mw${u}${i}`).classList.add('sel');
+  MS[u].sel=i;
+}
+function pD(u,di){
+  if(document.getElementById(`md${u}${di}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="md${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel','err');});
+  document.getElementById(`md${u}${di}`).classList.add('sel');
+  if(MS[u].sel===null)return;
+  const wi=MS[u].sel;
+  const sd=SH[u][di];
+  const cd=D[u].match.defs[D[u].match.correct[wi]];
+  const wB=document.getElementById(`mw${u}${wi}`),dB=document.getElementById(`md${u}${di}`);
+  if(sd===cd){
+    wB.classList.remove('sel');wB.classList.add('done');
+    dB.classList.remove('sel');dB.classList.add('done');
+    MS[u].done.push(wi);
+    if(MS[u].done.length===D[u].match.words.length){
+      document.getElementById(`match${u}-r`).innerHTML=`<div class="score-bar good" style="margin-top:.75rem"><span class="score-n">5/5</span><span class="score-l">All matched correctly!</span></div>`;
+    }
+  } else {
+    dB.classList.add('err');
+    setTimeout(()=>{if(dB)dB.classList.remove('err','sel');},700);
+    wB.classList.remove('sel');
+  }
+  MS[u].sel=null;
+}
+
+function bFib(u){
+  const ce=document.getElementById('chips'+u),fe=document.getElementById('fib'+u);
+  if(ce.innerHTML)return;
+  D[u].fib.chips.forEach(c=>{
+    const s=document.createElement('span');s.className='chip';s.id=`ch${u}${c}`;s.textContent=c;
+    s.onclick=()=>{const f=FI[u].find(x=>x===document.activeElement);if(f&&!f.value){f.value=c;s.classList.add('used');}};
+    ce.appendChild(s);
+  });
+  D[u].fib.rows.forEach((r,i)=>{
+    const row=document.createElement('div');row.className='fib-row';
+    row.innerHTML=`<span class="fib-n">${i+1}.</span><span>${r.pre}</span><input class="fib-i" id="fi${u}${i}" autocomplete="off" placeholder="…"/><span>${r.suf}</span>`;
+    fe.appendChild(row);
+    FI[u].push(document.getElementById(`fi${u}${i}`));
+  });
+}
+function chkFib(u){
+  let ok=0;const n=D[u].fib.rows.length;
+  D[u].fib.rows.forEach((r,i)=>{
+    const inp=FI[u][i];const v=inp.value.trim().toLowerCase();const a=r.ans.toLowerCase();
+    inp.classList.remove('correct','wrong');
+    if(v===a||v===a+'s'){inp.classList.add('correct');ok++;}else inp.classList.add('wrong');
+  });
+  document.getElementById(`fib${u}-s`).innerHTML=`<div class="score-bar${ok===n?' good':''}" style="margin-top:.5rem"><span class="score-n">${ok}/${n}</span><span class="score-l">${ok===n?'Perfect! All correct!':ok>n/2?'Good effort! Check the red ones.':'Keep trying!'}</span></div>`;
+}
+function rstFib(u){
+  D[u].fib.rows.forEach((_,i)=>{const inp=FI[u][i];inp.value='';inp.classList.remove('correct','wrong');});
+  D[u].fib.chips.forEach(c=>{const ch=document.getElementById(`ch${u}${c}`);if(ch)ch.classList.remove('used');});
+  document.getElementById(`fib${u}-s`).innerHTML='';
+}
+
+function bSpeak(u){
+  const el=document.getElementById('spk'+u);if(el.innerHTML)return;
+  D[u].speak.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='speak-card';
+    d.innerHTML=`<span class="speak-n">${i+1}.</span><span>${q}</span>`;
+    el.appendChild(d);
+  });
+}
+
+function bRev(u){
+  const re=document.getElementById('rev'+u),co=document.getElementById('col'+u);if(re.innerHTML)return;
+  D[u].rev.forEach(([en,cn])=>{const d=document.createElement('div');d.className='ri';d.innerHTML=`<span class="r-en">${en}</span><span class="r-cn">${cn}</span>`;re.appendChild(d);});
+  D[u].col.forEach(([en,cn])=>{const d=document.createElement('div');d.className='ci';d.innerHTML=`<div class="c-en">${en}</div><div class="c-cn">${cn}</div>`;co.appendChild(d);});
+}
+
+function setupWC(u){
+  const ta=document.getElementById('wr'+u),wc=document.getElementById('wc'+u);
+  ta.addEventListener('input',()=>{const n=ta.value.trim().split(/\s+/).filter(w=>w).length;wc.textContent=n+' word'+(n!==1?'s':'');});
+}
+
+[0,1].forEach(u=>{bVocab(u);bStory(u);bTF(u);bMC(u);bMatch(u);bFib(u);bSpeak(u);bRev(u);setupWC(u);});
+</script>
+</body>
+</html>
