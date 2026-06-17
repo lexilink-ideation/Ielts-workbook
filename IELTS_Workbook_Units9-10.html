@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Units 9–10 — Lexilink Ideation IELTS Studio</title>
+<style>
+:root{
+  --blue:#2b4c7e;--blue-mid:#3a6bc7;--blue-light:#ebf2ff;--blue-pale:#f0f4ff;
+  --green:#276749;--green-light:#c6f6d5;--green-mid:#38a169;
+  --red:#c53030;--red-light:#fed7d7;
+  --gold:#b7791f;--gold-light:#fefce8;
+  --gray:#4a5568;--gray-light:#718096;--border:#e2e8f0;
+  --bg:#f7f8fc;--card:#ffffff;--text:#1a202c;
+  --r:10px;--shadow:0 2px 8px rgba(0,0,0,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
+
+/* ── Top bar ── */
+.topbar{background:var(--blue);color:#fff;padding:10px 24px;font-size:.8rem;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between}
+.topbar a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.78rem}
+.topbar a:hover{color:#fff}
+
+/* ── Page header card ── */
+.pg-header{background:linear-gradient(135deg,#1a365d 0%,#2b6cb0 100%);color:#fff;padding:28px 32px 22px;text-align:center}
+.pg-header h1{font-size:1.05rem;font-weight:500;opacity:.85;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.pg-header h2{font-size:1.85rem;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.pg-header .subtitle{font-size:.95rem;opacity:.85;margin-bottom:16px}
+.pg-header .subtitle b{opacity:1}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:600}
+
+/* ── How to use ── */
+.howto{background:#fff;border-left:4px solid var(--blue-mid);border-radius:0 var(--r) var(--r) 0;margin:16px 20px;padding:10px 16px;font-size:.83rem;color:var(--gray);box-shadow:var(--shadow)}
+.howto b{color:var(--blue)}
+
+/* ── Unit tabs ── */
+.unit-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);background:#fff;padding:0 20px}
+.unit-tab{padding:12px 20px;font-size:.9rem;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;color:var(--gray-light);transition:all .2s;white-space:nowrap}
+.unit-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
+.unit-tab:hover:not(.active){color:var(--blue);background:var(--blue-pale)}
+
+/* ── Per-unit header ── */
+.unit-header{background:#fff;padding:16px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.unit-num{background:var(--blue);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;flex-shrink:0}
+.unit-meta h3{font-size:1.1rem;font-weight:700;color:var(--blue)}
+.unit-meta p{font-size:.8rem;color:var(--gray-light)}
+.lvl-badge{margin-left:auto;background:var(--blue-light);color:var(--blue);padding:5px 12px;border-radius:20px;font-size:.75rem;font-weight:700}
+
+/* ── Section nav ── */
+.sec-nav{display:flex;gap:4px;padding:12px 20px;background:var(--bg);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.sec-btn{padding:6px 14px;border:1px solid var(--border);border-radius:20px;cursor:pointer;font-size:.8rem;background:#fff;color:var(--gray);transition:all .15s;white-space:nowrap}
+.sec-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.sec-btn:hover:not(.active){background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
+
+/* ── Content area ── */
+.content{padding:20px;max-width:860px;margin:0 auto}
+
+/* ── Vocabulary cards ── */
+.vocab-hint{font-size:.8rem;color:var(--gray-light);margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.vocab-grid{display:flex;flex-direction:column;gap:6px}
+.word-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:box-shadow .15s}
+.word-card:hover{box-shadow:0 4px 16px rgba(43,76,126,.12)}
+.word-card-head{display:flex;align-items:center;gap:10px;padding:11px 16px}
+.word-card-head .word{font-weight:700;font-size:1rem;color:var(--blue);min-width:110px}
+.word-card-head .pos{font-size:.78rem;color:var(--gray-light);font-style:italic;min-width:28px}
+.word-card-head .cn{font-size:.82rem;font-weight:700;color:#c05621;min-width:64px}
+.word-card-head .def-preview{font-size:.82rem;color:var(--gray);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.word-card-head .toggle{color:var(--gray-light);font-size:.8rem;flex-shrink:0}
+.word-card-body{display:none;padding:0 16px 14px 16px;border-top:1px solid var(--border);background:var(--blue-pale)}
+.word-card-body .full-def{font-size:.88rem;color:var(--text);margin-top:10px;margin-bottom:6px}
+.word-card-body .example{font-size:.82rem;color:var(--gray);font-style:italic;border-left:3px solid var(--blue-mid);padding-left:10px}
+.word-card.open .word-card-body{display:block}
+.word-card.open .word-card-head .def-preview{display:none}
+.word-card.open .toggle::before{content:'▲'}
+.word-card .toggle::before{content:'▼'}
+
+/* Category label */
+.cat-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-mid);margin:14px 0 6px;padding-left:2px}
+
+/* ── Story ── */
+.story-card{background:#fff;border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
+.story-title{font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--blue-light)}
+.story-card p{margin-bottom:14px;line-height:1.85;font-size:.93rem}
+.story-card mark{background:#fefcbf;color:#744210;padding:1px 3px;border-radius:3px;font-weight:700;cursor:pointer}
+.story-hint{margin-top:16px;font-size:.78rem;color:var(--gray-light);text-align:center}
+
+/* ── Comprehension ── */
+.sec-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:10px}
+.ex-card{background:#fff;border-radius:var(--r);padding:20px;box-shadow:var(--shadow);margin-bottom:14px}
+.ex-card-title{font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:4px}
+.ex-card-sub{font-size:.78rem;color:var(--gray-light);margin-bottom:16px}
+.q-item{margin-bottom:16px}
+.q-text{font-size:.9rem;margin-bottom:8px;line-height:1.5}
+.q-num{font-weight:700;color:var(--blue);margin-right:4px}
+
+/* T/F */
+.tf-row{display:flex;gap:8px}
+.tf-btn{padding:6px 20px;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-weight:600;font-size:.85rem;background:#fff;transition:all .15s}
+.tf-btn:hover{background:var(--blue-light)}
+.tf-btn.ok{background:var(--green-light);border-color:var(--green-mid);color:var(--green)}
+.tf-btn.bad{background:var(--red-light);border-color:var(--red);color:var(--red)}
+
+/* MCQ */
+.mcq-opts{display:flex;flex-direction:column;gap:5px}
+.mcq-opt{padding:8px 14px;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-size:.87rem;background:#fff;text-align:left;transition:all .15s}
+.mcq-opt:hover{background:var(--blue-light)}
+.mcq-opt.ok{background:var(--green-light);border-color:var(--green-mid);color:var(--green);font-weight:600}
+.mcq-opt.bad{background:var(--red-light);border-color:var(--red);color:var(--red)}
+.mcq-opt.reveal{background:var(--green-light);border-color:var(--green-mid);opacity:.5}
+
+/* ── Practice ── */
+/* Matching */
+.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.match-col{display:flex;flex-direction:column;gap:6px}
+.match-col-lbl{font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--gray-light);text-transform:uppercase;margin-bottom:2px}
+.match-item{padding:9px 13px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:.87rem;background:#fff;transition:all .15s;line-height:1.4}
+.match-item.sel{border-color:var(--blue-mid);background:var(--blue-light)}
+.match-item.ok{border-color:var(--green-mid);background:var(--green-light);cursor:default;color:var(--green)}
+.match-item.err{border-color:var(--red);background:var(--red-light)}
+.match-word{font-weight:700;color:var(--blue)}
+.match-fb{margin-top:10px;font-size:.87rem;font-weight:700;color:var(--green-mid)}
+
+/* Fill in blank */
+.fill-item{margin-bottom:14px}
+.fill-sent{font-size:.9rem;line-height:1.9}
+.blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--blue-mid);padding:0 4px;color:var(--blue);font-weight:700;cursor:pointer;transition:border-color .2s}
+.blank.sel{outline:2px solid var(--blue-mid);border-radius:3px}
+.blank.ok{border-color:var(--green-mid);color:var(--green)}
+.blank.bad{border-color:var(--red);color:var(--red)}
+.fill-input{border:none;border-bottom:2px solid var(--blue-mid);outline:none;font-size:.9rem;font-weight:700;color:var(--blue);width:110px;background:transparent;padding:0 4px}
+.word-bank{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
+.chip{padding:5px 16px;background:var(--blue-light);color:var(--blue);border:2px solid var(--blue-mid);border-radius:20px;cursor:pointer;font-weight:700;font-size:.85rem;transition:all .15s}
+.chip:hover{background:var(--blue);color:#fff}
+.chip.used{opacity:.3;cursor:default;pointer-events:none}
+.prac-btns{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.check-btn{padding:9px 22px;background:var(--blue);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:700;font-size:.88rem}
+.check-btn:hover{background:#1a365d}
+.reset-btn{padding:9px 18px;background:#fff;color:var(--gray);border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:.88rem}
+.reset-btn:hover{background:var(--bg)}
+.score-badge{display:inline-flex;align-items:center;padding:4px 12px;background:var(--green-light);color:var(--green);border-radius:20px;font-weight:700;font-size:.85rem}
+
+/* ── Speaking ── */
+.speak-card{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.speak-card h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:14px}
+.speak-q{padding:11px 15px 11px 18px;background:var(--blue-pale);border-left:4px solid var(--blue-mid);border-radius:0 6px 6px 0;margin-bottom:8px;font-size:.9rem;line-height:1.5}
+.speak-q b{color:var(--blue);margin-right:4px}
+.phrases-box{margin-top:18px;padding:14px 18px;background:var(--gold-light);border:1px solid #f6e05e;border-radius:8px}
+.phrases-lbl{font-weight:700;color:var(--gold);font-size:.78rem;margin-bottom:8px}
+.phrase{display:inline-block;background:#fff;border:1px solid #f6e05e;color:var(--gold);padding:3px 12px;border-radius:20px;margin:3px;font-size:.82rem;font-weight:600}
+
+/* ── Writing ── */
+.write-card{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.write-card h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:14px}
+.write-prompt{padding:14px 18px;background:var(--blue-pale);border-radius:8px;font-size:.9rem;line-height:1.75;margin-bottom:10px;border-left:4px solid var(--blue-mid)}
+.write-cn{padding:10px 14px;background:#fffaf0;border-radius:6px;font-size:.83rem;color:#744210;margin-bottom:16px;border:1px solid #fbd38d}
+.write-area{width:100%;min-height:180px;padding:13px;border:2px solid var(--border);border-radius:8px;font-size:.88rem;font-family:inherit;resize:vertical;transition:border-color .2s;line-height:1.65}
+.write-area:focus{outline:none;border-color:var(--blue-mid)}
+.wc-info{display:flex;justify-content:space-between;margin-top:6px;font-size:.75rem;color:var(--gray-light)}
+
+/* ── Review ── */
+.review-section h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:12px}
+.review-section h3 span{font-size:.78rem;font-weight:400;color:var(--gray-light);margin-left:8px}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:28px}
+.flip-card{height:72px;cursor:pointer;perspective:600px}
+.flip-inner{width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d;position:relative}
+.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;border-radius:var(--r);display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;backface-visibility:hidden;box-shadow:var(--shadow)}
+.flip-front{background:#fff;border:1px solid var(--border);font-weight:700;color:var(--blue);font-size:.9rem}
+.flip-back{background:var(--blue);color:#fff;transform:rotateY(180deg);font-size:.88rem;font-weight:600}
+.review-hint{font-size:.75rem;color:var(--gray-light);margin-bottom:14px}
+.colloc-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+.colloc-table th{background:var(--green-mid);color:#fff;padding:8px 14px;text-align:left;font-size:.78rem;font-weight:700}
+.colloc-table td{padding:9px 14px;border-bottom:1px solid var(--border);font-size:.87rem}
+.colloc-table tr:last-child td{border-bottom:none}
+.colloc-table tr:nth-child(even) td{background:var(--green-light)}
+.colloc-en{font-weight:600}
+.colloc-cn{color:var(--gray)}
+
+/* ── Utility ── */
+.unit-pane{display:none}
+.unit-pane.active{display:block}
+.sec-pane{display:none}
+.sec-pane.active{display:block}
+.mt{margin-top:16px}
+.mb{margin-bottom:16px}
+
+@media(max-width:600px){
+  .pg-header{padding:20px 16px 16px}
+  .pg-header h2{font-size:1.45rem}
+  .unit-tabs{padding:0 10px}
+  .unit-tab{padding:10px 12px;font-size:.82rem}
+  .content{padding:12px}
+  .match-wrap{grid-template-columns:1fr}
+  .review-grid{grid-template-columns:repeat(3,1fr)}
+  .howto{margin:12px 12px}
+}
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <span>Lexilink Ideation IELTS Studio</span>
+  <a href="https://lexilink-ideation.github.io/Ielts-workbook/index.html">← Home 首页</a>
+</div>
+
+<!-- Page header -->
+<div class="pg-header">
+  <h1>IELTS Vocabulary Workbook</h1>
+  <h2>Units 9–10</h2>
+  <div class="subtitle"><b>Work &amp; Economy</b> | 工作 · 经济</div>
+  <div class="badges">
+    <span class="badge">Level 2</span>
+    <span class="badge">73 target words</span>
+    <span class="badge">Interactive exercises</span>
+    <span class="badge">中文支持</span>
+  </div>
+</div>
+
+<!-- How to use -->
+<div class="howto">
+  <b>How to use:</b> Study vocabulary → Read the story → Complete the exercises. Click any word card to expand its meaning. Answers are checked instantly. 每天学一个单元，复习前一个单元。
+</div>
+
+<!-- Unit tabs -->
+<div class="unit-tabs" id="unitTabs">
+  <div class="unit-tab active" onclick="switchUnit(0)">Unit 9 — Work &amp; Employment</div>
+  <div class="unit-tab" onclick="switchUnit(1)">Unit 10 — Business, Trade &amp; Finance</div>
+</div>
+
+<!-- ═══════════════ UNIT 9 ═══════════════ -->
+<div class="unit-pane active" id="pane0">
+  <div class="unit-header">
+    <div class="unit-num">9</div>
+    <div class="unit-meta">
+      <h3>Work &amp; Employment · 工作与职场</h3>
+      <p>33 target words · 7 parts · Categories: Jobs, Hiring &amp; Workplace, Pay &amp; Benefits</p>
+    </div>
+    <div class="lvl-badge">Level 2 — Foundation</div>
+  </div>
+  <div class="sec-nav" id="nav0">
+    <button class="sec-btn active" onclick="switchSec(0,0)">1 · Vocabulary</button>
+    <button class="sec-btn" onclick="switchSec(0,1)">2 · Story</button>
+    <button class="sec-btn" onclick="switchSec(0,2)">3 · Comprehension</button>
+    <button class="sec-btn" onclick="switchSec(0,3)">4 · Practice</button>
+    <button class="sec-btn" onclick="switchSec(0,4)">5 · Speaking</button>
+    <button class="sec-btn" onclick="switchSec(0,5)">6 · Writing</button>
+    <button class="sec-btn" onclick="switchSec(0,6)">7 · Review</button>
+  </div>
+
+  <!-- Sec 0: Vocabulary -->
+  <div class="sec-pane active content" id="s0_0">
+    <div class="vocab-hint">📖 Click any word card to expand its meaning</div>
+    <div class="cat-label">Jobs &amp; Careers 职位与职业</div>
+    <div class="vocab-grid" id="vg0_cat0"></div>
+    <div class="cat-label">Hiring &amp; Workplace 招聘与职场</div>
+    <div class="vocab-grid" id="vg0_cat1"></div>
+    <div class="cat-label">Pay &amp; Benefits 薪酬与福利</div>
+    <div class="vocab-grid" id="vg0_cat2"></div>
+  </div>
+
+  <!-- Sec 1: Story -->
+  <div class="sec-pane content" id="s0_1">
+    <div class="story-card">
+      <div class="story-title">📖 A Lifetime of Work</div>
+      <p>David had always known that teaching was his true <mark>vocation</mark>. But after ten years in the <mark>profession</mark>, he decided it was time for a change of <mark>career</mark>. He began searching for a new <mark>occupation</mark> that would challenge and inspire him.</p>
+      <p>One morning, he spotted a <mark>post</mark> advertised by a technology company — an <mark>opening</mark> for a <mark>personnel</mark> manager. The <mark>position</mark> required someone experienced in managing teams and finding new talent. David applied immediately. After three rounds of interviews, the <mark>employer</mark> offered him the role.</p>
+      <p>As a new <mark>employee</mark>, David completed a two-week <mark>training</mark> programme. His <mark>director</mark> introduced him to every <mark>colleague</mark> in the department. The <mark>executive</mark> team made him feel welcome. That same month, the company decided to <mark>employ</mark> two more specialists to keep up with growing demand.</p>
+      <p>Within a year, the firm decided to <mark>promote</mark> David to head of human resources. He was now responsible for the entire <mark>employment</mark> process — helping the company <mark>hire</mark> and <mark>recruit</mark> the right people. He also had to <mark>supervise</mark> a team of twelve and ensure every <mark>staff</mark> member felt supported.</p>
+      <p>Not all news was good. When the business slowed, David had to deliver a <mark>layoff</mark> notice to twenty workers who had been made <mark>redundant</mark>. One long-serving manager chose to <mark>resign</mark> rather than accept a transfer to another city. These were among the hardest moments in his career.</p>
+      <p>David managed the <mark>payroll</mark> carefully each month, making sure every employee received their correct <mark>salary</mark>. The firm offered fair <mark>wage</mark>s and many staff earned a generous end-of-year <mark>bonus</mark>. David's own <mark>income</mark> grew steadily, and his annual <mark>earnings</mark> now exceeded anything he had made as a teacher.</p>
+      <p>As he approached sixty, David thought about his <mark>pension</mark> and the <mark>benefit</mark>s the company offered — health insurance, flexible hours, and retirement savings. He planned to <mark>retire</mark> at sixty-five. Looking back, he was grateful for every challenge and every team he had helped build throughout a rewarding lifetime of work.</p>
+      <p class="story-hint">💡 Highlighted words are this unit's key vocabulary. Click any highlighted word to review its meaning.</p>
+    </div>
+  </div>
+
+  <!-- Sec 2: Comprehension -->
+  <div class="sec-pane content" id="s0_2">
+    <!-- T/F -->
+    <div class="ex-card">
+      <div class="ex-card-title">Section A — True or False 判断对错</div>
+      <div class="ex-card-sub">Read the story, then decide whether each statement is True or False.</div>
+      <div id="tf0"></div>
+    </div>
+    <!-- MCQ -->
+    <div class="ex-card mt">
+      <div class="ex-card-title">Section B — Multiple Choice 选择题</div>
+      <div class="ex-card-sub">Choose the best answer for each question.</div>
+      <div id="mcq0"></div>
+    </div>
+  </div>
+
+  <!-- Sec 3: Practice -->
+  <div class="sec-pane content" id="s0_3">
+    <!-- Matching -->
+    <div class="ex-card">
+      <div class="ex-card-title">Activity A — Match words with meanings</div>
+      <div class="ex-card-sub">Click a word on the left, then click its matching meaning on the right.</div>
+      <div id="match0"></div>
+    </div>
+    <!-- Fill -->
+    <div class="ex-card mt">
+      <div class="ex-card-title">Activity B — Fill in the blanks</div>
+      <div class="ex-card-sub">Click a blank to select it, then click a word from the box below, or type your own answer.</div>
+      <div id="fill0"></div>
+    </div>
+  </div>
+
+  <!-- Sec 4: Speaking -->
+  <div class="sec-pane content" id="s0_4">
+    <div class="speak-card">
+      <h3>🗣 Speaking practice — answer these questions aloud</h3>
+      <div id="speak0"></div>
+      <div id="phrases0"></div>
+    </div>
+  </div>
+
+  <!-- Sec 5: Writing -->
+  <div class="sec-pane content" id="s0_5">
+    <div class="write-card">
+      <h3>✍️ Writing practice</h3>
+      <div id="write0"></div>
+    </div>
+  </div>
+
+  <!-- Sec 6: Review -->
+  <div class="sec-pane content" id="s0_6">
+    <div class="review-section">
+      <h3>Today's words 今日单词 <span>Click each card to flip</span></h3>
+      <div class="review-hint">📌 Click a card to reveal the Chinese meaning. Click again to flip back.</div>
+      <div class="review-grid" id="rev0"></div>
+      <h3>Collocations 常见搭配</h3>
+      <div class="mt"></div>
+      <table class="colloc-table" id="col0"></table>
+    </div>
+  </div>
+</div><!-- /unit 9 -->
+
+<!-- ═══════════════ UNIT 10 ═══════════════ -->
+<div class="unit-pane" id="pane1">
+  <div class="unit-header">
+    <div class="unit-num">10</div>
+    <div class="unit-meta">
+      <h3>Business, Trade &amp; Finance · 商业、贸易与金融</h3>
+      <p>40 target words · 7 parts · Categories: Business, Trade &amp; Markets, Finance &amp; Economics</p>
+    </div>
+    <div class="lvl-badge">Level 2 — Foundation</div>
+  </div>
+  <div class="sec-nav" id="nav1">
+    <button class="sec-btn active" onclick="switchSec(1,0)">1 · Vocabulary</button>
+    <button class="sec-btn" onclick="switchSec(1,1)">2 · Story</button>
+    <button class="sec-btn" onclick="switchSec(1,2)">3 · Comprehension</button>
+    <button class="sec-btn" onclick="switchSec(1,3)">4 · Practice</button>
+    <button class="sec-btn" onclick="switchSec(1,4)">5 · Speaking</button>
+    <button class="sec-btn" onclick="switchSec(1,5)">6 · Writing</button>
+    <button class="sec-btn" onclick="switchSec(1,6)">7 · Review</button>
+  </div>
+
+  <!-- Sec 0: Vocabulary -->
+  <div class="sec-pane active content" id="s1_0">
+    <div class="vocab-hint">📖 Click any word card to expand its meaning</div>
+    <div class="cat-label">Business &amp; Companies 商业与企业</div>
+    <div class="vocab-grid" id="vg1_cat0"></div>
+    <div class="cat-label">Trade &amp; Markets 贸易与市场</div>
+    <div class="vocab-grid" id="vg1_cat1"></div>
+    <div class="cat-label">Finance &amp; Economics 金融与经济</div>
+    <div class="vocab-grid" id="vg1_cat2"></div>
+  </div>
+
+  <!-- Sec 1: Story -->
+  <div class="sec-pane content" id="s1_1">
+    <div class="story-card">
+      <div class="story-title">📖 The Rise and Fall of Hartwick Industries</div>
+      <p>The Hartwick <mark>corporation</mark> was one of the country's most admired <mark>enterprise</mark>s. Founded sixty years ago as a small <mark>firm</mark> making machine parts, it had grown through careful <mark>management</mark> into a global business. Its key <mark>subsidiary</mark>, Hartwick Pacific, operated across Asia and contributed a third of the group's total output.</p>
+      <p>The company's <mark>productivity</mark> was exceptional. Its factories could <mark>manufacture</mark> over ten thousand units a day. Through a series of decisions to <mark>incorporate</mark> smaller rivals into its structure, Hartwick had built a dominant market position. When it announced plans to <mark>merge</mark> with its largest competitor, regulators feared it would create a <mark>monopoly</mark>.</p>
+      <p><mark>Trade</mark> was at the heart of Hartwick's success. The company thrived on international <mark>commerce</mark>, choosing to <mark>export</mark> finished goods to markets across three continents while it <mark>import</mark>ed raw materials at competitive prices. This global model had worked brilliantly — until the government changed course.</p>
+      <p>A new law introduced a steep <mark>tariff</mark> on imported steel, raising production costs overnight. At the same time, a strict <mark>quota</mark> limited how much Hartwick could export each year. Supporters of <mark>protectionism</mark> argued these rules would save local jobs. Critics warned they would disrupt the balance of <mark>supply</mark> and <mark>demand</mark>, reduce the confidence of every <mark>consumer</mark>, and cause the company's annual <mark>turnover</mark> to fall sharply.</p>
+      <p>The government offered a <mark>subsidy</mark> to help cover rising costs, but it was not enough. Hartwick's <mark>finance</mark> team reviewed the <mark>budget</mark> with growing alarm. The company had borrowed <mark>capital</mark> to <mark>invest</mark> in new technology, and the <mark>debt</mark> was mounting. <mark>Revenue</mark> was falling, and for the first time in decades, the firm recorded no <mark>profit</mark>.</p>
+      <p>The wider <mark>economy</mark> made things worse. <mark>Inflation</mark> pushed up the cost of energy and materials. The national <mark>currency</mark> weakened, making imports more expensive still. <mark>Unemployment</mark> rose in the towns that depended on Hartwick. Consumer spending — a key driver of <mark>economic</mark> growth — slowed to a halt.</p>
+      <p>Hartwick's board reviewed its <mark>savings</mark>, now almost gone. Total <mark>expenditure</mark> had outpaced income for three years in a row. The <mark>yield</mark> on its investments was far below expectations. Analysts warned that without urgent action, <mark>bankruptcy</mark> was possible. Even the company's <mark>taxation</mark> strategy needed reform to reduce the burden on operating costs.</p>
+      <p>But new leadership refused to give up. They restructured the firm's finances, focused on high-demand markets, and worked to bring <mark>revenue</mark> back to healthy levels. Within two years, the company had stabilised. The feared <mark>recession</mark> had tested them to the limit — but Hartwick had survived, and emerged stronger than before.</p>
+      <p class="story-hint">💡 Highlighted words are this unit's key vocabulary. Click any highlighted word to review its meaning.</p>
+    </div>
+  </div>
+
+  <!-- Sec 2: Comprehension -->
+  <div class="sec-pane content" id="s1_2">
+    <div class="ex-card">
+      <div class="ex-card-title">Section A — True or False 判断对错</div>
+      <div class="ex-card-sub">Read the story, then decide whether each statement is True or False.</div>
+      <div id="tf1"></div>
+    </div>
+    <div class="ex-card mt">
+      <div class="ex-card-title">Section B — Multiple Choice 选择题</div>
+      <div class="ex-card-sub">Choose the best answer for each question.</div>
+      <div id="mcq1"></div>
+    </div>
+  </div>
+
+  <!-- Sec 3: Practice -->
+  <div class="sec-pane content" id="s1_3">
+    <div class="ex-card">
+      <div class="ex-card-title">Activity A — Match words with meanings</div>
+      <div class="ex-card-sub">Click a word on the left, then click its matching meaning on the right.</div>
+      <div id="match1"></div>
+    </div>
+    <div class="ex-card mt">
+      <div class="ex-card-title">Activity B — Fill in the blanks</div>
+      <div class="ex-card-sub">Click a blank to select it, then click a word from the box or type your answer.</div>
+      <div id="fill1"></div>
+    </div>
+  </div>
+
+  <!-- Sec 4: Speaking -->
+  <div class="sec-pane content" id="s1_4">
+    <div class="speak-card">
+      <h3>🗣 Speaking practice — answer these questions aloud</h3>
+      <div id="speak1"></div>
+      <div id="phrases1"></div>
+    </div>
+  </div>
+
+  <!-- Sec 5: Writing -->
+  <div class="sec-pane content" id="s1_5">
+    <div class="write-card">
+      <h3>✍️ Writing practice</h3>
+      <div id="write1"></div>
+    </div>
+  </div>
+
+  <!-- Sec 6: Review -->
+  <div class="sec-pane content" id="s1_6">
+    <div class="review-section">
+      <h3>Today's words 今日单词 <span>Click each card to flip</span></h3>
+      <div class="review-hint">📌 Click a card to reveal the Chinese meaning. Click again to flip back.</div>
+      <div class="review-grid" id="rev1"></div>
+      <h3>Collocations 常见搭配</h3>
+      <div class="mt"></div>
+      <table class="colloc-table" id="col1"></table>
+    </div>
+  </div>
+</div><!-- /unit 10 -->
+
+<div style="height:40px"></div>
+
+<script>
+// ─────────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────────
+const DATA = [
+  // ── UNIT 9 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Jobs & Careers", words: [
+          {w:"career",   p:"n.",   c:"职业生涯", d:"The series of jobs a person has in a particular area of work; one's professional life", e:"She built a successful career in finance over twenty years."},
+          {w:"profession",p:"n.",  c:"职业专业", d:"A type of job that requires special education, training, or skill",                     e:"Teaching is a profession that requires patience and dedication."},
+          {w:"vocation", p:"n.",   c:"职业天职", d:"A strong feeling that a particular type of work is exactly right for you; a calling",    e:"For many nurses, caring for others is a true vocation, not just a job."},
+          {w:"occupation",p:"n.",  c:"职业工作", d:"A person's job or profession; the activity a person does to earn a living",              e:"On the form, he listed his occupation as civil engineer."},
+          {w:"position", p:"n.",   c:"职位岗位", d:"A job or role within an organisation",                                                   e:"She applied for the position of senior marketing manager."},
+          {w:"post",     p:"n.",   c:"职位职务", d:"A job, especially one with responsibility in a company or organisation",                  e:"He was offered the post of regional director after five years."},
+          {w:"opening",  p:"n.",   c:"职位空缺", d:"A job vacancy; an available position that has not yet been filled",                      e:"There is an opening in our IT department for a software developer."},
+          {w:"personnel",p:"n.",   c:"人事职员", d:"The people employed in an organisation; also the department that manages staff",          e:"The personnel department handles all job applications and staff records."},
+          {w:"executive",p:"n.",   c:"高级主管", d:"A senior manager in a company who makes important decisions",                             e:"The executive presented the company's five-year strategy to the board."},
+          {w:"director", p:"n.",   c:"主任总监", d:"The head of a department, institution, or company; a top-level leader",                   e:"The director of finance oversees all budgets and spending."}
+        ]
+      },
+      {
+        label: "Hiring & Workplace", words: [
+          {w:"employ",   p:"v.",   c:"雇用使用", d:"To pay someone to work for you on a regular basis",                                       e:"The factory employs over five hundred workers from the local area."},
+          {w:"employee", p:"n.",   c:"雇员员工", d:"A person who is paid to work for a company or individual",                                e:"Every employee must complete the health and safety training course."},
+          {w:"employer", p:"n.",   c:"雇主老板", d:"A person or organisation that pays others to work for them",                              e:"A good employer provides clear guidance and fair working conditions."},
+          {w:"employment",p:"n.",  c:"雇用职业", d:"The state of having a paid job; the process of hiring someone",                           e:"Full employment is rarely achieved, but it remains an economic goal."},
+          {w:"hire",     p:"v.",   c:"雇用租借", d:"To employ someone for a wage; to take on new staff for a role",                           e:"We need to hire two more drivers before the busy season begins."},
+          {w:"recruit",  p:"v.",   c:"招募招聘", d:"To find and select people to join an organisation or fill a position",                    e:"The army recruits thousands of new soldiers every year."},
+          {w:"colleague",p:"n.",   c:"同事伙伴", d:"A person you work with, especially in a professional or office setting",                   e:"She often stayed late to help a colleague finish a difficult report."},
+          {w:"staff",    p:"n.",   c:"全体员工", d:"All the people employed in an organisation, treated as a group",                          e:"The manager thanked the entire staff for their hard work this year."},
+          {w:"promote",  p:"v.",   c:"晋升提拔", d:"To give someone a higher or more responsible job within an organisation",                  e:"She was promoted to senior analyst after only eighteen months."},
+          {w:"resign",   p:"v.",   c:"辞职离职", d:"To formally and officially leave a job or position",                                       e:"He decided to resign and start his own consulting firm."},
+          {w:"retire",   p:"v.",   c:"退休引退", d:"To stop working permanently, usually because of age or health",                            e:"She plans to retire at sixty-five and travel the world."},
+          {w:"layoff",   p:"n.",   c:"临时解雇", d:"The dismissal of employees because the company has no work or money for them",             e:"The recession caused a wave of layoffs across the manufacturing sector."},
+          {w:"redundant",p:"adj.", c:"被裁员的", d:"No longer needed in a job, usually because of company restructuring or automation",        e:"When the branch closed, forty workers were made redundant."},
+          {w:"supervise",p:"v.",   c:"监督管理", d:"To watch over and direct the work of others to make sure it is done correctly",            e:"Her role was to supervise a team of twelve junior engineers."},
+          {w:"training", p:"n.",   c:"培训训练", d:"The process of learning the skills, knowledge, or techniques needed for a job",            e:"All new recruits must complete a two-week training programme."}
+        ]
+      },
+      {
+        label: "Pay & Benefits", words: [
+          {w:"salary",   p:"n.",   c:"薪水薪金", d:"A fixed regular payment for work, usually paid monthly or annually",                       e:"Her annual salary was increased by ten percent after the review."},
+          {w:"wage",     p:"n.",   c:"工资周薪", d:"Payment for work calculated by the hour or week, rather than annually",                    e:"The minimum wage was raised to protect low-income workers."},
+          {w:"income",   p:"n.",   c:"收入所得", d:"The money a person receives from work or other financial sources regularly",               e:"Families with a low income may qualify for government support."},
+          {w:"earnings", p:"n.",   c:"工资收益", d:"The total amount of money someone receives from their work",                                e:"His earnings this year were the highest in his career so far."},
+          {w:"bonus",    p:"n.",   c:"奖金津贴", d:"An extra payment given to an employee as a reward for good performance",                    e:"All staff received a Christmas bonus equal to one month's salary."},
+          {w:"pension",  p:"n.",   c:"养老金",   d:"A regular payment made to someone who has retired from work, funded during employment",    e:"He began contributing to his pension fund as soon as he started working."},
+          {w:"benefit",  p:"n.",   c:"福利津贴", d:"An advantage or additional payment provided by an employer to an employee",                 e:"The job comes with excellent benefits, including private healthcare."},
+          {w:"payroll",  p:"n.",   c:"工资单",   d:"The list of a company's employees and how much each one is paid; the total wage bill",     e:"The finance manager is responsible for running the monthly payroll."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"David's first career was in the technology industry.",a:false},
+      {q:"The employer offered David the role after three rounds of interviews.",a:true},
+      {q:"The training programme lasted one month.",a:false},
+      {q:"The company's benefit package included health insurance.",a:true},
+      {q:"David planned to retire at sixty.",a:false}
+    ],
+    mcq: [
+      {q:"What was David's original profession before changing careers?",opts:["Finance","Technology","Teaching","Human resources"],ans:2},
+      {q:"What position did David apply for at the technology company?",opts:["Executive officer","Sales director","Personnel manager","Training coordinator"],ans:2},
+      {q:"What happened to twenty workers when the business slowed?",opts:["They were promoted","They were made redundant","They received a bonus","They completed more training"],ans:1},
+      {q:"What did David manage carefully each month?",opts:["The staff meetings","The company budget","The payroll","The hiring interviews"],ans:2},
+      {q:"At what age did David plan to retire?",opts:["Fifty-five","Sixty","Sixty-two","Sixty-five"],ans:3}
+    ],
+    match: {
+      ws:["occupation","recruit","redundant","payroll","pension"],
+      ds:[
+        "a regular payment made to someone who has retired from work",
+        "a person's job or profession; the activity done to earn a living",
+        "no longer needed in a job, usually due to restructuring",
+        "to find and select people to join an organisation",
+        "the list of all employees and how much each one is paid"
+      ],
+      correct:[1,3,2,4,0]
+    },
+    fill: {
+      sents:[
+        {s:"She decided to ___ because she found a better opportunity at another company.",w:"resign"},
+        {s:"The manager needed someone experienced to ___ the new team of fifteen people.",w:"supervise"},
+        {s:"Her hard work paid off when the director decided to ___ her to senior analyst.",w:"promote"},
+        {s:"After a record-breaking year, every employee received a generous year-end ___.",w:"bonus"},
+        {s:"For many teachers, education is not just a job — it is a ___.",w:"vocation"}
+      ],
+      bank:["resign","supervise","promote","bonus","vocation"]
+    },
+    speaking:{
+      qs:[
+        "Describe your ideal job. What profession would you like to enter, and why?",
+        "Do you think salary is the most important factor when choosing a job? Why or why not?",
+        "How should employers treat employees who are made redundant?",
+        "What are the advantages and disadvantages of working for a large corporation?",
+        "At what age do you think people should retire? Why?"
+      ],
+      phrases:"In my opinion... | One advantage of this is... | I believe that..."
+    },
+    writing:{
+      en:"Some people believe that a high salary is the most important aspect of any job, while others value job satisfaction and personal fulfilment more highly. Discuss both views and give your own opinion.",
+      cn:"有些人认为高薪是工作中最重要的方面，而另一些人更看重工作满意度和个人成就感。讨论两种观点并给出你自己的意见。",
+      hint:"Use at least 8 words from Unit 9. Aim for 250–280 words. 尽量用8个今天学过的单词。"
+    },
+    review:[
+      ["career","职业生涯"],["profession","职业专业"],["vocation","职业天职"],["occupation","职业工作"],["position","职位岗位"],
+      ["post","职位职务"],["opening","职位空缺"],["personnel","人事职员"],["executive","高级主管"],["director","主任总监"],
+      ["employ","雇用使用"],["employee","雇员员工"],["employer","雇主老板"],["employment","雇用职业"],["hire","雇用租借"],
+      ["recruit","招募招聘"],["colleague","同事伙伴"],["staff","全体员工"],["promote","晋升提拔"],["resign","辞职离职"],
+      ["retire","退休引退"],["layoff","临时解雇"],["redundant","被裁员的"],["supervise","监督管理"],["training","培训训练"],
+      ["salary","薪水薪金"],["wage","工资周薪"],["income","收入所得"],["earnings","工资收益"],["bonus","奖金津贴"],
+      ["pension","养老金"],["benefit","福利津贴"],["payroll","工资单"]
+    ],
+    collocations:[
+      ["build a career","建立职业生涯"],["enter a profession","进入某一职业"],["find an opening","找到职位空缺"],
+      ["employ full-time","全职雇用"],["recruit talented staff","招聘优秀员工"],["close colleague","亲密同事"],
+      ["on-the-job training","在职培训"],["earn a bonus","获得奖金"],["basic salary","基本薪资"],
+      ["receive a pension","领取养老金"],["staff benefits","员工福利"],["manage the payroll","管理工资单"],
+      ["resign from a post","从职位辞职"],["made redundant","被裁员"],["retire early","提前退休"]
+    ]
+  },
+
+  // ── UNIT 10 ─────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Business & Companies", words: [
+          {w:"enterprise", p:"n.",  c:"企业事业", d:"A business organisation; also the quality of being willing to take risks and try new ideas", e:"Small enterprises are vital for creating jobs in local communities."},
+          {w:"corporation",p:"n.",  c:"公司法人", d:"A large company or group of companies recognised legally as a single entity",                  e:"The multinational corporation operates in over fifty countries worldwide."},
+          {w:"firm",       p:"n.",  c:"公司商号", d:"A business, especially one offering professional services",                                    e:"She joined a leading law firm straight after graduating from university."},
+          {w:"subsidiary", p:"n.",  c:"子公司",   d:"A company that is owned and controlled by a larger parent company",                            e:"The subsidiary in Shanghai handles all of the group's Asian operations."},
+          {w:"management", p:"n.",  c:"管理经营", d:"The process of organising and controlling a business or team; the people who do this",          e:"Good management is essential for keeping a company productive and motivated."},
+          {w:"productivity",p:"n.", c:"生产效率", d:"The rate at which goods or services are produced; a measure of efficiency",                      e:"The new machines increased the factory's productivity by forty percent."},
+          {w:"manufacture",p:"v.",  c:"大量制造", d:"To make goods on a large scale, usually using machinery in a factory",                          e:"The plant manufactures car engines for export to Europe and North America."},
+          {w:"merge",      p:"v.",  c:"兼并合并", d:"For two or more companies to combine and become one single organisation",                       e:"The two airlines decided to merge in order to reduce costs and competition."},
+          {w:"monopoly",   p:"n.",  c:"垄断专卖", d:"Exclusive control over a product, service, or market, leaving no real competition",             e:"The regulator investigated the company for having a monopoly on broadband."},
+          {w:"incorporate",p:"v.",  c:"合并组成", d:"To include something as part of a whole; to legally form a company or group of companies",      e:"The firm decided to incorporate its overseas branches into one entity."}
+        ]
+      },
+      {
+        label: "Trade & Markets", words: [
+          {w:"trade",       p:"n./v.", c:"贸易商业", d:"The activity of buying and selling goods and services; commercial exchange",                     e:"International trade has grown rapidly since the 1990s."},
+          {w:"commerce",    p:"n.",    c:"商业贸易", d:"The buying and selling of goods and services on a large, often international, scale",           e:"The city has been a centre of commerce for over five centuries."},
+          {w:"export",      p:"v./n.", c:"出口输出", d:"To send goods to another country to be sold there",                                             e:"China exports large quantities of electronics to markets around the world."},
+          {w:"import",      p:"v./n.", c:"进口输入", d:"To bring goods from another country in order to sell them domestically",                         e:"The country imports most of its oil from the Middle East."},
+          {w:"tariff",      p:"n.",    c:"关税税率", d:"A tax charged on goods that cross national borders, especially imports",                         e:"The government imposed a 25% tariff on imported steel to protect local jobs."},
+          {w:"quota",       p:"n.",    c:"配额限额", d:"An official limit on the quantity of goods that may be imported, exported, or produced",         e:"A strict import quota was placed on foreign cars to support local manufacturers."},
+          {w:"subsidy",     p:"n.",    c:"补助金",   d:"Money given by a government to help support an industry, service, or group of people",          e:"Farmers in the region receive a subsidy to keep food prices affordable."},
+          {w:"demand",      p:"n.",    c:"需求需要", d:"The desire of consumers to buy a particular product or use a particular service",               e:"There is growing demand for electric vehicles in urban areas."},
+          {w:"supply",      p:"v./n.", c:"供给供应", d:"The amount of a good or service available for purchase; to provide something",                   e:"When supply falls below demand, prices tend to rise quickly."},
+          {w:"consumer",    p:"n.",    c:"消费者",   d:"A person who buys goods or uses services for their own needs",                                   e:"The new regulation is designed to protect the rights of consumers online."},
+          {w:"turnover",    p:"n.",    c:"营业额",   d:"The total amount of money a business earns in a period; also the rate at which staff leave",     e:"The company reported a turnover of fifty million pounds last financial year."},
+          {w:"protectionism",p:"n.",   c:"贸易保护", d:"The policy of shielding domestic industries from foreign competition through tariffs and quotas",  e:"Critics argue that protectionism makes goods more expensive for consumers."}
+        ]
+      },
+      {
+        label: "Finance & Economics", words: [
+          {w:"economy",    p:"n.",    c:"经济体系", d:"The system by which a country's money, industry, and trade are organised and managed",            e:"The government introduced reforms to stimulate the economy after the slowdown."},
+          {w:"economic",   p:"adj.",  c:"经济学的", d:"Relating to economics, the economy, or financial matters",                                        e:"The country faced serious economic challenges following the global recession."},
+          {w:"finance",    p:"n.",    c:"财政金融", d:"The management of money; the funds used to run a business or government",                         e:"She studied finance at university before joining an investment bank."},
+          {w:"budget",     p:"n.",    c:"预算经费", d:"A plan showing how money will be received and spent over a specific period",                       e:"The government announced cuts to the education budget in its annual review."},
+          {w:"invest",     p:"v.",    c:"投资购置", d:"To put money, time, or effort into something with the aim of gaining a future benefit",           e:"The company plans to invest twenty million in new research facilities."},
+          {w:"profit",     p:"n.",    c:"利润收益", d:"The money left after all costs have been subtracted from total income",                            e:"The firm posted its highest profit in ten years despite the tough market."},
+          {w:"revenue",    p:"n.",    c:"税收收入", d:"The total income earned by a business or government before costs are deducted",                    e:"Tax revenue fell sharply as unemployment rose during the crisis."},
+          {w:"capital",    p:"n.",    c:"资本资金", d:"Money or assets used to start or grow a business or make investments",                            e:"The start-up raised five million in capital from international investors."},
+          {w:"debt",       p:"n.",    c:"债务欠款", d:"Money owed by one person or organisation to another",                                             e:"The country's national debt has doubled over the past two decades."},
+          {w:"currency",   p:"n.",    c:"货币通货", d:"The system of money used in a particular country or region",                                       e:"A weak currency makes exports cheaper but raises the price of imports."},
+          {w:"inflation",  p:"n.",    c:"通货膨胀", d:"A general rise in the price of goods and services, reducing the purchasing power of money",       e:"High inflation means that the same amount of money buys less than before."},
+          {w:"recession",  p:"n.",    c:"经济衰退", d:"A period when a country's economy shrinks significantly for at least six months",                 e:"The recession caused thousands of businesses to close across the country."},
+          {w:"unemployment",p:"n.",   c:"失业率",   d:"The state of not having a paid job; the proportion of people in a population without work",      e:"Youth unemployment remains a serious challenge in many developing nations."},
+          {w:"yield",      p:"v./n.", c:"产量生产", d:"To produce or give as a result; the return or output from an investment or crop",                 e:"The investment yielded a 12% annual return over five years."},
+          {w:"savings",    p:"n.",    c:"存款储蓄", d:"Money that has been saved rather than spent; funds set aside for future use",                     e:"She used her savings to pay for a master's degree programme overseas."},
+          {w:"expenditure",p:"n.",    c:"支出消耗", d:"The total amount of money spent by a person, company, or government",                             e:"Government expenditure on healthcare increased by fifteen percent last year."},
+          {w:"bankruptcy", p:"n.",    c:"破产倒闭", d:"The legal state of being unable to pay debts; official insolvency",                               e:"The firm declared bankruptcy after three years of declining sales and rising costs."},
+          {w:"taxation",   p:"n.",    c:"税制税收", d:"The system of collecting taxes; the money collected by a government from individuals and businesses", e:"Taxation policy must balance raising revenue with encouraging investment."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"The Hartwick Corporation was founded sixty years ago as a small firm.",a:true},
+      {q:"The government removed all tariffs to help Hartwick export its goods.",a:false},
+      {q:"Hartwick announced plans to merge with its largest competitor.",a:true},
+      {q:"The company's bankruptcy was officially declared at the end of the story.",a:false},
+      {q:"Unemployment rose in towns that depended on Hartwick's factories.",a:true}
+    ],
+    mcq: [
+      {q:"What did the Hartwick Corporation originally manufacture?",opts:["Electronics","Agricultural products","Machine parts","Chemical goods"],ans:2},
+      {q:"What did the new government trade policy include?",opts:["A subsidy for all exports","Lower import taxes","A steep tariff on imported steel","A new quota for domestic sales"],ans:2},
+      {q:"Why were regulators concerned when Hartwick announced its merger?",opts:["The company had too much debt","The merged firm might gain a monopoly","The company's bankruptcy was declared","The currency had fallen sharply"],ans:1},
+      {q:"What did the government provide to help cover Hartwick's rising costs?",opts:["A larger investment budget","Removal of all taxation","A subsidy","Lower interest rates"],ans:2},
+      {q:"What helped Hartwick recover after two years?",opts:["A stronger currency","New import quotas","Restructuring, focusing on demand, and rebuilding revenue","Rising inflation across the market"],ans:2}
+    ],
+    match: {
+      ws:["subsidiary","monopoly","tariff","recession","expenditure"],
+      ds:[
+        "the total amount of money spent by a person or organisation",
+        "exclusive control over a product or service in a market",
+        "a company owned and controlled by a larger parent company",
+        "a period when a country's economy shrinks significantly",
+        "a tax charged on goods imported into or exported from a country"
+      ],
+      correct:[2,1,4,3,0]
+    },
+    fill: {
+      sents:[
+        {s:"When prices rise quickly due to ___, people find it harder to afford basic goods.",w:"inflation"},
+        {s:"The company managed to reduce its ___ by repaying loans ahead of schedule.",w:"debt"},
+        {s:"The ___ set aside for marketing was doubled after last year's successful campaign.",w:"budget"},
+        {s:"As a careful ___, she always compared prices before making any large purchase.",w:"consumer"},
+        {s:"The new product line helped the firm earn a ___ for the first time in three years.",w:"profit"}
+      ],
+      bank:["inflation","debt","budget","consumer","profit"]
+    },
+    speaking:{
+      qs:[
+        "Do you think free trade or protectionism is better for a country's economy? Why?",
+        "What do you think are the main causes of inflation, and how can governments control it?",
+        "Should governments provide subsidies to struggling industries? Give reasons for your view.",
+        "What are the risks and benefits of a company taking on large debts to invest in growth?",
+        "How does rising unemployment affect both individuals and the wider economy?"
+      ],
+      phrases:"The evidence suggests... | It can be argued that... | On the other hand..."
+    },
+    writing:{
+      en:"Some economists argue that free trade benefits all countries equally, while others believe that governments should use tariffs and subsidies to protect their national industries. Discuss both views and give your own opinion.",
+      cn:"一些经济学家认为自由贸易对所有国家都有同等好处，另一些人认为政府应使用关税和补贴保护本国产业。讨论两种观点并给出你自己的意见。",
+      hint:"Use at least 8 words from Unit 10. Aim for 250–280 words. 尽量用8个今天学过的单词。"
+    },
+    review:[
+      ["enterprise","企业事业"],["corporation","公司法人"],["firm","公司商号"],["subsidiary","子公司"],["management","管理经营"],
+      ["productivity","生产效率"],["manufacture","大量制造"],["merge","兼并合并"],["monopoly","垄断专卖"],["incorporate","合并组成"],
+      ["trade","贸易商业"],["commerce","商业贸易"],["export","出口输出"],["import","进口输入"],["tariff","关税税率"],
+      ["quota","配额限额"],["subsidy","补助金"],["demand","需求需要"],["supply","供给供应"],["consumer","消费者"],
+      ["turnover","营业额"],["protectionism","贸易保护"],["economy","经济体系"],["economic","经济学的"],["finance","财政金融"],
+      ["budget","预算经费"],["invest","投资购置"],["profit","利润收益"],["revenue","税收收入"],["capital","资本资金"],
+      ["debt","债务欠款"],["currency","货币通货"],["inflation","通货膨胀"],["recession","经济衰退"],["unemployment","失业率"],
+      ["yield","产量生产"],["savings","存款储蓄"],["expenditure","支出消耗"],["bankruptcy","破产倒闭"],["taxation","税制税收"]
+    ],
+    collocations:[
+      ["global trade","全球贸易"],["free commerce","自由商业"],["impose a tariff","征收关税"],
+      ["export quota","出口配额"],["government subsidy","政府补贴"],["consumer demand","消费者需求"],
+      ["annual turnover","年营业额"],["growing economy","不断增长的经济"],["manage finances","管理财务"],
+      ["national budget","国家预算"],["invest capital","投入资本"],["generate profit","创造利润"],
+      ["government revenue","政府收入"],["rising inflation","通货膨胀上升"],["declare bankruptcy","宣告破产"]
+    ]
+  }
+];
+
+// ─────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────
+let curUnit = 0;
+let fillState = [{answers:[], selected:null},{answers:[], selected:null}];
+let matchState = [{sel:null, pairs:new Set()},{sel:null, pairs:new Set()}];
+
+// ─────────────────────────────────────────────
+// UNIT / SECTION SWITCHING
+// ─────────────────────────────────────────────
+function switchUnit(u) {
+  curUnit = u;
+  document.querySelectorAll('.unit-tab').forEach((el,i) => el.classList.toggle('active', i===u));
+  document.querySelectorAll('.unit-pane').forEach((el,i) => el.classList.toggle('active', i===u));
+}
+
+function switchSec(u, s) {
+  const nav = document.getElementById('nav'+u);
+  nav.querySelectorAll('.sec-btn').forEach((el,i) => el.classList.toggle('active', i===s));
+  const pane = document.getElementById('pane'+u);
+  pane.querySelectorAll('.sec-pane').forEach((el,i) => el.classList.toggle('active', i===s));
+}
+
+// ─────────────────────────────────────────────
+// VOCABULARY
+// ─────────────────────────────────────────────
+function buildVocab() {
+  DATA.forEach((ud, ui) => {
+    ud.cats.forEach((cat, ci) => {
+      const grid = document.getElementById('vg'+ui+'_cat'+ci);
+      grid.innerHTML = cat.words.map((w,wi) => `
+        <div class="word-card" id="wc${ui}_${ci}_${wi}" onclick="toggleCard(this)">
+          <div class="word-card-head">
+            <span class="word">${w.w}</span>
+            <span class="pos">${w.p}</span>
+            <span class="cn">${w.c}</span>
+            <span class="def-preview">${w.d}</span>
+            <span class="toggle"></span>
+          </div>
+          <div class="word-card-body">
+            <div class="full-def">${w.d}</div>
+            <div class="example">"${w.e}"</div>
+          </div>
+        </div>`).join('');
+    });
+  });
+}
+function toggleCard(el) { el.classList.toggle('open'); }
+
+// ─────────────────────────────────────────────
+// T / F
+// ─────────────────────────────────────────────
+function buildTF() {
+  DATA.forEach((ud, ui) => {
+    document.getElementById('tf'+ui).innerHTML = ud.tf.map((t,i) => `
+      <div class="q-item" id="tf${ui}_${i}">
+        <div class="q-text"><span class="q-num">${i+1}.</span> ${t.q}</div>
+        <div class="tf-row">
+          <button class="tf-btn" onclick="checkTF(${ui},${i},true,${t.a})">True ✓</button>
+          <button class="tf-btn" onclick="checkTF(${ui},${i},false,${t.a})">False ✗</button>
+        </div>
+      </div>`).join('');
+  });
+}
+function checkTF(u, i, chosen, correct) {
+  const el = document.getElementById('tf'+u+'_'+i);
+  const btns = el.querySelectorAll('.tf-btn');
+  btns.forEach(b => b.disabled = true);
+  btns[0].classList.add(correct===true ? 'ok' : (chosen===true ? 'bad' : ''));
+  btns[1].classList.add(correct===false ? 'ok' : (chosen===false ? 'bad' : ''));
+}
+
+// ─────────────────────────────────────────────
+// MCQ
+// ─────────────────────────────────────────────
+function buildMCQ() {
+  DATA.forEach((ud, ui) => {
+    document.getElementById('mcq'+ui).innerHTML = ud.mcq.map((m,i) => `
+      <div class="q-item" id="mcq${ui}_${i}">
+        <div class="q-text"><span class="q-num">${i+1}.</span> ${m.q}</div>
+        <div class="mcq-opts">
+          ${m.opts.map((o,j) => `<button class="mcq-opt" onclick="checkMCQ(${ui},${i},${j},${m.ans})">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}
+        </div>
+      </div>`).join('');
+  });
+}
+function checkMCQ(u, qi, chosen, correct) {
+  const el = document.getElementById('mcq'+u+'_'+qi);
+  const btns = el.querySelectorAll('.mcq-opt');
+  btns.forEach(b => b.disabled = true);
+  btns[chosen].classList.add(chosen===correct ? 'ok' : 'bad');
+  if (chosen !== correct) btns[correct].classList.add('reveal');
+}
+
+// ─────────────────────────────────────────────
+// MATCHING
+// ─────────────────────────────────────────────
+function buildMatch() {
+  DATA.forEach((ud, ui) => {
+    const m = ud.match;
+    document.getElementById('match'+ui).innerHTML = `
+      <div class="match-wrap">
+        <div class="match-col">
+          <div class="match-col-lbl">Words</div>
+          ${m.ws.map((w,i) => `<div class="match-item match-word" id="mw${ui}_${i}" onclick="selMatch(${ui},'w',${i})">${w}</div>`).join('')}
+        </div>
+        <div class="match-col">
+          <div class="match-col-lbl">Meanings</div>
+          ${m.ds.map((d,i) => `<div class="match-item" id="md${ui}_${i}" onclick="selMatch(${ui},'d',${i})">${d}</div>`).join('')}
+        </div>
+      </div>
+      <div class="match-fb" id="mfb${ui}"></div>`;
+    matchState[ui] = {sel:null, pairs:new Set()};
+  });
+}
+function selMatch(u, side, idx) {
+  const ms = matchState[u];
+  const ud = DATA[u];
+  if (ms.sel === null) {
+    ms.sel = {side, idx};
+    document.querySelectorAll(`#match${u} .match-item`).forEach(e => e.classList.remove('sel'));
+    document.getElementById(`m${side==='w'?'w':'d'}${u}_${idx}`).classList.add('sel');
+  } else if (ms.sel.side === side) {
+    document.querySelectorAll(`#match${u} .match-item`).forEach(e => e.classList.remove('sel'));
+    ms.sel = {side, idx};
+    document.getElementById(`m${side==='w'?'w':'d'}${u}_${idx}`).classList.add('sel');
+  } else {
+    const wi = ms.sel.side==='w' ? ms.sel.idx : idx;
+    const di = ms.sel.side==='d' ? ms.sel.idx : idx;
+    const ok = ud.match.correct[wi] === di;
+    const we = document.getElementById(`mw${u}_${wi}`);
+    const de = document.getElementById(`md${u}_${di}`);
+    document.querySelectorAll(`#match${u} .match-item`).forEach(e => e.classList.remove('sel'));
+    if (ok) {
+      we.classList.add('ok'); de.classList.add('ok');
+      ms.pairs.add(wi);
+      if (ms.pairs.size === ud.match.ws.length)
+        document.getElementById('mfb'+u).textContent = '🎉 All matched correctly! Well done!';
+    } else {
+      we.classList.add('err'); de.classList.add('err');
+      setTimeout(() => { we.classList.remove('err'); de.classList.remove('err'); }, 700);
+    }
+    ms.sel = null;
+  }
+}
+
+// ─────────────────────────────────────────────
+// FILL IN BLANK
+// ─────────────────────────────────────────────
+function buildFill() {
+  DATA.forEach((ud, ui) => {
+    const f = ud.fill;
+    fillState[ui] = {answers: Array(f.sents.length).fill(null), selected: null};
+    const sHTML = f.sents.map((s,i) => {
+      const pts = s.s.split('___');
+      return `<div class="fill-item">
+        <div class="fill-sent">
+          <span class="q-num">${i+1}.</span> ${pts[0]}<input class="fill-input" id="fi${ui}_${i}" type="text"
+            placeholder="..." onclick="selBlank(${ui},${i})" oninput="typeBlank(${ui},${i},this.value)">${pts[1]}
+        </div>
+      </div>`;
+    }).join('');
+    const bankHTML = `<div class="word-bank">
+      ${f.bank.map((w,i) => `<div class="chip" id="ch${ui}_${i}" onclick="useChip(${ui},'${w}',${i})">${w}</div>`).join('')}
+    </div>`;
+    document.getElementById('fill'+ui).innerHTML = `
+      ${sHTML}${bankHTML}
+      <div class="prac-btns">
+        <button class="check-btn" onclick="checkFill(${ui})">Check answers</button>
+        <button class="reset-btn" onclick="resetFill(${ui})">Reset</button>
+        <span id="fs${ui}"></span>
+      </div>`;
+  });
+}
+function selBlank(u, i) { fillState[u].selected = i; }
+function typeBlank(u, i, val) {
+  fillState[u].answers[i] = val.trim().toLowerCase() || null;
+  const inp = document.getElementById('fi'+u+'_'+i);
+  inp.classList.remove('ok','bad');
+}
+function useChip(u, word, ci) {
+  const fs = fillState[u];
+  if (fs.selected === null) return;
+  const i = fs.selected;
+  const ud = DATA[u];
+  // unmark old chip for this blank
+  const prev = fs.answers[i];
+  if (prev) {
+    const oi = ud.fill.bank.indexOf(prev);
+    if (oi >= 0) { const oc = document.getElementById('ch'+u+'_'+oi); if(oc) oc.classList.remove('used'); }
+  }
+  fs.answers[i] = word;
+  const inp = document.getElementById('fi'+u+'_'+i);
+  inp.value = word;
+  inp.classList.remove('ok','bad');
+  document.getElementById('ch'+u+'_'+ci).classList.add('used');
+  // advance
+  const next = fs.answers.findIndex((a,j) => j > i && a === null);
+  if (next >= 0) { fs.selected = next; document.getElementById('fi'+u+'_'+next).focus(); }
+  else fs.selected = null;
+}
+function checkFill(u) {
+  const ud = DATA[u]; const fs = fillState[u]; let sc = 0;
+  ud.fill.sents.forEach((s,i) => {
+    const inp = document.getElementById('fi'+u+'_'+i);
+    const ans = (fs.answers[i] || '').toLowerCase().trim();
+    const ok = ans === s.w.toLowerCase();
+    inp.classList.remove('ok','bad'); inp.classList.add(ok ? 'ok' : 'bad');
+    if (ok) sc++;
+  });
+  document.getElementById('fs'+u).innerHTML = `<span class="score-badge">${sc} / ${ud.fill.sents.length}</span>`;
+}
+function resetFill(u) {
+  const ud = DATA[u];
+  fillState[u] = {answers: Array(ud.fill.sents.length).fill(null), selected: null};
+  ud.fill.sents.forEach((_,i) => {
+    const inp = document.getElementById('fi'+u+'_'+i);
+    inp.value = ''; inp.classList.remove('ok','bad');
+  });
+  ud.fill.bank.forEach((_,i) => {
+    const ch = document.getElementById('ch'+u+'_'+i);
+    if(ch) ch.classList.remove('used');
+  });
+  document.getElementById('fs'+u).innerHTML = '';
+}
+
+// ─────────────────────────────────────────────
+// SPEAKING
+// ─────────────────────────────────────────────
+function buildSpeaking() {
+  DATA.forEach((ud, ui) => {
+    document.getElementById('speak'+ui).innerHTML = ud.speaking.qs.map((q,i) =>
+      `<div class="speak-q"><b>${i+1}.</b>${q}</div>`).join('');
+    const phs = ud.speaking.phrases.split('|').map(p => p.trim());
+    document.getElementById('phrases'+ui).innerHTML = `
+      <div class="phrases-box">
+        <div class="phrases-lbl">💡 Useful phrases:</div>
+        ${phs.map(p => `<span class="phrase"><b>${p}</b></span>`).join('')}
+      </div>`;
+  });
+}
+
+// ─────────────────────────────────────────────
+// WRITING
+// ─────────────────────────────────────────────
+function buildWriting() {
+  DATA.forEach((ud, ui) => {
+    document.getElementById('write'+ui).innerHTML = `
+      <div class="write-prompt">${ud.writing.en}</div>
+      <div class="write-cn">${ud.writing.cn}</div>
+      <textarea class="write-area" placeholder="${ud.writing.hint}" oninput="updWC(${ui},this)"></textarea>
+      <div class="wc-info"><span id="wc${ui}">0 words</span><span>Target: 250–280 words</span></div>`;
+  });
+}
+function updWC(u, ta) {
+  const t = ta.value.trim();
+  document.getElementById('wc'+u).textContent = (t ? t.split(/\s+/).length : 0) + ' words';
+}
+
+// ─────────────────────────────────────────────
+// REVIEW
+// ─────────────────────────────────────────────
+function buildReview() {
+  DATA.forEach((ud, ui) => {
+    document.getElementById('rev'+ui).innerHTML = ud.review.map(([w,c]) => `
+      <div class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">${w}</div>
+          <div class="flip-face flip-back">${c}</div>
+        </div>
+      </div>`).join('');
+    document.getElementById('col'+ui).innerHTML = `
+      <thead><tr><th>#</th><th>Phrase 短语</th><th>中文</th></tr></thead>
+      <tbody>${ud.collocations.map(([p,c],i) => `
+        <tr><td>${i+1}</td><td class="colloc-en">${p}</td><td class="colloc-cn">${c}</td></tr>`).join('')}
+      </tbody>`;
+  });
+}
+
+// ─────────────────────────────────────────────
+// STORY: click highlighted word to show meaning
+// ─────────────────────────────────────────────
+function bindStoryMarks() {
+  document.querySelectorAll('.story-card mark').forEach(mk => {
+    const word = mk.textContent.toLowerCase().replace(/[^a-z]/g,'');
+    mk.title = 'Click to see definition';
+    mk.onclick = () => {
+      let found = null;
+      DATA.forEach(ud => {
+        ud.cats.forEach(cat => {
+          cat.words.forEach(w => {
+            if (w.w.toLowerCase() === word) found = w;
+          });
+        });
+      });
+      if (found) {
+        const existing = mk.nextElementSibling;
+        if (existing && existing.classList.contains('mark-popup')) { existing.remove(); return; }
+        const pop = document.createElement('span');
+        pop.className = 'mark-popup';
+        pop.style.cssText = 'display:inline-block;background:#1a365d;color:#fff;padding:3px 10px;border-radius:6px;font-size:.78rem;margin-left:6px;font-weight:500;cursor:pointer';
+        pop.textContent = `${found.c} — ${found.d.slice(0,60)}${found.d.length>60?'…':''}`;
+        pop.onclick = e => { e.stopPropagation(); pop.remove(); };
+        mk.parentNode.insertBefore(pop, mk.nextSibling);
+      }
+    };
+  });
+}
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+buildVocab();
+buildTF();
+buildMCQ();
+buildMatch();
+buildFill();
+buildSpeaking();
+buildWriting();
+buildReview();
+bindStoryMarks();
+</script>
+</body>
+</html>
