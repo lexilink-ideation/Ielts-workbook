@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{--teal:#1A7A8A;--teal-dk:#115966;--teal-lt:#D6EEF1;--teal-pl:#EEF8FA;--gold:#C9930A;--gold-lt:#FDF3D8;--sf:#FFFFFF;--bg:#F3F7F8;--bd:#DDE5E8;--tx:#1C2B33;--mu:#5A7280}
+
+/* topbar */
+.topbar{background:var(--teal);color:#fff;padding:.65rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(26,122,138,.2)}
+.topbar-logo{font-size:13px;font-weight:600;letter-spacing:.06em}
+.topbar-tag{font-size:11px;opacity:.7;letter-spacing:.04em}
+
+/* hero */
+.hero{background:linear-gradient(150deg,var(--teal) 0%,var(--teal-dk) 100%);color:#fff;padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:1rem}
+.hero-title{font-size:clamp(28px,6vw,46px);font-weight:700;line-height:1.15;margin-bottom:.75rem;position:relative}
+.hero-title span{color:#FFD97D}
+.hero-sub{font-size:16px;opacity:.82;max-width:520px;margin:0 auto 2rem;line-height:1.7;position:relative}
+.hero-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;position:relative}
+.hbadge{padding:.35rem .9rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);letter-spacing:.02em}
+
+/* progress strip */
+.progress-strip{background:var(--sf);border-bottom:1px solid var(--bd);padding:1rem 2rem}
+.progress-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.prog-label{font-size:13px;font-weight:600;color:var(--teal);white-space:nowrap}
+.prog-track{flex:1;min-width:160px;height:6px;background:var(--teal-lt);border-radius:3px;overflow:hidden}
+.prog-fill{height:100%;background:var(--teal);border-radius:3px;width:20%;transition:width .6s ease}
+.prog-text{font-size:12px;color:var(--mu);white-space:nowrap}
+
+/* main */
+.main{max-width:900px;margin:0 auto;padding:2.5rem 1rem 4rem}
+
+/* section labels */
+.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--bd)}
+
+/* unit grid */
+.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem}
+
+/* unit card — available */
+.unit-card{background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.05)}
+.unit-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,122,138,.14);border-color:var(--teal-lt)}
+.unit-card-top{background:var(--teal);padding:1.25rem 1.25rem 1rem;color:#fff;position:relative}
+.unit-card-top .unit-num{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:.3rem}
+.unit-card-top .unit-title{font-size:17px;font-weight:600;line-height:1.3;margin-bottom:.2rem}
+.unit-card-top .unit-cn{font-size:13px;opacity:.75}
+.unit-card-top .unit-emoji{position:absolute;top:1rem;right:1.1rem;font-size:26px;opacity:.85}
+.unit-card-body{padding:1rem 1.25rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
+.unit-words{display:flex;flex-wrap:wrap;gap:.3rem}
+.word-pill{font-size:11px;padding:.18rem .5rem;background:var(--teal-pl);color:var(--teal);border-radius:20px;border:1px solid var(--teal-lt);font-weight:500}
+.unit-card-footer{padding:.75rem 1.25rem;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
+.unit-card-footer .cta{font-size:13px;font-weight:600;color:var(--teal)}
+.unit-card-footer .word-count{font-size:12px;color:var(--mu)}
+.unit-card-footer .arrow{font-size:16px;color:var(--teal);transition:transform .15s}
+.unit-card:hover .arrow{transform:translateX(3px)}
+
+/* coming soon card */
+.unit-card-soon{background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;opacity:.6;cursor:default}
+.unit-card-soon .unit-card-top{background:#8AACB2}
+.soon-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.2rem .55rem;border-radius:20px;margin-top:.5rem}
+.unit-card-soon .unit-card-body{color:var(--mu)}
+.unit-card-soon .unit-card-footer .cta{color:var(--mu)}
+
+/* how-to section */
+.howto{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:1.5rem;margin-bottom:2.5rem}
+.howto-title{font-size:15px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.howto-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.howto-step{display:flex;align-items:flex-start;gap:.75rem}
+.step-num{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
+.step-text{font-size:13px;color:var(--mu);line-height:1.5}
+.step-text strong{color:var(--tx);display:block;margin-bottom:.1rem}
+
+/* about */
+.about{background:linear-gradient(135deg,var(--teal-pl) 0%,var(--gold-lt) 100%);border:1px solid var(--teal-lt);border-radius:16px;padding:1.5rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+@media(max-width:560px){.about{grid-template-columns:1fr}}
+.about-block-title{font-size:13px;font-weight:600;color:var(--teal);margin-bottom:.6rem}
+.about-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.about-list li{font-size:13px;color:var(--mu);display:flex;align-items:flex-start;gap:.5rem}
+.about-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:.05rem}
+
+/* footer */
+.footer{text-align:center;padding:2rem;font-size:12px;color:var(--mu);border-top:1px solid var(--bd)}
+.footer strong{color:var(--teal)}
+
+@media(max-width:600px){
+  .hero{padding:3rem 1.25rem 2.5rem}
+  .main{padding:1.5rem .75rem 3rem}
+  .progress-strip{padding:.75rem 1.25rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+  <span class="topbar-tag">IELTS Vocabulary Workbook</span>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="hero-title">IELTS Vocabulary<br><span>Workbook</span></div>
+  <div class="hero-sub">A step-by-step vocabulary programme for senior high school students. From A1 basics to IELTS-level English — one unit at a time.</div>
+  <div class="hero-badges">
+    <span class="hbadge">Beginner-friendly</span>
+    <span class="hbadge">Stories + exercises</span>
+    <span class="hbadge">Instant feedback</span>
+    <span class="hbadge">Chinese support 中文支持</span>
+  </div>
+</div>
+
+<div class="progress-strip">
+  <div class="progress-inner">
+    <span class="prog-label">Course progress</span>
+    <div class="prog-track"><div class="prog-fill" style="width:40%"></div></div>
+    <span class="prog-text">8 of 20 units available</span>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- Available units -->
+  <div class="section-label">Available now — 可以学习</div>
+  <div class="unit-grid">
+
+    <a class="unit-card" href="IELTS_Workbook_Units1-2.html">
+      <div class="unit-card-top">
+        <div class="unit-emoji">🏫</div>
+        <div class="unit-num">Units 1–2</div>
+        <div class="unit-title">School Life &amp; Daily Routine</div>
+        <div class="unit-cn">学校生活 · 日常生活</div>
+      </div>
+      <div class="unit-card-body">
+        <div class="unit-words">
+          <span class="word-pill">campus</span><span class="word-pill">subject</span><span class="word-pill">schedule</span><span class="word-pill">achieve</span><span class="word-pill">routine</span><span class="word-pill">punctual</span><span class="word-pill">priority</span><span class="word-pill">balanced</span><span class="word-pill">+ 12 more</span>
+        </div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta">Start learning</span>
+        <span class="word-count">20 words</span>
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <a class="unit-card" href="IELTS_Workbook_Units3-4.html">
+      <div class="unit-card-top" style="background:linear-gradient(135deg,#C9930A,#9E7008)">
+        <div class="unit-emoji">🍜</div>
+        <div class="unit-num">Units 3–4</div>
+        <div class="unit-title">Food &amp; Health · Travel</div>
+        <div class="unit-cn">食物与健康 · 旅行</div>
+      </div>
+      <div class="unit-card-body">
+        <div class="unit-words">
+          <span class="word-pill">diet</span><span class="word-pill">cuisine</span><span class="word-pill">organic</span><span class="word-pill">protein</span><span class="word-pill">destination</span><span class="word-pill">itinerary</span><span class="word-pill">navigate</span><span class="word-pill">souvenir</span><span class="word-pill">+ 12 more</span>
+        </div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta" style="color:#C9930A">Start learning</span>
+        <span class="word-count">20 words</span>
+        <span class="arrow" style="color:#C9930A">→</span>
+      </div>
+    </a>
+
+    <a class="unit-card" href="IELTS_Workbook_Units5-6.html">
+      <div class="unit-card-top" style="background:linear-gradient(135deg,#534AB7,#3A3380)">
+        <div class="unit-emoji">💻</div>
+        <div class="unit-num">Units 5–6</div>
+        <div class="unit-title">Technology &amp; Environment</div>
+        <div class="unit-cn">科技 · 环境</div>
+      </div>
+      <div class="unit-card-body">
+        <div class="unit-words">
+          <span class="word-pill">technology</span><span class="word-pill">device</span><span class="word-pill">software</span><span class="word-pill">innovation</span><span class="word-pill">environment</span><span class="word-pill">recycle</span><span class="word-pill">renewable</span><span class="word-pill">ecosystem</span><span class="word-pill">+ 12 more</span>
+        </div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta" style="color:#534AB7">Start learning</span>
+        <span class="word-count">20 words</span>
+        <span class="arrow" style="color:#534AB7">→</span>
+      </div>
+    </a>
+
+    <a class="unit-card" href="IELTS_Workbook_Units7-8.html">
+      <div class="unit-card-top" style="background:linear-gradient(135deg,#0F6E56,#0A4D3D)">
+        <div class="unit-emoji">🏛️</div>
+        <div class="unit-num">Units 7–8</div>
+        <div class="unit-title">Society &amp; Culture · Science</div>
+        <div class="unit-cn">社会与文化 · 科学</div>
+      </div>
+      <div class="unit-card-body">
+        <div class="unit-words">
+          <span class="word-pill">community</span><span class="word-pill">tradition</span><span class="word-pill">diversity</span><span class="word-pill">heritage</span><span class="word-pill">science</span><span class="word-pill">experiment</span><span class="word-pill">research</span><span class="word-pill">evidence</span><span class="word-pill">+ 12 more</span>
+        </div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta" style="color:#0F6E56">Start learning</span>
+        <span class="word-count">20 words</span>
+        <span class="arrow" style="color:#0F6E56">→</span>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- Coming soon -->
+  <div class="section-label">Coming soon — 即将推出</div>
+  <div class="unit-grid">
+
+    <div class="unit-card-soon">
+      <div class="unit-card-top">
+        <div class="unit-emoji">💼</div>
+        <div class="unit-num">Units 9–10</div>
+        <div class="unit-title">Work &amp; Economy</div>
+        <div class="unit-cn">工作 · 经济</div>
+        <div class="soon-badge">Coming soon</div>
+      </div>
+      <div class="unit-card-body">
+        <div style="font-size:13px">Words like: career, employment, economy, opportunity, responsibility, manage…</div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta">Not yet available</span>
+        <span class="word-count">20 words</span>
+      </div>
+    </div>
+
+    <div class="unit-card-soon">
+      <div class="unit-card-top">
+        <div class="unit-emoji">🌏</div>
+        <div class="unit-num">Units 11–12</div>
+        <div class="unit-title">Global Issues</div>
+        <div class="unit-cn">全球议题</div>
+        <div class="soon-badge">Coming soon</div>
+      </div>
+      <div class="unit-card-body">
+        <div style="font-size:13px">Words like: globalisation, poverty, inequality, conflict, government, policy…</div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta">Not yet available</span>
+        <span class="word-count">20 words</span>
+      </div>
+    </div>
+
+    <div class="unit-card-soon">
+      <div class="unit-card-top">
+        <div class="unit-emoji">📚</div>
+        <div class="unit-num">Units 13–20</div>
+        <div class="unit-title">IELTS Academic Vocabulary</div>
+        <div class="unit-cn">学术词汇</div>
+        <div class="soon-badge">Coming soon</div>
+      </div>
+      <div class="unit-card-body">
+        <div style="font-size:13px">Advanced words from real IELTS Cambridge passages — Levels 3 and 4.</div>
+      </div>
+      <div class="unit-card-footer">
+        <span class="cta">Not yet available</span>
+        <span class="word-count">80+ words</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- How to use -->
+  <div class="howto">
+    <div class="howto-title">How to use this workbook &nbsp; 使用说明</div>
+    <div class="howto-steps">
+      <div class="howto-step"><div class="step-num">1</div><div class="step-text"><strong>Learn vocabulary</strong>Click each word card to see its meaning and an example sentence.</div></div>
+      <div class="howto-step"><div class="step-num">2</div><div class="step-text"><strong>Read the story</strong>All target words appear in a short, easy story. Find them!</div></div>
+      <div class="howto-step"><div class="step-num">3</div><div class="step-text"><strong>Do the exercises</strong>True/False, multiple choice, matching, and fill-in-the-blank with instant feedback.</div></div>
+      <div class="howto-step"><div class="step-num">4</div><div class="step-text"><strong>Speak &amp; write</strong>Use the words in your own sentences. Practice every day!</div></div>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="about">
+    <div>
+      <div class="about-block-title">What you will learn 学习内容</div>
+      <ul class="about-list">
+        <li>200+ high-frequency IELTS vocabulary words</li>
+        <li>Words used in real IELTS reading and writing tasks</li>
+        <li>Common collocations and phrases</li>
+        <li>How to use words in sentences naturally</li>
+        <li>Academic vocabulary for IELTS Band 6+</li>
+      </ul>
+    </div>
+    <div>
+      <div class="about-block-title">How this workbook is different 特色</div>
+      <ul class="about-list">
+        <li>Stories make words easier to remember</li>
+        <li>Chinese translations for every word 中文翻译</li>
+        <li>Interactive — answers checked instantly</li>
+        <li>Beginner-friendly — starts from A1 level</li>
+        <li>Free to use — no app or account needed</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <strong>Lexilink Ideation IELTS Studio</strong><br>
+  IELTS Vocabulary Workbook &nbsp;·&nbsp; Built for senior high school students &nbsp;·&nbsp; Updated regularly
+</div>
+
+</body>
+</html>

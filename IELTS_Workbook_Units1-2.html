@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── Reset ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+
+/* ── Colour tokens ── */
+:root{
+  --teal:#1A7A8A;
+  --teal-dark:#115966;
+  --teal-light:#D6EEF1;
+  --teal-pale:#EEF8FA;
+  --gold:#C9930A;
+  --gold-light:#FDF3D8;
+  --gold-pale:#FFFBF0;
+  --surface:#FFFFFF;
+  --bg:#F3F7F8;
+  --border:#DDE5E8;
+  --text:#1C2B33;
+  --muted:#5A7280;
+  --correct-bg:#E1F5EE;
+  --correct:#0F6E56;
+  --wrong-bg:#FCEBEB;
+  --wrong:#A32D2D;
+}
+
+/* ── Layout ── */
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+
+/* ── Top bar ── */
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+
+.topbar-prog{font-size:11px;opacity:.8}
+
+/* ── Cover ── */
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:1.5rem auto 0;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+
+/* ── Unit tabs ── */
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* ── Unit panel ── */
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+
+/* ── Unit header ── */
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+
+/* ── Part tabs ── */
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+
+/* ── Part panels ── */
+.part-panel{display:none}
+.part-panel.active{display:block}
+
+/* ── Cards ── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.card-title svg{flex-shrink:0}
+
+/* ── Vocab cards ── */
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:15px;font-weight:600;color:var(--teal);min-width:110px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.75rem 1rem;border-top:1px solid var(--border)}
+.vocab-body.open{display:block}
+.v-meaning{font-size:13px;color:var(--muted);margin-bottom:.5rem}
+.v-eg{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+
+/* ── Story ── */
+.story-box{background:var(--gold-pale);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--text)}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-light);padding:.05rem .3rem;border-radius:4px}
+
+/* ── T/F ── */
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.tf-btn.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-result{font-size:12px;font-weight:500;flex-shrink:0}
+
+/* ── MC ── */
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--text)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pale);border-color:var(--teal-light)}
+.mc-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.mc-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.mc-opt:disabled{pointer-events:none}
+
+/* ── Score bar ── */
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:20px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+
+/* ── Match ── */
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none;cursor:default}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%}
+.match-def:hover:not(.done){background:var(--gold-pale);border-color:#E8D08A}
+.match-def.sel{background:var(--gold-pale);border-color:var(--gold)}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+
+/* ── Fill in blank ── */
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pale);border-radius:8px;border:1px solid var(--teal-light)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--surface);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-light);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:120px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--teal)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+
+/* ── Buttons ── */
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-primary:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+
+/* ── Speaking ── */
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;align-items:flex-start;gap:.6rem;color:var(--text)}
+.speak-num{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--muted);background:var(--gold-pale);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+
+/* ── Writing ── */
+.write-prompt{font-size:14px;color:var(--text);margin-bottom:.4rem}
+.write-prompt-cn{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.write-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--text);background:var(--surface);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.write-area:focus{border-color:var(--teal)}
+.write-counter{font-size:12px;color:var(--muted);margin-top:.3rem;text-align:right}
+
+/* ── Review ── */
+.review-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.review-cols{grid-template-columns:1fr}}
+.review-col-label{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.review-item{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.review-item:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--text)}
+.r-cn{color:var(--muted);font-size:12px}
+.colloc-item{padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.colloc-item:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--muted);font-size:12px}
+
+/* ── Progress ── */
+.progress-track{height:3px;background:rgba(255,255,255,.25);border-radius:2px;width:80px}
+.progress-fill{height:100%;background:#fff;border-radius:2px;transition:width .3s}
+
+/* ── Responsive ── */
+@media(max-width:600px){
+  .card{padding:1rem}
+  .unit-hdr{padding:1.1rem 1.25rem}
+  .match-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left"><span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+  <span class="topbar-prog">IELTS Vocabulary Workbook — Units 1–2</span></div>
+  <a class="topbar-home" href="index.html">← Home 首页</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-sub">For Senior High School Beginners &nbsp;·&nbsp; A1–A2 to IELTS Foundation</div>
+  <div class="cover-badges">
+    <span class="badge">Level 1</span>
+    <span class="badge">Units 1–2</span>
+    <span class="badge">20 target words</span>
+    <span class="badge">Interactive exercises</span>
+  </div>
+  <div class="cover-tip">
+    <strong>How to use this workbook</strong>
+    Study each unit's vocabulary, read the mini story, then try the exercises. Click words to see their meanings. Your answers are checked instantly. 每天学一个单元，复习前一个单元。
+  </div>
+</div>
+
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="switchUnit(0)">Unit 1 — School Life</button>
+    <button class="unit-btn" onclick="switchUnit(1)">Unit 2 — Daily Routine</button>
+  </div>
+
+  <!-- ══ UNIT 0 ══ -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 1 &nbsp;·&nbsp; School Life &nbsp; 学校生活</div>
+        <div class="unit-hdr-meta">10 target words &nbsp;·&nbsp; 7 parts</div>
+      </div>
+      <span class="unit-level">Level 1 — Foundation</span>
+    </div>
+    <div class="part-nav" id="pnav0">
+      <button class="part-btn active" onclick="switchPart(0,0)">1 · Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(0,1)">2 · Story</button>
+      <button class="part-btn" onclick="switchPart(0,2)">3 · Comprehension</button>
+      <button class="part-btn" onclick="switchPart(0,3)">4 · Practice</button>
+      <button class="part-btn" onclick="switchPart(0,4)">5 · Speaking</button>
+      <button class="part-btn" onclick="switchPart(0,5)">6 · Writing</button>
+      <button class="part-btn" onclick="switchPart(0,6)">7 · Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0"><div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div></div>
+    <div class="part-panel" id="u0p1"><div class="card"><div class="card-title">Mini story — target words are highlighted</div><div class="story-box"><div class="story-title">Li Wei's First Day</div><div class="story-text" id="st0"></div></div></div></div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A — True or False &nbsp; 判断对错</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B — Multiple Choice &nbsp; 选择题</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A — Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-res"></div></div>
+      <div class="card"><div class="card-title">Activity B — Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box below, or type your own answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-primary" onclick="checkFib(0)">Check answers</button><button class="btn btn-ghost" onclick="resetFib(0)">Reset</button></div><div id="fib0-score"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4"><div class="card"><div class="card-title">Speaking practice — answer these questions aloud</div><div id="speak0"></div><div class="hint">Useful phrases: <strong>My favourite subject is…</strong> &nbsp;|&nbsp; <strong>In my school, we have…</strong> &nbsp;|&nbsp; <strong>I want to achieve…</strong></div></div></div>
+    <div class="part-panel" id="u0p5"><div class="card"><div class="card-title">Writing practice</div><p class="write-prompt">Describe your typical school day. Use at least 5 words from today's unit.</p><p class="write-prompt-cn">描述你典型的一个学习日。尽量用5个今天学过的单词。</p><textarea class="write-area" id="wr0" placeholder="Start writing here…"></textarea><div class="write-counter" id="wc0">0 words</div></div></div>
+    <div class="part-panel" id="u0p6"><div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today's words 今日单词</div><div id="rev0"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations 常见搭配</div><div id="col0"></div></div></div></div></div>
+  </div>
+
+  <!-- ══ UNIT 1 ══ -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 2 &nbsp;·&nbsp; Daily Routine &nbsp; 日常生活</div>
+        <div class="unit-hdr-meta">10 target words &nbsp;·&nbsp; 7 parts</div>
+      </div>
+      <span class="unit-level">Level 1 — Foundation</span>
+    </div>
+    <div class="part-nav" id="pnav1">
+      <button class="part-btn active" onclick="switchPart(1,0)">1 · Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(1,1)">2 · Story</button>
+      <button class="part-btn" onclick="switchPart(1,2)">3 · Comprehension</button>
+      <button class="part-btn" onclick="switchPart(1,3)">4 · Practice</button>
+      <button class="part-btn" onclick="switchPart(1,4)">5 · Speaking</button>
+      <button class="part-btn" onclick="switchPart(1,5)">6 · Writing</button>
+      <button class="part-btn" onclick="switchPart(1,6)">7 · Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0"><div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div></div>
+    <div class="part-panel" id="u1p1"><div class="card"><div class="card-title">Mini story — target words are highlighted</div><div class="story-box"><div class="story-title">Mei Ling's Morning</div><div class="story-text" id="st1"></div></div></div></div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A — True or False &nbsp; 判断对错</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B — Multiple Choice &nbsp; 选择题</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A — Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-res"></div></div>
+      <div class="card"><div class="card-title">Activity B — Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box below, or type your own answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-primary" onclick="checkFib(1)">Check answers</button><button class="btn btn-ghost" onclick="resetFib(1)">Reset</button></div><div id="fib1-score"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4"><div class="card"><div class="card-title">Speaking practice — answer these questions aloud</div><div id="speak1"></div><div class="hint">Useful phrases: <strong>Every morning, I…</strong> &nbsp;|&nbsp; <strong>In my free time, I like to…</strong> &nbsp;|&nbsp; <strong>My first priority is…</strong></div></div></div>
+    <div class="part-panel" id="u1p5"><div class="card"><div class="card-title">Writing practice</div><p class="write-prompt">Describe your ideal daily routine. What do you do in the morning, afternoon, and evening? Use at least 5 words from today's unit.</p><p class="write-prompt-cn">描述你理想中的一天。早晨、下午和晚上你会做什么？尽量用5个今天学过的单词。</p><textarea class="write-area" id="wr1" placeholder="Start writing here…"></textarea><div class="write-counter" id="wc1">0 words</div></div></div>
+    <div class="part-panel" id="u1p6"><div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today's words 今日单词</div><div id="rev1"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations 常见搭配</div><div id="col1"></div></div></div></div></div>
+  </div>
+</div>
+
+<script>
+const D=[
+  {
+    words:[
+      {w:"campus",pos:"n.",cn:"校园",m:"the land and buildings of a school or university",eg:"The campus is very big and beautiful."},
+      {w:"subject",pos:"n.",cn:"科目；话题",m:"a topic you study at school (e.g. maths, science)",eg:"My favourite subject is science."},
+      {w:"assignment",pos:"n.",cn:"作业；任务",m:"a piece of work your teacher gives you to do",eg:"I finished my English assignment last night."},
+      {w:"schedule",pos:"n.",cn:"时间表；课程表",m:"a plan that shows when things will happen",eg:"My schedule is very busy on Mondays."},
+      {w:"facility",pos:"n.",cn:"设施；设备",m:"a room or equipment used for a particular purpose",eg:"Our school has great sports facilities."},
+      {w:"grade",pos:"n.",cn:"成绩；年级",m:"a mark that shows how well you did in a test",eg:"She got a good grade on her maths test."},
+      {w:"knowledge",pos:"n.",cn:"知识；了解",m:"what you know about something",eg:"Reading books increases your knowledge."},
+      {w:"enroll",pos:"v.",cn:"报名；注册",m:"to officially join a school or course",eg:"He enrolled in an English class last month."},
+      {w:"achieve",pos:"v.",cn:"实现；达到",m:"to succeed in doing something after trying hard",eg:"You can achieve your goals if you work hard."},
+      {w:"lecture",pos:"n.",cn:"讲座；授课",m:"a talk given to a group of students to teach them",eg:"The professor gave an interesting lecture today."},
+    ],
+    story:[
+      "Li Wei arrived at her new university and looked around the ",{h:"campus"}," for the first time. She saw a large library, a modern sports centre, and many classrooms. She was happy — the ",{h:"facilities"}," were amazing.",
+      "\n\nShe looked at her ",{h:"schedule"}," and saw that her first class started at 8 a.m. Her favourite ",{h:"subject"}," was biology, and she wanted to ",{h:"enroll"}," in an extra English course too.",
+      "\n\nIn the afternoon, she attended a long ",{h:"lecture"}," about chemistry. The professor spoke clearly and shared a lot of ",{h:"knowledge"}," with the students. Li Wei listened carefully and wrote many notes.",
+      "\n\nAfter the lecture, the professor gave an ",{h:"assignment"},". Li Wei was nervous, but she told herself: \"If I study hard, I can ",{h:"achieve"}," a good ",{h:"grade"},". I believe I can do it!\"",
+      "\n\nLi Wei walked back to her room and smiled. University life was going to be busy — but she was ready."
+    ],
+    tf:[
+      {q:"Li Wei's campus had a library and a sports centre.",a:true},
+      {q:"Li Wei's first class started at 9 a.m.",a:false},
+      {q:"Li Wei wanted to enroll in an extra English course.",a:true},
+      {q:"The chemistry lecture was given by a student.",a:false},
+      {q:"Li Wei was confident about her assignment from the start.",a:false},
+    ],
+    mc:[
+      {q:"What is Li Wei's favourite subject?",o:["English","Biology","Chemistry","Maths"],a:1},
+      {q:"What did Li Wei look at to find her class times?",o:["A map","A textbook","Her schedule","Her phone"],a:2},
+      {q:"What did the professor give after the lecture?",o:["A grade","A schedule","An assignment","A book"],a:2},
+      {q:"What word means 'a talk given to students'?",o:["Subject","Facility","Lecture","Campus"],a:2},
+      {q:"What does Li Wei want to achieve?",o:["A new campus","A good grade","A long schedule","A new facility"],a:1},
+    ],
+    match:{
+      words:["campus","schedule","enroll","grade","knowledge"],
+      defs:["a mark that shows how well you did","the land and buildings of a school","to officially join a school or course","what you know about something","a plan showing when things happen"],
+      correct:[1,4,2,0,3]
+    },
+    fib:{
+      chips:["assignment","facility","subject","lecture","achieve"],
+      rows:[
+        {pre:"My ",suf:" is due tomorrow. I need to finish it tonight.",ans:"assignment"},
+        {pre:"English is not my best ",suf:", but I am trying hard.",ans:"subject"},
+        {pre:"The sports ",suf:" at our school is open every morning.",ans:"facility"},
+        {pre:"The professor gave a one-hour ",suf:" about climate change.",ans:"lecture"},
+        {pre:"If you practise every day, you can ",suf:" great results.",ans:"achieve"},
+      ]
+    },
+    speak:["What is your favourite subject? Why do you like it?","Describe your school's facilities. What does your school have?","Is your schedule busy? What do you have to do each week?","Have you ever enrolled in any extra class or course? What was it?","What do you want to achieve in the next year?"],
+    rev:[["campus","校园"],["subject","科目；话题"],["assignment","作业；任务"],["schedule","时间表"],["facility","设施；设备"],["grade","成绩；年级"],["knowledge","知识；了解"],["enroll","报名；注册"],["achieve","实现；达到"],["lecture","讲座；授课"]],
+    col:[["school / university campus","学校/大学校园"],["favourite subject","最喜欢的科目"],["do / finish an assignment","做/完成作业"],["daily / weekly schedule","时刻表"],["sports facility","运动设施"],["get a good grade","得到好成绩"],["general knowledge","常识"],["enroll in a course","报名参加课程"],["achieve a goal","实现目标"],["attend a lecture","听讲座"]]
+  },
+  {
+    words:[
+      {w:"routine",pos:"n.",cn:"日常惯例；常规",m:"things you do regularly every day",eg:"My morning routine takes about 30 minutes."},
+      {w:"alarm",pos:"n.",cn:"闹钟；警报",m:"a device or sound that wakes you up",eg:"I set my alarm for 6 o'clock every morning."},
+      {w:"commute",pos:"v./n.",cn:"上下班；通勤",m:"to travel to work or school every day",eg:"She commutes to school by bus."},
+      {w:"punctual",pos:"adj.",cn:"守时的；准时的",m:"arriving at the right time, not late",eg:"He is always punctual for class."},
+      {w:"habit",pos:"n.",cn:"习惯",m:"something you do often without thinking about it",eg:"Reading before sleep is a healthy habit."},
+      {w:"leisure",pos:"n.",cn:"休闲；空闲时间",m:"free time that you can use to relax or have fun",eg:"I enjoy leisure activities like swimming."},
+      {w:"productive",pos:"adj.",cn:"高效的；富有成果的",m:"getting a lot done in a short time",eg:"I feel most productive in the morning."},
+      {w:"exhausted",pos:"adj.",cn:"筋疲力尽的",m:"very tired",eg:"After football practice, I was exhausted."},
+      {w:"priority",pos:"n.",cn:"优先事项",m:"the thing you think is most important",eg:"Homework is my first priority every evening."},
+      {w:"balanced",pos:"adj.",cn:"均衡的；平衡的",m:"having the right amount of everything",eg:"A balanced lifestyle helps you stay healthy."},
+    ],
+    story:[
+      "Mei Ling's morning ",{h:"routine"}," always begins the same way. At 6:30 a.m., her ",{h:"alarm"}," rings. She turns it off, stretches, and gets out of bed. She never wants to be late — being ",{h:"punctual"}," is very important to her.",
+      "\n\nHer first ",{h:"priority"}," every morning is a healthy breakfast. She knows that eating well helps her feel ",{h:"balanced"}," and ready for the day. Then she packs her bag and starts her ",{h:"commute"}," to school by bicycle.",
+      "\n\nAt school, Mei Ling is always ",{h:"productive"},". She finishes her homework in class, listens in lectures, and never wastes time. It is a ",{h:"habit"}," she has kept since middle school.",
+      "\n\nAfter school, she enjoys some ",{h:"leisure"}," time. She reads books, listens to music, or goes for a walk. By 9 p.m., she is ",{h:"exhausted"}," and goes to bed. \"A good day,\" she always thinks, \"is a ",{h:"balanced"}," day.\""
+    ],
+    tf:[
+      {q:"Mei Ling's alarm rings at 7:00 a.m.",a:false},
+      {q:"Being punctual is important to Mei Ling.",a:true},
+      {q:"Mei Ling commutes to school by bus.",a:false},
+      {q:"Mei Ling is very productive at school.",a:true},
+      {q:"She goes to bed at 10 p.m.",a:false},
+    ],
+    mc:[
+      {q:"What is Mei Ling's first priority in the morning?",o:["Commuting","Checking her phone","Eating a healthy breakfast","Reading"],a:2},
+      {q:"Which word means 'very tired'?",o:["Punctual","Exhausted","Balanced","Productive"],a:1},
+      {q:"What does Mei Ling do in her leisure time?",o:["Does homework","Attends lectures","Reads books or walks","Commutes"],a:2},
+      {q:"What is a 'habit'?",o:["Something you do rarely","Something you do often without thinking","Something very difficult","A type of subject"],a:1},
+      {q:"What does Mei Ling think makes a good day?",o:["A productive day","A long day","A balanced day","A leisure day"],a:2},
+    ],
+    match:{
+      words:["routine","punctual","leisure","exhausted","priority"],
+      defs:["free time to relax","arriving at the right time","very tired","the most important thing","things you do regularly every day"],
+      correct:[4,1,0,2,3]
+    },
+    fib:{
+      chips:["alarm","balanced","commute","habit","productive"],
+      rows:[
+        {pre:"I set my ",suf:" for 6:30 a.m. so I am never late.",ans:"alarm"},
+        {pre:"Eating fruit, vegetables, and protein gives you a ",suf:" diet.",ans:"balanced"},
+        {pre:"She ",suf:"s to work by train every morning.",ans:"commute"},
+        {pre:"Exercising every day is a great ",suf:" for your health.",ans:"habit"},
+        {pre:"I am very ",suf:" after a good night's sleep.",ans:"productive"},
+      ]
+    },
+    speak:["Describe your morning routine. What do you do every day?","Are you punctual? Do you like it when others are late?","What do you do in your leisure time?","What is your number one priority right now in life?","How do you stay balanced between study and relaxation?"],
+    rev:[["routine","日常惯例"],["alarm","闹钟；警报"],["commute","上下班；通勤"],["punctual","守时的；准时的"],["habit","习惯"],["leisure","休闲；空闲时间"],["productive","高效的；富有成果的"],["exhausted","筋疲力尽的"],["priority","优先事项"],["balanced","均衡的；平衡的"]],
+    col:[["morning / daily routine","日常/晨间例行活动"],["set an alarm","设置闹钟"],["commute to school / work","通勤上学/上班"],["be punctual / on time","准时"],["good / healthy habit","好/健康的习惯"],["leisure time / activities","休闲时间/活动"],["stay productive","保持高效率"],["feel exhausted","感到筋疲力尽"],["top priority","最优先事项"],["balanced lifestyle","均衡的生活方式"]]
+  }
+];
+
+const MS=[{sel:null,done:[]},{sel:null,done:[]}];
+const FI=[[],[]];
+let shuffled=[null,null];
+
+function switchUnit(u){
+  document.querySelectorAll('.unit-btn').forEach((b,i)=>b.classList.toggle('active',i===u));
+  document.querySelectorAll('.unit-panel').forEach((p,i)=>p.classList.toggle('active',i===u));
+}
+function switchPart(u,p){
+  document.querySelectorAll(`#pnav${u} .part-btn`).forEach((b,i)=>b.classList.toggle('active',i===p));
+  for(let i=0;i<7;i++){const el=document.getElementById(`u${u}p${i}`);if(el)el.classList.toggle('active',i===p);}
+}
+
+// Vocab
+function buildVocab(u){
+  const g=document.getElementById('vg'+u);if(g.children.length)return;
+  D[u].words.forEach((w,i)=>{
+    const d=document.createElement('div');d.className='vocab-item';
+    d.innerHTML=`<div class="vocab-head" onclick="toggleV(${u},${i})"><span class="v-word">${w.w}</span><span class="v-pos">${w.pos}</span><span class="v-cn">${w.cn}</span><span class="v-toggle" id="vt${u}${i}">+ more</span></div><div class="vocab-body" id="vb${u}${i}"><div class="v-meaning">${w.m}</div><div class="v-eg">"${w.eg}"</div></div>`;
+    g.appendChild(d);
+  });
+}
+function toggleV(u,i){
+  const b=document.getElementById(`vb${u}${i}`),t=document.getElementById(`vt${u}${i}`);
+  const o=b.classList.toggle('open');t.textContent=o?'– less':'+ more';
+}
+
+// Story
+function buildStory(u){
+  const el=document.getElementById('st'+u);if(el.innerHTML)return;
+  let h='';
+  D[u].story.forEach(s=>{if(typeof s==='string')h+=s.replace(/\n/g,'<br>');else h+=`<span class="hw">${s.h}</span>`;});
+  el.innerHTML=h;
+}
+
+// T/F
+function buildTF(u){
+  const el=document.getElementById('tf'+u);if(el.innerHTML)return;
+  D[u].tf.forEach((x,i)=>{
+    const r=document.createElement('div');r.className='tf-row';
+    r.innerHTML=`<span class="tf-q">${i+1}. ${x.q}</span><div class="tf-btns"><button class="tf-btn" id="tfT${u}${i}" onclick="doTF(${u},${i},true)">T</button><button class="tf-btn" id="tfF${u}${i}" onclick="doTF(${u},${i},false)">F</button></div><span class="tf-result" id="tfR${u}${i}"></span>`;
+    el.appendChild(r);
+  });
+}
+function doTF(u,i,v){
+  const c=D[u].tf[i].a;
+  const tB=document.getElementById(`tfT${u}${i}`),fB=document.getElementById(`tfF${u}${i}`),r=document.getElementById(`tfR${u}${i}`);
+  tB.disabled=fB.disabled=true;
+  if(v===c){(v?tB:fB).classList.add('correct');r.textContent='✓ Correct';r.style.color='var(--correct)';}
+  else{(v?tB:fB).classList.add('wrong');(c?tB:fB).classList.add('correct');r.textContent='✗ Incorrect';r.style.color='var(--wrong)';}
+}
+
+// MC
+function buildMC(u){
+  const el=document.getElementById('mc'+u);if(el.innerHTML)return;
+  D[u].mc.forEach((x,qi)=>{
+    const b=document.createElement('div');b.className='mc-block';
+    b.innerHTML=`<div class="mc-q">${qi+1}. ${x.q}</div><div class="mc-opts">${x.o.map((o,oi)=>`<button class="mc-opt" id="mc${u}${qi}${oi}" onclick="doMC(${u},${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</button>`).join('')}</div>`;
+    el.appendChild(b);
+  });
+}
+function doMC(u,qi,oi){
+  const c=D[u].mc[qi].a;
+  for(let i=0;i<4;i++){const b=document.getElementById(`mc${u}${qi}${i}`);if(b){b.disabled=true;if(i===c)b.classList.add('correct');else if(i===oi)b.classList.add('wrong');}}
+}
+
+// Match
+function buildMatch(u){
+  const el=document.getElementById('match'+u);if(el.innerHTML)return;
+  const m=D[u].match;
+  const sh=[...m.defs].sort(()=>Math.random()-.5);
+  shuffled[u]=sh;
+  const g=document.createElement('div');g.className='match-grid';
+  m.words.forEach((w,i)=>{
+    const wb=document.createElement('button');wb.className='match-word';wb.id=`mw${u}${i}`;wb.textContent=w;wb.onclick=()=>pickWord(u,i);g.appendChild(wb);
+    const db=document.createElement('button');db.className='match-def';db.id=`md${u}${i}`;db.textContent=sh[i];db.onclick=()=>pickDef(u,i);g.appendChild(db);
+  });
+  el.appendChild(g);
+}
+function pickWord(u,i){
+  if(document.getElementById(`mw${u}${i}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="mw${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel');});
+  document.getElementById(`mw${u}${i}`).classList.add('sel');
+  MS[u].sel=i;
+}
+function pickDef(u,di){
+  if(document.getElementById(`md${u}${di}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="md${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel','err');});
+  document.getElementById(`md${u}${di}`).classList.add('sel');
+  if(MS[u].sel===null)return;
+  const wi=MS[u].sel;
+  const selDef=shuffled[u][di];
+  const correctDef=D[u].match.defs[D[u].match.correct[wi]];
+  const wB=document.getElementById(`mw${u}${wi}`),dB=document.getElementById(`md${u}${di}`);
+  if(selDef===correctDef){
+    wB.classList.remove('sel');wB.classList.add('done');
+    dB.classList.remove('sel');dB.classList.add('done');
+    MS[u].done.push(wi);
+    if(MS[u].done.length===D[u].match.words.length){
+      document.getElementById(`match${u}-res`).innerHTML=`<div class="score-bar good" style="margin-top:.75rem"><span class="score-num">5/5</span><span class="score-label">All matched correctly! Well done!</span></div>`;
+    }
+  } else {
+    dB.classList.add('err');
+    setTimeout(()=>{if(dB)dB.classList.remove('err','sel');},700);
+    wB.classList.remove('sel');
+  }
+  MS[u].sel=null;
+}
+
+// Fill in blank
+function buildFib(u){
+  const ce=document.getElementById('chips'+u),fe=document.getElementById('fib'+u);
+  if(ce.innerHTML)return;
+  D[u].fib.chips.forEach(c=>{
+    const s=document.createElement('span');s.className='chip';s.id=`ch${u}${c}`;s.textContent=c;
+    s.onclick=()=>{
+      const f=FI[u].find(x=>x===document.activeElement);
+      if(f&&!f.value){f.value=c;s.classList.add('used');}
+    };
+    ce.appendChild(s);
+  });
+  D[u].fib.rows.forEach((r,i)=>{
+    const row=document.createElement('div');row.className='fib-row';
+    row.innerHTML=`<span class="fib-num">${i+1}.</span><span>${r.pre}</span><input class="fib-input" id="fi${u}${i}" autocomplete="off" placeholder="…"/><span>${r.suf}</span>`;
+    fe.appendChild(row);
+    FI[u].push(document.getElementById(`fi${u}${i}`));
+  });
+}
+function checkFib(u){
+  let ok=0;
+  D[u].fib.rows.forEach((r,i)=>{
+    const inp=FI[u][i];const v=inp.value.trim().toLowerCase();const a=r.ans.toLowerCase();
+    inp.classList.remove('correct','wrong');
+    if(v===a||v===a+'s'){inp.classList.add('correct');ok++;}else inp.classList.add('wrong');
+  });
+  const n=D[u].fib.rows.length;
+  const sc=document.getElementById(`fib${u}-score`);
+  sc.innerHTML=`<div class="score-bar${ok===n?' good':''}" style="margin-top:.5rem"><span class="score-num">${ok}/${n}</span><span class="score-label">${ok===n?'Perfect! All correct!':ok>n/2?'Good effort! Check the red ones.':'Keep trying — review the vocabulary and try again.'}</span></div>`;
+}
+function resetFib(u){
+  D[u].fib.rows.forEach((_,i)=>{const inp=FI[u][i];inp.value='';inp.classList.remove('correct','wrong');});
+  D[u].fib.chips.forEach(c=>{const ch=document.getElementById(`ch${u}${c}`);if(ch)ch.classList.remove('used');});
+  document.getElementById(`fib${u}-score`).innerHTML='';
+}
+
+// Speaking
+function buildSpeak(u){
+  const el=document.getElementById('speak'+u);if(el.innerHTML)return;
+  D[u].speak.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='speak-card';
+    d.innerHTML=`<span class="speak-num">${i+1}.</span><span>${q}</span>`;
+    el.appendChild(d);
+  });
+}
+
+// Review
+function buildReview(u){
+  const re=document.getElementById('rev'+u),co=document.getElementById('col'+u);if(re.innerHTML)return;
+  D[u].rev.forEach(([en,cn])=>{const d=document.createElement('div');d.className='review-item';d.innerHTML=`<span class="r-en">${en}</span><span class="r-cn">${cn}</span>`;re.appendChild(d);});
+  D[u].col.forEach(([en,cn])=>{const d=document.createElement('div');d.className='colloc-item';d.innerHTML=`<div class="c-en">${en}</div><div class="c-cn">${cn}</div>`;co.appendChild(d);});
+}
+
+// Word counter
+function setupWC(u){
+  const ta=document.getElementById('wr'+u),wc=document.getElementById('wc'+u);
+  ta.addEventListener('input',()=>{const n=ta.value.trim().split(/\s+/).filter(w=>w).length;wc.textContent=n+' word'+(n!==1?'s':'');});
+}
+
+[0,1].forEach(u=>{buildVocab(u);buildStory(u);buildTF(u);buildMC(u);buildMatch(u);buildFib(u);buildSpeak(u);buildReview(u);setupWC(u);});
+</script>
+</body>
+</html>
