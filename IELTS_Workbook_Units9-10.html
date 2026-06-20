@@ -4,451 +4,300 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IELTS Vocabulary Workbook — Units 9–10 — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
 <style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
 :root{
-  --blue:#2b4c7e;--blue-mid:#3a6bc7;--blue-light:#ebf2ff;--blue-pale:#f0f4ff;
-  --green:#276749;--green-light:#c6f6d5;--green-mid:#38a169;
-  --red:#c53030;--red-light:#fed7d7;
-  --gold:#b7791f;--gold-light:#fefce8;
-  --gray:#4a5568;--gray-light:#718096;--border:#e2e8f0;
-  --bg:#f7f8fc;--card:#ffffff;--text:#1a202c;
-  --r:10px;--shadow:0 2px 8px rgba(0,0,0,.08);
+  --teal:#1A7A8A;
+  --teal-dark:#115966;
+  --teal-light:#D6EEF1;
+  --teal-pale:#EEF8FA;
+  --gold:#C9930A;
+  --gold-light:#FDF3D8;
+  --gold-pale:#FFFBF0;
+  --surface:#FFFFFF;
+  --bg:#F3F7F8;
+  --border:#DDE5E8;
+  --text:#1C2B33;
+  --muted:#5A7280;
+  --correct-bg:#E1F5EE;
+  --correct:#0F6E56;
+  --wrong-bg:#FCEBEB;
+  --wrong:#A32D2D;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px}
-
-/* ── Top bar ── */
-.topbar{background:var(--blue);color:#fff;padding:10px 24px;font-size:.8rem;font-weight:600;letter-spacing:.04em;display:flex;align-items:center;justify-content:space-between}
-.topbar a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.78rem}
-.topbar a:hover{color:#fff}
-
-/* ── Page header card ── */
-.pg-header{background:linear-gradient(135deg,#1a365d 0%,#2b6cb0 100%);color:#fff;padding:28px 32px 22px;text-align:center}
-.pg-header h1{font-size:1.05rem;font-weight:500;opacity:.85;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
-.pg-header h2{font-size:1.85rem;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
-.pg-header .subtitle{font-size:.95rem;opacity:.85;margin-bottom:16px}
-.pg-header .subtitle b{opacity:1}
-.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;padding:5px 14px;border-radius:20px;font-size:.78rem;font-weight:600}
-
-/* ── How to use ── */
-.howto{background:#fff;border-left:4px solid var(--blue-mid);border-radius:0 var(--r) var(--r) 0;margin:16px 20px;padding:10px 16px;font-size:.83rem;color:var(--gray);box-shadow:var(--shadow)}
-.howto b{color:var(--blue)}
-
-/* ── Unit tabs ── */
-.unit-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);background:#fff;padding:0 20px}
-.unit-tab{padding:12px 20px;font-size:.9rem;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;color:var(--gray-light);transition:all .2s;white-space:nowrap}
-.unit-tab.active{color:var(--blue);border-bottom-color:var(--blue)}
-.unit-tab:hover:not(.active){color:var(--blue);background:var(--blue-pale)}
-
-/* ── Per-unit header ── */
-.unit-header{background:#fff;padding:16px 24px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.unit-num{background:var(--blue);color:#fff;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:800;flex-shrink:0}
-.unit-meta h3{font-size:1.1rem;font-weight:700;color:var(--blue)}
-.unit-meta p{font-size:.8rem;color:var(--gray-light)}
-.lvl-badge{margin-left:auto;background:var(--blue-light);color:var(--blue);padding:5px 12px;border-radius:20px;font-size:.75rem;font-weight:700}
-
-/* ── Section nav ── */
-.sec-nav{display:flex;gap:4px;padding:12px 20px;background:var(--bg);border-bottom:1px solid var(--border);flex-wrap:wrap}
-.sec-btn{padding:6px 14px;border:1px solid var(--border);border-radius:20px;cursor:pointer;font-size:.8rem;background:#fff;color:var(--gray);transition:all .15s;white-space:nowrap}
-.sec-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
-.sec-btn:hover:not(.active){background:var(--blue-light);border-color:var(--blue-mid);color:var(--blue)}
-
-/* ── Content area ── */
-.content{padding:20px;max-width:860px;margin:0 auto}
-
-/* ── Vocabulary cards ── */
-.vocab-hint{font-size:.8rem;color:var(--gray-light);margin-bottom:10px;display:flex;align-items:center;gap:6px}
-.vocab-grid{display:flex;flex-direction:column;gap:6px}
-.word-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);cursor:pointer;transition:box-shadow .15s}
-.word-card:hover{box-shadow:0 4px 16px rgba(43,76,126,.12)}
-.word-card-head{display:flex;align-items:center;gap:10px;padding:11px 16px}
-.word-card-head .word{font-weight:700;font-size:1rem;color:var(--blue);min-width:110px}
-.word-card-head .pos{font-size:.78rem;color:var(--gray-light);font-style:italic;min-width:28px}
-.word-card-head .cn{font-size:.82rem;font-weight:700;color:#c05621;min-width:64px}
-.word-card-head .def-preview{font-size:.82rem;color:var(--gray);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.word-card-head .toggle{color:var(--gray-light);font-size:.8rem;flex-shrink:0}
-.word-card-body{display:none;padding:0 16px 14px 16px;border-top:1px solid var(--border);background:var(--blue-pale)}
-.word-card-body .full-def{font-size:.88rem;color:var(--text);margin-top:10px;margin-bottom:6px}
-.word-card-body .example{font-size:.82rem;color:var(--gray);font-style:italic;border-left:3px solid var(--blue-mid);padding-left:10px}
-.word-card.open .word-card-body{display:block}
-.word-card.open .word-card-head .def-preview{display:none}
-.word-card.open .toggle::before{content:'▲'}
-.word-card .toggle::before{content:'▼'}
-
-/* Category label */
-.cat-label{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-mid);margin:14px 0 6px;padding-left:2px}
-
-/* ── Story ── */
-.story-card{background:#fff;border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
-.story-title{font-size:1.2rem;font-weight:700;color:var(--blue);margin-bottom:18px;padding-bottom:10px;border-bottom:2px solid var(--blue-light)}
-.story-card p{margin-bottom:14px;line-height:1.85;font-size:.93rem}
-.story-card mark{background:#fefcbf;color:#744210;padding:1px 3px;border-radius:3px;font-weight:700;cursor:pointer}
-.story-hint{margin-top:16px;font-size:.78rem;color:var(--gray-light);text-align:center}
-
-/* ── Comprehension ── */
-.sec-label{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:10px}
-.ex-card{background:#fff;border-radius:var(--r);padding:20px;box-shadow:var(--shadow);margin-bottom:14px}
-.ex-card-title{font-size:.95rem;font-weight:700;color:var(--blue);margin-bottom:4px}
-.ex-card-sub{font-size:.78rem;color:var(--gray-light);margin-bottom:16px}
-.q-item{margin-bottom:16px}
-.q-text{font-size:.9rem;margin-bottom:8px;line-height:1.5}
-.q-num{font-weight:700;color:var(--blue);margin-right:4px}
-
-/* T/F */
-.tf-row{display:flex;gap:8px}
-.tf-btn{padding:6px 20px;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-weight:600;font-size:.85rem;background:#fff;transition:all .15s}
-.tf-btn:hover{background:var(--blue-light)}
-.tf-btn.ok{background:var(--green-light);border-color:var(--green-mid);color:var(--green)}
-.tf-btn.bad{background:var(--red-light);border-color:var(--red);color:var(--red)}
-
-/* MCQ */
-.mcq-opts{display:flex;flex-direction:column;gap:5px}
-.mcq-opt{padding:8px 14px;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-size:.87rem;background:#fff;text-align:left;transition:all .15s}
-.mcq-opt:hover{background:var(--blue-light)}
-.mcq-opt.ok{background:var(--green-light);border-color:var(--green-mid);color:var(--green);font-weight:600}
-.mcq-opt.bad{background:var(--red-light);border-color:var(--red);color:var(--red)}
-.mcq-opt.reveal{background:var(--green-light);border-color:var(--green-mid);opacity:.5}
-
-/* ── Practice ── */
-/* Matching */
-.match-wrap{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.match-col{display:flex;flex-direction:column;gap:6px}
-.match-col-lbl{font-size:.72rem;font-weight:700;letter-spacing:.05em;color:var(--gray-light);text-transform:uppercase;margin-bottom:2px}
-.match-item{padding:9px 13px;border:2px solid var(--border);border-radius:8px;cursor:pointer;font-size:.87rem;background:#fff;transition:all .15s;line-height:1.4}
-.match-item.sel{border-color:var(--blue-mid);background:var(--blue-light)}
-.match-item.ok{border-color:var(--green-mid);background:var(--green-light);cursor:default;color:var(--green)}
-.match-item.err{border-color:var(--red);background:var(--red-light)}
-.match-word{font-weight:700;color:var(--blue)}
-.match-fb{margin-top:10px;font-size:.87rem;font-weight:700;color:var(--green-mid)}
-
-/* Fill in blank */
-.fill-item{margin-bottom:14px}
-.fill-sent{font-size:.9rem;line-height:1.9}
-.blank{display:inline-block;min-width:90px;border-bottom:2px solid var(--blue-mid);padding:0 4px;color:var(--blue);font-weight:700;cursor:pointer;transition:border-color .2s}
-.blank.sel{outline:2px solid var(--blue-mid);border-radius:3px}
-.blank.ok{border-color:var(--green-mid);color:var(--green)}
-.blank.bad{border-color:var(--red);color:var(--red)}
-.fill-input{border:none;border-bottom:2px solid var(--blue-mid);outline:none;font-size:.9rem;font-weight:700;color:var(--blue);width:110px;background:transparent;padding:0 4px}
-.word-bank{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
-.chip{padding:5px 16px;background:var(--blue-light);color:var(--blue);border:2px solid var(--blue-mid);border-radius:20px;cursor:pointer;font-weight:700;font-size:.85rem;transition:all .15s}
-.chip:hover{background:var(--blue);color:#fff}
-.chip.used{opacity:.3;cursor:default;pointer-events:none}
-.prac-btns{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.check-btn{padding:9px 22px;background:var(--blue);color:#fff;border:none;border-radius:6px;cursor:pointer;font-weight:700;font-size:.88rem}
-.check-btn:hover{background:#1a365d}
-.reset-btn{padding:9px 18px;background:#fff;color:var(--gray);border:1px solid var(--border);border-radius:6px;cursor:pointer;font-size:.88rem}
-.reset-btn:hover{background:var(--bg)}
-.score-badge{display:inline-flex;align-items:center;padding:4px 12px;background:var(--green-light);color:var(--green);border-radius:20px;font-weight:700;font-size:.85rem}
-
-/* ── Speaking ── */
-.speak-card{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
-.speak-card h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:14px}
-.speak-q{padding:11px 15px 11px 18px;background:var(--blue-pale);border-left:4px solid var(--blue-mid);border-radius:0 6px 6px 0;margin-bottom:8px;font-size:.9rem;line-height:1.5}
-.speak-q b{color:var(--blue);margin-right:4px}
-.phrases-box{margin-top:18px;padding:14px 18px;background:var(--gold-light);border:1px solid #f6e05e;border-radius:8px}
-.phrases-lbl{font-weight:700;color:var(--gold);font-size:.78rem;margin-bottom:8px}
-.phrase{display:inline-block;background:#fff;border:1px solid #f6e05e;color:var(--gold);padding:3px 12px;border-radius:20px;margin:3px;font-size:.82rem;font-weight:600}
-
-/* ── Writing ── */
-.write-card{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
-.write-card h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:14px}
-.write-prompt{padding:14px 18px;background:var(--blue-pale);border-radius:8px;font-size:.9rem;line-height:1.75;margin-bottom:10px;border-left:4px solid var(--blue-mid)}
-.write-cn{padding:10px 14px;background:#fffaf0;border-radius:6px;font-size:.83rem;color:#744210;margin-bottom:16px;border:1px solid #fbd38d}
-.write-area{width:100%;min-height:180px;padding:13px;border:2px solid var(--border);border-radius:8px;font-size:.88rem;font-family:inherit;resize:vertical;transition:border-color .2s;line-height:1.65}
-.write-area:focus{outline:none;border-color:var(--blue-mid)}
-.wc-info{display:flex;justify-content:space-between;margin-top:6px;font-size:.75rem;color:var(--gray-light)}
-
-/* ── Review ── */
-.review-section h3{font-size:1rem;font-weight:700;color:var(--blue);margin-bottom:12px}
-.review-section h3 span{font-size:.78rem;font-weight:400;color:var(--gray-light);margin-left:8px}
-.review-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px;margin-bottom:28px}
-.flip-card{height:72px;cursor:pointer;perspective:600px}
-.flip-inner{width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d;position:relative}
-.flip-card.flipped .flip-inner{transform:rotateY(180deg)}
-.flip-face{position:absolute;inset:0;border-radius:var(--r);display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;backface-visibility:hidden;box-shadow:var(--shadow)}
-.flip-front{background:#fff;border:1px solid var(--border);font-weight:700;color:var(--blue);font-size:.9rem}
-.flip-back{background:var(--blue);color:#fff;transform:rotateY(180deg);font-size:.88rem;font-weight:600}
-.review-hint{font-size:.75rem;color:var(--gray-light);margin-bottom:14px}
-.colloc-table{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
-.colloc-table th{background:var(--green-mid);color:#fff;padding:8px 14px;text-align:left;font-size:.78rem;font-weight:700}
-.colloc-table td{padding:9px 14px;border-bottom:1px solid var(--border);font-size:.87rem}
-.colloc-table tr:last-child td{border-bottom:none}
-.colloc-table tr:nth-child(even) td{background:var(--green-light)}
-.colloc-en{font-weight:600}
-.colloc-cn{color:var(--gray)}
-
-/* ── Utility ── */
-.unit-pane{display:none}
-.unit-pane.active{display:block}
-.sec-pane{display:none}
-.sec-pane.active{display:block}
-.mt{margin-top:16px}
-.mb{margin-bottom:16px}
-
-@media(max-width:600px){
-  .pg-header{padding:20px 16px 16px}
-  .pg-header h2{font-size:1.45rem}
-  .unit-tabs{padding:0 10px}
-  .unit-tab{padding:10px 12px;font-size:.82rem}
-  .content{padding:12px}
-  .match-wrap{grid-template-columns:1fr}
-  .review-grid{grid-template-columns:repeat(3,1fr)}
-  .howto{margin:12px 12px}
-}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:1.5rem auto 0;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.part-panel{display:none}
+.part-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.cat-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;padding:.3rem .75rem;margin:.75rem 0 .4rem;display:inline-block}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:15px;font-weight:600;color:var(--teal);min-width:130px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.75rem 1rem;border-top:1px solid var(--border)}
+.vocab-body.open{display:block}
+.v-meaning{font-size:13px;color:var(--muted);margin-bottom:.5rem}
+.v-eg{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.story-box{background:var(--gold-pale);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--text)}
+.story-text p{margin-bottom:.9rem}
+.story-text p:last-child{margin-bottom:0}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-light);padding:.05rem .3rem;border-radius:4px}
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.tf-btn.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-result{font-size:12px;font-weight:500;flex-shrink:0}
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--text)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pale);border-color:var(--teal-light)}
+.mc-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.mc-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.mc-opt:disabled{pointer-events:none}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:20px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%}
+.match-def:hover:not(.done){background:var(--gold-pale);border-color:#E8D08A}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pale);border-radius:8px;border:1px solid var(--teal-light)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--surface);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-light);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:120px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--teal)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-primary:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;align-items:flex-start;gap:.6rem;color:var(--text)}
+.speak-num{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--muted);background:var(--gold-pale);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+.write-prompt{font-size:14px;color:var(--text);margin-bottom:.4rem}
+.write-prompt-cn{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.write-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--text);background:var(--surface);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.write-area:focus{border-color:var(--teal)}
+.write-counter{font-size:12px;color:var(--muted);margin-top:.3rem;text-align:right}
+.write-hint{font-size:12px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.review-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.review-cols{grid-template-columns:1fr}}
+.review-col-label{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.review-item{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.review-item:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--text)}
+.r-cn{color:var(--muted);font-size:12px}
+.colloc-item{padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.colloc-item:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--muted);font-size:12px}
+@media(max-width:600px){.card{padding:1rem}.unit-hdr{padding:1.1rem 1.25rem}.match-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- Top bar -->
 <div class="topbar">
-  <span>Lexilink Ideation IELTS Studio</span>
-  <a href="https://lexilink-ideation.github.io/Ielts-workbook/index.html">← Home 首页</a>
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">IELTS Vocabulary Workbook &mdash; Units 9&ndash;10</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
 </div>
 
-<!-- Page header -->
-<div class="pg-header">
-  <h1>IELTS Vocabulary Workbook</h1>
-  <h2>Units 9–10</h2>
-  <div class="subtitle"><b>Work &amp; Economy</b> | 工作 · 经济</div>
-  <div class="badges">
-    <span class="badge">Level 2</span>
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-sub">Units 9&ndash;10 &nbsp;&middot;&nbsp; Work &amp; Economy &nbsp;|&nbsp; &#24037;&#20316; &middot; &#32463;&#27982;</div>
+  <div class="cover-badges">
+    <span class="badge">Level 2 &mdash; Foundation</span>
+    <span class="badge">Units 9&ndash;10</span>
     <span class="badge">73 target words</span>
     <span class="badge">Interactive exercises</span>
-    <span class="badge">中文支持</span>
+  </div>
+  <div class="cover-tip">
+    <strong>How to use</strong>
+    Study vocabulary &rarr; Read the story &rarr; Complete the exercises. Click any word to see its meaning. Answers are checked instantly.
   </div>
 </div>
 
-<!-- How to use -->
-<div class="howto">
-  <b>How to use:</b> Study vocabulary → Read the story → Complete the exercises. Click any word card to expand its meaning. Answers are checked instantly. 每天学一个单元，复习前一个单元。
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="switchUnit(0)">Unit 9 &mdash; Work &amp; Employment</button>
+    <button class="unit-btn" onclick="switchUnit(1)">Unit 10 &mdash; Business, Trade &amp; Finance</button>
+  </div>
+
+  <!-- UNIT 9 -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 9 &nbsp;&middot;&nbsp; Work &amp; Employment &nbsp; &#24037;&#20316;&#19982;&#32844;&#20121;</div>
+        <div class="unit-hdr-meta">33 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Jobs &middot; Hiring &middot; Pay &amp; Benefits</div>
+      </div>
+      <span class="unit-level">Level 2 &mdash; Foundation</span>
+    </div>
+    <div class="part-nav" id="pnav0">
+      <button class="part-btn active" onclick="switchPart(0,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(0,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(0,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(0,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(0,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(0,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(0,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">A Lifetime of Work</div>
+          <div class="story-text"><p>David had always known that teaching was his true <span class="hw">vocation</span>. But after ten years in the <span class="hw">profession</span>, he decided it was time for a change of <span class="hw">career</span>. He began searching for a new <span class="hw">occupation</span> that would challenge and inspire him.</p>
+          <p>One morning, he spotted a <span class="hw">post</span> advertised by a technology company — an <span class="hw">opening</span> for a <span class="hw">personnel</span> manager. The <span class="hw">position</span> required someone experienced in managing teams and finding new talent. David applied immediately. After three rounds of interviews, the <span class="hw">employer</span> offered him the role.</p>
+          <p>As a new <span class="hw">employee</span>, David completed a two-week <span class="hw">training</span> programme. His <span class="hw">director</span> introduced him to every <span class="hw">colleague</span> in the department. The <span class="hw">executive</span> team made him feel welcome. That same month, the company decided to <span class="hw">employ</span> two more specialists to keep up with growing demand.</p>
+          <p>Within a year, the firm decided to <span class="hw">promote</span> David to head of human resources. He was now responsible for the entire <span class="hw">employment</span> process — helping the company <span class="hw">hire</span> and <span class="hw">recruit</span> the right people. He also had to <span class="hw">supervise</span> a team of twelve and ensure every <span class="hw">staff</span> member felt supported.</p>
+          <p>Not all news was good. When the business slowed, David had to deliver a <span class="hw">layoff</span> notice to twenty workers who had been made <span class="hw">redundant</span>. One long-serving manager chose to <span class="hw">resign</span> rather than accept a transfer to another city. These were among the hardest moments in his career.</p>
+          <p>David managed the <span class="hw">payroll</span> carefully each month, making sure every employee received their correct <span class="hw">salary</span>. The firm offered fair <span class="hw">wage</span>s and many staff earned a generous end-of-year <span class="hw">bonus</span>. David's own <span class="hw">income</span> grew steadily, and his annual <span class="hw">earnings</span> now exceeded anything he had made as a teacher.</p>
+          <p>As he approached sixty, David thought about his <span class="hw">pension</span> and the <span class="hw">benefit</span>s the company offered — health insurance, flexible hours, and retirement savings. He planned to <span class="hw">retire</span> at sixty-five. Looking back, he was grateful for every challenge and every team he had helped build throughout a rewarding lifetime of work.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(0)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk0"></div><div class="hint" id="ph0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp0en"></p><p class="write-prompt-cn" id="wp0cn"></p><p class="write-hint" id="wp0hint"></p><textarea class="write-area" id="wr0" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc0">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u0p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&apos;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev0"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col0"></div></div></div></div>
+    </div>
+  </div>
+
+  <!-- UNIT 10 -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 10 &nbsp;&middot;&nbsp; Business, Trade &amp; Finance &nbsp; &#21830;&#19994;&#12289;&#36136;&#26131;&#19982;&#37329;&#34701;</div>
+        <div class="unit-hdr-meta">40 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Business &middot; Trade &middot; Finance &amp; Economics</div>
+      </div>
+      <span class="unit-level">Level 2 &mdash; Foundation</span>
+    </div>
+    <div class="part-nav" id="pnav1">
+      <button class="part-btn active" onclick="switchPart(1,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(1,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(1,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(1,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(1,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(1,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(1,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Rise and Fall of Hartwick Industries</div>
+          <div class="story-text"><p>The Hartwick <span class="hw">corporation</span> was one of the country's most admired <span class="hw">enterprise</span>s. Founded sixty years ago as a small <span class="hw">firm</span> making machine parts, it had grown through careful <span class="hw">management</span> into a global business. Its key <span class="hw">subsidiary</span>, Hartwick Pacific, operated across Asia and contributed a third of the group's total output.</p>
+          <p>The company's <span class="hw">productivity</span> was exceptional. Its factories could <span class="hw">manufacture</span> over ten thousand units a day. Through a series of decisions to <span class="hw">incorporate</span> smaller rivals into its structure, Hartwick had built a dominant market position. When it announced plans to <span class="hw">merge</span> with its largest competitor, regulators feared it would create a <span class="hw">monopoly</span>.</p>
+          <p><span class="hw">Trade</span> was at the heart of Hartwick's success. The company thrived on international <span class="hw">commerce</span>, choosing to <span class="hw">export</span> finished goods to markets across three continents while it <span class="hw">import</span>ed raw materials at competitive prices. This global model had worked brilliantly — until the government changed course.</p>
+          <p>A new law introduced a steep <span class="hw">tariff</span> on imported steel, raising production costs overnight. At the same time, a strict <span class="hw">quota</span> limited how much Hartwick could export each year. Supporters of <span class="hw">protectionism</span> argued these rules would save local jobs. Critics warned they would disrupt the balance of <span class="hw">supply</span> and <span class="hw">demand</span>, reduce the confidence of every <span class="hw">consumer</span>, and cause the company's annual <span class="hw">turnover</span> to fall sharply.</p>
+          <p>The government offered a <span class="hw">subsidy</span> to help cover rising costs, but it was not enough. Hartwick's <span class="hw">finance</span> team reviewed the <span class="hw">budget</span> with growing alarm. The company had borrowed <span class="hw">capital</span> to <span class="hw">invest</span> in new technology, and the <span class="hw">debt</span> was mounting. <span class="hw">Revenue</span> was falling, and for the first time in decades, the firm recorded no <span class="hw">profit</span>.</p>
+          <p>The wider <span class="hw">economy</span> made things worse. <span class="hw">Inflation</span> pushed up the cost of energy and materials. The national <span class="hw">currency</span> weakened, making imports more expensive still. <span class="hw">Unemployment</span> rose in the towns that depended on Hartwick. Consumer spending — a key driver of <span class="hw">economic</span> growth — slowed to a halt.</p>
+          <p>Hartwick's board reviewed its <span class="hw">savings</span>, now almost gone. Total <span class="hw">expenditure</span> had outpaced income for three years in a row. The <span class="hw">yield</span> on its investments was far below expectations. Analysts warned that without urgent action, <span class="hw">bankruptcy</span> was possible. Even the company's <span class="hw">taxation</span> strategy needed reform to reduce the burden on operating costs.</p>
+          <p>But new leadership refused to give up. They restructured the firm's finances, focused on high-demand markets, and worked to bring <span class="hw">revenue</span> back to healthy levels. Within two years, the company had stabilised. The feared <span class="hw">recession</span> had tested them to the limit — but Hartwick had survived, and emerged stronger than before.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(1)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk1"></div><div class="hint" id="ph1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp1en"></p><p class="write-prompt-cn" id="wp1cn"></p><p class="write-hint" id="wp1hint"></p><textarea class="write-area" id="wr1" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc1">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u1p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&apos;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev1"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col1"></div></div></div></div>
+    </div>
+  </div>
 </div>
-
-<!-- Unit tabs -->
-<div class="unit-tabs" id="unitTabs">
-  <div class="unit-tab active" onclick="switchUnit(0)">Unit 9 — Work &amp; Employment</div>
-  <div class="unit-tab" onclick="switchUnit(1)">Unit 10 — Business, Trade &amp; Finance</div>
-</div>
-
-<!-- ═══════════════ UNIT 9 ═══════════════ -->
-<div class="unit-pane active" id="pane0">
-  <div class="unit-header">
-    <div class="unit-num">9</div>
-    <div class="unit-meta">
-      <h3>Work &amp; Employment · 工作与职场</h3>
-      <p>33 target words · 7 parts · Categories: Jobs, Hiring &amp; Workplace, Pay &amp; Benefits</p>
-    </div>
-    <div class="lvl-badge">Level 2 — Foundation</div>
-  </div>
-  <div class="sec-nav" id="nav0">
-    <button class="sec-btn active" onclick="switchSec(0,0)">1 · Vocabulary</button>
-    <button class="sec-btn" onclick="switchSec(0,1)">2 · Story</button>
-    <button class="sec-btn" onclick="switchSec(0,2)">3 · Comprehension</button>
-    <button class="sec-btn" onclick="switchSec(0,3)">4 · Practice</button>
-    <button class="sec-btn" onclick="switchSec(0,4)">5 · Speaking</button>
-    <button class="sec-btn" onclick="switchSec(0,5)">6 · Writing</button>
-    <button class="sec-btn" onclick="switchSec(0,6)">7 · Review</button>
-  </div>
-
-  <!-- Sec 0: Vocabulary -->
-  <div class="sec-pane active content" id="s0_0">
-    <div class="vocab-hint">📖 Click any word card to expand its meaning</div>
-    <div class="cat-label">Jobs &amp; Careers 职位与职业</div>
-    <div class="vocab-grid" id="vg0_cat0"></div>
-    <div class="cat-label">Hiring &amp; Workplace 招聘与职场</div>
-    <div class="vocab-grid" id="vg0_cat1"></div>
-    <div class="cat-label">Pay &amp; Benefits 薪酬与福利</div>
-    <div class="vocab-grid" id="vg0_cat2"></div>
-  </div>
-
-  <!-- Sec 1: Story -->
-  <div class="sec-pane content" id="s0_1">
-    <div class="story-card">
-      <div class="story-title">📖 A Lifetime of Work</div>
-      <p>David had always known that teaching was his true <mark>vocation</mark>. But after ten years in the <mark>profession</mark>, he decided it was time for a change of <mark>career</mark>. He began searching for a new <mark>occupation</mark> that would challenge and inspire him.</p>
-      <p>One morning, he spotted a <mark>post</mark> advertised by a technology company — an <mark>opening</mark> for a <mark>personnel</mark> manager. The <mark>position</mark> required someone experienced in managing teams and finding new talent. David applied immediately. After three rounds of interviews, the <mark>employer</mark> offered him the role.</p>
-      <p>As a new <mark>employee</mark>, David completed a two-week <mark>training</mark> programme. His <mark>director</mark> introduced him to every <mark>colleague</mark> in the department. The <mark>executive</mark> team made him feel welcome. That same month, the company decided to <mark>employ</mark> two more specialists to keep up with growing demand.</p>
-      <p>Within a year, the firm decided to <mark>promote</mark> David to head of human resources. He was now responsible for the entire <mark>employment</mark> process — helping the company <mark>hire</mark> and <mark>recruit</mark> the right people. He also had to <mark>supervise</mark> a team of twelve and ensure every <mark>staff</mark> member felt supported.</p>
-      <p>Not all news was good. When the business slowed, David had to deliver a <mark>layoff</mark> notice to twenty workers who had been made <mark>redundant</mark>. One long-serving manager chose to <mark>resign</mark> rather than accept a transfer to another city. These were among the hardest moments in his career.</p>
-      <p>David managed the <mark>payroll</mark> carefully each month, making sure every employee received their correct <mark>salary</mark>. The firm offered fair <mark>wage</mark>s and many staff earned a generous end-of-year <mark>bonus</mark>. David's own <mark>income</mark> grew steadily, and his annual <mark>earnings</mark> now exceeded anything he had made as a teacher.</p>
-      <p>As he approached sixty, David thought about his <mark>pension</mark> and the <mark>benefit</mark>s the company offered — health insurance, flexible hours, and retirement savings. He planned to <mark>retire</mark> at sixty-five. Looking back, he was grateful for every challenge and every team he had helped build throughout a rewarding lifetime of work.</p>
-      <p class="story-hint">💡 Highlighted words are this unit's key vocabulary. Click any highlighted word to review its meaning.</p>
-    </div>
-  </div>
-
-  <!-- Sec 2: Comprehension -->
-  <div class="sec-pane content" id="s0_2">
-    <!-- T/F -->
-    <div class="ex-card">
-      <div class="ex-card-title">Section A — True or False 判断对错</div>
-      <div class="ex-card-sub">Read the story, then decide whether each statement is True or False.</div>
-      <div id="tf0"></div>
-    </div>
-    <!-- MCQ -->
-    <div class="ex-card mt">
-      <div class="ex-card-title">Section B — Multiple Choice 选择题</div>
-      <div class="ex-card-sub">Choose the best answer for each question.</div>
-      <div id="mcq0"></div>
-    </div>
-  </div>
-
-  <!-- Sec 3: Practice -->
-  <div class="sec-pane content" id="s0_3">
-    <!-- Matching -->
-    <div class="ex-card">
-      <div class="ex-card-title">Activity A — Match words with meanings</div>
-      <div class="ex-card-sub">Click a word on the left, then click its matching meaning on the right.</div>
-      <div id="match0"></div>
-    </div>
-    <!-- Fill -->
-    <div class="ex-card mt">
-      <div class="ex-card-title">Activity B — Fill in the blanks</div>
-      <div class="ex-card-sub">Click a blank to select it, then click a word from the box below, or type your own answer.</div>
-      <div id="fill0"></div>
-    </div>
-  </div>
-
-  <!-- Sec 4: Speaking -->
-  <div class="sec-pane content" id="s0_4">
-    <div class="speak-card">
-      <h3>🗣 Speaking practice — answer these questions aloud</h3>
-      <div id="speak0"></div>
-      <div id="phrases0"></div>
-    </div>
-  </div>
-
-  <!-- Sec 5: Writing -->
-  <div class="sec-pane content" id="s0_5">
-    <div class="write-card">
-      <h3>✍️ Writing practice</h3>
-      <div id="write0"></div>
-    </div>
-  </div>
-
-  <!-- Sec 6: Review -->
-  <div class="sec-pane content" id="s0_6">
-    <div class="review-section">
-      <h3>Today's words 今日单词 <span>Click each card to flip</span></h3>
-      <div class="review-hint">📌 Click a card to reveal the Chinese meaning. Click again to flip back.</div>
-      <div class="review-grid" id="rev0"></div>
-      <h3>Collocations 常见搭配</h3>
-      <div class="mt"></div>
-      <table class="colloc-table" id="col0"></table>
-    </div>
-  </div>
-</div><!-- /unit 9 -->
-
-<!-- ═══════════════ UNIT 10 ═══════════════ -->
-<div class="unit-pane" id="pane1">
-  <div class="unit-header">
-    <div class="unit-num">10</div>
-    <div class="unit-meta">
-      <h3>Business, Trade &amp; Finance · 商业、贸易与金融</h3>
-      <p>40 target words · 7 parts · Categories: Business, Trade &amp; Markets, Finance &amp; Economics</p>
-    </div>
-    <div class="lvl-badge">Level 2 — Foundation</div>
-  </div>
-  <div class="sec-nav" id="nav1">
-    <button class="sec-btn active" onclick="switchSec(1,0)">1 · Vocabulary</button>
-    <button class="sec-btn" onclick="switchSec(1,1)">2 · Story</button>
-    <button class="sec-btn" onclick="switchSec(1,2)">3 · Comprehension</button>
-    <button class="sec-btn" onclick="switchSec(1,3)">4 · Practice</button>
-    <button class="sec-btn" onclick="switchSec(1,4)">5 · Speaking</button>
-    <button class="sec-btn" onclick="switchSec(1,5)">6 · Writing</button>
-    <button class="sec-btn" onclick="switchSec(1,6)">7 · Review</button>
-  </div>
-
-  <!-- Sec 0: Vocabulary -->
-  <div class="sec-pane active content" id="s1_0">
-    <div class="vocab-hint">📖 Click any word card to expand its meaning</div>
-    <div class="cat-label">Business &amp; Companies 商业与企业</div>
-    <div class="vocab-grid" id="vg1_cat0"></div>
-    <div class="cat-label">Trade &amp; Markets 贸易与市场</div>
-    <div class="vocab-grid" id="vg1_cat1"></div>
-    <div class="cat-label">Finance &amp; Economics 金融与经济</div>
-    <div class="vocab-grid" id="vg1_cat2"></div>
-  </div>
-
-  <!-- Sec 1: Story -->
-  <div class="sec-pane content" id="s1_1">
-    <div class="story-card">
-      <div class="story-title">📖 The Rise and Fall of Hartwick Industries</div>
-      <p>The Hartwick <mark>corporation</mark> was one of the country's most admired <mark>enterprise</mark>s. Founded sixty years ago as a small <mark>firm</mark> making machine parts, it had grown through careful <mark>management</mark> into a global business. Its key <mark>subsidiary</mark>, Hartwick Pacific, operated across Asia and contributed a third of the group's total output.</p>
-      <p>The company's <mark>productivity</mark> was exceptional. Its factories could <mark>manufacture</mark> over ten thousand units a day. Through a series of decisions to <mark>incorporate</mark> smaller rivals into its structure, Hartwick had built a dominant market position. When it announced plans to <mark>merge</mark> with its largest competitor, regulators feared it would create a <mark>monopoly</mark>.</p>
-      <p><mark>Trade</mark> was at the heart of Hartwick's success. The company thrived on international <mark>commerce</mark>, choosing to <mark>export</mark> finished goods to markets across three continents while it <mark>import</mark>ed raw materials at competitive prices. This global model had worked brilliantly — until the government changed course.</p>
-      <p>A new law introduced a steep <mark>tariff</mark> on imported steel, raising production costs overnight. At the same time, a strict <mark>quota</mark> limited how much Hartwick could export each year. Supporters of <mark>protectionism</mark> argued these rules would save local jobs. Critics warned they would disrupt the balance of <mark>supply</mark> and <mark>demand</mark>, reduce the confidence of every <mark>consumer</mark>, and cause the company's annual <mark>turnover</mark> to fall sharply.</p>
-      <p>The government offered a <mark>subsidy</mark> to help cover rising costs, but it was not enough. Hartwick's <mark>finance</mark> team reviewed the <mark>budget</mark> with growing alarm. The company had borrowed <mark>capital</mark> to <mark>invest</mark> in new technology, and the <mark>debt</mark> was mounting. <mark>Revenue</mark> was falling, and for the first time in decades, the firm recorded no <mark>profit</mark>.</p>
-      <p>The wider <mark>economy</mark> made things worse. <mark>Inflation</mark> pushed up the cost of energy and materials. The national <mark>currency</mark> weakened, making imports more expensive still. <mark>Unemployment</mark> rose in the towns that depended on Hartwick. Consumer spending — a key driver of <mark>economic</mark> growth — slowed to a halt.</p>
-      <p>Hartwick's board reviewed its <mark>savings</mark>, now almost gone. Total <mark>expenditure</mark> had outpaced income for three years in a row. The <mark>yield</mark> on its investments was far below expectations. Analysts warned that without urgent action, <mark>bankruptcy</mark> was possible. Even the company's <mark>taxation</mark> strategy needed reform to reduce the burden on operating costs.</p>
-      <p>But new leadership refused to give up. They restructured the firm's finances, focused on high-demand markets, and worked to bring <mark>revenue</mark> back to healthy levels. Within two years, the company had stabilised. The feared <mark>recession</mark> had tested them to the limit — but Hartwick had survived, and emerged stronger than before.</p>
-      <p class="story-hint">💡 Highlighted words are this unit's key vocabulary. Click any highlighted word to review its meaning.</p>
-    </div>
-  </div>
-
-  <!-- Sec 2: Comprehension -->
-  <div class="sec-pane content" id="s1_2">
-    <div class="ex-card">
-      <div class="ex-card-title">Section A — True or False 判断对错</div>
-      <div class="ex-card-sub">Read the story, then decide whether each statement is True or False.</div>
-      <div id="tf1"></div>
-    </div>
-    <div class="ex-card mt">
-      <div class="ex-card-title">Section B — Multiple Choice 选择题</div>
-      <div class="ex-card-sub">Choose the best answer for each question.</div>
-      <div id="mcq1"></div>
-    </div>
-  </div>
-
-  <!-- Sec 3: Practice -->
-  <div class="sec-pane content" id="s1_3">
-    <div class="ex-card">
-      <div class="ex-card-title">Activity A — Match words with meanings</div>
-      <div class="ex-card-sub">Click a word on the left, then click its matching meaning on the right.</div>
-      <div id="match1"></div>
-    </div>
-    <div class="ex-card mt">
-      <div class="ex-card-title">Activity B — Fill in the blanks</div>
-      <div class="ex-card-sub">Click a blank to select it, then click a word from the box or type your answer.</div>
-      <div id="fill1"></div>
-    </div>
-  </div>
-
-  <!-- Sec 4: Speaking -->
-  <div class="sec-pane content" id="s1_4">
-    <div class="speak-card">
-      <h3>🗣 Speaking practice — answer these questions aloud</h3>
-      <div id="speak1"></div>
-      <div id="phrases1"></div>
-    </div>
-  </div>
-
-  <!-- Sec 5: Writing -->
-  <div class="sec-pane content" id="s1_5">
-    <div class="write-card">
-      <h3>✍️ Writing practice</h3>
-      <div id="write1"></div>
-    </div>
-  </div>
-
-  <!-- Sec 6: Review -->
-  <div class="sec-pane content" id="s1_6">
-    <div class="review-section">
-      <h3>Today's words 今日单词 <span>Click each card to flip</span></h3>
-      <div class="review-hint">📌 Click a card to reveal the Chinese meaning. Click again to flip back.</div>
-      <div class="review-grid" id="rev1"></div>
-      <h3>Collocations 常见搭配</h3>
-      <div class="mt"></div>
-      <table class="colloc-table" id="col1"></table>
-    </div>
-  </div>
-</div><!-- /unit 10 -->
-
-<div style="height:40px"></div>
 
 <script>
-// ─────────────────────────────────────────────
-// DATA
-// ─────────────────────────────────────────────
 const DATA = [
   // ── UNIT 9 ──────────────────────────────────
   {
@@ -532,7 +381,7 @@ const DATA = [
         {s:"After a record-breaking year, every employee received a generous year-end ___.",w:"bonus"},
         {s:"For many teachers, education is not just a job — it is a ___.",w:"vocation"}
       ],
-      bank:["resign","supervise","promote","bonus","vocation"]
+      bank:["bonus","promote","vocation","resign","supervise"]
     },
     speaking:{
       qs:[
@@ -693,327 +542,167 @@ const DATA = [
   }
 ];
 
-// ─────────────────────────────────────────────
-// STATE
-// ─────────────────────────────────────────────
-let curUnit = 0;
-let fillState = [{answers:[], selected:null},{answers:[], selected:null}];
-let matchState = [{sel:null, pairs:new Set()},{sel:null, pairs:new Set()}];
+const MS=[{sel:null,done:[]},{sel:null,done:[]}];
+const FI=[[],[]];
 
-// ─────────────────────────────────────────────
-// UNIT / SECTION SWITCHING
-// ─────────────────────────────────────────────
-function switchUnit(u) {
-  curUnit = u;
-  document.querySelectorAll('.unit-tab').forEach((el,i) => el.classList.toggle('active', i===u));
-  document.querySelectorAll('.unit-pane').forEach((el,i) => el.classList.toggle('active', i===u));
+function switchUnit(u){
+  document.querySelectorAll('.unit-btn').forEach((b,i)=>b.classList.toggle('active',i===u));
+  document.querySelectorAll('.unit-panel').forEach((p,i)=>p.classList.toggle('active',i===u));
+}
+function switchPart(u,p){
+  document.querySelectorAll(`#pnav${u} .part-btn`).forEach((b,i)=>b.classList.toggle('active',i===p));
+  for(let i=0;i<7;i++){const e=document.getElementById(`u${u}p${i}`);if(e)e.classList.toggle('active',i===p);}
 }
 
-function switchSec(u, s) {
-  const nav = document.getElementById('nav'+u);
-  nav.querySelectorAll('.sec-btn').forEach((el,i) => el.classList.toggle('active', i===s));
-  const pane = document.getElementById('pane'+u);
-  pane.querySelectorAll('.sec-pane').forEach((el,i) => el.classList.toggle('active', i===s));
-}
-
-// ─────────────────────────────────────────────
-// VOCABULARY
-// ─────────────────────────────────────────────
-function buildVocab() {
-  DATA.forEach((ud, ui) => {
-    ud.cats.forEach((cat, ci) => {
-      const grid = document.getElementById('vg'+ui+'_cat'+ci);
-      grid.innerHTML = cat.words.map((w,wi) => `
-        <div class="word-card" id="wc${ui}_${ci}_${wi}" onclick="toggleCard(this)">
-          <div class="word-card-head">
-            <span class="word">${w.w}</span>
-            <span class="pos">${w.p}</span>
-            <span class="cn">${w.c}</span>
-            <span class="def-preview">${w.d}</span>
-            <span class="toggle"></span>
-          </div>
-          <div class="word-card-body">
-            <div class="full-def">${w.d}</div>
-            <div class="example">"${w.e}"</div>
-          </div>
-        </div>`).join('');
+function buildVocab(u){
+  const g=document.getElementById('vg'+u);
+  if(g.children.length)return;
+  const d=DATA[u];
+  d.cats.forEach(cat=>{
+    const lbl=document.createElement('div');lbl.className='cat-label';lbl.textContent=cat.label;g.appendChild(lbl);
+    cat.words.forEach((w,i)=>{
+      const vi=document.createElement('div');vi.className='vocab-item';
+      const id=`vb${u}_${cat.label.replace(/\s/g,'_')}_${i}`;
+      vi.innerHTML=`<div class="vocab-head" onclick="tV('${id}')"><span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span><span class="v-cn">${w.c}</span><span class="v-toggle" id="vt_${id}">+ more</span></div><div class="vocab-body" id="${id}"><div class="v-meaning">${w.d}</div><div class="v-eg">"${w.e}"</div></div>`;
+      g.appendChild(vi);
     });
   });
 }
-function toggleCard(el) { el.classList.toggle('open'); }
-
-// ─────────────────────────────────────────────
-// T / F
-// ─────────────────────────────────────────────
-function buildTF() {
-  DATA.forEach((ud, ui) => {
-    document.getElementById('tf'+ui).innerHTML = ud.tf.map((t,i) => `
-      <div class="q-item" id="tf${ui}_${i}">
-        <div class="q-text"><span class="q-num">${i+1}.</span> ${t.q}</div>
-        <div class="tf-row">
-          <button class="tf-btn" onclick="checkTF(${ui},${i},true,${t.a})">True ✓</button>
-          <button class="tf-btn" onclick="checkTF(${ui},${i},false,${t.a})">False ✗</button>
-        </div>
-      </div>`).join('');
-  });
-}
-function checkTF(u, i, chosen, correct) {
-  const el = document.getElementById('tf'+u+'_'+i);
-  const btns = el.querySelectorAll('.tf-btn');
-  btns.forEach(b => b.disabled = true);
-  btns[0].classList.add(correct===true ? 'ok' : (chosen===true ? 'bad' : ''));
-  btns[1].classList.add(correct===false ? 'ok' : (chosen===false ? 'bad' : ''));
+function tV(id){
+  const b=document.getElementById(id),t=document.getElementById('vt_'+id);
+  const o=b.classList.toggle('open');t.textContent=o?'- less':'+ more';
 }
 
-// ─────────────────────────────────────────────
-// MCQ
-// ─────────────────────────────────────────────
-function buildMCQ() {
-  DATA.forEach((ud, ui) => {
-    document.getElementById('mcq'+ui).innerHTML = ud.mcq.map((m,i) => `
-      <div class="q-item" id="mcq${ui}_${i}">
-        <div class="q-text"><span class="q-num">${i+1}.</span> ${m.q}</div>
-        <div class="mcq-opts">
-          ${m.opts.map((o,j) => `<button class="mcq-opt" onclick="checkMCQ(${ui},${i},${j},${m.ans})">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}
-        </div>
-      </div>`).join('');
+function buildTF(u){
+  const el=document.getElementById('tf'+u);if(el.innerHTML)return;
+  DATA[u].tf.forEach((x,i)=>{
+    const r=document.createElement('div');r.className='tf-row';
+    r.innerHTML=`<span class="tf-q">${i+1}. ${x.q}</span><div class="tf-btns"><button class="tf-btn" id="tT${u}${i}" onclick="dTF(${u},${i},true)">T</button><button class="tf-btn" id="tF${u}${i}" onclick="dTF(${u},${i},false)">F</button></div><span class="tf-result" id="tR${u}${i}"></span>`;
+    el.appendChild(r);
   });
 }
-function checkMCQ(u, qi, chosen, correct) {
-  const el = document.getElementById('mcq'+u+'_'+qi);
-  const btns = el.querySelectorAll('.mcq-opt');
-  btns.forEach(b => b.disabled = true);
-  btns[chosen].classList.add(chosen===correct ? 'ok' : 'bad');
-  if (chosen !== correct) btns[correct].classList.add('reveal');
+function dTF(u,i,v){
+  const c=DATA[u].tf[i].a;
+  const tB=document.getElementById(`tT${u}${i}`),fB=document.getElementById(`tF${u}${i}`),r=document.getElementById(`tR${u}${i}`);
+  tB.disabled=fB.disabled=true;
+  if(v===c){(v?tB:fB).classList.add('correct');r.textContent='✓ Correct';r.style.color='var(--correct)';}
+  else{(v?tB:fB).classList.add('wrong');(c?tB:fB).classList.add('correct');r.textContent='✗ Incorrect';r.style.color='var(--wrong)';}
 }
 
-// ─────────────────────────────────────────────
-// MATCHING
-// ─────────────────────────────────────────────
-function buildMatch() {
-  DATA.forEach((ud, ui) => {
-    const m = ud.match;
-    document.getElementById('match'+ui).innerHTML = `
-      <div class="match-wrap">
-        <div class="match-col">
-          <div class="match-col-lbl">Words</div>
-          ${m.ws.map((w,i) => `<div class="match-item match-word" id="mw${ui}_${i}" onclick="selMatch(${ui},'w',${i})">${w}</div>`).join('')}
-        </div>
-        <div class="match-col">
-          <div class="match-col-lbl">Meanings</div>
-          ${m.ds.map((d,i) => `<div class="match-item" id="md${ui}_${i}" onclick="selMatch(${ui},'d',${i})">${d}</div>`).join('')}
-        </div>
-      </div>
-      <div class="match-fb" id="mfb${ui}"></div>`;
-    matchState[ui] = {sel:null, pairs:new Set()};
+function buildMC(u){
+  const el=document.getElementById('mc'+u);if(el.innerHTML)return;
+  DATA[u].mcq.forEach((x,qi)=>{
+    const b=document.createElement('div');b.className='mc-block';
+    b.innerHTML=`<div class="mc-q">${qi+1}. ${x.q}</div><div class="mc-opts">${x.opts.map((o,oi)=>`<button class="mc-opt" id="mc${u}${qi}${oi}" onclick="dMC(${u},${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</button>`).join('')}</div>`;
+    el.appendChild(b);
   });
 }
-function selMatch(u, side, idx) {
-  const ms = matchState[u];
-  const ud = DATA[u];
-  if (ms.sel === null) {
-    ms.sel = {side, idx};
-    document.querySelectorAll(`#match${u} .match-item`).forEach(e => e.classList.remove('sel'));
-    document.getElementById(`m${side==='w'?'w':'d'}${u}_${idx}`).classList.add('sel');
-  } else if (ms.sel.side === side) {
-    document.querySelectorAll(`#match${u} .match-item`).forEach(e => e.classList.remove('sel'));
-    ms.sel = {side, idx};
-    document.getElementById(`m${side==='w'?'w':'d'}${u}_${idx}`).classList.add('sel');
-  } else {
-    const wi = ms.sel.side==='w' ? ms.sel.idx : idx;
-    const di = ms.sel.side==='d' ? ms.sel.idx : idx;
-    const ok = ud.match.correct[wi] === di;
-    const we = document.getElementById(`mw${u}_${wi}`);
-    const de = document.getElementById(`md${u}_${di}`);
-    document.querySelectorAll(`#match${u} .match-item`).forEach(e => e.classList.remove('sel'));
-    if (ok) {
-      we.classList.add('ok'); de.classList.add('ok');
-      ms.pairs.add(wi);
-      if (ms.pairs.size === ud.match.ws.length)
-        document.getElementById('mfb'+u).textContent = '🎉 All matched correctly! Well done!';
-    } else {
-      we.classList.add('err'); de.classList.add('err');
-      setTimeout(() => { we.classList.remove('err'); de.classList.remove('err'); }, 700);
+function dMC(u,qi,oi){
+  const c=DATA[u].mcq[qi].ans;
+  for(let i=0;i<4;i++){const b=document.getElementById(`mc${u}${qi}${i}`);if(b){b.disabled=true;if(i===c)b.classList.add('correct');else if(i===oi)b.classList.add('wrong');}}
+}
+
+function buildMatch(u){
+  const el=document.getElementById('match'+u);if(el.innerHTML)return;
+  const m=DATA[u].match;
+  const g=document.createElement('div');g.className='match-grid';
+  m.ws.forEach((w,i)=>{
+    const wb=document.createElement('button');wb.className='match-word';wb.id=`mw${u}${i}`;wb.textContent=w;wb.onclick=()=>pW(u,i);g.appendChild(wb);
+    const db=document.createElement('button');db.className='match-def';db.id=`md${u}${i}`;db.textContent=m.ds[i];db.onclick=()=>pD(u,i);g.appendChild(db);
+  });
+  el.appendChild(g);
+}
+function pW(u,i){
+  if(document.getElementById(`mw${u}${i}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="mw${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel');});
+  document.getElementById(`mw${u}${i}`).classList.add('sel');
+  MS[u].sel=i;
+}
+function pD(u,di){
+  if(document.getElementById(`md${u}${di}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="md${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel','err');});
+  document.getElementById(`md${u}${di}`).classList.add('sel');
+  if(MS[u].sel===null)return;
+  const wi=MS[u].sel;
+  const correct_di=DATA[u].match.correct[wi];
+  const wB=document.getElementById(`mw${u}${wi}`),dB=document.getElementById(`md${u}${di}`);
+  if(di===correct_di){
+    wB.classList.remove('sel');wB.classList.add('done');
+    dB.classList.remove('sel');dB.classList.add('done');
+    MS[u].done.push(wi);
+    if(MS[u].done.length===DATA[u].match.ws.length){
+      document.getElementById(`match${u}-r`).innerHTML=`<div class="score-bar good" style="margin-top:.75rem"><span class="score-num">5/5</span><span class="score-label">All matched correctly!</span></div>`;
     }
-    ms.sel = null;
+  }else{
+    dB.classList.add('err');
+    setTimeout(()=>{if(dB)dB.classList.remove('err','sel');},700);
+    wB.classList.remove('sel');
   }
+  MS[u].sel=null;
 }
 
-// ─────────────────────────────────────────────
-// FILL IN BLANK
-// ─────────────────────────────────────────────
-function buildFill() {
-  DATA.forEach((ud, ui) => {
-    const f = ud.fill;
-    fillState[ui] = {answers: Array(f.sents.length).fill(null), selected: null};
-    const sHTML = f.sents.map((s,i) => {
-      const pts = s.s.split('___');
-      return `<div class="fill-item">
-        <div class="fill-sent">
-          <span class="q-num">${i+1}.</span> ${pts[0]}<input class="fill-input" id="fi${ui}_${i}" type="text"
-            placeholder="..." onclick="selBlank(${ui},${i})" oninput="typeBlank(${ui},${i},this.value)">${pts[1]}
-        </div>
-      </div>`;
-    }).join('');
-    const bankHTML = `<div class="word-bank">
-      ${f.bank.map((w,i) => `<div class="chip" id="ch${ui}_${i}" onclick="useChip(${ui},'${w}',${i})">${w}</div>`).join('')}
-    </div>`;
-    document.getElementById('fill'+ui).innerHTML = `
-      ${sHTML}${bankHTML}
-      <div class="prac-btns">
-        <button class="check-btn" onclick="checkFill(${ui})">Check answers</button>
-        <button class="reset-btn" onclick="resetFill(${ui})">Reset</button>
-        <span id="fs${ui}"></span>
-      </div>`;
+function buildFib(u){
+  const ce=document.getElementById('chips'+u),fe=document.getElementById('fib'+u);
+  if(ce.innerHTML)return;
+  const bank=[...DATA[u].fill.bank];
+  // shuffle
+  for(let i=bank.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bank[i],bank[j]]=[bank[j],bank[i]];}
+  bank.forEach(c=>{
+    const s=document.createElement('span');s.className='chip';s.id=`ch${u}${c}`;s.textContent=c;
+    s.onclick=()=>{const a=document.activeElement;if(a&&a.classList.contains('fib-input')&&!a.value){a.value=c;s.classList.add('used');}};
+    ce.appendChild(s);
+  });
+  DATA[u].fill.sents.forEach((r,i)=>{
+    const parts=r.s.split('___');
+    const row=document.createElement('div');row.className='fib-row';
+    row.innerHTML=`<span class="fib-num">${i+1}.</span><span>${parts[0]}</span><input class="fib-input" id="fi${u}${i}" autocomplete="off" placeholder="&hellip;"/><span>${parts[1]||''}</span>`;
+    fe.appendChild(row);
+    FI[u].push(document.getElementById(`fi${u}${i}`));
   });
 }
-function selBlank(u, i) { fillState[u].selected = i; }
-function typeBlank(u, i, val) {
-  fillState[u].answers[i] = val.trim().toLowerCase() || null;
-  const inp = document.getElementById('fi'+u+'_'+i);
-  inp.classList.remove('ok','bad');
-}
-function useChip(u, word, ci) {
-  const fs = fillState[u];
-  if (fs.selected === null) return;
-  const i = fs.selected;
-  const ud = DATA[u];
-  // unmark old chip for this blank
-  const prev = fs.answers[i];
-  if (prev) {
-    const oi = ud.fill.bank.indexOf(prev);
-    if (oi >= 0) { const oc = document.getElementById('ch'+u+'_'+oi); if(oc) oc.classList.remove('used'); }
-  }
-  fs.answers[i] = word;
-  const inp = document.getElementById('fi'+u+'_'+i);
-  inp.value = word;
-  inp.classList.remove('ok','bad');
-  document.getElementById('ch'+u+'_'+ci).classList.add('used');
-  // advance
-  const next = fs.answers.findIndex((a,j) => j > i && a === null);
-  if (next >= 0) { fs.selected = next; document.getElementById('fi'+u+'_'+next).focus(); }
-  else fs.selected = null;
-}
-function checkFill(u) {
-  const ud = DATA[u]; const fs = fillState[u]; let sc = 0;
-  ud.fill.sents.forEach((s,i) => {
-    const inp = document.getElementById('fi'+u+'_'+i);
-    const ans = (fs.answers[i] || '').toLowerCase().trim();
-    const ok = ans === s.w.toLowerCase();
-    inp.classList.remove('ok','bad'); inp.classList.add(ok ? 'ok' : 'bad');
-    if (ok) sc++;
+function chkFib(u){
+  let ok=0;const n=DATA[u].fill.sents.length;
+  DATA[u].fill.sents.forEach((r,i)=>{
+    const inp=FI[u][i];const v=inp.value.trim().toLowerCase();const a=r.w.toLowerCase();
+    inp.classList.remove('correct','wrong');
+    if(v===a||v===a+'s'||v===a+'d'||v===a+'ed'){inp.classList.add('correct');ok++;}else inp.classList.add('wrong');
   });
-  document.getElementById('fs'+u).innerHTML = `<span class="score-badge">${sc} / ${ud.fill.sents.length}</span>`;
+  document.getElementById(`fib${u}-s`).innerHTML=`<div class="score-bar${ok===n?' good':''}" style="margin-top:.5rem"><span class="score-num">${ok}/${n}</span><span class="score-label">${ok===n?'Perfect! All correct!':ok>n/2?'Good effort! Check the red ones.':'Keep trying!'}</span></div>`;
 }
-function resetFill(u) {
-  const ud = DATA[u];
-  fillState[u] = {answers: Array(ud.fill.sents.length).fill(null), selected: null};
-  ud.fill.sents.forEach((_,i) => {
-    const inp = document.getElementById('fi'+u+'_'+i);
-    inp.value = ''; inp.classList.remove('ok','bad');
-  });
-  ud.fill.bank.forEach((_,i) => {
-    const ch = document.getElementById('ch'+u+'_'+i);
-    if(ch) ch.classList.remove('used');
-  });
-  document.getElementById('fs'+u).innerHTML = '';
+function rstFib(u){
+  DATA[u].fill.sents.forEach((_,i)=>{const inp=FI[u][i];inp.value='';inp.classList.remove('correct','wrong');});
+  DATA[u].fill.bank.forEach(c=>{const ch=document.getElementById(`ch${u}${c}`);if(ch)ch.classList.remove('used');});
+  document.getElementById(`fib${u}-s`).innerHTML='';
 }
 
-// ─────────────────────────────────────────────
-// SPEAKING
-// ─────────────────────────────────────────────
-function buildSpeaking() {
-  DATA.forEach((ud, ui) => {
-    document.getElementById('speak'+ui).innerHTML = ud.speaking.qs.map((q,i) =>
-      `<div class="speak-q"><b>${i+1}.</b>${q}</div>`).join('');
-    const phs = ud.speaking.phrases.split('|').map(p => p.trim());
-    document.getElementById('phrases'+ui).innerHTML = `
-      <div class="phrases-box">
-        <div class="phrases-lbl">💡 Useful phrases:</div>
-        ${phs.map(p => `<span class="phrase"><b>${p}</b></span>`).join('')}
-      </div>`;
+function buildSpeak(u){
+  const el=document.getElementById('spk'+u);if(el.innerHTML)return;
+  DATA[u].speaking.qs.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='speak-card';
+    d.innerHTML=`<span class="speak-num">${i+1}.</span><span>${q}</span>`;
+    el.appendChild(d);
   });
+  const ph=document.getElementById('ph'+u);
+  const parts=DATA[u].speaking.phrases.split('|').map(p=>`<strong>${p.trim()}</strong>`);
+  ph.innerHTML='Useful phrases: '+parts.join(' &nbsp;|&nbsp; ');
 }
 
-// ─────────────────────────────────────────────
-// WRITING
-// ─────────────────────────────────────────────
-function buildWriting() {
-  DATA.forEach((ud, ui) => {
-    document.getElementById('write'+ui).innerHTML = `
-      <div class="write-prompt">${ud.writing.en}</div>
-      <div class="write-cn">${ud.writing.cn}</div>
-      <textarea class="write-area" placeholder="${ud.writing.hint}" oninput="updWC(${ui},this)"></textarea>
-      <div class="wc-info"><span id="wc${ui}">0 words</span><span>Target: 250–280 words</span></div>`;
-  });
-}
-function updWC(u, ta) {
-  const t = ta.value.trim();
-  document.getElementById('wc'+u).textContent = (t ? t.split(/\s+/).length : 0) + ' words';
+function buildWrite(u){
+  const d=DATA[u].writing;
+  document.getElementById(`wp${u}en`).textContent=d.en;
+  document.getElementById(`wp${u}cn`).textContent=d.cn;
+  document.getElementById(`wp${u}hint`).textContent=d.hint;
+  const ta=document.getElementById('wr'+u),wc=document.getElementById('wc'+u);
+  ta.addEventListener('input',()=>{const n=ta.value.trim().split(/\s+/).filter(w=>w).length;wc.textContent=n+' word'+(n!==1?'s':'');});
 }
 
-// ─────────────────────────────────────────────
-// REVIEW
-// ─────────────────────────────────────────────
-function buildReview() {
-  DATA.forEach((ud, ui) => {
-    document.getElementById('rev'+ui).innerHTML = ud.review.map(([w,c]) => `
-      <div class="flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="flip-inner">
-          <div class="flip-face flip-front">${w}</div>
-          <div class="flip-face flip-back">${c}</div>
-        </div>
-      </div>`).join('');
-    document.getElementById('col'+ui).innerHTML = `
-      <thead><tr><th>#</th><th>Phrase 短语</th><th>中文</th></tr></thead>
-      <tbody>${ud.collocations.map(([p,c],i) => `
-        <tr><td>${i+1}</td><td class="colloc-en">${p}</td><td class="colloc-cn">${c}</td></tr>`).join('')}
-      </tbody>`;
-  });
+function buildRev(u){
+  const re=document.getElementById('rev'+u),co=document.getElementById('col'+u);if(re.innerHTML)return;
+  DATA[u].review.forEach(([en,cn])=>{const d=document.createElement('div');d.className='review-item';d.innerHTML=`<span class="r-en">${en}</span><span class="r-cn">${cn}</span>`;re.appendChild(d);});
+  DATA[u].collocations.forEach(([en,cn])=>{const d=document.createElement('div');d.className='colloc-item';d.innerHTML=`<div class="c-en">${en}</div><div class="c-cn">${cn}</div>`;co.appendChild(d);});
 }
 
-// ─────────────────────────────────────────────
-// STORY: click highlighted word to show meaning
-// ─────────────────────────────────────────────
-function bindStoryMarks() {
-  document.querySelectorAll('.story-card mark').forEach(mk => {
-    const word = mk.textContent.toLowerCase().replace(/[^a-z]/g,'');
-    mk.title = 'Click to see definition';
-    mk.onclick = () => {
-      let found = null;
-      DATA.forEach(ud => {
-        ud.cats.forEach(cat => {
-          cat.words.forEach(w => {
-            if (w.w.toLowerCase() === word) found = w;
-          });
-        });
-      });
-      if (found) {
-        const existing = mk.nextElementSibling;
-        if (existing && existing.classList.contains('mark-popup')) { existing.remove(); return; }
-        const pop = document.createElement('span');
-        pop.className = 'mark-popup';
-        pop.style.cssText = 'display:inline-block;background:#1a365d;color:#fff;padding:3px 10px;border-radius:6px;font-size:.78rem;margin-left:6px;font-weight:500;cursor:pointer';
-        pop.textContent = `${found.c} — ${found.d.slice(0,60)}${found.d.length>60?'…':''}`;
-        pop.onclick = e => { e.stopPropagation(); pop.remove(); };
-        mk.parentNode.insertBefore(pop, mk.nextSibling);
-      }
-    };
-  });
-}
-
-// ─────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────
-buildVocab();
-buildTF();
-buildMCQ();
-buildMatch();
-buildFill();
-buildSpeaking();
-buildWriting();
-buildReview();
-bindStoryMarks();
+[0,1].forEach(u=>{buildVocab(u);buildTF(u);buildMC(u);buildMatch(u);buildFib(u);buildSpeak(u);buildWrite(u);buildRev(u);});
 </script>
 </body>
 </html>

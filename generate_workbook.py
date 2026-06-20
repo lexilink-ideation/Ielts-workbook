@@ -1,9 +1,242 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+IELTS Workbook Generator — Lexilink Ideation
+=============================================
+Drop any file into the input/ folder (vocabulary list, reading passage,
+or listening script), then run:
+
+    python3 generate_workbook.py
+
+Optional arguments:
+    --units  9-10          override auto-detected unit numbers
+    --level  2             1=Beginner  2=Foundation(default)  3=Academic
+    --model  claude-opus-4-5   override Claude model (default: claude-opus-4-5)
+
+Requirements:
+    pip install anthropic pdfplumber
+    export ANTHROPIC_API_KEY=sk-ant-...
+"""
+
+import os, sys, json, re, glob, argparse, random
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+INPUT_DIR = BASE_DIR / "input"
+
+# ─── Level labels ────────────────────────────────────────────────────────────
+
+LEVEL_LABELS = {
+    1: "Level 1 — Beginner",
+    2: "Level 2 — Foundation",
+    3: "Level 3 — Academic",
+}
+
+# ─── Auto-detect next unit pair ──────────────────────────────────────────────
+
+def get_next_unit_pair():
+    existing = sorted(glob.glob(str(BASE_DIR / "IELTS_Workbook_Units*.html")))
+    if not existing:
+        return 9, 10
+    last_b = 0
+    for f in existing:
+        m = re.search(r"Units(\d+)-(\d+)", f)
+        if m:
+            last_b = max(last_b, int(m.group(2)))
+    return last_b + 1, last_b + 2
+
+# ─── Read input file ─────────────────────────────────────────────────────────
+
+def read_input():
+    files = sorted(
+        [f for f in INPUT_DIR.iterdir() if f.is_file() and not f.name.startswith(".")],
+        key=lambda x: x.stat().st_mtime,
+        reverse=True,
+    )
+    if not files:
+        sys.exit(f"❌  No files found in {INPUT_DIR}. Drop a .txt or .pdf there first.")
+
+    path = files[0]
+    print(f"📄  Input file: {path.name}")
+
+    if path.suffix.lower() == ".pdf":
+        try:
+            import pdfplumber
+            with pdfplumber.open(path) as pdf:
+                text = "\n".join(p.extract_text() or "" for p in pdf.pages)
+        except ImportError:
+            sys.exit("❌  pdfplumber not installed. Run: pip install pdfplumber")
+    else:
+        text = path.read_text(encoding="utf-8", errors="ignore")
+
+    return text.strip(), path.name
+
+# ─── Call Claude API ─────────────────────────────────────────────────────────
+
+PROMPT_TEMPLATE = """\
+You are an expert IELTS vocabulary curriculum designer for a senior high school \
+workbook targeting Chinese learners (A2 → IELTS Band 6+).
+
+Below is source material (a vocabulary list, reading passage, or listening script).
+From it, identify TWO distinct IELTS topic themes and select 10 words for each theme.
+Prioritise words that recur in IELTS Cambridge reading/writing tasks.
+
+SOURCE MATERIAL (first 7000 chars):
+{source}
+
+LEVEL: {level_label}
+
+Return ONLY valid JSON — no markdown fences, no explanation — matching this schema exactly:
+
+{{
+  "unit_a": {{
+    "topic_en": "Topic Name",
+    "topic_cn": "中文主题",
+    "story_title": "Character's Story Title",
+    "write_prompt_en": "Writing prompt in English. Use at least 5 words from today's unit.",
+    "write_prompt_cn": "写作提示中文版。尽量用5个今天学过的单词。",
+    "speak_hints": "Phrase one… | Phrase two… | Phrase three…",
+    "words": [
+      {{"w": "word", "p": "n./v./adj./adv.", "cn": "中文释义(≤8字)", "m": "Clear English definition.", "eg": "Natural example sentence at B1-B2 level."}}
+    ],
+    "story": [
+      ["Paragraph text with ", {{"h": "word"}}, " embedded naturally, etc."]
+    ],
+    "tf": [{{"q": "Statement about the story?", "a": true}}],
+    "mc": [{{"q": "Question?", "o": ["Option A", "Option B", "Option C", "Option D"], "a": 0}}],
+    "match": {{
+      "words": ["w1","w2","w3","w4","w5"],
+      "defs":  ["def for w3","def for w1","def for w4","def for w5","def for w2"],
+      "correct": [1, 4, 0, 2, 3]
+    }},
+    "fib": {{
+      "chips": ["w1","w2","w3","w4","w5"],
+      "rows": [{{"pre": "Sentence start ", "suf": " sentence end.", "ans": "w1"}}]
+    }},
+    "speak": ["Question 1?", "Question 2?", "Question 3?", "Question 4?", "Question 5?"],
+    "rev": [["word","中文"]],
+    "col": [["collocation phrase","中文搭配"]]
+  }},
+  "unit_b": {{ ...same structure... }}
+}}
+
+STRICT RULES:
+• Each unit has EXACTLY 10 words, EXACTLY 5 tf, EXACTLY 5 mc, EXACTLY 5 match pairs, \
+EXACTLY 5 fib rows, EXACTLY 5 speak questions, 10 rev pairs, 10 col pairs.
+• Story: 4–5 natural paragraphs; ALL 10 words must appear, marked as {{"h":"word"}} in the array.
+• match.correct[i] = index in match.defs that is the correct definition for match.words[i]. \
+  Defs must NOT be in word order (pre-shuffle them so it's a real matching challenge).
+• fib rows must NOT use the same word as the speak hints or story title.
+• Chinese definitions ≤ 8 characters.
+• unit_a and unit_b must cover DIFFERENT topics and use completely different word sets.
+"""
+
+def call_api(source_text: str, level: int, model: str) -> dict:
+    import anthropic
+    client = anthropic.Anthropic()
+
+    prompt = PROMPT_TEMPLATE.format(
+        source=source_text[:7000],
+        level_label=LEVEL_LABELS[level],
+    )
+
+    print(f"🤖  Calling {model} to generate content…")
+    response = client.messages.create(
+        model=model,
+        max_tokens=8000,
+        messages=[{"role": "user", "content": prompt}],
+    )
+
+    raw = response.content[0].text.strip()
+    # Strip markdown fences if the model adds them anyway
+    raw = re.sub(r"^```json\s*", "", raw)
+    raw = re.sub(r"\s*```$", "", raw)
+
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError as e:
+        sys.exit(f"❌  JSON parse error: {e}\n\nRaw response:\n{raw[:500]}")
+
+# ─── HTML builder ────────────────────────────────────────────────────────────
+
+def esc(s: str) -> str:
+    """Escape & and < > for HTML attributes / display text."""
+    return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+def speak_hints_html(hints_str: str) -> str:
+    parts = [p.strip() for p in hints_str.split("|")]
+    joined = " &nbsp;|&nbsp; ".join(f"<strong>{esc(p)}</strong>" for p in parts)
+    return f'Useful phrases: {joined}'
+
+def build_html(data: dict, unit_a: int, unit_b: int, level: int) -> str:
+    ua = data["unit_a"]
+    ub = data["unit_b"]
+
+    level_label = LEVEL_LABELS[level]
+    pair_str    = f"Units {unit_a}–{unit_b}"   # "Units 9–10"
+    pair_dash   = f"Units{unit_a}-{unit_b}"               # "Units9-10"
+
+    topics_en = f"{esc(ua['topic_en'])} &nbsp;&middot;&nbsp; {esc(ub['topic_en'])}"
+    topics_cn = f"{ua['topic_cn']} · {ub['topic_cn']}"
+
+    # Serialize the JS data array
+    js_units = []
+    for u in (ua, ub):
+        # Shuffle the word-bank chips so they don't appear in answer order
+        shuffled_chips = u["fib"]["chips"][:]
+        random.shuffle(shuffled_chips)
+        fib_shuffled = {**u["fib"], "chips": shuffled_chips}
+        js_units.append({
+            "words":  u["words"],
+            "story":  u["story"],
+            "tf":     u["tf"],
+            "mc":     u["mc"],
+            "match":  u["match"],
+            "fib":    fib_shuffled,
+            "speak":  u["speak"],
+            "rev":    u["rev"],
+            "col":    u["col"],
+        })
+    data_js = json.dumps(js_units, ensure_ascii=False, indent=2)
+
+    html = HTML_TEMPLATE
+    html = html.replace("%%TITLE%%",          f"IELTS Vocabulary Workbook — {pair_str} — Lexilink Ideation IELTS Studio")
+    html = html.replace("%%PAIR_STR%%",       pair_str)
+    html = html.replace("%%TOPICS_EN%%",      topics_en)
+    html = html.replace("%%TOPICS_CN%%",      topics_cn)
+    html = html.replace("%%LEVEL_LABEL%%",    level_label)
+    html = html.replace("%%UNIT_A_NUM%%",     str(unit_a))
+    html = html.replace("%%UNIT_A_TOPIC_EN%%", esc(ua["topic_en"]))
+    html = html.replace("%%UNIT_A_TOPIC_CN%%", ua["topic_cn"])
+    html = html.replace("%%UNIT_B_NUM%%",     str(unit_b))
+    html = html.replace("%%UNIT_B_TOPIC_EN%%", esc(ub["topic_en"]))
+    html = html.replace("%%UNIT_B_TOPIC_CN%%", ub["topic_cn"])
+    html = html.replace("%%STORY_TITLE_A%%",  esc(ua["story_title"]))
+    html = html.replace("%%STORY_TITLE_B%%",  esc(ub["story_title"]))
+    html = html.replace("%%WRITE_EN_A%%",     esc(ua["write_prompt_en"]))
+    html = html.replace("%%WRITE_CN_A%%",     esc(ua["write_prompt_cn"]))
+    html = html.replace("%%WRITE_EN_B%%",     esc(ub["write_prompt_en"]))
+    html = html.replace("%%WRITE_CN_B%%",     esc(ub["write_prompt_cn"]))
+    html = html.replace("%%SPEAK_HINTS_A%%",  speak_hints_html(ua["speak_hints"]))
+    html = html.replace("%%SPEAK_HINTS_B%%",  speak_hints_html(ub["speak_hints"]))
+    html = html.replace("%%DATA_JS%%",        data_js)
+
+    return html
+
+# ─── HTML template ───────────────────────────────────────────────────────────
+# Placeholders: %%TITLE%% %%PAIR_STR%% %%TOPICS_EN%% %%TOPICS_CN%%
+#   %%LEVEL_LABEL%% %%UNIT_A_NUM%% %%UNIT_A_TOPIC_EN%% %%UNIT_A_TOPIC_CN%%
+#   %%UNIT_B_NUM%% %%UNIT_B_TOPIC_EN%% %%UNIT_B_TOPIC_CN%%
+#   %%STORY_TITLE_A%% %%STORY_TITLE_B%%
+#   %%WRITE_EN_A%% %%WRITE_CN_A%% %%WRITE_EN_B%% %%WRITE_CN_B%%
+#   %%SPEAK_HINTS_A%% %%SPEAK_HINTS_B%%
+#   %%DATA_JS%%
+
+HTML_TEMPLATE = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IELTS Vocabulary Workbook — Units 3–4 — Lexilink Ideation IELTS Studio</title>
+<title>%%TITLE%%</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -13,11 +246,10 @@ body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;
 :root{--teal:#1A7A8A;--teal-dk:#115966;--teal-lt:#D6EEF1;--teal-pl:#EEF8FA;--gold:#C9930A;--gold-lt:#FDF3D8;--gold-pl:#FFFBF0;--sf:#FFFFFF;--bg:#F3F7F8;--bd:#DDE5E8;--tx:#1C2B33;--mu:#5A7280;--ok-bg:#E1F5EE;--ok:#0F6E56;--er-bg:#FCEBEB;--er:#A32D2D}
 .page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
 .topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
 .topbar-logo{font-weight:600;letter-spacing:.08em}
 .topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
 .topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
-.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
-
 .cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
 .cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
 .cover-title{font-size:clamp(22px,5vw,36px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
@@ -136,185 +368,100 @@ body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;
 </head>
 <body>
 <div class="topbar">
-  <div class="topbar-left"><span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
-  <span>IELTS Vocabulary Workbook — Units 3–4</span></div>
-  <a class="topbar-home" href="index.html">← Home 首页</a>
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span>IELTS Vocabulary Workbook &mdash; %%PAIR_STR%%</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
 </div>
 <div class="cover">
   <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
   <div class="cover-title">IELTS Vocabulary Workbook</div>
-  <div class="cover-units">Units 3–4</div>
-  <div class="cover-sub">Food &amp; Health &nbsp;·&nbsp; Travel &nbsp;|&nbsp; 食物与健康 · 旅行</div>
+  <div class="cover-units">%%PAIR_STR%%</div>
+  <div class="cover-sub">%%TOPICS_EN%% &nbsp;|&nbsp; %%TOPICS_CN%%</div>
   <div class="cover-badges">
-    <span class="badge">Level 1</span>
+    <span class="badge">%%LEVEL_LABEL%%</span>
     <span class="badge">20 target words</span>
     <span class="badge">Interactive exercises</span>
   </div>
-  <div class="cover-tip"><strong>How to use</strong>Study vocabulary → Read the story → Complete the exercises. Click any word card to see its meaning. Answers are checked instantly.</div>
+  <div class="cover-tip"><strong>How to use</strong>Study vocabulary &rarr; Read the story &rarr; Complete the exercises. Click any word card to see its meaning. Answers are checked instantly.</div>
 </div>
 
 <div class="page">
   <div class="unit-nav">
-    <button class="unit-btn active" onclick="sU(0)">Unit 3 — Food &amp; Health</button>
-    <button class="unit-btn" onclick="sU(1)">Unit 4 — Travel</button>
+    <button class="unit-btn active" onclick="sU(0)">Unit %%UNIT_A_NUM%% &mdash; %%UNIT_A_TOPIC_EN%%</button>
+    <button class="unit-btn" onclick="sU(1)">Unit %%UNIT_B_NUM%% &mdash; %%UNIT_B_TOPIC_EN%%</button>
   </div>
 
-  <!-- UNIT 3 -->
+  <!-- UNIT A -->
   <div class="unit-panel active" id="unit0">
     <div class="unit-hdr">
-      <div><div class="unit-hdr-title">Unit 3 &nbsp;·&nbsp; Food &amp; Health &nbsp; 食物与健康</div><div class="unit-hdr-meta">10 target words &nbsp;·&nbsp; 7 parts</div></div>
-      <span class="unit-level">Level 1 — Foundation</span>
+      <div>
+        <div class="unit-hdr-title">Unit %%UNIT_A_NUM%% &nbsp;&middot;&nbsp; %%UNIT_A_TOPIC_EN%% &nbsp; %%UNIT_A_TOPIC_CN%%</div>
+        <div class="unit-hdr-meta">10 target words &nbsp;&middot;&nbsp; 7 parts</div>
+      </div>
+      <span class="unit-level">%%LEVEL_LABEL%%</span>
     </div>
     <div class="part-nav" id="pn0">
-      <button class="part-btn active" onclick="sP(0,0)">1 · Vocabulary</button>
-      <button class="part-btn" onclick="sP(0,1)">2 · Story</button>
-      <button class="part-btn" onclick="sP(0,2)">3 · Comprehension</button>
-      <button class="part-btn" onclick="sP(0,3)">4 · Practice</button>
-      <button class="part-btn" onclick="sP(0,4)">5 · Speaking</button>
-      <button class="part-btn" onclick="sP(0,5)">6 · Writing</button>
-      <button class="part-btn" onclick="sP(0,6)">7 · Review</button>
+      <button class="part-btn active" onclick="sP(0,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="sP(0,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="sP(0,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="sP(0,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="sP(0,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="sP(0,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="sP(0,6)">7 &middot; Review</button>
     </div>
     <div class="part-panel active" id="u0p0"><div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div></div>
-    <div class="part-panel" id="u0p1"><div class="card"><div class="card-title">Mini story — target words are highlighted</div><div class="story-box"><div class="story-title">Tom's Good Diet</div><div class="story-text" id="st0"></div></div></div></div>
+    <div class="part-panel" id="u0p1"><div class="card"><div class="card-title">Mini story &mdash; target words are highlighted</div><div class="story-box"><div class="story-title">%%STORY_TITLE_A%%</div><div class="story-text" id="st0"></div></div></div></div>
     <div class="part-panel" id="u0p2">
-      <div class="card"><div class="card-title">Section A — True or False &nbsp; 判断对错</div><div id="tf0"></div></div>
-      <div class="card"><div class="card-title">Section B — Multiple Choice &nbsp; 选择题</div><div id="mc0"></div></div>
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc0"></div></div>
     </div>
     <div class="part-panel" id="u0p3">
-      <div class="card"><div class="card-title">Activity A — Match words with meanings</div><p style="font-size:13px;color:var(--mu);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
-      <div class="card"><div class="card-title">Activity B — Fill in the blanks</div><p style="font-size:13px;color:var(--mu);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-p" onclick="chkFib(0)">Check answers</button><button class="btn btn-g" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--mu);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--mu);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-p" onclick="chkFib(0)">Check answers</button><button class="btn btn-g" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
     </div>
-    <div class="part-panel" id="u0p4"><div class="card"><div class="card-title">Speaking practice — answer aloud</div><div id="spk0"></div><div class="hint">Useful phrases: <strong>My diet usually includes…</strong> &nbsp;|&nbsp; <strong>I prefer…because…</strong> &nbsp;|&nbsp; <strong>I think organic food is…</strong></div></div></div>
-    <div class="part-panel" id="u0p5"><div class="card"><div class="card-title">Writing practice</div><p class="wp">Describe your favourite meal or a healthy eating habit. Use at least 5 words from today's unit.</p><p class="wp-cn">描述你最喜欢的一顿饭或健康饮食习惯。尽量用5个今天学过的单词。</p><textarea class="wa" id="wr0" placeholder="Start writing here…"></textarea><div class="wc" id="wc0">0 words</div></div></div>
-    <div class="part-panel" id="u0p6"><div class="card"><div class="rev-cols"><div><div class="rev-col-lbl" style="color:var(--teal)">Today's words 今日单词</div><div id="rev0"></div></div><div><div class="rev-col-lbl" style="color:var(--gold)">Collocations 常见搭配</div><div id="col0"></div></div></div></div></div>
+    <div class="part-panel" id="u0p4"><div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk0"></div><div class="hint">%%SPEAK_HINTS_A%%</div></div></div>
+    <div class="part-panel" id="u0p5"><div class="card"><div class="card-title">Writing practice</div><p class="wp">%%WRITE_EN_A%%</p><p class="wp-cn">%%WRITE_CN_A%%</p><textarea class="wa" id="wr0" placeholder="Start writing here&hellip;"></textarea><div class="wc" id="wc0">0 words</div></div></div>
+    <div class="part-panel" id="u0p6"><div class="card"><div class="rev-cols"><div><div class="rev-col-lbl" style="color:var(--teal)">Today's words &#20170;&#26085;&#21333;&#35789;</div><div id="rev0"></div></div><div><div class="rev-col-lbl" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col0"></div></div></div></div></div>
   </div>
 
-  <!-- UNIT 4 -->
+  <!-- UNIT B -->
   <div class="unit-panel" id="unit1">
     <div class="unit-hdr">
-      <div><div class="unit-hdr-title">Unit 4 &nbsp;·&nbsp; Travel &nbsp; 旅行</div><div class="unit-hdr-meta">10 target words &nbsp;·&nbsp; 7 parts</div></div>
-      <span class="unit-level">Level 1 — Foundation</span>
+      <div>
+        <div class="unit-hdr-title">Unit %%UNIT_B_NUM%% &nbsp;&middot;&nbsp; %%UNIT_B_TOPIC_EN%% &nbsp; %%UNIT_B_TOPIC_CN%%</div>
+        <div class="unit-hdr-meta">10 target words &nbsp;&middot;&nbsp; 7 parts</div>
+      </div>
+      <span class="unit-level">%%LEVEL_LABEL%%</span>
     </div>
     <div class="part-nav" id="pn1">
-      <button class="part-btn active" onclick="sP(1,0)">1 · Vocabulary</button>
-      <button class="part-btn" onclick="sP(1,1)">2 · Story</button>
-      <button class="part-btn" onclick="sP(1,2)">3 · Comprehension</button>
-      <button class="part-btn" onclick="sP(1,3)">4 · Practice</button>
-      <button class="part-btn" onclick="sP(1,4)">5 · Speaking</button>
-      <button class="part-btn" onclick="sP(1,5)">6 · Writing</button>
-      <button class="part-btn" onclick="sP(1,6)">7 · Review</button>
+      <button class="part-btn active" onclick="sP(1,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="sP(1,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="sP(1,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="sP(1,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="sP(1,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="sP(1,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="sP(1,6)">7 &middot; Review</button>
     </div>
     <div class="part-panel active" id="u1p0"><div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div></div>
-    <div class="part-panel" id="u1p1"><div class="card"><div class="card-title">Mini story — target words are highlighted</div><div class="story-box"><div class="story-title">Xiao Ming's First Trip Abroad</div><div class="story-text" id="st1"></div></div></div></div>
+    <div class="part-panel" id="u1p1"><div class="card"><div class="card-title">Mini story &mdash; target words are highlighted</div><div class="story-box"><div class="story-title">%%STORY_TITLE_B%%</div><div class="story-text" id="st1"></div></div></div></div>
     <div class="part-panel" id="u1p2">
-      <div class="card"><div class="card-title">Section A — True or False &nbsp; 判断对错</div><div id="tf1"></div></div>
-      <div class="card"><div class="card-title">Section B — Multiple Choice &nbsp; 选择题</div><div id="mc1"></div></div>
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc1"></div></div>
     </div>
     <div class="part-panel" id="u1p3">
-      <div class="card"><div class="card-title">Activity A — Match words with meanings</div><p style="font-size:13px;color:var(--mu);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
-      <div class="card"><div class="card-title">Activity B — Fill in the blanks</div><p style="font-size:13px;color:var(--mu);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-p" onclick="chkFib(1)">Check answers</button><button class="btn btn-g" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--mu);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--mu);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-p" onclick="chkFib(1)">Check answers</button><button class="btn btn-g" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
     </div>
-    <div class="part-panel" id="u1p4"><div class="card"><div class="card-title">Speaking practice — answer aloud</div><div id="spk1"></div><div class="hint">Useful phrases: <strong>I have / have never been abroad…</strong> &nbsp;|&nbsp; <strong>My dream destination is…</strong> &nbsp;|&nbsp; <strong>When I travel, I usually…</strong></div></div></div>
-    <div class="part-panel" id="u1p5"><div class="card"><div class="card-title">Writing practice</div><p class="wp">Describe a trip you have taken or would like to take. Use at least 5 words from today's unit.</p><p class="wp-cn">描述一次你去过的旅行或想要去的旅行。尽量用5个今天学过的单词。</p><textarea class="wa" id="wr1" placeholder="Start writing here…"></textarea><div class="wc" id="wc1">0 words</div></div></div>
-    <div class="part-panel" id="u1p6"><div class="card"><div class="rev-cols"><div><div class="rev-col-lbl" style="color:var(--teal)">Today's words 今日单词</div><div id="rev1"></div></div><div><div class="rev-col-lbl" style="color:var(--gold)">Collocations 常见搭配</div><div id="col1"></div></div></div></div></div>
+    <div class="part-panel" id="u1p4"><div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk1"></div><div class="hint">%%SPEAK_HINTS_B%%</div></div></div>
+    <div class="part-panel" id="u1p5"><div class="card"><div class="card-title">Writing practice</div><p class="wp">%%WRITE_EN_B%%</p><p class="wp-cn">%%WRITE_CN_B%%</p><textarea class="wa" id="wr1" placeholder="Start writing here&hellip;"></textarea><div class="wc" id="wc1">0 words</div></div></div>
+    <div class="part-panel" id="u1p6"><div class="card"><div class="rev-cols"><div><div class="rev-col-lbl" style="color:var(--teal)">Today's words &#20170;&#26085;&#21333;&#35789;</div><div id="rev1"></div></div><div><div class="rev-col-lbl" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col1"></div></div></div></div></div>
   </div>
 </div>
 
 <script>
-const D=[
-  {
-    words:[
-      {w:"diet",p:"n./v.",cn:"饮食；节食",m:"the food you regularly eat",eg:"A healthy diet includes fruit and vegetables."},
-      {w:"ingredient",p:"n.",cn:"成分；食材",m:"one of the things used to make a food or dish",eg:"Sugar is an important ingredient in this cake."},
-      {w:"appetite",p:"n.",cn:"食欲；欲望",m:"the feeling of wanting to eat food",eg:"Exercise can increase your appetite."},
-      {w:"consume",p:"v.",cn:"消耗；吃喝",m:"to eat or drink something; to use something up",eg:"We consume too much sugar every day."},
-      {w:"beverage",p:"n.",cn:"饮料",m:"any drink other than water (tea, juice, coffee, etc.)",eg:"What is your favourite hot beverage?"},
-      {w:"cuisine",p:"n.",cn:"烹饪风格；菜肴",m:"a style of cooking from a particular country or region",eg:"Chinese cuisine is famous around the world."},
-      {w:"organic",p:"adj.",cn:"有机的",m:"food grown without chemicals or artificial substances",eg:"She prefers to buy organic vegetables."},
-      {w:"calorie",p:"n.",cn:"卡路里；热量",m:"a unit used to measure the energy in food",eg:"This meal has over 500 calories."},
-      {w:"protein",p:"n.",cn:"蛋白质",m:"a substance in food that helps your body grow and repair",eg:"Eggs and meat are rich in protein."},
-      {w:"digest",p:"v.",cn:"消化；领悟",m:"to break down food in your stomach so your body can use it",eg:"It takes time to digest a heavy meal."},
-    ],
-    story:[
-      ["Tom loved food. Every day, he had a balanced ",{h:"diet"}," full of vegetables, rice, and fruit. He believed that what you ",{h:"consume"}," every day has a big effect on your health."],
-      ["One morning, his mother was cooking a special dish. She showed Tom each ",{h:"ingredient"}," — fresh tomatoes, garlic, olive oil, and herbs. It was a simple Italian ",{h:"cuisine"},", but it smelled amazing."],
-      ["Tom sat down to eat. He had a big ",{h:"appetite"}," that morning, so he ate two large portions. The food was ",{h:"organic"}," — grown without chemicals — and it tasted much better than supermarket food."],
-      ["After the meal, his mother handed him a glass of warm tea — his favourite hot ",{h:"beverage"},". She told him: \"This meal has fewer ",{h:"calories"}," than fast food, but it is full of ",{h:"protein"}," to keep you strong.\""],
-      ["Tom smiled. \"It also helps me think clearly,\" he said. \"I feel like I can ",{h:"digest"}," not just the food — but ideas too!\" His mother laughed. Good food, Tom believed, was the best start to any day."],
-    ],
-    tf:[
-      {q:"Tom had a balanced diet every day.",a:true},
-      {q:"Tom's mother was cooking Japanese cuisine.",a:false},
-      {q:"The ingredients included tomatoes, garlic, and olive oil.",a:true},
-      {q:"Tom did not enjoy the meal.",a:false},
-      {q:"Tom's mother said the meal was full of protein.",a:true},
-    ],
-    mc:[
-      {q:"What style of cooking was Tom's mother making?",o:["Chinese","Italian","French","Japanese"],a:1},
-      {q:"What does 'organic' mean in this story?",o:["Cooked in a restaurant","Very expensive food","Grown without chemicals","Full of protein"],a:2},
-      {q:"What is Tom's favourite hot beverage?",o:["Coffee","Juice","Tea","Milk"],a:2},
-      {q:"What does the word 'consume' mean?",o:["To cook food","To eat or use something","To buy food","To smell food"],a:1},
-      {q:"What did Tom mean by 'digest ideas'?",o:["He was still hungry","He could understand things better","He wanted more food","He felt sick"],a:1},
-    ],
-    match:{words:["diet","calorie","ingredient","cuisine","appetite"],defs:["a style of cooking from a country","a unit of energy in food","the feeling of wanting to eat","food you regularly eat","one thing used to make a dish"],correct:[3,1,4,0,2]},
-    fib:{chips:["organic","digest","beverage","consume","protein"],rows:[
-      {pre:"Milk, eggs, and beans are good sources of ",suf:" for your body.",ans:"protein"},
-      {pre:"We ",suf:" too much processed food in modern life.",ans:"consume"},
-      {pre:"The farmer grows ",suf:" vegetables without any chemicals.",ans:"organic"},
-      {pre:"Water is the best ",suf:" you can drink every day.",ans:"beverage"},
-      {pre:"After a big meal, it can take several hours to ",suf:" the food.",ans:"digest"},
-    ]},
-    speak:["What does your daily diet usually look like?","Do you prefer organic food or regular food? Why?","What is your favourite cuisine and why?","What beverages do you drink most often?","What is the healthiest thing you consume every week?"],
-    rev:[["diet","饮食；节食"],["ingredient","成分；食材"],["appetite","食欲；欲望"],["consume","消耗；吃喝"],["beverage","饮料"],["cuisine","烹饪风格；菜肴"],["organic","有机的"],["calorie","卡路里；热量"],["protein","蛋白质"],["digest","消化；领悟"]],
-    col:[["healthy / balanced diet","健康/均衡的饮食"],["local / organic ingredients","本地/有机食材"],["lose one's appetite","失去食欲"],["consume energy / calories","消耗能量/卡路里"],["hot / cold beverage","热/冷饮料"],["traditional cuisine","传统菜肴"],["organic food / farming","有机食品/农业"],["burn calories","燃烧卡路里"],["rich in protein","富含蛋白质"],["easy to digest","容易消化"]]
-  },
-  {
-    words:[
-      {w:"destination",p:"n.",cn:"目的地；终点",m:"the place you are travelling to",eg:"Paris is a popular tourist destination."},
-      {w:"itinerary",p:"n.",cn:"行程表；旅行计划",m:"a plan listing the places you will visit on a trip",eg:"She planned a detailed itinerary for the holiday."},
-      {w:"departure",p:"n.",cn:"出发；离开",m:"the act of leaving a place to start a journey",eg:"The departure time is 8 a.m."},
-      {w:"luggage",p:"n.",cn:"行李",m:"the bags and suitcases you take when you travel",eg:"Please do not leave your luggage unattended."},
-      {w:"abroad",p:"adv.",cn:"在国外；到国外",m:"in or to a foreign country",eg:"She studied abroad for one year."},
-      {w:"souvenir",p:"n.",cn:"纪念品",m:"something you buy to remember a place you visited",eg:"He bought a souvenir magnet from every city."},
-      {w:"passport",p:"n.",cn:"护照；保障",m:"an official document needed to travel to another country",eg:"Always keep your passport safe when travelling."},
-      {w:"navigate",p:"v.",cn:"导航；找路",m:"to find the right direction when travelling",eg:"She used a map to navigate through the old city."},
-      {w:"journey",p:"n.",cn:"旅程；旅行",m:"the act of travelling from one place to another",eg:"The train journey took about three hours."},
-      {w:"accommodation",p:"n.",cn:"住宿；住处",m:"a place where you stay when away from home",eg:"We booked accommodation near the beach."},
-    ],
-    story:[
-      ["Xiao Ming had always dreamed of going ",{h:"abroad"},". Finally, his dream came true. He packed his ",{h:"luggage"},", double-checked his ",{h:"passport"},", and headed to the airport."],
-      ["His ",{h:"destination"}," was Japan. He had planned a full ",{h:"itinerary"}," — three cities in seven days. The ",{h:"departure"}," was at 6 a.m., so he woke up very early and took a taxi."],
-      ["When he arrived in Tokyo, Xiao Ming used a map to ",{h:"navigate"}," the busy streets. He found his ",{h:"accommodation"}," — a small but cosy hotel near a famous temple."],
-      ["Every day was an adventure. He walked for hours, tasted local food, and bought many ",{h:"souvenirs"}," for his family. At the end of each day, he wrote in his diary about his ",{h:"journey"},"."],
-      ["On the last night, Xiao Ming sat on the hotel balcony and looked at the city lights. \"Travel,\" he wrote, \"changes the way you see the world.\" He was already planning his next trip."],
-    ],
-    tf:[
-      {q:"Xiao Ming's destination was South Korea.",a:false},
-      {q:"He had a detailed itinerary for his trip.",a:true},
-      {q:"Xiao Ming forgot to bring his passport.",a:false},
-      {q:"He used a map to navigate the streets of Tokyo.",a:true},
-      {q:"Xiao Ming wrote about his journey in a diary.",a:true},
-    ],
-    mc:[
-      {q:"Where did Xiao Ming travel to?",o:["China","France","Japan","Australia"],a:2},
-      {q:"What time was his departure?",o:["8 a.m.","6 a.m.","9 a.m.","7 a.m."],a:1},
-      {q:"What is an 'itinerary'?",o:["A type of luggage","A travel plan listing places to visit","A souvenir from a trip","A type of accommodation"],a:1},
-      {q:"What did Xiao Ming buy for his family?",o:["Food","Books","Souvenirs","Clothes"],a:2},
-      {q:"What did Xiao Ming learn from his trip?",o:["Japan is too expensive","Travel changes how you see the world","He prefers staying home","Passports are not important"],a:1},
-    ],
-    match:{words:["destination","luggage","souvenir","departure","accommodation"],defs:["a place to stay when away from home","something bought to remember a trip","the act of leaving to start a journey","bags and suitcases for travelling","the place you are travelling to"],correct:[4,3,1,2,0]},
-    fib:{chips:["passport","journey","abroad","itinerary","navigate"],rows:[
-      {pre:"She studied ",suf:" in the UK for two years.",ans:"abroad"},
-      {pre:"Always carry your ",suf:" when you travel to another country.",ans:"passport"},
-      {pre:"We planned a detailed ",suf:" for our holiday in Europe.",ans:"itinerary"},
-      {pre:"The ",suf:" from Beijing to Shanghai took five hours by train.",ans:"journey"},
-      {pre:"He used his phone to ",suf:" through the unfamiliar streets.",ans:"navigate"},
-    ]},
-    speak:["Have you ever travelled abroad? Where did you go?","What would be your dream travel destination? Why?","What do you usually pack in your luggage?","Have you ever used a map or app to navigate somewhere new?","What souvenir would you buy to remember a special trip?"],
-    rev:[["destination","目的地；终点"],["itinerary","行程表；旅行计划"],["departure","出发；离开"],["luggage","行李"],["abroad","在国外；到国外"],["souvenir","纪念品"],["passport","护照；保障"],["navigate","导航；找路"],["journey","旅程；旅行"],["accommodation","住宿；住处"]],
-    col:[["travel abroad","出国旅行"],["pack one's luggage","打包行李"],["check your passport","检查护照"],["tourist destination","旅游目的地"],["detailed itinerary","详细行程"],["departure time / gate","出发时间/登机口"],["buy a souvenir","买纪念品"],["navigate a city","在城市中找路"],["long / short journey","长途/短途旅行"],["book accommodation","预订住宿"]]
-  }
-];
+const D=%%DATA_JS%%;
 
 const MS=[{sel:null,done:[]},{sel:null,done:[]}];
 const FI=[[],[]];
@@ -339,7 +486,7 @@ function bVocab(u){
 }
 function tV(u,i){
   const b=document.getElementById(`vb${u}${i}`),t=document.getElementById(`vt${u}${i}`);
-  const o=b.classList.toggle('open');t.textContent=o?'– less':'+ more';
+  const o=b.classList.toggle('open');t.textContent=o?'- less':'+ more';
 }
 
 function bStory(u){
@@ -384,12 +531,11 @@ function dMC(u,qi,oi){
 function bMatch(u){
   const el=document.getElementById('match'+u);if(el.innerHTML)return;
   const m=D[u].match;
-  const sh=[...m.defs].sort(()=>Math.random()-.5);
-  SH[u]=sh;
+  SH[u]=m.defs;
   const g=document.createElement('div');g.className='match-grid';
   m.words.forEach((w,i)=>{
     const wb=document.createElement('button');wb.className='mw';wb.id=`mw${u}${i}`;wb.textContent=w;wb.onclick=()=>pW(u,i);g.appendChild(wb);
-    const db=document.createElement('button');db.className='md';db.id=`md${u}${i}`;db.textContent=sh[i];db.onclick=()=>pD(u,i);g.appendChild(db);
+    const db=document.createElement('button');db.className='md';db.id=`md${u}${i}`;db.textContent=m.defs[i];db.onclick=()=>pD(u,i);g.appendChild(db);
   });
   el.appendChild(g);
 }
@@ -405,10 +551,9 @@ function pD(u,di){
   document.getElementById(`md${u}${di}`).classList.add('sel');
   if(MS[u].sel===null)return;
   const wi=MS[u].sel;
-  const sd=SH[u][di];
-  const cd=D[u].match.defs[D[u].match.correct[wi]];
+  const correct_di=D[u].match.correct[wi];
   const wB=document.getElementById(`mw${u}${wi}`),dB=document.getElementById(`md${u}${di}`);
-  if(sd===cd){
+  if(di===correct_di){
     wB.classList.remove('sel');wB.classList.add('done');
     dB.classList.remove('sel');dB.classList.add('done');
     MS[u].done.push(wi);
@@ -428,12 +573,12 @@ function bFib(u){
   if(ce.innerHTML)return;
   D[u].fib.chips.forEach(c=>{
     const s=document.createElement('span');s.className='chip';s.id=`ch${u}${c}`;s.textContent=c;
-    s.onclick=()=>{const f=FI[u].find(x=>x===document.activeElement);if(f&&!f.value){f.value=c;s.classList.add('used');}};
+    s.onclick=()=>{const active=document.activeElement;if(active&&active.classList.contains('fib-i')&&!active.value){active.value=c;s.classList.add('used');}};
     ce.appendChild(s);
   });
   D[u].fib.rows.forEach((r,i)=>{
     const row=document.createElement('div');row.className='fib-row';
-    row.innerHTML=`<span class="fib-n">${i+1}.</span><span>${r.pre}</span><input class="fib-i" id="fi${u}${i}" autocomplete="off" placeholder="…"/><span>${r.suf}</span>`;
+    row.innerHTML=`<span class="fib-n">${i+1}.</span><span>${r.pre}</span><input class="fib-i" id="fi${u}${i}" autocomplete="off" placeholder="&hellip;"/><span>${r.suf}</span>`;
     fe.appendChild(row);
     FI[u].push(document.getElementById(`fi${u}${i}`));
   });
@@ -443,7 +588,7 @@ function chkFib(u){
   D[u].fib.rows.forEach((r,i)=>{
     const inp=FI[u][i];const v=inp.value.trim().toLowerCase();const a=r.ans.toLowerCase();
     inp.classList.remove('correct','wrong');
-    if(v===a||v===a+'s'){inp.classList.add('correct');ok++;}else inp.classList.add('wrong');
+    if(v===a||v===a+'s'||v===a+'d'||v===a+'ed'){inp.classList.add('correct');ok++;}else inp.classList.add('wrong');
   });
   document.getElementById(`fib${u}-s`).innerHTML=`<div class="score-bar${ok===n?' good':''}" style="margin-top:.5rem"><span class="score-n">${ok}/${n}</span><span class="score-l">${ok===n?'Perfect! All correct!':ok>n/2?'Good effort! Check the red ones.':'Keep trying!'}</span></div>`;
 }
@@ -476,4 +621,47 @@ function setupWC(u){
 [0,1].forEach(u=>{bVocab(u);bStory(u);bTF(u);bMC(u);bMatch(u);bFib(u);bSpeak(u);bRev(u);setupWC(u);});
 </script>
 </body>
-</html>
+</html>"""
+
+# ─── Main ────────────────────────────────────────────────────────────────────
+
+def main():
+    parser = argparse.ArgumentParser(description="Generate IELTS Workbook unit pair HTML")
+    parser.add_argument("--units", help="e.g. 9-10 (default: auto-detect)")
+    parser.add_argument("--level", type=int, default=2, choices=[1, 2, 3])
+    parser.add_argument("--model", default="claude-opus-4-5")
+    args = parser.parse_args()
+
+    # Resolve unit numbers
+    if args.units:
+        m = re.match(r"(\d+)[-–](\d+)", args.units)
+        if not m:
+            sys.exit("❌  --units must be in the form 9-10")
+        unit_a, unit_b = int(m.group(1)), int(m.group(2))
+    else:
+        unit_a, unit_b = get_next_unit_pair()
+
+    print(f"🎯  Generating Units {unit_a}–{unit_b}  (Level {args.level})")
+
+    # Read input
+    source_text, source_name = read_input()
+
+    # Call API
+    data = call_api(source_text, args.level, args.model)
+
+    # Build HTML
+    html = build_html(data, unit_a, unit_b, args.level)
+
+    # Save
+    out_name = f"IELTS_Workbook_Units{unit_a}-{unit_b}.html"
+    out_path = BASE_DIR / out_name
+    out_path.write_text(html, encoding="utf-8")
+    print(f"✅  Saved: {out_name}")
+    print(f"    Topics: {data['unit_a']['topic_en']} · {data['unit_b']['topic_en']}")
+    print(f"\nNext steps:")
+    print(f"  1. Open {out_name} in your browser to review")
+    print(f"  2. Update index.html to mark Units {unit_a}–{unit_b} as available")
+    print(f"  3. git add {out_name} && git commit -m 'Add Units {unit_a}-{unit_b}' && git push")
+
+if __name__ == "__main__":
+    main()
