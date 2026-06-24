@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Units 11–12 — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --gold:#C9930A;--gold-light:#FDF3D8;--gold-pale:#FFFBF0;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:1.5rem auto 0;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.part-panel{display:none}
+.part-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.cat-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;padding:.3rem .75rem;margin:.75rem 0 .4rem;display:inline-block}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:15px;font-weight:600;color:var(--teal);min-width:130px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.75rem 1rem;border-top:1px solid var(--border)}
+.vocab-body.open{display:block}
+.v-meaning{font-size:13px;color:var(--muted);margin-bottom:.5rem}
+.v-eg{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.story-box{background:var(--gold-pale);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--text)}
+.story-text p{margin-bottom:.9rem}
+.story-text p:last-child{margin-bottom:0}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-light);padding:.05rem .3rem;border-radius:4px}
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.tf-btn.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-result{font-size:12px;font-weight:500;flex-shrink:0}
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--text)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pale);border-color:var(--teal-light)}
+.mc-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.mc-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.mc-opt:disabled{pointer-events:none}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:20px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%}
+.match-def:hover:not(.done){background:var(--gold-pale);border-color:#E8D08A}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pale);border-radius:8px;border:1px solid var(--teal-light)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--surface);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-light);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:120px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--teal)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-primary:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;align-items:flex-start;gap:.6rem;color:var(--text)}
+.speak-num{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--muted);background:var(--gold-pale);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+.write-prompt{font-size:14px;color:var(--text);margin-bottom:.4rem}
+.write-prompt-cn{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.write-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--text);background:var(--surface);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.write-area:focus{border-color:var(--teal)}
+.write-counter{font-size:12px;color:var(--muted);margin-top:.3rem;text-align:right}
+.write-hint{font-size:12px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.review-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.review-cols{grid-template-columns:1fr}}
+.review-col-label{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.review-item{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.review-item:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--text)}
+.r-cn{color:var(--muted);font-size:12px}
+.colloc-item{padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.colloc-item:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--muted);font-size:12px}
+@media(max-width:600px){.card{padding:1rem}.unit-hdr{padding:1.1rem 1.25rem}.match-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">IELTS Vocabulary Workbook &mdash; Units 11&ndash;12</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-sub">Units 11&ndash;12 &nbsp;&middot;&nbsp; Global Issues &nbsp;|&nbsp; &#20840;&#29699;&#35758;&#39064;</div>
+  <div class="cover-badges">
+    <span class="badge">Level 2 &mdash; Foundation</span>
+    <span class="badge">Units 11&ndash;12</span>
+    <span class="badge">69 target words</span>
+    <span class="badge">Interactive exercises</span>
+  </div>
+  <div class="cover-tip">
+    <strong>How to use</strong>
+    Study vocabulary &rarr; Read the story &rarr; Complete the exercises. Click any word to see its meaning. Answers are checked instantly.
+  </div>
+</div>
+
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="switchUnit(0)">Unit 11 &mdash; Environment, Health &amp; Migration</button>
+    <button class="unit-btn" onclick="switchUnit(1)">Unit 12 &mdash; Politics, Conflict &amp; Global Economy</button>
+  </div>
+
+  <!-- UNIT 11 -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 11 &nbsp;&middot;&nbsp; Environment, Health &amp; Migration &nbsp; &#29615;&#22659;&#12289;&#21592;&#29983;&#19982;&#31227;&#27665;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Climate &middot; Health &middot; Migration &amp; Poverty</div>
+      </div>
+      <span class="unit-level">Level 2 &mdash; Foundation</span>
+    </div>
+    <div class="part-nav" id="pnav0">
+      <button class="part-btn active" onclick="switchPart(0,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(0,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(0,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(0,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(0,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(0,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(0,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">When the Rain Finally Came</div>
+          <div class="story-text">
+<p>Dr Amara Chen&#8217;s research station sat at the edge of a dying delta. For years she had documented how the burning of <span class="hw">petroleum</span> and other fossil fuels released <span class="hw">carbon</span> into the atmosphere. The factory three kilometres upstream produced a daily <span class="hw">emission</span> of toxic gases that thickened the air. Scientists had warned for decades that these gases were accelerating the <span class="hw">greenhouse</span> effect, trapping heat that was reshaping the planet itself.</p>
+<p>The warning signs were everywhere. A powerful <span class="hw">seismic</span> event had cracked open the earth near the eastern ridge, releasing underground gases. A sudden <span class="hw">deluge</span> of record-breaking rain swept away entire villages. Where <span class="hw">drought</span> had gripped the land for three years before, a <span class="hw">hurricane</span> now threatened the coast. These disasters were not separate events &mdash; they were connected, each one feeding the next in a cycle Amara had spent her career trying to explain to those in power.</p>
+<p>The river <span class="hw">ecosystem</span> she had studied for twenty years was barely recognisable. Industrial <span class="hw">pollutant</span>s had poisoned the water. The freshwater turtle, pushed to the edge by <span class="hw">depletion</span> of its habitat, was now <span class="hw">extinct</span> in this region &mdash; one more entry on the long list of species facing <span class="hw">extinction</span>. The <span class="hw">ozone</span> layer above the southern hemisphere showed fresh chemical damage. Communities had pledged to <span class="hw">recycle</span> and invest in <span class="hw">renewable</span> energy, but political will was slow to follow.</p>
+<p>The health consequences were just as severe. An outbreak of <span class="hw">infectious</span> disease swept through the flooded settlements. Cases of <span class="hw">malaria</span> doubled within a month. Children already weakened by <span class="hw">malnutrition</span> were especially vulnerable, their small bodies unable to fight off illness. Those living with <span class="hw">aids</span> had little access to medication. The field hospital operated on the principles of <span class="hw">humanism</span> &mdash; the belief that every life had equal worth &mdash; but the <span class="hw">humanitarian</span> teams were overwhelmed. Food <span class="hw">scarcity</span> pushed communities toward <span class="hw">starvation</span>, and emergency rations were running out.</p>
+<p>The crisis uprooted thousands. <span class="hw">Migrant</span> families streamed toward the city in a wave of <span class="hw">migration</span> driven not by choice but by desperation. Many applied for <span class="hw">asylum</span> in neighbouring countries. The <span class="hw">indigenous</span> communities, whose <span class="hw">ethnic</span> identity was bound to the land itself, refused to leave &mdash; even as their homes vanished beneath the water. Back in the city, rising <span class="hw">inflation</span> had wiped out savings. A wave of <span class="hw">layoff</span>s at the closed processing plant meant that government <span class="hw">dole</span> payments were the only income for hundreds of families. <span class="hw">Unemployment</span> climbed month after month. The national <span class="hw">deficit</span> widened, and for those living in <span class="hw">penury</span>, the promise of recovery felt very far away. When the rain finally came again &mdash; gentle and steady, not violent &mdash; Amara stood outside and let it fall on her face. It was a beginning. It would have to be enough.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(0)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk0"></div><div class="hint" id="ph0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp0en"></p><p class="write-prompt-cn" id="wp0cn"></p><p class="write-hint" id="wp0hint"></p><textarea class="write-area" id="wr0" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc0">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u0p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&#8217;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev0"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col0"></div></div></div></div>
+    </div>
+  </div>
+
+  <!-- UNIT 12 -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 12 &nbsp;&middot;&nbsp; Politics, Conflict &amp; Global Economy &nbsp; &#25919;&#27835;&#12289;&#20914;&#31361;&#19982;&#20840;&#29699;&#32463;&#27982;</div>
+        <div class="unit-hdr-meta">34 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Governance &middot; Conflict &middot; Trade &amp; Power</div>
+      </div>
+      <span class="unit-level">Level 2 &mdash; Foundation</span>
+    </div>
+    <div class="part-nav" id="pnav1">
+      <button class="part-btn active" onclick="switchPart(1,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(1,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(1,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(1,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(1,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(1,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(1,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Treaty of New Dawn</div>
+          <div class="story-text">
+<p>The island of Solvara had spent two hundred years as a <span class="hw">colony</span> of the Arenian Empire. The first <span class="hw">colonist</span>s had arrived with trade ships and promises, but <span class="hw">colonialism</span> quickly revealed its true face: extraction, forced labour, and the erasure of local identity. The <span class="hw">colonial</span> administration built roads and courts, but only to serve its own interests. For Solvara&#8217;s people, <span class="hw">imperialism</span> was not an abstract concept in a textbook &mdash; it was the daily reality of being governed by strangers thousands of miles away. Those who justified the empire called themselves <span class="hw">imperialist</span> visionaries; those who lived under it called it what it was.</p>
+<p>When independence finally came, it did not last. General Marvok seized power and declared himself <span class="hw">dictator</span>. Under his <span class="hw">dictatorship</span>, every democratic institution was dismantled. <span class="hw">Censorship</span> removed newspapers from newsstands, silenced radio stations, and cleared libraries of unapproved books. His government issued a <span class="hw">mandate</span> that citizens must attend state rallies and display loyalty. <span class="hw">Propaganda</span> posters covered every public wall. <span class="hw">Martial</span> law was declared in the eastern province when protests broke out, and armed soldiers controlled the streets for months.</p>
+<p>Resistance grew slowly but steadily. A regional <span class="hw">alliance</span> of democratic movements formed in secret. Border <span class="hw">skirmish</span>es with a neighbouring state escalated when Marvok ordered a <span class="hw">missile</span> strike on a rebel village. Evidence reached foreign governments of <span class="hw">genocide</span> in the north &mdash; the deliberate killing of thousands from a particular minority group. Reports of systemic <span class="hw">racism</span> and the forced <span class="hw">segregat</span>ion of communities shocked the international community. Stories of the <span class="hw">exploitation</span> of political prisoners as forced labour added to the outrage. In response, an international <span class="hw">sanction</span> froze Solvara&#8217;s overseas assets and cut its access to foreign markets. Governments demanded the regime <span class="hw">disarm</span> its paramilitaries. Marvok refused, and the <span class="hw">strife</span> continued for years.</p>
+<p>Behind the scenes, a team of skilled <span class="hw">diplomat</span>s worked quietly to find a way forward. Their lead envoy, a woman named Lena Voss, had spent her career mastering <span class="hw">diplomacy</span> &mdash; the patient management of conflict through conversation rather than force. Every meeting followed agreed <span class="hw">protocol</span>: formal introductions, written agendas, and language vetted by all parties. After eighteen months of talks, both sides agreed to hold a <span class="hw">referendum</span> in which citizens would vote directly on the country&#8217;s future. The question of <span class="hw">sovereignty</span> &mdash; who truly had the right to govern Solvara &mdash; would be answered by the Solvarans themselves. All parties agreed the process must be fully <span class="hw">diplomatic</span> and transparent.</p>
+<p>The transition was not easy. <span class="hw">Globalization</span> had tied Solvara&#8217;s economy to foreign markets in complicated ways. A single conglomerate had managed to <span class="hw">monopolize</span> the country&#8217;s mineral exports, and breaking that <span class="hw">monopoly</span> required new laws and strong political will. The new government introduced a farm <span class="hw">subsidy</span> to support struggling rural communities and imposed a <span class="hw">tariff</span> on cheap imported goods to protect local manufacturers. The new constitution declared Solvara fully <span class="hw">sovereign</span> &mdash; accountable only to its own citizens, guided by laws they had helped write. It was an imperfect peace, but it was theirs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(1)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk1"></div><div class="hint" id="ph1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp1en"></p><p class="write-prompt-cn" id="wp1cn"></p><p class="write-hint" id="wp1hint"></p><textarea class="write-area" id="wr1" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc1">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u1p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&#8217;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev1"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col1"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  // ── UNIT 11 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Environment & Climate", words: [
+          {w:"carbon",     p:"n.",      c:"碳；碳元素", d:"A chemical element found in all living things; in 'carbon emissions' it refers to CO₂ released by burning fuel", e:"The government introduced a carbon tax to discourage the use of fossil fuels."},
+          {w:"depletion",  p:"n.",      c:"耗尽；减少", d:"The reduction or exhaustion of a resource, especially a natural one", e:"Scientists are alarmed by the rapid depletion of the world's freshwater supplies."},
+          {w:"deluge",     p:"n.",      c:"洪水；大量", d:"A severe flood or extremely heavy rainfall; an overwhelming quantity of anything", e:"The deluge destroyed hundreds of homes in the low-lying coastal villages."},
+          {w:"drought",    p:"n.",      c:"干旱", d:"A long period of abnormally low rainfall leading to a shortage of water", e:"The severe drought destroyed the harvest and forced many farmers to abandon their land."},
+          {w:"ecosystem",  p:"n.",      c:"生态系统", d:"All the plants, animals, and natural features of an area living and interacting together as a system", e:"Cutting down the rainforest destroys a delicate ecosystem built over millions of years."},
+          {w:"emission",   p:"n.",      c:"排放；排放物", d:"The production and release of a substance, especially greenhouse gases, into the atmosphere", e:"Electric vehicles produce no direct emission and help reduce urban air pollution."},
+          {w:"extinct",    p:"adj.",    c:"灭绝的", d:"No longer existing; used to describe a species that has completely died out", e:"The dodo bird became extinct in the late 17th century due to hunting and habitat loss."},
+          {w:"extinction", p:"n.",      c:"灭绝；消亡", d:"The state or process of a species dying out completely and permanently", e:"Scientists warn that climate change is accelerating the extinction of many animal species."},
+          {w:"greenhouse", p:"n./adj.", c:"温室；温室效应的", d:"A glass structure for growing plants; used in 'greenhouse effect' — the warming of Earth by trapped gases", e:"The greenhouse effect is intensifying as more CO₂ enters the atmosphere each year."},
+          {w:"hurricane",  p:"n.",      c:"飓风", d:"A tropical storm with extremely strong, fast-rotating winds, usually causing severe damage", e:"The hurricane destroyed entire neighbourhoods when it made landfall on Friday morning."},
+          {w:"ozone",      p:"n.",      c:"臭氧", d:"A gas layer in the upper atmosphere that absorbs harmful ultraviolet radiation from the sun", e:"Scientists discovered that certain industrial chemicals were thinning the ozone layer."},
+          {w:"petroleum",  p:"n.",      c:"石油；原油", d:"Crude oil found underground; a primary source of fuel and many industrial products", e:"The country depends heavily on petroleum exports for its national income."},
+          {w:"pollutant",  p:"n.",      c:"污染物", d:"A substance that contaminates the natural environment, especially water, air, or soil", e:"Lead is a dangerous pollutant that can damage the developing brains of young children."},
+          {w:"recycle",    p:"v.",      c:"回收利用", d:"To convert waste materials into new products rather than discarding them", e:"The city encourages residents to recycle glass, paper, and plastic separately."},
+          {w:"renewable",  p:"adj.",    c:"可再生的", d:"Capable of being naturally replenished; describes energy from sources like solar, wind, or water", e:"The country plans to generate 80% of its electricity from renewable sources by 2040."},
+          {w:"seismic",    p:"adj.",    c:"地震的；巨大的", d:"Relating to earthquakes; also used figuratively to mean of enormous scale or effect", e:"The seismic event measured 7.2 on the Richter scale and was felt across five countries."}
+        ]
+      },
+      {
+        label: "Health & Humanitarian Crisis", words: [
+          {w:"aids",         p:"n.",    c:"艾滋病", d:"Acquired Immune Deficiency Syndrome; a serious disease caused by the HIV virus that weakens the immune system", e:"Access to antiretroviral drugs has significantly extended the lives of people living with aids."},
+          {w:"humanism",     p:"n.",    c:"人文主义", d:"A philosophy that emphasises human welfare and rational thought rather than religious doctrine", e:"The organisation's work is grounded in humanism — the belief that every person deserves dignity."},
+          {w:"humanitarian", p:"adj./n.","c":"人道主义的", d:"Concerned with improving human welfare and reducing suffering; a person who promotes human welfare", e:"Humanitarian organisations delivered food and medicine to the flood-affected communities."},
+          {w:"infectious",   p:"adj.", c:"传染性的", d:"Capable of spreading from one person to another through contact or the environment", e:"The infectious disease spread rapidly through the camp due to limited access to clean water."},
+          {w:"malaria",      p:"n.",    c:"疟疾", d:"A serious disease transmitted by the bite of infected mosquitoes, common in tropical regions", e:"Millions of children in sub-Saharan Africa are at risk of malaria each year."},
+          {w:"malnutrition", p:"n.",    c:"营养不良", d:"A serious condition resulting from a diet that lacks proper nutrients or sufficient calories", e:"Malnutrition in early childhood can permanently affect physical and mental development."},
+          {w:"scarcity",     p:"n.",    c:"匮乏；稀缺", d:"A severe lack or shortage of something essential; insufficiency of supply", e:"Water scarcity is one of the most pressing challenges facing the Middle East and North Africa."},
+          {w:"starvation",   p:"n.",    c:"饥饿；挨饿", d:"Extreme suffering or death caused by a lack of food over a prolonged period", e:"Aid workers found children on the brink of starvation in the remote mountain villages."}
+        ]
+      },
+      {
+        label: "Migration & Economic Hardship", words: [
+          {w:"asylum",      p:"n.",    c:"庇护；避难", d:"Protection given by a state to someone who has fled their home country as a refugee", e:"The family applied for asylum after crossing the border to escape the violence."},
+          {w:"deficit",     p:"n.",    c:"赤字；亏损", d:"The amount by which spending exceeds income; a shortfall in a budget or trade account", e:"The government's budget deficit has grown due to increased spending and lower tax revenues."},
+          {w:"dole",        p:"n.",    c:"失业救济金", d:"Unemployment benefit paid by the government to people who are out of work", e:"After losing his job at the factory, he had to claim the dole to support his family."},
+          {w:"ethnic",      p:"adj.", c:"民族的；种族的", d:"Relating to a group of people who share a common national, cultural, or racial background", e:"The city is home to many different ethnic communities, each with its own traditions and language."},
+          {w:"indigenous",  p:"adj.", c:"土著的；本土的", d:"Originating or occurring naturally in a particular place; native to a region", e:"The new law was designed to protect the land rights of indigenous communities."},
+          {w:"inflation",   p:"n.",   c:"通货膨胀", d:"A general and sustained rise in prices that reduces the purchasing power of money", e:"High inflation means families must spend more money just to buy the same basic goods."},
+          {w:"layoff",      p:"n.",   c:"裁员；临时解雇", d:"The dismissal of employees, often temporary, because a company lacks sufficient work or funds", e:"The recession triggered a wave of layoffs across the manufacturing sector."},
+          {w:"migrant",     p:"n.",   c:"移民；流动工人", d:"A person who moves from one place to another, especially across borders, to live or find work", e:"Thousands of economic migrants arrived at the border seeking better opportunities."},
+          {w:"migration",   p:"n.",   c:"迁移；移民", d:"The movement of people from one place to another, especially to a different country, to live or work", e:"Economic migration has brought skilled workers from many countries to major cities worldwide."},
+          {w:"penury",      p:"n.",   c:"贫困；赤贫", d:"Extreme poverty; a state of having very little money or resources", e:"The collapse of the local fishing industry left many families in penury."},
+          {w:"unemployment",p:"n.",   c:"失业；失业状态", d:"The state of not having a paid job while actively looking for one; the proportion of people without work", e:"Youth unemployment remains high in many developing economies despite overall growth."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Dr Amara Chen&#8217;s research station was located in a busy city centre.",a:false},
+      {q:"The hurricane and the drought in the story were connected as part of the same climate crisis.",a:true},
+      {q:"The freshwater turtle in the story was successfully saved through conservation efforts.",a:false},
+      {q:"The humanitarian teams in the story had more than enough resources to help everyone.",a:false},
+      {q:"Indigenous communities in the story chose to stay on their land even as floods threatened.",a:true}
+    ],
+    mcq: [
+      {q:"What was the main purpose of Dr Amara Chen's research station?",opts:["Running a hospital for migrants","Monitoring climate and environmental damage","Managing a refugee camp","Producing renewable energy"],ans:1},
+      {q:"Which disease doubled in cases within a month after the flooding?",opts:["AIDS","Malnutrition","Malaria","An unnamed infectious disease"],ans:2},
+      {q:"Why did migrant families move toward the city in the story?",opts:["To find better schools","To claim the dole","Forced by desperation, not choice","To seek petroleum work"],ans:2},
+      {q:"What does 'scarcity' mean in the context of the story?",opts:["A surplus of food aid","A type of disease","A dangerous shortage of food supplies","A renewable energy source"],ans:2},
+      {q:"What widened as unemployment rose in the story?",opts:["The greenhouse effect","The national deficit","The ozone layer","The rate of migration"],ans:1}
+    ],
+    match: {
+      ws:["ecosystem","depletion","emission","migration","asylum"],
+      ds:[
+        "protection given by a country to a person who has fled their homeland",
+        "the reduction or exhaustion of a natural resource",
+        "the movement of people from one region to another to live or work",
+        "the production and discharge of gases, especially greenhouse gases, into the air",
+        "all living organisms in an area interacting with each other and their environment"
+      ],
+      correct:[4,1,3,2,0]
+    },
+    fill: {
+      sents:[
+        {s:"Plastic waste is one of the most visible ___ in our oceans, harming thousands of marine species.",w:"pollutant"},
+        {s:"After the factory closed, ___ in the town rose sharply, and families struggled to afford basic necessities.",w:"unemployment"},
+        {s:"The region experienced a devastating ___ that left the land dry and cracked for three consecutive years.",w:"drought"},
+        {s:"Conservation efforts have so far prevented the complete ___ of the giant panda, whose population is slowly recovering.",w:"extinction"},
+        {s:"Aid workers found children suffering from severe ___, their bodies dangerously weakened by weeks without adequate food.",w:"starvation"}
+      ],
+      bank:["pollutant","unemployment","drought","extinction","starvation"]
+    },
+    speaking:{
+      qs:[
+        "What do you think is the most serious environmental problem facing your country today? Why?",
+        "Why is malnutrition still a major problem in parts of the world despite global food production being high enough to feed everyone?",
+        "Should wealthier countries be required to accept migrants and asylum seekers? Give reasons for your view.",
+        "How does inflation affect ordinary families differently from wealthy ones?",
+        "Do you think individuals or governments bear more responsibility for reducing carbon emissions? Explain your answer."
+      ],
+      phrases:"In my opinion... | One reason for this is... | For example... | On the other hand..."
+    },
+    writing:{
+      en:"Climate change is causing environmental disasters in many parts of the world. Some argue that wealthy nations must do more to help countries suffering from droughts, floods, and famine. Discuss the causes of these crises and what can be done to address them.",
+      cn:"气候变化在世界许多地区引发环境灾害。一些人认为富裕国家必须更多帮助遭受干旱、洪水和饥荒的国家。讨论这些危机的成因以及可采取的应对措施。",
+      hint:"Use at least 8 words from Unit 11. Aim for 250–280 words. 尽量用8个今天学过的单词。"
+    },
+    review:[
+      ["carbon","碳；碳元素"],["depletion","耗尽；减少"],["deluge","洪水；大量"],["drought","干旱"],
+      ["ecosystem","生态系统"],["emission","排放；排放物"],["extinct","灭绝的"],["extinction","灭绝；消亡"],
+      ["greenhouse","温室；温室效应的"],["hurricane","飓风"],["ozone","臭氧"],["petroleum","石油；原油"],
+      ["pollutant","污染物"],["recycle","回收利用"],["renewable","可再生的"],["seismic","地震的；巨大的"],
+      ["aids","艾滋病"],["humanism","人文主义"],["humanitarian","人道主义的"],["infectious","传染性的"],
+      ["malaria","疟疾"],["malnutrition","营养不良"],["scarcity","匮乏；稀缺"],["starvation","饥饿；挨饿"],
+      ["asylum","庇护；避难"],["deficit","赤字；亏损"],["dole","失业救济金"],["ethnic","民族的；种族的"],
+      ["indigenous","土著的；本土的"],["inflation","通货膨胀"],["layoff","裁员；临时解雇"],["migrant","移民；流动工人"],
+      ["migration","迁移；移民"],["penury","贫困；赤贫"],["unemployment","失业；失业状态"]
+    ],
+    collocations:[
+      ["carbon emissions","碳排放"],["carbon footprint","碳足迹"],["greenhouse effect","温室效应"],
+      ["renewable energy","可再生能源"],["ozone layer","臭氧层"],["ecosystem collapse","生态系统崩溃"],
+      ["water depletion","水资源耗尽"],["air pollutant","空气污染物"],["seek asylum","寻求庇护"],
+      ["humanitarian aid","人道主义援助"],["economic migration","经济移民"],["ethnic minority","少数民族"],
+      ["indigenous rights","土著权利"],["rising inflation","通货膨胀上升"],["national deficit","国家赤字"]
+    ]
+  },
+
+  // ── UNIT 12 ─────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Politics & Governance", words: [
+          {w:"censorship",   p:"n.",    c:"审查制度", d:"The suppression or control of speech, media, writing, or other communication by an authority", e:"Censorship of the press made it impossible for citizens to access independent news."},
+          {w:"colonial",     p:"adj.", c:"殖民地的", d:"Relating to or characteristic of a colony or the system of colonialism", e:"The colonial government imposed new taxes on local farmers to fund its administration."},
+          {w:"colonialism",  p:"n.",   c:"殖民主义", d:"The policy and practice of acquiring political and economic control over another country or territory", e:"The long-term effects of colonialism are still felt in many parts of Africa and Asia."},
+          {w:"colonist",     p:"n.",   c:"殖民者；殖民地居民", d:"A person who settles in or inhabits a colony, especially as part of a colonising power", e:"The early colonists brought diseases to which indigenous peoples had no immunity."},
+          {w:"colony",       p:"n.",   c:"殖民地", d:"A country or area under the political control and administration of a distant power", e:"India was a British colony for nearly two hundred years before gaining independence in 1947."},
+          {w:"dictator",     p:"n.",   c:"独裁者", d:"A ruler with total, unrestrained power over a country, typically one who seized power by force", e:"The dictator used the army to crush all political opposition within months of taking power."},
+          {w:"dictatorship", p:"n.",   c:"独裁政治", d:"A system of government in which one person or group holds absolute power without democratic accountability", e:"Under the dictatorship, free elections were abolished and the constitution was rewritten."},
+          {w:"diplomacy",    p:"n.",   c:"外交；外交手段", d:"The management of international relations and agreements between countries through negotiation", e:"Patient diplomacy helped the two rival nations resolve their border dispute peacefully."},
+          {w:"diplomat",     p:"n.",   c:"外交官", d:"An official representing their country abroad in negotiations and international affairs", e:"The diplomat met with foreign ministers from six countries to discuss the peace process."},
+          {w:"diplomatic",   p:"adj.", c:"外交的；圆滑的", d:"Relating to diplomacy; also meaning tactful and skilled in dealing with sensitive situations", e:"Both sides agreed the process must be fully diplomatic and free from political interference."},
+          {w:"mandate",      p:"n.",   c:"授权；命令", d:"An official order or authority given to carry out a policy; the authority given by voters to an elected government", e:"The newly elected government claimed a mandate from the people to reform the tax system."},
+          {w:"referendum",   p:"n.",   c:"公投；全民公决", d:"A general direct vote by the entire electorate on a single political question", e:"The government held a referendum to decide whether to remain in the trade union."},
+          {w:"sovereignty",  p:"n.",   c:"主权；自主权", d:"The full right and power of a country to govern itself without interference from outside", e:"The small nation fiercely defended its sovereignty against pressure from larger neighbours."}
+        ]
+      },
+      {
+        label: "Conflict & Social Issues", words: [
+          {w:"alliance",    p:"n.",   c:"联盟；同盟", d:"A union or formal agreement between countries, groups, or individuals for mutual benefit", e:"The two countries formed a military alliance to defend against a common threat."},
+          {w:"disarm",      p:"v.",   c:"解除武装", d:"To take away or lay down weapons; to reduce a country's armed forces", e:"The peace agreement required both sides to disarm their militia groups within six months."},
+          {w:"exploitation",p:"n.",   c:"剥削；开采", d:"The action of treating someone unfairly for one's own benefit; also the use of natural resources", e:"Workers in the region suffered years of exploitation before labour laws were reformed."},
+          {w:"genocide",    p:"n.",   c:"种族灭绝", d:"The deliberate and systematic killing of a large group of people from a particular nation or ethnicity", e:"The international court investigated evidence of genocide committed against the minority population."},
+          {w:"martial",     p:"adj.", c:"军事的；尚武的", d:"Relating to war or the military; used in 'martial law' — military control of civilian life", e:"Martial law was declared after violent protests erupted in the capital city."},
+          {w:"missile",     p:"n.",   c:"导弹；飞弹", d:"A weapon that is self-propelled and directed at a target, usually carrying an explosive warhead", e:"The missile strike on the rebel base drew immediate international condemnation."},
+          {w:"propaganda",  p:"n.",   c:"宣传；政治宣传", d:"Biased or misleading information spread by an organisation or government to promote its political cause", e:"State-controlled media was used to spread propaganda and justify the government's actions."},
+          {w:"racism",      p:"n.",   c:"种族主义；种族歧视", d:"Prejudice, discrimination, or hostility directed at someone because of their race or ethnic background", e:"The new law was introduced to combat racism and protect minority communities from discrimination."},
+          {w:"sanction",    p:"n./v.","c":"制裁；批准", d:"An official penalty imposed on a country to pressure it to change behaviour; also to officially approve", e:"The United Nations imposed economic sanctions on the country following the military coup."},
+          {w:"segregate",   p:"v.",   c:"实行种族隔离；分离", d:"To separate or divide people, usually based on race, religion, sex, or another characteristic", e:"The apartheid system forced the government to segregate every aspect of daily life by race."},
+          {w:"skirmish",    p:"n.",   c:"小规模冲突；小摩擦", d:"A minor, brief military conflict or argument; a small fight between groups or armies", e:"A skirmish along the border left three soldiers injured but did not escalate into full conflict."},
+          {w:"strife",      p:"n.",   c:"冲突；纷争", d:"Angry or bitter conflict, disagreement, or struggle between people or groups", e:"Years of political strife had left the country deeply divided and economically weakened."}
+        ]
+      },
+      {
+        label: "Global Economy & Power", words: [
+          {w:"globalization", p:"n.",   c:"全球化", d:"The process by which businesses, cultures, and ideas spread and connect across the world", e:"Globalization has created new markets and opportunities, but also widened inequality between nations."},
+          {w:"imperialism",   p:"n.",   c:"帝国主义", d:"A policy of extending a country's power and influence through colonisation, military force, or trade", e:"Historians debate whether modern economic imperialism has replaced the older colonial model."},
+          {w:"imperialist",   p:"n.",   c:"帝国主义者", d:"A person who supports or practices imperialism; relating to or characteristic of imperialism", e:"Critics called the corporation's expansion into developing markets a new form of imperialist control."},
+          {w:"monopolize",    p:"v.",   c:"垄断；独占", d:"To take exclusive control of a trade, service, or market, leaving no real competition", e:"The firm attempted to monopolize the country's telecommunications industry through aggressive acquisitions."},
+          {w:"monopoly",      p:"n.",   c:"垄断；独家经营", d:"Exclusive control over the supply of a product or service in a market with no real competition", e:"The regulator broke up the company's monopoly to restore fair competition in the sector."},
+          {w:"protocol",      p:"n.",   c:"外交礼仪；协议", d:"The official rules and formal procedures of diplomatic occasions; also an international agreement", e:"Every aspect of the summit was governed by strict diplomatic protocol, from seating to speeches."},
+          {w:"sovereign",     p:"adj./n.","c":"有主权的；君主", d:"Possessing supreme and independent authority; a monarch or other ruler with full governing power", e:"The new constitution established the nation as a fully sovereign state, free from foreign control."},
+          {w:"subsidy",       p:"n.",   c:"补贴；津贴", d:"Money given by a government to support a business, industry, or public service", e:"The agricultural subsidy allowed small farmers to compete with cheaper imported produce."},
+          {w:"tariff",        p:"n.",   c:"关税", d:"A tax imposed on goods imported from another country, used to protect domestic industries or raise revenue", e:"The government imposed a 30% tariff on imported steel to protect local steelmakers."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Solvara was an independent country that had never been under foreign rule.",a:false},
+      {q:"General Marvok came to power through a democratic election.",a:false},
+      {q:"The international community responded to evidence of genocide by imposing sanctions on Solvara.",a:true},
+      {q:"The diplomat Lena Voss led the peace negotiations between the two sides.",a:true},
+      {q:"The new government removed all tariffs on imported goods to support free trade.",a:false}
+    ],
+    mcq: [
+      {q:"What did colonialism involve in the story of Solvara?",opts:["Free trade and cultural exchange","Extraction, forced labour, and erasure of local identity","A democratic system of shared governance","Building schools and hospitals for local people"],ans:1},
+      {q:"What did General Marvok do after coming to power?",opts:["Held a free and fair referendum","Invited foreign diplomats to govern jointly","Declared himself dictator and ended democracy","Signed a peace treaty with neighbouring states"],ans:2},
+      {q:"What international response followed evidence of genocide?",opts:["A military alliance was formed to invade","Economic sanctions were imposed","A new colonial government was established","Martial law was lifted across the country"],ans:1},
+      {q:"What did Lena Voss use instead of force to resolve the conflict?",opts:["Economic subsidies","Military alliances","A missile defence system","Diplomacy and careful negotiation"],ans:3},
+      {q:"Why did the new government impose a tariff on imported goods?",opts:["To raise money for humanitarian aid","To support the military budget","To protect local manufacturers from cheap competition","To monopolize the export market"],ans:2}
+    ],
+    match: {
+      ws:["diplomacy","genocide","sovereignty","censorship","monopoly"],
+      ds:[
+        "exclusive control over a product or market with no real competition",
+        "the deliberate killing of a large group based on nationality or ethnicity",
+        "the management of international relations through negotiation",
+        "the suppression or control of information, media, or speech by an authority",
+        "the supreme right of a state to govern itself without outside interference"
+      ],
+      correct:[2,1,4,3,0]
+    },
+    fill: {
+      sents:[
+        {s:"The government imposed a heavy ___ on imported goods to protect domestic manufacturers from foreign competition.",w:"tariff"},
+        {s:"The regime used ___ to spread false information and convince citizens that their leader was acting in their best interests.",w:"propaganda"},
+        {s:"Citizens voted in a ___ to decide whether their region should seek independence from the central government.",w:"referendum"},
+        {s:"The lasting damage caused by ___ can be seen in the economic inequality between former colonies and wealthy nations.",w:"colonialism"},
+        {s:"The international community agreed to impose a trade ___ that restricted the country's ability to export its goods.",w:"sanction"}
+      ],
+      bank:["tariff","propaganda","referendum","colonialism","sanction"]
+    },
+    speaking:{
+      qs:[
+        "Do you think colonialism still affects the world today? Give specific examples to support your view.",
+        "Is economic sanctions an effective way to change a government's behaviour? What are the risks?",
+        "Why is diplomatic negotiation often preferred over military action in resolving international conflicts?",
+        "Do you think globalization has been good or bad for developing countries? Explain your reasoning.",
+        "What does sovereignty mean to a nation, and when might it come into conflict with international law?"
+      ],
+      phrases:"The evidence suggests... | It can be argued that... | On the other hand... | In my view..."
+    },
+    writing:{
+      en:"Some people argue that economic globalisation has helped lift millions out of poverty, while others believe it has increased inequality and exploitation. Discuss both views and give your own opinion.",
+      cn:"一些人认为经济全球化帮助数百万人脱贫，另一些人则认为它加剧了不平等和剥削。讨论两种观点并给出你自己的意见。",
+      hint:"Use at least 8 words from Unit 12. Aim for 250–280 words. 尽量用8个今天学过的单词。"
+    },
+    review:[
+      ["censorship","审查制度"],["colonial","殖民地的"],["colonialism","殖民主义"],["colonist","殖民者"],
+      ["colony","殖民地"],["dictator","独裁者"],["dictatorship","独裁政治"],["diplomacy","外交；外交手段"],
+      ["diplomat","外交官"],["diplomatic","外交的；圆滑的"],["mandate","授权；命令"],["referendum","公投；全民公决"],
+      ["sovereignty","主权；自主权"],["alliance","联盟；同盟"],["disarm","解除武装"],["exploitation","剥削；开采"],
+      ["genocide","种族灭绝"],["martial","军事的；尚武的"],["missile","导弹；飞弹"],["propaganda","宣传；政治宣传"],
+      ["racism","种族主义"],["sanction","制裁；批准"],["segregate","实行种族隔离"],["skirmish","小规模冲突"],
+      ["strife","冲突；纷争"],["globalization","全球化"],["imperialism","帝国主义"],["imperialist","帝国主义者"],
+      ["monopolize","垄断；独占"],["monopoly","垄断；独家经营"],["protocol","外交礼仪；协议"],["sovereign","有主权的；君主"],
+      ["subsidy","补贴；津贴"],["tariff","关税"]
+    ],
+    collocations:[
+      ["colonial rule","殖民统治"],["colonial legacy","殖民遗留问题"],["declare a dictator","宣布独裁"],
+      ["diplomatic relations","外交关系"],["diplomatic immunity","外交豁免权"],["hold a referendum","举行公投"],
+      ["national sovereignty","国家主权"],["military alliance","军事联盟"],["impose sanctions","实施制裁"],
+      ["racial segregation","种族隔离"],["political strife","政治纷争"],["economic globalization","经济全球化"],
+      ["trade tariff","贸易关税"],["government subsidy","政府补贴"],["break a monopoly","打破垄断"]
+    ]
+  }
+];
+
+const MS=[{sel:null,done:[]},{sel:null,done:[]}];
+const FI=[[],[]];
+
+function switchUnit(u){
+  document.querySelectorAll('.unit-btn').forEach((b,i)=>b.classList.toggle('active',i===u));
+  document.querySelectorAll('.unit-panel').forEach((p,i)=>p.classList.toggle('active',i===u));
+}
+function switchPart(u,p){
+  document.querySelectorAll(`#pnav${u} .part-btn`).forEach((b,i)=>b.classList.toggle('active',i===p));
+  for(let i=0;i<7;i++){const e=document.getElementById(`u${u}p${i}`);if(e)e.classList.toggle('active',i===p);}
+}
+
+function buildVocab(u){
+  const g=document.getElementById('vg'+u);
+  if(g.children.length)return;
+  const d=DATA[u];
+  d.cats.forEach(cat=>{
+    const lbl=document.createElement('div');lbl.className='cat-label';lbl.textContent=cat.label;g.appendChild(lbl);
+    cat.words.forEach((w,i)=>{
+      const vi=document.createElement('div');vi.className='vocab-item';
+      const id=`vb${u}_${cat.label.replace(/[^a-z]/gi,'_')}_${i}`;
+      vi.innerHTML=`<div class="vocab-head" onclick="tV('${id}')"><span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span><span class="v-cn">${w.c}</span><span class="v-toggle" id="vt_${id}">+ more</span></div><div class="vocab-body" id="${id}"><div class="v-meaning">${w.d}</div><div class="v-eg">"${w.e}"</div></div>`;
+      g.appendChild(vi);
+    });
+  });
+}
+function tV(id){
+  const b=document.getElementById(id),t=document.getElementById('vt_'+id);
+  const o=b.classList.toggle('open');t.textContent=o?'- less':'+ more';
+}
+
+function buildTF(u){
+  const el=document.getElementById('tf'+u);if(el.innerHTML)return;
+  DATA[u].tf.forEach((x,i)=>{
+    const r=document.createElement('div');r.className='tf-row';
+    r.innerHTML=`<span class="tf-q">${i+1}. ${x.q}</span><div class="tf-btns"><button class="tf-btn" id="tT${u}${i}" onclick="dTF(${u},${i},true)">T</button><button class="tf-btn" id="tF${u}${i}" onclick="dTF(${u},${i},false)">F</button></div><span class="tf-result" id="tR${u}${i}"></span>`;
+    el.appendChild(r);
+  });
+}
+function dTF(u,i,v){
+  const c=DATA[u].tf[i].a;
+  const tB=document.getElementById(`tT${u}${i}`),fB=document.getElementById(`tF${u}${i}`),r=document.getElementById(`tR${u}${i}`);
+  tB.disabled=fB.disabled=true;
+  if(v===c){(v?tB:fB).classList.add('correct');r.textContent='\u2713 Correct';r.style.color='var(--correct)';}
+  else{(v?tB:fB).classList.add('wrong');(c?tB:fB).classList.add('correct');r.textContent='\u2717 Incorrect';r.style.color='var(--wrong)';}
+}
+
+function buildMC(u){
+  const el=document.getElementById('mc'+u);if(el.innerHTML)return;
+  DATA[u].mcq.forEach((x,qi)=>{
+    const b=document.createElement('div');b.className='mc-block';
+    b.innerHTML=`<div class="mc-q">${qi+1}. ${x.q}</div><div class="mc-opts">${x.opts.map((o,oi)=>`<button class="mc-opt" id="mc${u}${qi}${oi}" onclick="dMC(${u},${qi},${oi})">${String.fromCharCode(65+oi)}. ${o}</button>`).join('')}</div>`;
+    el.appendChild(b);
+  });
+}
+function dMC(u,qi,oi){
+  const c=DATA[u].mcq[qi].ans;
+  for(let i=0;i<4;i++){const b=document.getElementById(`mc${u}${qi}${i}`);if(b){b.disabled=true;if(i===c)b.classList.add('correct');else if(i===oi)b.classList.add('wrong');}}
+}
+
+function buildMatch(u){
+  const el=document.getElementById('match'+u);if(el.innerHTML)return;
+  const m=DATA[u].match;
+  const g=document.createElement('div');g.className='match-grid';
+  m.ws.forEach((w,i)=>{
+    const wb=document.createElement('button');wb.className='match-word';wb.id=`mw${u}${i}`;wb.textContent=w;wb.onclick=()=>pW(u,i);g.appendChild(wb);
+    const db=document.createElement('button');db.className='match-def';db.id=`md${u}${i}`;db.textContent=m.ds[i];db.onclick=()=>pD(u,i);g.appendChild(db);
+  });
+  el.appendChild(g);
+}
+function pW(u,i){
+  if(document.getElementById(`mw${u}${i}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="mw${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel');});
+  document.getElementById(`mw${u}${i}`).classList.add('sel');
+  MS[u].sel=i;
+}
+function pD(u,di){
+  if(document.getElementById(`md${u}${di}`).classList.contains('done'))return;
+  document.querySelectorAll(`[id^="md${u}"]`).forEach(b=>{if(!b.classList.contains('done'))b.classList.remove('sel','err');});
+  document.getElementById(`md${u}${di}`).classList.add('sel');
+  if(MS[u].sel===null)return;
+  const wi=MS[u].sel;
+  const correct_di=DATA[u].match.correct[wi];
+  const wB=document.getElementById(`mw${u}${wi}`),dB=document.getElementById(`md${u}${di}`);
+  if(di===correct_di){
+    wB.classList.remove('sel');wB.classList.add('done');
+    dB.classList.remove('sel');dB.classList.add('done');
+    MS[u].done.push(wi);
+    if(MS[u].done.length===DATA[u].match.ws.length){
+      document.getElementById(`match${u}-r`).innerHTML=`<div class="score-bar good" style="margin-top:.75rem"><span class="score-num">5/5</span><span class="score-label">All matched correctly!</span></div>`;
+    }
+  }else{
+    dB.classList.add('err');
+    setTimeout(()=>{if(dB)dB.classList.remove('err','sel');},700);
+    wB.classList.remove('sel');
+  }
+  MS[u].sel=null;
+}
+
+function buildFib(u){
+  const ce=document.getElementById('chips'+u),fe=document.getElementById('fib'+u);
+  if(ce.innerHTML)return;
+  const bank=[...DATA[u].fill.bank];
+  for(let i=bank.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[bank[i],bank[j]]=[bank[j],bank[i]];}
+  bank.forEach(c=>{
+    const s=document.createElement('span');s.className='chip';s.id=`ch${u}${c}`;s.textContent=c;
+    s.onclick=()=>{const a=document.activeElement;if(a&&a.classList.contains('fib-input')&&!a.value){a.value=c;s.classList.add('used');}};
+    ce.appendChild(s);
+  });
+  DATA[u].fill.sents.forEach((r,i)=>{
+    const parts=r.s.split('___');
+    const row=document.createElement('div');row.className='fib-row';
+    row.innerHTML=`<span class="fib-num">${i+1}.</span><span>${parts[0]}</span><input class="fib-input" id="fi${u}${i}" autocomplete="off" placeholder="&hellip;"/><span>${parts[1]||''}</span>`;
+    fe.appendChild(row);
+    FI[u].push(document.getElementById(`fi${u}${i}`));
+  });
+}
+function chkFib(u){
+  let ok=0;const n=DATA[u].fill.sents.length;
+  DATA[u].fill.sents.forEach((r,i)=>{
+    const inp=FI[u][i];const v=inp.value.trim().toLowerCase();const a=r.w.toLowerCase();
+    inp.classList.remove('correct','wrong');
+    if(v===a||v===a+'s'||v===a+'d'||v===a+'ed'){inp.classList.add('correct');ok++;}else inp.classList.add('wrong');
+  });
+  document.getElementById(`fib${u}-s`).innerHTML=`<div class="score-bar${ok===n?' good':''}" style="margin-top:.5rem"><span class="score-num">${ok}/${n}</span><span class="score-label">${ok===n?'Perfect! All correct!':ok>n/2?'Good effort! Check the red ones.':'Keep trying!'}</span></div>`;
+}
+function rstFib(u){
+  DATA[u].fill.sents.forEach((_,i)=>{const inp=FI[u][i];inp.value='';inp.classList.remove('correct','wrong');});
+  DATA[u].fill.bank.forEach(c=>{const ch=document.getElementById(`ch${u}${c}`);if(ch)ch.classList.remove('used');});
+  document.getElementById(`fib${u}-s`).innerHTML='';
+}
+
+function buildSpeak(u){
+  const el=document.getElementById('spk'+u);if(el.innerHTML)return;
+  DATA[u].speaking.qs.forEach((q,i)=>{
+    const d=document.createElement('div');d.className='speak-card';
+    d.innerHTML=`<span class="speak-num">${i+1}.</span><span>${q}</span>`;
+    el.appendChild(d);
+  });
+  const ph=document.getElementById('ph'+u);
+  const parts=DATA[u].speaking.phrases.split('|').map(p=>`<strong>${p.trim()}</strong>`);
+  ph.innerHTML='Useful phrases: '+parts.join(' &nbsp;|&nbsp; ');
+}
+
+function buildWrite(u){
+  const d=DATA[u].writing;
+  document.getElementById(`wp${u}en`).textContent=d.en;
+  document.getElementById(`wp${u}cn`).textContent=d.cn;
+  document.getElementById(`wp${u}hint`).textContent=d.hint;
+  const ta=document.getElementById('wr'+u),wc=document.getElementById('wc'+u);
+  ta.addEventListener('input',()=>{const n=ta.value.trim().split(/\s+/).filter(w=>w).length;wc.textContent=n+' word'+(n!==1?'s':'');});
+}
+
+function buildRev(u){
+  const re=document.getElementById('rev'+u),co=document.getElementById('col'+u);if(re.innerHTML)return;
+  DATA[u].review.forEach(([en,cn])=>{const d=document.createElement('div');d.className='review-item';d.innerHTML=`<span class="r-en">${en}</span><span class="r-cn">${cn}</span>`;re.appendChild(d);});
+  DATA[u].collocations.forEach(([en,cn])=>{const d=document.createElement('div');d.className='colloc-item';d.innerHTML=`<div class="c-en">${en}</div><div class="c-cn">${cn}</div>`;co.appendChild(d);});
+}
+
+[0,1].forEach(u=>{buildVocab(u);buildTF(u);buildMC(u);buildMatch(u);buildFib(u);buildSpeak(u);buildWrite(u);buildRev(u);});
+</script>
+</body>
+</html>
