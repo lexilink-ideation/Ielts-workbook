@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Units 13–14 — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --gold:#C9930A;--gold-light:#FDF3D8;--gold-pale:#FFFBF0;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:1.5rem auto 0;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.part-panel{display:none}
+.part-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.cat-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;padding:.3rem .75rem;margin:.75rem 0 .4rem;display:inline-block}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:15px;font-weight:600;color:var(--teal);min-width:130px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.75rem 1rem;border-top:1px solid var(--border)}
+.vocab-body.open{display:block}
+.v-meaning{font-size:13px;color:var(--muted);margin-bottom:.5rem}
+.v-eg{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.story-box{background:var(--gold-pale);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--text)}
+.story-text p{margin-bottom:.9rem}
+.story-text p:last-child{margin-bottom:0}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-light);padding:.05rem .3rem;border-radius:4px}
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.tf-btn.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-result{font-size:12px;font-weight:500;flex-shrink:0}
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--text)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pale);border-color:var(--teal-light)}
+.mc-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.mc-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.mc-opt:disabled{pointer-events:none}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:20px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%}
+.match-def:hover:not(.done){background:var(--gold-pale);border-color:#E8D08A}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pale);border-radius:8px;border:1px solid var(--teal-light)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--surface);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-light);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:130px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--teal)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-primary:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;align-items:flex-start;gap:.6rem;color:var(--text)}
+.speak-num{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--muted);background:var(--gold-pale);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+.write-prompt{font-size:14px;color:var(--text);margin-bottom:.4rem}
+.write-prompt-cn{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.write-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--text);background:var(--surface);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.write-area:focus{border-color:var(--teal)}
+.write-counter{font-size:12px;color:var(--muted);margin-top:.3rem;text-align:right}
+.write-hint{font-size:12px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.review-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.review-cols{grid-template-columns:1fr}}
+.review-col-label{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.review-item{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.review-item:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--text)}
+.r-cn{color:var(--muted);font-size:12px}
+.colloc-item{padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.colloc-item:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--muted);font-size:12px}
+@media(max-width:600px){.card{padding:1rem}.unit-hdr{padding:1.1rem 1.25rem}.match-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">IELTS Vocabulary Workbook &mdash; Units 13&ndash;14</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-sub">Units 13&ndash;14 &nbsp;&middot;&nbsp; Academic Vocabulary &nbsp;|&nbsp; &#23398;&#26415;&#35789;&#27719;</div>
+  <div class="cover-badges">
+    <span class="badge">Level 3 &mdash; Academic</span>
+    <span class="badge">Units 13&ndash;14</span>
+    <span class="badge">70 target words</span>
+    <span class="badge">Interactive exercises</span>
+  </div>
+  <div class="cover-tip">
+    <strong>How to use</strong>
+    Study vocabulary &rarr; Read the story &rarr; Complete the exercises. Click any word to see its meaning. Answers are checked instantly.
+  </div>
+</div>
+
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="switchUnit(0)">Unit 13 &mdash; Research Methods &amp; Analysis</button>
+    <button class="unit-btn" onclick="switchUnit(1)">Unit 14 &mdash; Academic Writing &amp; Argumentation</button>
+  </div>
+
+  <!-- UNIT 13 -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 13 &nbsp;&middot;&nbsp; Research Methods &amp; Analysis &nbsp; &#31185;&#30740;&#26041;&#27861;&#19982;&#20998;&#26512;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Research &middot; Data &middot; Theory &amp; Concepts</div>
+      </div>
+      <span class="unit-level">Level 3 &mdash; Academic</span>
+    </div>
+    <div class="part-nav" id="pnav0">
+      <button class="part-btn active" onclick="switchPart(0,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(0,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(0,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(0,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(0,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(0,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(0,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Last Coral</div>
+          <div class="story-text">
+<p>Dr Amara Lin stood at the bow of the research vessel, watching the coral reef dissolve into pale water below. She had first dived here twenty years ago, when the reef blazed with colour. Now most of it was bleached. Her <span class="hw">hypothesis</span> was bold: a small genus of coral might possess a thermal enzyme allowing it to survive in warming seas. She had come here to <span class="hw">investigate</span> this claim &mdash; not to guess, but to test it with precision.</p>
+<p>The first task was to <span class="hw">assess</span> the reef&rsquo;s condition. Together with her team, she would <span class="hw">evaluate</span> each colony against a precise checklist: colour, tissue cover, calcification rate. Automated instruments would <span class="hw">monitor</span> temperature and acidity around the clock. When the sensors began to <span class="hw">detect</span> unusual chemical signatures in the deeper sections, she felt the first pulse of excitement. &ldquo;I need to <span class="hw">identify</span> which colonies show thermal resistance,&rdquo; she told her assistant Yusuf. New readings would <span class="hw">indicate</span> whether the enzyme was present. She prepared to <span class="hw">demonstrate</span> her method before the whole team. After three weeks of careful preparation, she managed to <span class="hw">obtain</span> a complete baseline dataset. The team worked to <span class="hw">define</span> the precise conditions needed to trigger the enzyme response. When results arrived, they allowed her to <span class="hw">conclude</span> that the enzyme was real &mdash; present in seventeen percent of surviving colonies.</p>
+<p>The <span class="hw">data</span> was rich. Every reading added to a growing body of <span class="hw">evidence</span> that thermal adaptation was possible. She compared each finding against the <span class="hw">criterion</span> set at the project&rsquo;s outset: a two-degree increase in heat tolerance. Her first <span class="hw">estimate</span> suggested thirty percent of adapted colonies could survive such warming. She kept her analysis within the <span class="hw">parameter</span> she had specified: coral found only below fifteen metres. One critical challenge was to <span class="hw">differentiate</span> between genuine heat tolerance and mere stress response. Many colonies began to <span class="hw">deviate</span> from expected thermal patterns &mdash; but was this survival or shock? The <span class="hw">discrete</span> chemical difference between adapted and maladapted tissue was measurable under high magnification. She could <span class="hw">attribute</span> the survival advantage to a single enzyme cluster. The full <span class="hw">analysis</span> confirmed this. Now she had to <span class="hw">interpret</span> the results carefully: was this data enough to claim that coral could outlast climate change? It would depend on the <span class="hw">source</span> &mdash; whether the enzyme gene was present in wild populations, not just the laboratory.</p>
+<p>Every great discovery begins with a <span class="hw">concept</span> &mdash; a small idea that refuses to be ignored. Amara&rsquo;s <span class="hw">theory</span> had once seemed too <span class="hw">abstract</span> to test, dismissed as poetic <span class="hw">notion</span> rather than science. But the <span class="hw">fundamental</span> truth of biology is that life finds a way. This <span class="hw">principle</span> had guided her for two decades. She had learned to <span class="hw">perceive</span> signals others overlooked &mdash; the small, quiet clues buried in noise. The survival of coral was <span class="hw">intrinsic</span> to the health of the entire ocean. Her argument, backed by data, was now fully <span class="hw">coherent</span>. She worked to <span class="hw">clarify</span> the mechanism behind thermal adaptation and to <span class="hw">specify</span> the exact genetic conditions required. There was still a long road ahead. But for the first time in years, she allowed herself something close to hope.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(0)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk0"></div><div class="hint" id="ph0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp0en"></p><p class="write-prompt-cn" id="wp0cn"></p><p class="write-hint" id="wp0hint"></p><textarea class="write-area" id="wr0" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc0">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u0p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&rsquo;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev0"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col0"></div></div></div></div>
+    </div>
+  </div>
+
+  <!-- UNIT 14 -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 14 &nbsp;&middot;&nbsp; Academic Writing &amp; Argumentation &nbsp; &#23398;&#26415;&#20889;&#20316;&#19982;&#35770;&#35758;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Scholarly Writing &middot; Critical Reasoning &middot; Academic Process</div>
+      </div>
+      <span class="unit-level">Level 3 &mdash; Academic</span>
+    </div>
+    <div class="part-nav" id="pnav1">
+      <button class="part-btn active" onclick="switchPart(1,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(1,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(1,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(1,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(1,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(1,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(1,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Dissertation</div>
+          <div class="story-text">
+<p>Maya had been working on her doctoral thesis for four years. Her research &mdash; an investigation of academic publishing culture in the digital age &mdash; had demanded patience, rigour, and more than a few sleepless nights. Her supervisor, Professor Holt, had advised her to <span class="hw">cite</span> only the most authoritative sources. &ldquo;An <span class="hw">author</span> who builds an argument on shaky foundations,&rdquo; he said, &ldquo;will not be trusted, no matter how elegant the writing.&rdquo; Maya nodded. She had already read every key <span class="hw">text</span> in her field &mdash; entire <span class="hw">chapter</span>s of monographs, dozens of journal articles, conference proceedings from three continents.</p>
+<p>Today she was refining the final <span class="hw">draft</span> of her introduction. She needed to <span class="hw">acknowledge</span> the scholars whose ideas had shaped her own thinking. She also had to frame her findings in their proper <span class="hw">context</span> &mdash; explaining not just what she had found, but why it mattered within the larger field. She spent two hours refining the <span class="hw">structure</span> of her argument, ensuring every section followed in logical <span class="hw">sequence</span>. When she finished, the prose was clear, her <span class="hw">objective</span> was stated precisely, her methodology was <span class="hw">valid</span> by every departmental standard, and her evidence was <span class="hw">consistent</span> across all three case studies.</p>
+<p>She had learned, through painful revision, that a strong academic argument must <span class="hw">justify</span> its every claim. You could not simply <span class="hw">assume</span> an idea was true without showing your workings. You had to <span class="hw">contradict</span> the evidence you disagreed with &mdash; face it directly, not avoid it. You had to be ready for reviewers to <span class="hw">reject</span> your interpretation. If the data <span class="hw">confirm</span>ed your hypothesis, you stated so carefully. It was not enough to <span class="hw">challenge</span> an existing theory; you had to replace it with something more persuasive. Your reasoning had to <span class="hw">conform</span> to disciplinary standards. The evidence had to be <span class="hw">sufficient</span> to support the claims you were making. You could not <span class="hw">constrain</span> your conclusions to only the most favourable data. And above all, everything had to be <span class="hw">relevant</span> &mdash; every paragraph had to earn its place. Even where she needed to <span class="hw">modify</span> her original argument, she did so transparently. The most powerful move, she had learned, was not to assert &mdash; it was to <span class="hw">construct</span> a case so careful and well-evidenced that it could not easily be dismantled.</p>
+<p>The ethics board had advised her to <span class="hw">restrict</span> the personal data she collected to prevent identification of participants. Certain publication channels were <span class="hw">prohibit</span>ed under the new open-access policy. To strengthen her empirical base, she used additional datasets as a <span class="hw">supplement</span> to her primary interviews. In one section, she used statistical modelling as a <span class="hw">substitute</span> for a missing experimental group. Rigorous methodology was <span class="hw">integral</span> to the credibility of her entire project. She had <span class="hw">isolate</span>d three variables in her second study to ensure external factors could not contaminate the results. Once cleaned and coded, her dataset would <span class="hw">generate</span> findings comparable across national contexts. A more transparent peer review system, she argued, would <span class="hw">facilitate</span> greater trust in published research. The library would <span class="hw">allocate</span> digital archiving space for all research outputs and <span class="hw">assign</span> a permanent digital identifier to each deposited chapter. With the right infrastructure, knowledge within one university&rsquo;s archive could be <span class="hw">transmit</span>ted across the entire global academic community &mdash; freely, instantly, without cost.</p>
+<p>Professor Holt returned the final version on a Tuesday afternoon with a single line: &ldquo;This is ready.&rdquo; Maya printed the thesis that same evening. Four years. Three hundred and sixty pages. She held the bound manuscript in both hands and felt, for the first time, entirely certain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(1)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk1"></div><div class="hint" id="ph1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp1en"></p><p class="write-prompt-cn" id="wp1cn"></p><p class="write-hint" id="wp1hint"></p><textarea class="write-area" id="wr1" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc1">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u1p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&rsquo;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev1"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col1"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  // ── UNIT 13 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Research Process", words: [
+          {w:"hypothesis",   p:"n.",    c:"假说；假设", d:"A proposed explanation for a phenomenon, put forward as a starting point for investigation", e:"The scientist developed a hypothesis that the enzyme was responsible for the coral's heat resistance."},
+          {w:"investigate",  p:"v.",    c:"调查；研究", d:"To carry out a systematic inquiry to discover or examine facts", e:"The team was sent to investigate the cause of the sudden decline in fish populations."},
+          {w:"assess",       p:"v.",    c:"评估；评价", d:"To evaluate or judge the nature, quality, or importance of something", e:"Inspectors were brought in to assess the structural damage caused by the earthquake."},
+          {w:"evaluate",     p:"v.",    c:"评价；衡量", d:"To form an opinion of the amount, value, or quality of something after careful study", e:"Students are encouraged to evaluate their own work before submitting it for marking."},
+          {w:"monitor",      p:"v.",    c:"监测；监控", d:"To observe and check the progress or quality of something over time", e:"Sensors placed along the riverbed monitor water temperature and chemical levels continuously."},
+          {w:"detect",       p:"v.",    c:"发现；探测", d:"To discover or identify the presence or existence of something", e:"Early screening tests can detect signs of the disease before any symptoms appear."},
+          {w:"identify",     p:"v.",    c:"识别；确定", d:"To recognise and name something; to establish the identity or characteristics of", e:"Researchers were able to identify the genetic mutation responsible for the condition."},
+          {w:"indicate",     p:"v.",    c:"表明；指示", d:"To point to or suggest something; to be a sign of", e:"The rising temperature readings indicate that the cooling system is no longer functioning properly."},
+          {w:"demonstrate",  p:"v.",    c:"证明；演示", d:"To show clearly and conclusively, often through evidence or practical example", e:"The experiment was designed to demonstrate how light bends when passing through water."},
+          {w:"obtain",       p:"v.",    c:"获得；得到", d:"To come into possession of; to acquire through effort", e:"It took three months to obtain the necessary permits to begin the field research."},
+          {w:"define",       p:"v.",    c:"定义；界定", d:"To state or describe exactly the nature, scope, or meaning of something", e:"Before starting the study, researchers carefully defined what they meant by 'academic success'."},
+          {w:"conclude",     p:"v.",    c:"得出结论；推断", d:"To reach a judgement or decision after consideration of the evidence", e:"After reviewing all the data, the team concluded that the new drug was both safe and effective."}
+        ]
+      },
+      {
+        label: "Data & Evidence", words: [
+          {w:"data",         p:"n.",    c:"数据；资料", d:"Facts and statistics collected together for reference or analysis", e:"The data collected over ten years clearly showed a downward trend in average rainfall."},
+          {w:"evidence",     p:"n.",    c:"证据；证明", d:"Available information or signs indicating whether a belief or proposition is true or valid", e:"The prosecution presented strong evidence that linked the suspect to the crime scene."},
+          {w:"criterion",    p:"n.",    c:"标准；准则", d:"A principle or standard by which something may be judged or decided (plural: criteria)", e:"The main criterion for selection was the candidate's ability to work under pressure."},
+          {w:"estimate",     p:"v./n.", c:"估计；估算", d:"To roughly calculate or judge the value, number, or extent of something", e:"Scientists estimate that the glacier has lost nearly forty percent of its mass since 1980."},
+          {w:"parameter",    p:"n.",    c:"参数；范围", d:"A limit or boundary that defines the scope of a study or activity", e:"The researchers set strict parameters to ensure the study was both manageable and reliable."},
+          {w:"differentiate",p:"v.",   c:"区分；辨别", d:"To recognise or show a difference between two or more things", e:"It is important to differentiate between correlation and causation in scientific research."},
+          {w:"deviate",      p:"v.",   c:"偏离；背离", d:"To depart from an established course, standard, or norm", e:"Several of the trial results began to deviate significantly from the predicted outcome."},
+          {w:"discrete",     p:"adj.", c:"离散的；各别的", d:"Individually separate and distinct; not continuous or overlapping", e:"The survey used five discrete categories to classify responses rather than a continuous scale."},
+          {w:"attribute",    p:"v.",   c:"归因于；归属于", d:"To regard something as caused by or belonging to a particular source", e:"Researchers attribute the increase in allergies partly to changes in the modern diet."},
+          {w:"analysis",     p:"n.",   c:"分析；解析", d:"Detailed examination of the elements or structure of something, typically for interpretation", e:"A careful analysis of the survey responses revealed several unexpected patterns."},
+          {w:"interpret",    p:"v.",   c:"解释；诠释", d:"To explain the meaning of something; to understand in a particular way", e:"Different scholars have interpreted the same historical event in very different ways."},
+          {w:"source",       p:"n.",   c:"来源；出处", d:"A place, person, or thing from which something originates or can be obtained", e:"The journalist refused to reveal the identity of her source within the government."}
+        ]
+      },
+      {
+        label: "Theory & Concepts", words: [
+          {w:"concept",      p:"n.",   c:"概念；观念", d:"An abstract idea or general notion that forms the basis of thinking", e:"The concept of democracy has been interpreted differently across various political systems."},
+          {w:"theory",       p:"n.",   c:"理论；学说", d:"A system of ideas intended to explain something, especially based on general principles", e:"Darwin's theory of evolution fundamentally changed how scientists understood the natural world."},
+          {w:"abstract",     p:"adj.", c:"抽象的；概念性的", d:"Existing in thought or as an idea but not having a physical or concrete existence", e:"At first the mathematical model seemed too abstract to be of any practical use."},
+          {w:"notion",       p:"n.",   c:"概念；想法", d:"A belief or idea, especially one that is vague or imprecise", e:"The notion that success depends entirely on individual effort ignores the role of circumstance."},
+          {w:"fundamental",  p:"adj.", c:"基本的；根本的", d:"Forming a necessary base or core; of central importance", e:"Understanding basic grammar is fundamental to writing clearly in any language."},
+          {w:"principle",    p:"n.",   c:"原则；原理", d:"A fundamental truth or proposition that serves as the foundation for a belief or system of behaviour", e:"The principle of equal pay for equal work is enshrined in the country's employment law."},
+          {w:"perceive",     p:"v.",   c:"察觉；理解", d:"To become aware of or understand through the senses or the mind", e:"Experienced teachers often perceive subtle signs of difficulty that students try to hide."},
+          {w:"intrinsic",    p:"adj.", c:"内在的；固有的", d:"Belonging naturally to something; part of its very nature", e:"The intrinsic value of education cannot be measured solely by employment rates."},
+          {w:"coherent",     p:"adj.", c:"条理清晰的；一致的", d:"Logical and consistent; clearly expressed and easy to understand", e:"A coherent argument presents its ideas in a clear, logical order with strong supporting evidence."},
+          {w:"clarify",      p:"v.",   c:"澄清；阐明", d:"To make something less confused and easier to understand", e:"The teacher asked the student to clarify what she meant by 'cultural influence'."},
+          {w:"specify",      p:"v.",   c:"明确说明；详细规定", d:"To identify or state precisely; to give exact details or requirements", e:"The report failed to specify which countries would be affected by the new trade agreement."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Amara Lin's hypothesis was that all coral species could adapt to warming seas.", a:false},
+      {q:"Automated instruments were used to monitor temperature and acidity.", a:true},
+      {q:"The thermal enzyme was found in the majority of surviving coral colonies.", a:false},
+      {q:"Amara attributed the coral's survival advantage to a single enzyme cluster.", a:true},
+      {q:"Amara had been studying this reef for twenty years before the story begins.", a:true}
+    ],
+    mcq: [
+      {q:"What did Amara's team use to evaluate each coral colony?",
+       opts:["Temperature sensors only","A precise checklist of colour, tissue cover, and calcification","Photographic records taken weekly","Water samples from the surface"],
+       ans:1},
+      {q:"What did Amara need to differentiate between during her study?",
+       opts:["Wild and laboratory coral","Bleached and healthy colonies","Genuine heat tolerance and mere stress response","Deep and shallow water specimens"],
+       ans:2},
+      {q:"What parameter did Amara specify for her research?",
+       opts:["Only coral found at the surface","Only coral grown in the laboratory","Only coral communities below fifteen metres","Only coral in tropical regions"],
+       ans:2},
+      {q:"What does the story say about Amara's original theory?",
+       opts:["It was accepted immediately by colleagues","It was considered too abstract and dismissed","It had already been published in a journal","It was based on laboratory experiments only"],
+       ans:1},
+      {q:"What conclusion did Amara reach about the thermal enzyme?",
+       opts:["It was present in all surviving colonies","It was found only in laboratory specimens","It was real and present in seventeen percent of colonies","It was caused by pollution in the water"],
+       ans:2}
+    ],
+    match: {
+      ws:  ["hypothesis","criterion","attribute","intrinsic","coherent"],
+      ds:  ["a proposed explanation to be tested by investigation","a standard used to judge or make a decision","to credit something as the cause of a result","belonging naturally to something; inherent","logical, consistent, and clearly expressed"],
+      correct: [0,1,2,3,4]
+    },
+    fill: {
+      sents: [
+        {s:"The scientists worked carefully to ___ the results without introducing personal bias.", w:"interpret"},
+        {s:"Several coral colonies began to ___ from their expected thermal growth patterns.", w:"deviate"},
+        {s:"Researchers ___ that around seventeen percent of colonies carried the thermal enzyme.", w:"estimate"},
+        {s:"The ___ chemical difference between adapted and unadapted tissue was visible under a microscope.", w:"discrete"},
+        {s:"An experienced researcher can ___ subtle signals that a beginner might overlook.", w:"perceive"}
+      ],
+      bank: ["interpret","deviate","estimate","discrete","perceive"]
+    },
+    speaking: {
+      qs: [
+        "Have you ever formed a hypothesis about your own life or studies? How did you test it?",
+        "Do you think all scientific theories should lead to practical results, or is theoretical research valuable on its own?",
+        "Think of a concept that was once considered too abstract to prove. How was it eventually confirmed?",
+        "How do you differentiate between reliable evidence and mere opinion when reading news or research?",
+        "What fundamental principle guides your approach to studying or working?"
+      ],
+      phrases: "<strong>Useful phrases:</strong> &ldquo;test a hypothesis&rdquo; &middot; &ldquo;assess the evidence&rdquo; &middot; &ldquo;attribute success to&rdquo; &middot; &ldquo;clarify a concept&rdquo; &middot; &ldquo;fundamental to our understanding of&rdquo;"
+    },
+    writing: {
+      en: "Some people believe that scientific theories are only valuable if they can be immediately applied to real-world problems. Others argue that abstract theoretical research is equally important. Discuss both views and give your own opinion.",
+      cn: "有人认为，科学理论只有能立即应用于现实问题才有价值；另一些人认为，抽象的理论研究同样重要。讨论双方观点并给出你的意见。",
+      hint: "Try to use: hypothesis, fundamental, perceive, concept, theory, intrinsic, evidence, conclude"
+    },
+    review: [
+      ["hypothesis","假说；假设"],["investigate","调查；研究"],["assess","评估；评价"],["evaluate","评价；衡量"],
+      ["monitor","监测；监控"],["detect","发现；探测"],["identify","识别；确定"],["indicate","表明；指示"],
+      ["demonstrate","证明；演示"],["obtain","获得；得到"],["define","定义；界定"],["conclude","得出结论"],
+      ["data","数据；资料"],["evidence","证据；证明"],["criterion","标准；准则"],["estimate","估计；估算"],
+      ["parameter","参数；范围"],["differentiate","区分；辨别"],["deviate","偏离；背离"],["discrete","离散的；各别的"],
+      ["attribute","归因于"],["analysis","分析；解析"],["interpret","解释；诠释"],["source","来源；出处"],
+      ["concept","概念；观念"],["theory","理论；学说"],["abstract","抽象的"],["notion","概念；想法"],
+      ["fundamental","基本的；根本的"],["principle","原则；原理"],["perceive","察觉；理解"],["intrinsic","内在的；固有的"],
+      ["coherent","条理清晰的"],["clarify","澄清；阐明"],["specify","明确说明"]
+    ],
+    collocations: [
+      ["test a hypothesis","检验假设"],["conduct an analysis","进行分析"],["assess the evidence","评估证据"],
+      ["identify key factors","识别关键因素"],["attribute success to","将成功归因于"],["a primary source","主要来源"],
+      ["fundamental principles","基本原则"],["clarify a concept","阐明一个概念"],["interpret the results","解释结果"],
+      ["specify the conditions","明确条件"],["coherent argument","条理清晰的论点"],["intrinsic value","内在价值"],
+      ["set a criterion","设定标准"],["estimate the cost","估计成本"],["monitor progress","监控进展"]
+    ]
+  },
+
+  // ── UNIT 14 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Scholarly Writing", words: [
+          {w:"cite",        p:"v.",    c:"引用；援引", d:"To quote or refer to a source of information as evidence in academic writing", e:"The essay must cite at least five peer-reviewed sources to be considered for publication."},
+          {w:"author",      p:"n.",    c:"作者；著作人", d:"The writer of a book, article, or other text; the originator of an idea or work", e:"The author of the study acknowledged several limitations in her research design."},
+          {w:"text",        p:"n.",    c:"文本；原文", d:"A written or printed work; the main body of a piece of writing", e:"Students are required to read the original text before attending the seminar discussion."},
+          {w:"chapter",     p:"n.",    c:"章节；篇章", d:"A main division of a book or other long written work", e:"The third chapter of the thesis explores the relationship between poverty and educational attainment."},
+          {w:"draft",       p:"n./v.", c:"草稿；起草", d:"A preliminary version of a piece of writing; to prepare a preliminary version", e:"She revised the draft three times before submitting it to her supervisor for feedback."},
+          {w:"acknowledge", p:"v.",    c:"承认；致谢", d:"To recognise the contribution of someone; to express gratitude or admit the truth of something", e:"The researcher acknowledged that her sample size was too small to draw firm conclusions."},
+          {w:"context",     p:"n.",    c:"背景；上下文", d:"The circumstances or background against which something is interpreted or understood", e:"To fully understand the poem, you need to consider the historical context in which it was written."},
+          {w:"structure",   p:"n.",    c:"结构；框架", d:"The way in which the parts of something are organised or arranged", e:"A well-planned essay has a clear structure that guides the reader from introduction to conclusion."},
+          {w:"sequence",    p:"n.",    c:"顺序；序列", d:"A particular order in which related things follow each other", e:"The events in the story do not follow a chronological sequence — they alternate between past and present."},
+          {w:"objective",   p:"n./adj.","c":"目标；客观的", d:"A goal or aim; also, not influenced by personal feelings or opinions", e:"The report's main objective was to assess the economic impact of the new trade policy."},
+          {w:"valid",       p:"adj.",  c:"有效的；正当的", d:"Having a sound basis in logic or fact; legally or officially acceptable", e:"For an argument to be valid, each step must follow logically from the one before it."},
+          {w:"consistent",  p:"adj.",  c:"一致的；连贯的", d:"Acting or done in the same way over time; compatible and not contradictory", e:"The witness's account was not consistent with the physical evidence found at the scene."}
+        ]
+      },
+      {
+        label: "Critical Reasoning", words: [
+          {w:"justify",     p:"v.",    c:"为……辩护；证明……正当", d:"To show or prove that something is right or reasonable", e:"The government was asked to justify its decision to cut funding for public libraries."},
+          {w:"assume",      p:"v.",    c:"假定；假设", d:"To accept something as true without proof; to take for granted", e:"We cannot simply assume that economic growth will automatically benefit the poorest citizens."},
+          {w:"contradict",  p:"v.",    c:"反驳；与……矛盾", d:"To assert the opposite of; to be in conflict with", e:"The second set of results directly contradicted the findings from the first experiment."},
+          {w:"reject",      p:"v.",    c:"拒绝；否定", d:"To dismiss as inadequate, unacceptable, or untrue", e:"The committee rejected the proposal on the grounds that it lacked sufficient evidence."},
+          {w:"confirm",     p:"v.",    c:"证实；确认", d:"To establish the truth or correctness of something; to verify", e:"Further tests were needed to confirm that the drug was effective in a wider population."},
+          {w:"challenge",   p:"v./n.", c:"挑战；质疑", d:"To question or dispute the truth, validity, or authority of something", e:"The young researcher dared to challenge a theory that had been accepted for decades."},
+          {w:"conform",     p:"v.",    c:"遵从；符合", d:"To comply with rules, standards, or conventions; to behave in a way that is expected", e:"All submissions must conform to the journal's formatting and citation guidelines."},
+          {w:"sufficient",  p:"adj.", c:"足够的；充分的", d:"Enough to meet the needs of a situation or for a particular purpose", e:"The evidence was not sufficient to convict the defendant beyond reasonable doubt."},
+          {w:"constrain",   p:"v.",    c:"限制；束缚", d:"To restrict or limit; to force someone to follow a particular course of action", e:"The researchers were constrained by a limited budget and a tight research timeline."},
+          {w:"relevant",    p:"adj.", c:"相关的；切题的", d:"Closely connected to the matter in hand; important or applicable to a particular situation", e:"Please only include information that is directly relevant to the research question."},
+          {w:"modify",      p:"v.",    c:"修改；调整", d:"To make partial or minor changes to something; to adapt", e:"After receiving feedback, she modified her original argument to address the reviewers' concerns."},
+          {w:"construct",   p:"v.",    c:"构建；建立", d:"To build or create something systematically; in language: to formulate an argument or sentence", e:"A strong academic essay constructs its argument step by step, with each point building on the last."}
+        ]
+      },
+      {
+        label: "Academic Process", words: [
+          {w:"restrict",    p:"v.",    c:"限制；约束", d:"To limit or control the size, amount, or range of something", e:"The ethics committee restricted the study to participants over the age of eighteen."},
+          {w:"prohibit",    p:"v.",    c:"禁止；不许", d:"To formally forbid something by law or rule", e:"University policy prohibits students from sharing examination questions with others."},
+          {w:"supplement",  p:"n./v.", c:"补充；增补", d:"Something that is added to complete or enhance something; to add extra content", e:"The textbook is used as a supplement to, not a replacement for, the weekly lectures."},
+          {w:"substitute",  p:"n./v.", c:"替代；替换", d:"A person or thing that takes the place of another; to use one thing in place of another", e:"When fresh herbs were unavailable, the chef used dried ones as a substitute."},
+          {w:"integral",    p:"adj.", c:"不可缺少的；整体的", d:"Necessary to make a whole complete; essential", e:"Peer review is integral to the process of academic publishing and quality control."},
+          {w:"isolate",     p:"v.",    c:"隔离；分离", d:"To separate from others; to identify and deal with something separately", e:"The team isolated the variable they wanted to study by keeping all other conditions constant."},
+          {w:"generate",    p:"v.",    c:"产生；生成", d:"To produce or create; to bring about", e:"The new policy is expected to generate significant debate among academics and policymakers alike."},
+          {w:"facilitate",  p:"v.",    c:"促进；便利", d:"To make an action or process easier or more achievable", e:"Online platforms can facilitate collaboration between researchers in different countries."},
+          {w:"allocate",    p:"v.",    c:"分配；拨给", d:"To distribute resources or duties between people or for a purpose", e:"The government plans to allocate additional funding to research in renewable energy."},
+          {w:"assign",      p:"v.",    c:"指派；分配", d:"To give a particular task or role to someone; to designate something for a specific purpose", e:"Each student was assigned a different historical period to research and present."},
+          {w:"transmit",    p:"v.",    c:"传输；传递", d:"To send or pass something from one place or person to another", e:"The satellite is capable of transmitting high-resolution images back to Earth in real time."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Professor Holt told Maya to cite only the most authoritative sources.", a:true},
+      {q:"Maya's methodology was found to be invalid by the department.", a:false},
+      {q:"Maya used statistical modelling as a supplement to a missing experimental group.", a:false},
+      {q:"The ethics board restricted the personal data Maya collected to protect participants.", a:true},
+      {q:"Professor Holt returned Maya's final thesis with several major revision requests.", a:false}
+    ],
+    mcq: [
+      {q:"What did Maya need to acknowledge in her introduction?",
+       opts:["The word count of her thesis","The scholars whose ideas shaped her thinking","The number of sources she cited","The university's open-access policy"],
+       ans:1},
+      {q:"According to the story, what must an academic argument do with evidence it disagrees with?",
+       opts:["Ignore it in the main text","Place it in an appendix","Contradict it directly","Summarise it without comment"],
+       ans:2},
+      {q:"Why did Maya isolate three variables in her second study?",
+       opts:["To reduce the length of her thesis","To satisfy the ethics board only","To ensure external factors could not contaminate results","To generate more data for her dataset"],
+       ans:2},
+      {q:"What did Maya use statistical modelling as in her thesis?",
+       opts:["A supplement to her interviews","A substitute for a missing experimental group","A way to generate additional data","A method to assign participant codes"],
+       ans:1},
+      {q:"How long was Maya's completed thesis?",
+       opts:["240 pages","300 pages","360 pages","400 pages"],
+       ans:2}
+    ],
+    match: {
+      ws:  ["cite","justify","integral","constrain","facilitate"],
+      ds:  ["to refer to a source as evidence","to show that something is right or reasonable","essential and necessary to the whole","to restrict or limit something","to make a process easier or more efficient"],
+      correct: [0,1,2,3,4]
+    },
+    fill: {
+      sents: [
+        {s:"The data was collected in a specific ___ to allow direct comparison between phases.", w:"sequence"},
+        {s:"All researchers must ___ to the ethical guidelines set by the university.", w:"conform"},
+        {s:"The author carefully ___d the contributions of three scholars who influenced her work.", w:"acknowledge"},
+        {s:"The new library system will ___ digitised research to institutions around the world.", w:"transmit"},
+        {s:"The team used modelling as a ___ when direct observation was not possible.", w:"substitute"}
+      ],
+      bank: ["sequence","conform","acknowledge","transmit","substitute"]
+    },
+    speaking: {
+      qs: [
+        "Do you prefer studying academic texts or practical guides? What are the benefits of each?",
+        "How do you decide which sources to cite when writing an essay or report?",
+        "Have you ever had an assumption challenged by new evidence? How did you respond?",
+        "In your opinion, should academic research be freely available to the public? Why or why not?",
+        "What makes a piece of academic writing coherent and convincing to you?"
+      ],
+      phrases: "<strong>Useful phrases:</strong> &ldquo;construct a well-structured argument&rdquo; &middot; &ldquo;cite evidence to support&rdquo; &middot; &ldquo;conform to academic standards&rdquo; &middot; &ldquo;acknowledge limitations&rdquo; &middot; &ldquo;facilitate a better understanding of&rdquo;"
+    },
+    writing: {
+      en: "Academic research should be freely available to everyone, not locked behind subscription fees. To what extent do you agree or disagree with this statement?",
+      cn: "学术研究成果应该对所有人免费开放，而不是锁在订阅付费墙后。你在多大程度上同意这一观点？",
+      hint: "Try to use: transmit, facilitate, restrict, prohibit, integral, generate, allocate, relevant"
+    },
+    review: [
+      ["cite","引用；援引"],["author","作者；著作人"],["text","文本；原文"],["chapter","章节；篇章"],
+      ["draft","草稿；起草"],["acknowledge","承认；致谢"],["context","背景；上下文"],["structure","结构；框架"],
+      ["sequence","顺序；序列"],["objective","目标；客观的"],["valid","有效的；正当的"],["consistent","一致的；连贯的"],
+      ["justify","为……辩护"],["assume","假定；假设"],["contradict","反驳；矛盾"],["reject","拒绝；否定"],
+      ["confirm","证实；确认"],["challenge","挑战；质疑"],["conform","遵从；符合"],["sufficient","足够的；充分的"],
+      ["constrain","限制；束缚"],["relevant","相关的；切题的"],["modify","修改；调整"],["construct","构建；建立"],
+      ["restrict","限制；约束"],["prohibit","禁止；不许"],["supplement","补充；增补"],["substitute","替代；替换"],
+      ["integral","不可缺少的"],["isolate","隔离；分离"],["generate","产生；生成"],["facilitate","促进；便利"],
+      ["allocate","分配；拨给"],["assign","指派；分配"],["transmit","传输；传递"]
+    ],
+    collocations: [
+      ["cite a source","引用资料"],["draft a proposal","起草提案"],["justify a claim","为论点辩护"],
+      ["construct an argument","构建论点"],["conform to standards","符合标准"],["acknowledge contributions","承认贡献"],
+      ["facilitate communication","促进交流"],["allocate resources","分配资源"],["restrict access","限制访问"],
+      ["supplement with data","用数据补充"],["integral component","不可缺少的组成部分"],["transmit information","传递信息"],
+      ["relevant evidence","相关证据"],["sufficient evidence","充分的证据"],["isolate a variable","分离变量"]
+    ]
+  }
+];
+
+// ── UNIT SWITCHING ────────────────────────────────────────
+function switchUnit(i){
+  document.querySelectorAll('.unit-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.unit-panel').forEach((p,j)=>p.classList.toggle('active',j===i));
+}
+function switchPart(u,p){
+  document.querySelectorAll(`#pnav${u} .part-btn`).forEach((b,j)=>b.classList.toggle('active',j===p));
+  document.querySelectorAll(`#unit${u} .part-panel`).forEach((el,j)=>el.classList.toggle('active',j===p));
+}
+
+// ── VOCAB BUILDER ─────────────────────────────────────────
+function buildVocab(u){
+  const d=DATA[u]; const el=document.getElementById('vg'+u);
+  d.cats.forEach(cat=>{
+    const lbl=document.createElement('div'); lbl.className='cat-label'; lbl.textContent=cat.label;
+    el.appendChild(lbl);
+    cat.words.forEach(w=>{
+      const item=document.createElement('div'); item.className='vocab-item';
+      item.innerHTML=`<div class="vocab-head" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.v-toggle').textContent=this.nextElementSibling.classList.contains('open')?'▲':'▼'">
+        <span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span><span class="v-cn">${w.c}</span><span class="v-toggle">▼</span>
+      </div>
+      <div class="vocab-body"><div class="v-meaning">${w.d}</div><div class="v-eg">${w.e}</div></div>`;
+      el.appendChild(item);
+    });
+  });
+}
+
+// ── T/F ───────────────────────────────────────────────────
+function buildTF(u){
+  const el=document.getElementById('tf'+u);
+  DATA[u].tf.forEach((q,i)=>{
+    const row=document.createElement('div'); row.className='tf-row';
+    row.innerHTML=`<span class="tf-q">${i+1}. ${q.q}</span>
+    <div class="tf-btns">
+      <button class="tf-btn" onclick="chkTF(this,${u},${i},true)">True</button>
+      <button class="tf-btn" onclick="chkTF(this,${u},${i},false)">False</button>
+    </div><span class="tf-result" id="tfr${u}_${i}"></span>`;
+    el.appendChild(row);
+  });
+}
+function chkTF(btn,u,i,val){
+  const correct=DATA[u].tf[i].a;
+  const row=btn.closest('.tf-row');
+  row.querySelectorAll('.tf-btn').forEach(b=>b.disabled=true);
+  if(val===correct){btn.classList.add('correct'); document.getElementById('tfr'+u+'_'+i).textContent='✓ Correct';}
+  else{btn.classList.add('wrong'); const other=row.querySelectorAll('.tf-btn')[val?1:0]; other.classList.add('correct'); document.getElementById('tfr'+u+'_'+i).textContent='✗ Incorrect';}
+}
+
+// ── MCQ ───────────────────────────────────────────────────
+function buildMC(u){
+  const el=document.getElementById('mc'+u);
+  DATA[u].mcq.forEach((q,i)=>{
+    const block=document.createElement('div'); block.className='mc-block';
+    let opts=q.opts.map((o,j)=>`<button class="mc-opt" onclick="chkMC(this,${u},${i},${j})">${o}</button>`).join('');
+    block.innerHTML=`<div class="mc-q">${i+1}. ${q.q}</div><div class="mc-opts">${opts}</div>`;
+    el.appendChild(block);
+  });
+}
+function chkMC(btn,u,i,j){
+  const correct=DATA[u].mcq[i].ans;
+  const opts=btn.closest('.mc-opts').querySelectorAll('.mc-opt');
+  opts.forEach(b=>b.disabled=true);
+  if(j===correct){btn.classList.add('correct');}
+  else{btn.classList.add('wrong'); opts[correct].classList.add('correct');}
+}
+
+// ── MATCHING ──────────────────────────────────────────────
+let matchState={};
+function buildMatch(u){
+  const m=DATA[u].match; const el=document.getElementById('match'+u);
+  const grid=document.createElement('div'); grid.className='match-grid';
+  const ws=[...m.ws]; const ds=[...m.ds];
+  const dsShuffled=[...ds].sort(()=>Math.random()-.5);
+  matchState[u]={ws,ds,dsShuffled,sel:null,done:0};
+  ws.forEach((w,i)=>{
+    const wb=document.createElement('button'); wb.className='match-word'; wb.dataset.wi=i; wb.textContent=w;
+    wb.onclick=()=>selectWord(u,wb,i);
+    const db=document.createElement('button'); db.className='match-def'; db.dataset.di=dsShuffled.indexOf(ds[i]);
+    db.textContent=dsShuffled[dsShuffled.indexOf(ds[i])];
+    db.onclick=()=>selectDef(u,db);
+    grid.appendChild(wb); grid.appendChild(db);
+  });
+  // Rebuild to interleave properly
+  el.innerHTML='';
+  const grid2=document.createElement('div'); grid2.className='match-grid';
+  const allWBtns=[]; const allDBtns=[];
+  ws.forEach((w,i)=>{
+    const wb=document.createElement('button'); wb.className='match-word'; wb.dataset.wi=i; wb.textContent=w;
+    wb.onclick=()=>selectWord(u,wb,i); allWBtns.push(wb);
+  });
+  dsShuffled.forEach((d,i)=>{
+    const db=document.createElement('button'); db.className='match-def'; db.dataset.di=i; db.textContent=d;
+    db.onclick=()=>selectDef(u,db); allDBtns.push(db);
+  });
+  ws.forEach((_,i)=>{ grid2.appendChild(allWBtns[i]); grid2.appendChild(allDBtns[i]); });
+  el.appendChild(grid2);
+  matchState[u].wBtns=allWBtns; matchState[u].dBtns=allDBtns;
+}
+function selectWord(u,btn,i){
+  const s=matchState[u];
+  s.wBtns.forEach(b=>b.classList.remove('sel'));
+  s.sel=i; btn.classList.add('sel');
+}
+function selectDef(u,btn){
+  const s=matchState[u]; if(s.sel===null) return;
+  const di=parseInt(btn.dataset.di);
+  const correctDi=s.dsShuffled.indexOf(s.ds[s.sel]);
+  if(di===correctDi){
+    btn.classList.add('done'); s.wBtns[s.sel].classList.remove('sel'); s.wBtns[s.sel].classList.add('done');
+    s.wBtns[s.sel].disabled=true; s.done++;
+    if(s.done===s.ws.length) document.getElementById('match'+u+'-r').innerHTML='<div class="score-bar good" style="margin-top:.75rem"><span class="score-num">✓</span><span class="score-label">All matched correctly!</span></div>';
+  } else {
+    btn.classList.add('err'); setTimeout(()=>btn.classList.remove('err'),600);
+  }
+  s.sel=null;
+}
+
+// ── FILL IN THE BLANK ─────────────────────────────────────
+function buildFib(u){
+  const f=DATA[u].fill; const chipsEl=document.getElementById('chips'+u); const fibEl=document.getElementById('fib'+u);
+  const bank=[...f.bank].sort(()=>Math.random()-.5);
+  bank.forEach(w=>{
+    const chip=document.createElement('span'); chip.className='chip'; chip.textContent=w; chip.dataset.w=w;
+    chip.onclick=()=>{
+      const active=fibEl.querySelector('.fib-input:focus')||fibEl.querySelector('.fib-input:not(.correct):not(.wrong)');
+      if(active){active.value=w; chip.classList.add('used');}
+    };
+    chipsEl.appendChild(chip);
+  });
+  f.sents.forEach((s,i)=>{
+    const row=document.createElement('div'); row.className='fib-row';
+    const [before,after]=s.s.split('___');
+    row.innerHTML=`<span class="fib-num">${i+1}.</span>${before}<input class="fib-input" data-ans="${s.w}" placeholder="…">${after}`;
+    fibEl.appendChild(row);
+  });
+}
+function chkFib(u){
+  const inputs=document.getElementById('fib'+u).querySelectorAll('.fib-input');
+  let correct=0;
+  inputs.forEach(inp=>{
+    if(inp.value.trim().toLowerCase()===inp.dataset.ans.toLowerCase()){inp.classList.add('correct'); correct++;}
+    else inp.classList.add('wrong');
+  });
+  document.getElementById('fib'+u+'-s').innerHTML=`<div class="score-bar${correct===inputs.length?' good':''}"><span class="score-num">${correct}/${inputs.length}</span><span class="score-label">${correct===inputs.length?'All correct!':'Keep practising.'}</span></div>`;
+}
+function rstFib(u){
+  document.getElementById('fib'+u).querySelectorAll('.fib-input').forEach(i=>{i.value='';i.className='fib-input';});
+  document.getElementById('chips'+u).querySelectorAll('.chip').forEach(c=>c.classList.remove('used'));
+  document.getElementById('fib'+u+'-s').innerHTML='';
+}
+
+// ── SPEAKING ──────────────────────────────────────────────
+function buildSpeak(u){
+  const s=DATA[u].speaking; const el=document.getElementById('spk'+u);
+  s.qs.forEach((q,i)=>{
+    const card=document.createElement('div'); card.className='speak-card';
+    card.innerHTML=`<span class="speak-num">${i+1}</span><span>${q}</span>`; el.appendChild(card);
+  });
+  document.getElementById('ph'+u).innerHTML=s.phrases;
+}
+
+// ── WRITING ───────────────────────────────────────────────
+function buildWrite(u){
+  const w=DATA[u].writing;
+  document.getElementById('wp'+u+'en').textContent=w.en;
+  document.getElementById('wp'+u+'cn').textContent=w.cn;
+  document.getElementById('wp'+u+'hint').textContent=w.hint;
+  const area=document.getElementById('wr'+u);
+  const counter=document.getElementById('wc'+u);
+  area.addEventListener('input',()=>{ const wds=area.value.trim().split(/\s+/).filter(Boolean).length; counter.textContent=wds+' word'+(wds!==1?'s':''); });
+}
+
+// ── REVIEW ────────────────────────────────────────────────
+function buildReview(u){
+  const d=DATA[u];
+  const revEl=document.getElementById('rev'+u);
+  d.review.forEach(([en,cn])=>{
+    const item=document.createElement('div'); item.className='review-item';
+    item.innerHTML=`<span class="r-en">${en}</span><span class="r-cn">${cn}</span>`; revEl.appendChild(item);
+  });
+  const colEl=document.getElementById('col'+u);
+  d.collocations.forEach(([en,cn])=>{
+    const item=document.createElement('div'); item.className='colloc-item';
+    item.innerHTML=`<div class="c-en">${en}</div><div class="c-cn">${cn}</div>`; colEl.appendChild(item);
+  });
+}
+
+// ── INIT ──────────────────────────────────────────────────
+[0,1].forEach(u=>{ buildVocab(u); buildTF(u); buildMC(u); buildMatch(u); buildFib(u); buildSpeak(u); buildWrite(u); buildReview(u); });
+</script>
+</body>
+</html>

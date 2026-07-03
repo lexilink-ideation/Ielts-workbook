@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Units 15–16 — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --gold:#C9930A;--gold-light:#FDF3D8;--gold-pale:#FFFBF0;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:1.5rem auto 0;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.part-panel{display:none}
+.part-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.cat-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;padding:.3rem .75rem;margin:.75rem 0 .4rem;display:inline-block}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:15px;font-weight:600;color:var(--teal);min-width:130px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.75rem 1rem;border-top:1px solid var(--border)}
+.vocab-body.open{display:block}
+.v-meaning{font-size:13px;color:var(--muted);margin-bottom:.5rem}
+.v-eg{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.story-box{background:var(--gold-pale);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--text)}
+.story-text p{margin-bottom:.9rem}
+.story-text p:last-child{margin-bottom:0}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-light);padding:.05rem .3rem;border-radius:4px}
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.tf-btn.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-result{font-size:12px;font-weight:500;flex-shrink:0}
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--text)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pale);border-color:var(--teal-light)}
+.mc-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.mc-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.mc-opt:disabled{pointer-events:none}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:20px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%}
+.match-def:hover:not(.done){background:var(--gold-pale);border-color:#E8D08A}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pale);border-radius:8px;border:1px solid var(--teal-light)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--surface);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-light);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:130px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--teal)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-primary:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;align-items:flex-start;gap:.6rem;color:var(--text)}
+.speak-num{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--muted);background:var(--gold-pale);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+.write-prompt{font-size:14px;color:var(--text);margin-bottom:.4rem}
+.write-prompt-cn{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.write-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--text);background:var(--surface);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.write-area:focus{border-color:var(--teal)}
+.write-counter{font-size:12px;color:var(--muted);margin-top:.3rem;text-align:right}
+.write-hint{font-size:12px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.review-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.review-cols{grid-template-columns:1fr}}
+.review-col-label{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.review-item{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.review-item:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--text)}
+.r-cn{color:var(--muted);font-size:12px}
+.colloc-item{padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.colloc-item:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--muted);font-size:12px}
+@media(max-width:600px){.card{padding:1rem}.unit-hdr{padding:1.1rem 1.25rem}.match-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">IELTS Vocabulary Workbook &mdash; Units 15&ndash;16</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-sub">Units 15&ndash;16 &nbsp;&middot;&nbsp; Academic Vocabulary &nbsp;|&nbsp; &#31038;&#20250;&#19982;&#21457;&#23637;</div>
+  <div class="cover-badges">
+    <span class="badge">Level 3 &mdash; Academic</span>
+    <span class="badge">Units 15&ndash;16</span>
+    <span class="badge">70 target words</span>
+    <span class="badge">Interactive exercises</span>
+  </div>
+  <div class="cover-tip">
+    <strong>How to use</strong>
+    Study vocabulary &rarr; Read the story &rarr; Complete the exercises. Click any word to see its meaning. Answers are checked instantly.
+  </div>
+</div>
+
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="switchUnit(0)">Unit 15 &mdash; Economy, Policy &amp; Society</button>
+    <button class="unit-btn" onclick="switchUnit(1)">Unit 16 &mdash; Change, Strategy &amp; Development</button>
+  </div>
+
+  <!-- UNIT 15 -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 15 &nbsp;&middot;&nbsp; Economy, Policy &amp; Society &nbsp; &#32463;&#27982;&#12289;&#25919;&#31574;&#19982;&#31038;&#20250;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Governance &middot; Economy &middot; Community &amp; Culture</div>
+      </div>
+      <span class="unit-level">Level 3 &mdash; Academic</span>
+    </div>
+    <div class="part-nav" id="pnav0">
+      <button class="part-btn active" onclick="switchPart(0,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(0,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(0,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(0,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(0,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(0,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(0,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Mineral State</div>
+          <div class="story-text">
+<p>Finance Minister Dara Osei arrived in the capital on a Monday morning carrying two conflicting reports. The first listed her government&rsquo;s <span class="hw">domestic</span> commitments: <span class="hw">subsidy</span> payments for rural farmers, infrastructure budgets, and <span class="hw">community</span> health programmes. The second was a proposal from an international mining consortium offering to <span class="hw">export</span> the country&rsquo;s rare-earth minerals at scale. Estira had always relied on agriculture as the primary <span class="hw">function</span> of its economy. But the prime minister wanted to diversify. &ldquo;We cannot <span class="hw">maintain</span> our current <span class="hw">income</span>,&rdquo; he said. &ldquo;We need to <span class="hw">regulate</span> the mining sector properly and use it to <span class="hw">establish</span> a stronger economic base.&rdquo;</p>
+<p>The political challenge was immediately <span class="hw">legal</span>. The existing <span class="hw">procedure</span> for granting mining rights dated back sixty years, giving foreign companies <span class="hw">authority</span> over extraction without proper environmental oversight. Parliament would need to <span class="hw">legislate</span> new protections before any agreement could be signed. The <span class="hw">civil</span> society groups watching from the street made clear they would accept nothing less. The <span class="hw">policy</span> debate that followed was fierce.</p>
+<p>Dara spent three weeks working through the numbers. Estira&rsquo;s <span class="hw">ratio</span> of debt to GDP was already high, and its ability to obtain further <span class="hw">credit</span> from international institutions was limited. If the government cut the <span class="hw">benefit</span> payments supporting rural households, communities would suffer. If it raised <span class="hw">output</span> without infrastructure investment, gains would flow to foreign shareholders, not local workers. Every <span class="hw">factor</span> pointed toward the same conclusion: this would require a long-term strategy, not a quick deal. Companies that <span class="hw">consume</span>d local resources would need to <span class="hw">sustain</span> them. Revenue would need to be <span class="hw">distribute</span>d fairly. The word &ldquo;<span class="hw">economic</span>&rdquo; appeared on every page, but the human consequences were what kept Dara awake at night.</p>
+<p>She also considered the social dimension. Each argument for or against the mines had a <span class="hw">culture</span> of people behind it. The <span class="hw">ideology</span> of open markets had its advocates. The <span class="hw">tradition</span> of the communities around the mine sites &mdash; their relationship with the land, their languages, their seasonal rituals &mdash; had its defenders. The country was <span class="hw">diverse</span>; no single policy could satisfy everyone. The rights of the <span class="hw">individual</span> had to be weighed against the needs of the collective. A <span class="hw">liberal</span> approach to economic planning would attract foreign investment but might erode local culture. A <span class="hw">neutral</span> mediating body was needed to hear all voices. Mining had long been the <span class="hw">domain</span> of engineers and economists &mdash; but not anymore. As thousands of families prepared to <span class="hw">migrate</span> away from the region if the mines were approved, and as others prepared to <span class="hw">integrate</span> new technologies into traditional farming practices, Dara understood that the decision ahead of her was not purely financial. It was a question of identity itself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(0)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk0"></div><div class="hint" id="ph0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp0en"></p><p class="write-prompt-cn" id="wp0cn"></p><p class="write-hint" id="wp0hint"></p><textarea class="write-area" id="wr0" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc0">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u0p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&rsquo;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev0"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col0"></div></div></div></div>
+    </div>
+  </div>
+
+  <!-- UNIT 16 -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 16 &nbsp;&middot;&nbsp; Change, Strategy &amp; Development &nbsp; &#21464;&#21464;&#12289;&#25112;&#30053;&#19982;&#21457;&#23637;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Transformation &middot; Goals &middot; Society &amp; Human Factors</div>
+      </div>
+      <span class="unit-level">Level 3 &mdash; Academic</span>
+    </div>
+    <div class="part-nav" id="pnav1">
+      <button class="part-btn active" onclick="switchPart(1,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(1,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(1,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(1,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(1,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(1,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(1,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Comeback City</div>
+          <div class="story-text">
+<p>For twenty years, Moreford had been in <span class="hw">decline</span>. When the steel mill closed, the city lost not just jobs but its identity. The factories that had sustained three generations were gone. The population began to migrate outward. Empty buildings <span class="hw">emerge</span>d from neglect like broken teeth. What had once been a thriving industrial centre began to decay, and every <span class="hw">trend</span> pointed downward. Then came Mayor Yara.</p>
+<p>&ldquo;We need to rethink our <span class="hw">approach</span>,&rdquo; she said at her first council meeting. &ldquo;The city&rsquo;s future will not <span class="hw">evolve</span> from nostalgia. We need to <span class="hw">adapt</span>.&rdquo; She recruited Marcus, an urban planner whose <span class="hw">strategy</span> had <span class="hw">transform</span>ed a former coal district into a creative hub, and asked him to <span class="hw">contribute</span> his thinking to Moreford&rsquo;s revival. The <span class="hw">transition</span> ahead, both knew, would not be quick.</p>
+<p>Marcus&rsquo;s <span class="hw">method</span> was straightforward: listen first, then act. He spent three months meeting community groups, businesses, and school councils. Every participant was invited to identify <span class="hw">issue</span>s and voice concerns. He did not <span class="hw">predict</span> outcomes in advance or promise specific results. He wanted to understand how residents perceived their situation before imposing any solution. The findings were <span class="hw">significant</span>. People wanted economic opportunities &mdash; but they also wanted to preserve what made Moreford distinct. They wanted to <span class="hw">reinforce</span> its identity, not erase it. The <span class="hw">outcome</span> of Marcus&rsquo;s sessions was a 200-page document that <span class="hw">focus</span>ed on five core sectors: creative industries, sustainable food, education, tourism, and local manufacturing. The overarching <span class="hw">process</span> would take a decade. The goal was to <span class="hw">achieve</span> a genuine recovery &mdash; not just economic, but social and psychological.</p>
+<p>Recovery required all sides to <span class="hw">react</span> to change &mdash; and to <span class="hw">conflict</span>. Property developers wanted to <span class="hw">expand</span> rapidly, prioritising profit over planning. Long-term residents reacted with suspicion. <span class="hw">Advocate</span>s for the homeless warned that rapid growth could displace the most vulnerable. Psychologists studying the city wrote about the collective <span class="hw">attitude</span> of a population in grief &mdash; how a community that has lost its economic <span class="hw">shift</span>s inward, becoming resistant to the very change it needs. Marcus asked the council to consider the <span class="hw">physical</span> as well as the financial: the design of public spaces, the walkability of streets, the accessibility of green areas. All of these, research showed, affected how people <span class="hw">survive</span>d economic hardship and rebuilt a sense of belonging. The city would need to <span class="hw">pursue</span> a careful path: <span class="hw">promote</span> development without displacing existing communities, build the future while honouring the past.</p>
+<p>Six years later, Moreford had <span class="hw">alter</span>ed beyond recognition. New businesses filled the old mill district. Tourism had <span class="hw">recover</span>ed. The population was growing again. <span class="hw">Potential</span> investors who had once ignored the city now competed for space. Mayor Yara, re-elected by a large margin, stood at the new waterfront square and said: &ldquo;What we achieved here was not a transformation of the city. It was a transformation of how the city thought about itself.&rdquo; In the end, it was the psychological <span class="hw">shift</span> &mdash; the change in collective <span class="hw">attitude</span> &mdash; that proved most <span class="hw">significant</span> of all. A place in <span class="hw">decline</span>, if it can <span class="hw">evolve</span> its own self-concept, can become something entirely new.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(1)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk1"></div><div class="hint" id="ph1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp1en"></p><p class="write-prompt-cn" id="wp1cn"></p><p class="write-hint" id="wp1hint"></p><textarea class="write-area" id="wr1" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc1">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u1p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&rsquo;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev1"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col1"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  // ── UNIT 15 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Policy & Governance", words: [
+          {w:"policy",     p:"n.",    c:"政策；方针", d:"A course of action or set of principles adopted by a government, organisation, or individual", e:"The government introduced a new policy to reduce carbon emissions across all industrial sectors."},
+          {w:"legal",      p:"adj.",  c:"法律的；合法的", d:"Relating to the law; required or permitted by law", e:"The company took legal action against the rival firm that had copied its product design."},
+          {w:"legislate",  p:"v.",    c:"立法；制定法律", d:"To make or enact laws through a legislative body", e:"Parliament voted to legislate strict limits on the level of pesticides permitted in food products."},
+          {w:"civil",      p:"adj.",  c:"公民的；民间的", d:"Relating to citizens or the state rather than military or religious matters; courteous", e:"Civil rights campaigners fought for decades to end racial discrimination in the legal system."},
+          {w:"authority",  p:"n.",    c:"权力；当局", d:"The power or right to give orders and make decisions; an official organisation with that power", e:"The local authority announced plans to build three new primary schools in the coming year."},
+          {w:"regulate",   p:"v.",    c:"管理；调控", d:"To control or supervise something, especially a business or industry, using rules and regulations", e:"An independent body was established to regulate the banking industry after the financial crisis."},
+          {w:"establish",  p:"v.",    c:"建立；确立", d:"To set up on a firm or permanent basis; to prove a fact or claim to be true", e:"The charity was established in 1978 to provide housing support for homeless young people."},
+          {w:"maintain",   p:"v.",    c:"维持；保持", d:"To keep something in good condition; to continue or preserve something over time", e:"It is expensive to maintain historic buildings, but their cultural value makes the effort worthwhile."},
+          {w:"function",   p:"n./v.", c:"功能；起作用", d:"The purpose or role of something; to work or operate in a specific way", e:"The primary function of the immune system is to protect the body from infection and disease."},
+          {w:"domestic",   p:"adj.", c:"国内的；家庭的", d:"Relating to one's own country; relating to the home or family life", e:"The rise in domestic energy prices has placed significant pressure on lower-income households."},
+          {w:"role",       p:"n.",    c:"角色；作用", d:"The function assumed or part played by a person or thing in a particular situation", e:"The role of the media in shaping public opinion has grown significantly in the digital age."},
+          {w:"procedure",  p:"n.",    c:"程序；步骤", d:"An established or official way of doing something, especially in a formal or professional context", e:"Medical staff must follow strict procedure when handling infectious or hazardous materials."}
+        ]
+      },
+      {
+        label: "Economy & Resources", words: [
+          {w:"economic",   p:"adj.", c:"经济的；经济学的", d:"Relating to the economy or the science of economics; justified in terms of profit", e:"The government introduced a series of economic reforms to reduce unemployment and stimulate growth."},
+          {w:"income",     p:"n.",   c:"收入；收益", d:"Money received, especially on a regular basis, for work, investments, or from the state", e:"A significant portion of the country's national income comes from tourism and services."},
+          {w:"subsidy",    p:"n.",   c:"补贴；津贴", d:"A sum of money granted by the government to support an industry or keep prices low", e:"Farmers in the region depend heavily on government subsidies to remain competitive globally."},
+          {w:"export",     p:"v./n.","c":"出口；出口商品", d:"To send goods or services to another country for sale; goods sold abroad", e:"The country's main exports include oil, cocoa, and a growing range of manufactured goods."},
+          {w:"credit",     p:"n.",   c:"信贷；信誉", d:"Money available to borrow; the quality of being trusted to pay back borrowed money", e:"Small businesses often struggle to obtain credit from banks during periods of economic uncertainty."},
+          {w:"output",     p:"n.",   c:"产量；产出", d:"The amount of something produced by a person, machine, or industry over a period of time", e:"Factory output fell sharply during the winter months due to widespread power shortages."},
+          {w:"ratio",      p:"n.",   c:"比率；比例", d:"The quantitative relationship between two amounts, showing how many times one contains the other", e:"The teacher-to-student ratio in many rural schools is far too high for effective learning."},
+          {w:"factor",     p:"n.",   c:"因素；要素", d:"A circumstance, fact, or influence that contributes to a result or outcome", e:"Poor nutrition is a significant factor in the high rates of childhood illness across the region."},
+          {w:"benefit",    p:"n./v.","c":"利益；受益", d:"An advantage or profit gained from something; a payment made by the state to support citizens", e:"Working from home offers many benefits, including reduced commuting time and greater flexibility."},
+          {w:"sustain",    p:"v.",   c:"维持；支撑", d:"To keep alive or in existence; to maintain at a constant level over a period of time", e:"A balanced and varied diet is essential to sustain good health throughout a person's life."},
+          {w:"consume",    p:"v.",   c:"消耗；耗尽", d:"To use up a resource or product; to eat or drink", e:"Developed countries consume far more energy per person annually than developing ones."},
+          {w:"distribute", p:"v.",   c:"分发；分配", d:"To give out or supply something to a number of people; to spread or scatter over an area", e:"Volunteers distributed food parcels and medicine to families in the worst-affected areas."}
+        ]
+      },
+      {
+        label: "Society & Community", words: [
+          {w:"community",  p:"n.",   c:"社区；社群", d:"A group of people living in the same area, or a group linked by shared interests or identity", e:"The whole community came together to rebuild the local playground after the flood destroyed it."},
+          {w:"culture",    p:"n.",   c:"文化；文明", d:"The arts, customs, beliefs, and institutions of a particular society or group of people", e:"Living abroad gave her a deep appreciation of Japanese culture, traditions, and daily customs."},
+          {w:"tradition",  p:"n.",   c:"传统；惯例", d:"A long-established custom or belief passed down through generations", e:"The festival is a tradition that has been celebrated in the region for over three hundred years."},
+          {w:"diverse",    p:"adj.", c:"多样的；各异的", d:"Showing a great deal of variety; very different from each other", e:"The school has a diverse student body representing more than forty different nationalities."},
+          {w:"individual", p:"n./adj.","c":"个人；个体的", d:"A single person, considered separately from a group; relating to one person rather than a group", e:"The programme is carefully designed to meet the individual learning needs of each student."},
+          {w:"ideology",   p:"n.",   c:"意识形态；思想体系", d:"A system of ideas and ideals, especially one that forms the basis of political or economic thinking", e:"The two parties were divided by fundamentally different ideologies on the role of the state in the economy."},
+          {w:"liberal",    p:"adj.", c:"开明的；自由主义的", d:"Open to new ideas and willing to respect other people's opinions; favouring individual freedom", e:"The new government adopted a more liberal approach to immigration, granting more visas to skilled workers."},
+          {w:"neutral",    p:"adj.", c:"中立的；中性的", d:"Not supporting either side in a dispute or conflict; impartial", e:"The mediator tried to remain neutral during the heated negotiations between the two governments."},
+          {w:"domain",     p:"n.",   c:"领域；范围", d:"An area of territory owned or controlled by someone; a sphere of knowledge or activity", e:"Climate policy has traditionally been the domain of environmental scientists and economists."},
+          {w:"migrate",    p:"v.",   c:"迁移；移居", d:"To move from one region or country to another, especially to find work or better conditions", e:"Thousands of people migrate to the capital city each year in search of better opportunities."},
+          {w:"integrate",  p:"v.",   c:"整合；融入", d:"To combine parts into a whole; to become part of a society or group", e:"The challenge for new arrivals is to integrate into the host community while preserving their own culture."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Estira's economy had always been based primarily on mining.", a:false},
+      {q:"The existing legal procedure for granting mining rights was sixty years old.", a:true},
+      {q:"Estira's ratio of debt to GDP was already low when the story begins.", a:false},
+      {q:"Dara concluded that the mining deal would require a long-term strategy.", a:true},
+      {q:"The civil society groups outside Parliament supported the mining proposal.", a:false}
+    ],
+    mcq: [
+      {q:"What did Parliament need to do before any mining agreement could be signed?",
+       opts:["Increase the national subsidy","Legislate new environmental protections","Reduce the export tax","Establish a new authority"],
+       ans:1},
+      {q:"Why was Estira's ability to obtain credit limited?",
+       opts:["Because of falling export prices","Because of its high debt-to-GDP ratio","Because of domestic political instability","Because international banks had withdrawn"],
+       ans:1},
+      {q:"What did Dara say about companies consuming local resources?",
+       opts:["They should pay higher taxes","They would need to legally sustain those resources","They should distribute profits abroad","They should reduce their domestic output"],
+       ans:1},
+      {q:"What did liberal economists argue in the mining debate?",
+       opts:["That the land was sacred to traditional communities","That the mines should be closed permanently","That open markets should be favoured","That more credit was needed first"],
+       ans:2},
+      {q:"What concern did Dara have about raising output without infrastructure?",
+       opts:["It would damage the country's export procedure","Gains would go to foreign shareholders, not local workers","It would reduce the ratio of income to output","The community would fail to integrate new workers"],
+       ans:1}
+    ],
+    match: {
+      ws:  ["subsidy","regulate","ideology","integrate","sustain"],
+      ds:  ["a government payment to support an industry or keep prices low","to control or supervise with rules and regulations","a system of ideas forming the basis of political belief","to combine into a whole; to become part of a society","to keep something alive or maintained over time"],
+      correct: [0,1,2,3,4]
+    },
+    fill: {
+      sents: [
+        {s:"The government decided to ___ the relief funds equally among all affected regions.", w:"distribute"},
+        {s:"The school attracted a ___ group of students from more than thirty different countries.", w:"diverse"},
+        {s:"International mediators are expected to remain ___ throughout the peace negotiations.", w:"neutral"},
+        {s:"Parliament voted to ___ strict new limits on industrial pollution from the mining sector.", w:"legislate"},
+        {s:"It is costly to ___ historic buildings, but their cultural significance justifies the effort.", w:"maintain"}
+      ],
+      bank: ["distribute","diverse","neutral","legislate","maintain"]
+    },
+    speaking: {
+      qs: [
+        "What role should governments play in regulating private businesses and industries?",
+        "How do subsidies affect local industries and communities in your country?",
+        "Is it possible to maintain your own cultural identity while integrating into a new society? How?",
+        "Do you think economic development and the protection of cultural traditions can coexist?",
+        "What factors do you think are most important for a country's long-term economic success?"
+      ],
+      phrases: "<strong>Useful phrases:</strong> &ldquo;public policy on&hellip;&rdquo; &middot; &ldquo;domestic market conditions&rdquo; &middot; &ldquo;regulate the industry&rdquo; &middot; &ldquo;distribute resources fairly&rdquo; &middot; &ldquo;integrate into the community&rdquo;"
+    },
+    writing: {
+      en: "Governments should prioritise economic development over the protection of traditional cultures and communities. To what extent do you agree or disagree?",
+      cn: "政府应该将经济发展置于保护传统文化和社区之前。你在多大程度上同意这一观点？",
+      hint: "Try to use: sustain, benefit, community, tradition, ideology, domestic, regulate, integrate"
+    },
+    review: [
+      ["policy","政策；方针"],["legal","法律的；合法的"],["legislate","立法；制定法律"],["civil","公民的；民间的"],
+      ["authority","权力；当局"],["regulate","管理；调控"],["establish","建立；确立"],["maintain","维持；保持"],
+      ["function","功能；起作用"],["domestic","国内的；家庭的"],["role","角色；作用"],["procedure","程序；步骤"],
+      ["economic","经济的"],["income","收入；收益"],["subsidy","补贴；津贴"],["export","出口；出口商品"],
+      ["credit","信贷；信誉"],["output","产量；产出"],["ratio","比率；比例"],["factor","因素；要素"],
+      ["benefit","利益；受益"],["sustain","维持；支撑"],["consume","消耗；耗尽"],["distribute","分发；分配"],
+      ["community","社区；社群"],["culture","文化；文明"],["tradition","传统；惯例"],["diverse","多样的；各异的"],
+      ["individual","个人；个体的"],["ideology","意识形态"],["liberal","开明的；自由主义的"],["neutral","中立的"],
+      ["domain","领域；范围"],["migrate","迁移；移居"],["integrate","整合；融入"]
+    ],
+    collocations: [
+      ["public policy","公共政策"],["legal framework","法律框架"],["domestic market","国内市场"],
+      ["regulate the industry","监管行业"],["economic output","经济产出"],["national income","国家收入"],
+      ["government subsidy","政府补贴"],["export goods","出口商品"],["distribute resources","分配资源"],
+      ["community benefit","社区收益"],["sustain growth","维持增长"],["integrate into society","融入社会"],
+      ["a diverse community","多元化社区"],["remain neutral","保持中立"],["establish authority","建立权威"]
+    ]
+  },
+
+  // ── UNIT 16 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Change & Transformation", words: [
+          {w:"evolve",     p:"v.",   c:"演变；进化", d:"To develop gradually, especially from a simple to a more complex form", e:"Language evolves over time, absorbing new words and shedding those that fall out of use."},
+          {w:"transform",  p:"v.",   c:"改变；转变", d:"To make a thorough or dramatic change in the form, appearance, or character of something", e:"The new mayor's investment programme transformed the run-down waterfront into a cultural hub."},
+          {w:"transition", p:"n.",   c:"过渡；转型", d:"The process or period of changing from one state or condition to another", e:"The transition from a coal-based economy to renewable energy took the country over two decades."},
+          {w:"emerge",     p:"v.",   c:"出现；浮现", d:"To become apparent or known; to come out from a hidden or difficult situation", e:"A clear pattern began to emerge from the data after months of careful analysis."},
+          {w:"expand",     p:"v.",   c:"扩大；扩展", d:"To become or make larger or more extensive; to develop in greater detail", e:"The company plans to expand its operations into three new markets over the next two years."},
+          {w:"shift",      p:"n./v.","c":"转变；移动", d:"A change in position, direction, or tendency; to move or cause to move from one position to another", e:"There has been a significant shift in public attitudes toward renewable energy over the past decade."},
+          {w:"trend",      p:"n.",   c:"趋势；动向", d:"A general direction in which something is developing or changing over time", e:"The trend toward remote working accelerated sharply during and after the global pandemic."},
+          {w:"adapt",      p:"v.",   c:"适应；改编", d:"To become adjusted to new conditions; to modify for a new purpose or audience", e:"Animals that cannot adapt to changing environmental conditions risk becoming extinct."},
+          {w:"alter",      p:"v.",   c:"改变；更改", d:"To change in character or composition, typically in a small but significant way", e:"The architect was asked to alter the original design to comply with new safety regulations."},
+          {w:"recover",    p:"v.",   c:"恢复；复原", d:"To return to a normal state of health, mind, or strength after difficulty or setback", e:"It took the coastal town nearly a decade to fully recover from the damage caused by the tsunami."},
+          {w:"reinforce",  p:"v.",   c:"加强；强化", d:"To strengthen or support something, especially by adding more material or resources", e:"The new findings reinforce the argument that diet has a direct impact on mental health."},
+          {w:"promote",    p:"v.",   c:"推动；促进；晋升", d:"To support or encourage the progress of something; to publicise; to raise in rank", e:"The initiative was designed to promote equal opportunities for women in the technology sector."}
+        ]
+      },
+      {
+        label: "Strategy & Achievement", words: [
+          {w:"strategy",   p:"n.",   c:"策略；战略", d:"A plan of action designed to achieve a long-term or overall aim", e:"The company's long-term strategy focused on expanding into emerging markets in Asia and Africa."},
+          {w:"target",     p:"n./v.","c":"目标；指向", d:"An objective or result one is attempting to achieve; to aim at a particular group or goal", e:"The government set a target of reducing carbon emissions by fifty percent within fifteen years."},
+          {w:"achieve",    p:"v.",   c:"达成；实现", d:"To successfully reach a desired objective or result, especially through hard work", e:"She worked tirelessly for five years to achieve her ambition of running her own business."},
+          {w:"pursue",     p:"v.",   c:"追求；追逐", d:"To follow or chase; to continue an activity or course of action over time", e:"He chose to pursue a career in medicine after volunteering at a rural health clinic."},
+          {w:"potential",  p:"n./adj.","c":"潜力；潜在的", d:"Latent qualities or abilities that may be developed; capable of becoming something in the future", e:"The report identified several regions with the potential to become major technology hubs."},
+          {w:"predict",    p:"v.",   c:"预测；预言", d:"To say or estimate that something will happen in the future based on evidence or reasoning", e:"Economists struggled to predict the scale of the recession that followed the banking collapse."},
+          {w:"approach",   p:"n./v.","c":"方法；接近", d:"A way of dealing with something; to come near to in distance, quality, or time", e:"The school adopted a child-centred approach to learning, focusing on curiosity over memorisation."},
+          {w:"outcome",    p:"n.",   c:"结果；成果", d:"The way a thing turns out; a consequence or result of an action or situation", e:"The outcome of the negotiations surprised both parties, as neither expected such a swift agreement."},
+          {w:"process",    p:"n.",   c:"过程；流程", d:"A series of actions or steps taken to achieve a particular end", e:"The application process for the scholarship involves three written submissions and an interview."},
+          {w:"contribute", p:"v.",   c:"贡献；促成", d:"To give a share of something; to help bring about a result or help make it better", e:"Poor air quality is believed to contribute significantly to the rising rates of respiratory illness."},
+          {w:"focus",      p:"v./n.","c":"聚焦；重点", d:"To concentrate attention or effort on a particular area; the centre of attention", e:"The new curriculum places a stronger focus on practical skills and problem-solving."},
+          {w:"method",     p:"n.",   c:"方法；方式", d:"A particular way of doing something, especially in a systematic or established manner", e:"The researcher used a mixed-methods approach, combining surveys with in-depth interviews."}
+        ]
+      },
+      {
+        label: "Society & Human Factors", words: [
+          {w:"psychology", p:"n.",   c:"心理；心理学", d:"The scientific study of the human mind and behaviour; the mental characteristics of a person or group", e:"Understanding the psychology of motivation is key to designing effective educational programmes."},
+          {w:"attitude",   p:"n.",   c:"态度；看法", d:"A settled way of thinking or feeling about someone or something; posture or position of the body", e:"A positive attitude toward failure as a learning experience is common among successful entrepreneurs."},
+          {w:"physical",   p:"adj.", c:"物质的；身体的", d:"Relating to the body rather than the mind; relating to material things that can be touched", e:"Regular physical activity has been shown to significantly reduce the risk of heart disease."},
+          {w:"survive",    p:"v.",   c:"幸存；活下来", d:"To continue to live or exist despite hardship or difficulty; to outlive", e:"Many small businesses failed to survive the economic downturn caused by the pandemic."},
+          {w:"advocate",   p:"n./v.","c":"倡导者；提倡", d:"A person who publicly supports a cause; to publicly recommend or support a particular cause", e:"She became a passionate advocate for the rights of refugees after working at a border camp."},
+          {w:"significant",p:"adj.", c:"重要的；有意义的", d:"Important or noteworthy; large or noticeable enough to be worth attention", e:"The discovery of the new enzyme was a significant step forward in cancer research."},
+          {w:"participate", p:"v.",  c:"参与；参加", d:"To take part in an action or event", e:"All students are encouraged to participate in at least one extracurricular activity each term."},
+          {w:"conflict",   p:"n./v.","c":"冲突；矛盾", d:"A serious disagreement or argument; to be incompatible or in opposition", e:"The novel explores the conflict between personal loyalty and public duty."},
+          {w:"react",      p:"v.",   c:"做出反应；回应", d:"To respond or behave in a particular way in response to something", e:"The stock market reacted sharply to the announcement of higher-than-expected inflation figures."},
+          {w:"issue",      p:"n.",   c:"问题；议题", d:"An important topic or problem for debate or discussion; to formally give out or publish", e:"Housing affordability has become one of the most pressing issues in major cities worldwide."},
+          {w:"decline",    p:"n./v.","c":"下降；衰退", d:"A gradual and continuous loss of strength, quality, or numbers; to become smaller or worse", e:"The decline in bee populations poses a serious threat to global food production."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Moreford had been in decline for twenty years when the story begins.", a:true},
+      {q:"Marcus had previously transformed a tech hub into a coal district.", a:false},
+      {q:"Marcus spent three months listening to communities before taking action.", a:true},
+      {q:"The strategy document Marcus produced focused on six core sectors.", a:false},
+      {q:"Mayor Yara was re-elected by a large margin after the city's recovery.", a:true}
+    ],
+    mcq: [
+      {q:"What caused Moreford's initial decline?",
+       opts:["A major flood","A change in government","The closure of the steel mill","A collapse in tourism"],
+       ans:2},
+      {q:"What was Marcus's method before designing any strategy?",
+       opts:["Study similar cities online","Predict economic trends first","Listen to community groups and businesses","Focus on the five core sectors immediately"],
+       ans:2},
+      {q:"What did residents say they wanted in addition to economic opportunities?",
+       opts:["To rebuild the steel mill","To attract large corporations","To preserve what made Moreford distinct","To promote it as a technology hub"],
+       ans:2},
+      {q:"What did property developers prioritise in the conflict over regeneration?",
+       opts:["Preserving local history","Supporting vulnerable residents","Rapid expansion and profit","Sustainable building practices"],
+       ans:2},
+      {q:"What did Mayor Yara identify as the most important transformation?",
+       opts:["The new waterfront development","The economic recovery statistics","The shift in how the city thought about itself","The rise in tourism income"],
+       ans:2}
+    ],
+    match: {
+      ws:  ["evolve","transition","pursue","advocate","reinforce"],
+      ds:  ["to develop gradually into a more complex form","the process of changing from one state to another","to follow or try to achieve something over time","to publicly support or recommend a particular cause","to strengthen or support something already existing"],
+      correct: [0,1,2,3,4]
+    },
+    fill: {
+      sents: [
+        {s:"Every data point and every ___ in the city's history pointed toward further decline.", w:"trend"},
+        {s:"Residents and developers came into ___ over plans to demolish the historic market building.", w:"conflict"},
+        {s:"The city had to ___ its economic model after the manufacturing sector collapsed.", w:"adapt"},
+        {s:"The improvement in school attendance was the most ___ result of the community programme.", w:"significant"},
+        {s:"The ___ of the three-year urban plan exceeded what most residents had dared to hope for.", w:"outcome"}
+      ],
+      bank: ["trend","conflict","adapt","significant","outcome"]
+    },
+    speaking: {
+      qs: [
+        "Can you think of a place or institution that successfully transformed itself after a long period of decline?",
+        "What role should local communities play in decisions about urban development and regeneration?",
+        "Is it possible to pursue economic growth without creating conflict between different social groups?",
+        "What do you think is the most significant challenge facing cities in your country today?",
+        "How do you think a city's collective attitude or psychology affects its chances of recovery and renewal?"
+      ],
+      phrases: "<strong>Useful phrases:</strong> &ldquo;a significant factor in&hellip;&rdquo; &middot; &ldquo;transition to&hellip;&rdquo; &middot; &ldquo;pursue a strategy of&hellip;&rdquo; &middot; &ldquo;advocate for change&rdquo; &middot; &ldquo;contribute to recovery&rdquo;"
+    },
+    writing: {
+      en: "Urban regeneration projects often benefit wealthy newcomers more than long-term residents. How far do you agree with this view?",
+      cn: "城市更新项目通常让新来的富人受益更多，而不是长期居民。你在多大程度上同意这一观点？",
+      hint: "Try to use: transform, community, conflict, significant, advocate, outcome, contribute, sustain"
+    },
+    review: [
+      ["evolve","演变；进化"],["transform","改变；转变"],["transition","过渡；转型"],["emerge","出现；浮现"],
+      ["expand","扩大；扩展"],["shift","转变；移动"],["trend","趋势；动向"],["adapt","适应；改编"],
+      ["alter","改变；更改"],["recover","恢复；复原"],["reinforce","加强；强化"],["promote","推动；促进"],
+      ["strategy","策略；战略"],["target","目标；指向"],["achieve","达成；实现"],["pursue","追求；追逐"],
+      ["potential","潜力；潜在的"],["predict","预测；预言"],["approach","方法；接近"],["outcome","结果；成果"],
+      ["process","过程；流程"],["contribute","贡献；促成"],["focus","聚焦；重点"],["method","方法；方式"],
+      ["psychology","心理；心理学"],["attitude","态度；看法"],["physical","物质的；身体的"],["survive","幸存；活下来"],
+      ["advocate","倡导者；提倡"],["significant","重要的；有意义的"],["participate","参与；参加"],["conflict","冲突；矛盾"],
+      ["react","做出反应"],["issue","问题；议题"],["decline","下降；衰退"]
+    ],
+    collocations: [
+      ["a significant factor","一个重要因素"],["transition to democracy","过渡到民主"],["pursue a strategy","追求一种战略"],
+      ["advocate for change","倡导变革"],["reinforce identity","强化身份认同"],["adapt to change","适应变化"],
+      ["contribute to recovery","为复苏作贡献"],["shift in attitude","态度转变"],["economic decline","经济衰退"],
+      ["long-term trend","长期趋势"],["achieve an outcome","实现一个结果"],["psychological impact","心理影响"],
+      ["react to pressure","对压力作出反应"],["evolve over time","随时间演变"],["participate actively","积极参与"]
+    ]
+  }
+];
+
+// ── UNIT SWITCHING ────────────────────────────────────────
+function switchUnit(i){
+  document.querySelectorAll('.unit-btn').forEach((b,j)=>b.classList.toggle('active',j===i));
+  document.querySelectorAll('.unit-panel').forEach((p,j)=>p.classList.toggle('active',j===i));
+}
+function switchPart(u,p){
+  document.querySelectorAll(`#pnav${u} .part-btn`).forEach((b,j)=>b.classList.toggle('active',j===p));
+  document.querySelectorAll(`#unit${u} .part-panel`).forEach((el,j)=>el.classList.toggle('active',j===p));
+}
+
+// ── VOCAB BUILDER ─────────────────────────────────────────
+function buildVocab(u){
+  const d=DATA[u]; const el=document.getElementById('vg'+u);
+  d.cats.forEach(cat=>{
+    const lbl=document.createElement('div'); lbl.className='cat-label'; lbl.textContent=cat.label;
+    el.appendChild(lbl);
+    cat.words.forEach(w=>{
+      const item=document.createElement('div'); item.className='vocab-item';
+      item.innerHTML=`<div class="vocab-head" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.v-toggle').textContent=this.nextElementSibling.classList.contains('open')?'▲':'▼'">
+        <span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span><span class="v-cn">${w.c}</span><span class="v-toggle">▼</span>
+      </div>
+      <div class="vocab-body"><div class="v-meaning">${w.d}</div><div class="v-eg">${w.e}</div></div>`;
+      el.appendChild(item);
+    });
+  });
+}
+
+// ── T/F ───────────────────────────────────────────────────
+function buildTF(u){
+  const el=document.getElementById('tf'+u);
+  DATA[u].tf.forEach((q,i)=>{
+    const row=document.createElement('div'); row.className='tf-row';
+    row.innerHTML=`<span class="tf-q">${i+1}. ${q.q}</span>
+    <div class="tf-btns">
+      <button class="tf-btn" onclick="chkTF(this,${u},${i},true)">True</button>
+      <button class="tf-btn" onclick="chkTF(this,${u},${i},false)">False</button>
+    </div><span class="tf-result" id="tfr${u}_${i}"></span>`;
+    el.appendChild(row);
+  });
+}
+function chkTF(btn,u,i,val){
+  const correct=DATA[u].tf[i].a;
+  const row=btn.closest('.tf-row');
+  row.querySelectorAll('.tf-btn').forEach(b=>b.disabled=true);
+  if(val===correct){btn.classList.add('correct'); document.getElementById('tfr'+u+'_'+i).textContent='✓ Correct';}
+  else{btn.classList.add('wrong'); const other=row.querySelectorAll('.tf-btn')[val?1:0]; other.classList.add('correct'); document.getElementById('tfr'+u+'_'+i).textContent='✗ Incorrect';}
+}
+
+// ── MCQ ───────────────────────────────────────────────────
+function buildMC(u){
+  const el=document.getElementById('mc'+u);
+  DATA[u].mcq.forEach((q,i)=>{
+    const block=document.createElement('div'); block.className='mc-block';
+    let opts=q.opts.map((o,j)=>`<button class="mc-opt" onclick="chkMC(this,${u},${i},${j})">${o}</button>`).join('');
+    block.innerHTML=`<div class="mc-q">${i+1}. ${q.q}</div><div class="mc-opts">${opts}</div>`;
+    el.appendChild(block);
+  });
+}
+function chkMC(btn,u,i,j){
+  const correct=DATA[u].mcq[i].ans;
+  const opts=btn.closest('.mc-opts').querySelectorAll('.mc-opt');
+  opts.forEach(b=>b.disabled=true);
+  if(j===correct){btn.classList.add('correct');}
+  else{btn.classList.add('wrong'); opts[correct].classList.add('correct');}
+}
+
+// ── MATCHING ──────────────────────────────────────────────
+let matchState={};
+function buildMatch(u){
+  const m=DATA[u].match; const el=document.getElementById('match'+u);
+  const ws=m.ws; const ds=m.ds;
+  const dsShuffled=[...ds].sort(()=>Math.random()-.5);
+  matchState[u]={ws,ds,dsShuffled,sel:null,done:0};
+  const grid=document.createElement('div'); grid.className='match-grid';
+  const allWBtns=[]; const allDBtns=[];
+  ws.forEach((w,i)=>{
+    const wb=document.createElement('button'); wb.className='match-word'; wb.dataset.wi=i; wb.textContent=w;
+    wb.onclick=()=>selectWord(u,wb,i); allWBtns.push(wb);
+  });
+  dsShuffled.forEach((d,i)=>{
+    const db=document.createElement('button'); db.className='match-def'; db.dataset.di=i; db.textContent=d;
+    db.onclick=()=>selectDef(u,db); allDBtns.push(db);
+  });
+  ws.forEach((_,i)=>{ grid.appendChild(allWBtns[i]); grid.appendChild(allDBtns[i]); });
+  el.appendChild(grid);
+  matchState[u].wBtns=allWBtns; matchState[u].dBtns=allDBtns;
+}
+function selectWord(u,btn,i){
+  const s=matchState[u];
+  s.wBtns.forEach(b=>b.classList.remove('sel'));
+  s.sel=i; btn.classList.add('sel');
+}
+function selectDef(u,btn){
+  const s=matchState[u]; if(s.sel===null) return;
+  const di=parseInt(btn.dataset.di);
+  const correctDi=s.dsShuffled.indexOf(s.ds[s.sel]);
+  if(di===correctDi){
+    btn.classList.add('done'); s.wBtns[s.sel].classList.remove('sel'); s.wBtns[s.sel].classList.add('done');
+    s.wBtns[s.sel].disabled=true; s.done++;
+    if(s.done===s.ws.length) document.getElementById('match'+u+'-r').innerHTML='<div class="score-bar good" style="margin-top:.75rem"><span class="score-num">✓</span><span class="score-label">All matched correctly!</span></div>';
+  } else {
+    btn.classList.add('err'); setTimeout(()=>btn.classList.remove('err'),600);
+  }
+  s.sel=null;
+}
+
+// ── FILL IN THE BLANK ─────────────────────────────────────
+function buildFib(u){
+  const f=DATA[u].fill; const chipsEl=document.getElementById('chips'+u); const fibEl=document.getElementById('fib'+u);
+  const bank=[...f.bank].sort(()=>Math.random()-.5);
+  bank.forEach(w=>{
+    const chip=document.createElement('span'); chip.className='chip'; chip.textContent=w; chip.dataset.w=w;
+    chip.onclick=()=>{
+      const inputs=fibEl.querySelectorAll('.fib-input:not(.correct):not(.wrong)');
+      let active=null;
+      inputs.forEach(inp=>{ if(document.activeElement===inp) active=inp; });
+      if(!active && inputs.length>0) active=inputs[0];
+      if(active){active.value=w; chip.classList.add('used');}
+    };
+    chipsEl.appendChild(chip);
+  });
+  f.sents.forEach((s,i)=>{
+    const row=document.createElement('div'); row.className='fib-row';
+    const [before,after]=s.s.split('___');
+    row.innerHTML=`<span class="fib-num">${i+1}.</span>${before}<input class="fib-input" data-ans="${s.w}" placeholder="…">${after||''}`;
+    fibEl.appendChild(row);
+  });
+}
+function chkFib(u){
+  const inputs=document.getElementById('fib'+u).querySelectorAll('.fib-input');
+  let correct=0;
+  inputs.forEach(inp=>{
+    if(inp.value.trim().toLowerCase()===inp.dataset.ans.toLowerCase()){inp.classList.add('correct'); correct++;}
+    else inp.classList.add('wrong');
+  });
+  document.getElementById('fib'+u+'-s').innerHTML=`<div class="score-bar${correct===inputs.length?' good':''}"><span class="score-num">${correct}/${inputs.length}</span><span class="score-label">${correct===inputs.length?'All correct!':'Keep practising.'}</span></div>`;
+}
+function rstFib(u){
+  document.getElementById('fib'+u).querySelectorAll('.fib-input').forEach(i=>{i.value='';i.className='fib-input';});
+  document.getElementById('chips'+u).querySelectorAll('.chip').forEach(c=>c.classList.remove('used'));
+  document.getElementById('fib'+u+'-s').innerHTML='';
+}
+
+// ── SPEAKING ──────────────────────────────────────────────
+function buildSpeak(u){
+  const s=DATA[u].speaking; const el=document.getElementById('spk'+u);
+  s.qs.forEach((q,i)=>{
+    const card=document.createElement('div'); card.className='speak-card';
+    card.innerHTML=`<span class="speak-num">${i+1}</span><span>${q}</span>`; el.appendChild(card);
+  });
+  document.getElementById('ph'+u).innerHTML=s.phrases;
+}
+
+// ── WRITING ───────────────────────────────────────────────
+function buildWrite(u){
+  const w=DATA[u].writing;
+  document.getElementById('wp'+u+'en').textContent=w.en;
+  document.getElementById('wp'+u+'cn').textContent=w.cn;
+  document.getElementById('wp'+u+'hint').textContent=w.hint;
+  const area=document.getElementById('wr'+u);
+  const counter=document.getElementById('wc'+u);
+  area.addEventListener('input',()=>{ const wds=area.value.trim().split(/\s+/).filter(Boolean).length; counter.textContent=wds+' word'+(wds!==1?'s':''); });
+}
+
+// ── REVIEW ────────────────────────────────────────────────
+function buildReview(u){
+  const d=DATA[u];
+  const revEl=document.getElementById('rev'+u);
+  d.review.forEach(([en,cn])=>{
+    const item=document.createElement('div'); item.className='review-item';
+    item.innerHTML=`<span class="r-en">${en}</span><span class="r-cn">${cn}</span>`; revEl.appendChild(item);
+  });
+  const colEl=document.getElementById('col'+u);
+  d.collocations.forEach(([en,cn])=>{
+    const item=document.createElement('div'); item.className='colloc-item';
+    item.innerHTML=`<div class="c-en">${en}</div><div class="c-cn">${cn}</div>`; colEl.appendChild(item);
+  });
+}
+
+// ── INIT ──────────────────────────────────────────────────
+[0,1].forEach(u=>{ buildVocab(u); buildTF(u); buildMC(u); buildMatch(u); buildFib(u); buildSpeak(u); buildWrite(u); buildReview(u); });
+</script>
+</body>
+</html>
