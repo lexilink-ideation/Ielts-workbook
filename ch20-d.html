@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Lesson 20D — Wine, Wit, and 'Noman' | Lexilink History Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0F0800;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.10);--border2:rgba(255,255,255,0.06);
+  --amber-300:#E8A832;--amber-400:#D4890F;--amber-500:#B8720A;
+  --amber-bg:rgba(212,137,15,0.12);--amber-border:rgba(212,137,15,0.3);
+  --text:#fff;--text2:rgba(255,255,255,0.72);--text3:rgba(255,255,255,0.45);
+  --teal:#1D9E75;--teal-bg:rgba(29,158,117,0.12);--teal-border:rgba(29,158,117,0.3);
+  --coral:#E05C3A;--coral-bg:rgba(224,92,58,0.12);
+  --blue:#4A9EE0;--blue-bg:rgba(74,158,224,0.12);
+  --r:12px;--r-sm:8px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;}
+.site-header{background:#111;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100;}
+.hdr{max-width:860px;margin:0 auto;padding:0 1.5rem;height:54px;display:flex;align-items:center;gap:12px;}
+.logo-wrap{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:26px;height:26px;}
+.logo-name{font-size:13px;font-weight:700;color:#fff;}
+.hdr-pipe{width:1px;height:20px;background:rgba(255,255,255,0.15);}
+.hdr-back{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text3);text-decoration:none;transition:color .15s;}
+.hdr-back:hover{color:var(--text2);}
+.hdr-spacer{flex:1;}
+.hdr-badge{font-size:10px;font-weight:700;letter-spacing:.05em;padding:3px 10px;border-radius:99px;border:1px solid var(--amber-border);color:var(--amber-300);background:var(--amber-bg);}
+.lesson-hero{background:linear-gradient(135deg,#2C1600 0%,#5C3200 40%,#7A4500 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.lesson-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,130,0,0.15),transparent);pointer-events:none;}
+.lesson-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.75rem;}
+.lesson-hero h1{font-size:clamp(22px,4vw,36px);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lesson-hero p{font-size:14px;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto .875rem;}
+.lesson-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.l-pill{font-size:11px;font-weight:500;padding:4px 12px;border-radius:99px;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.06);}
+.lesson-progress{background:#1A1100;border-bottom:1px solid rgba(255,255,255,0.06);padding:.75rem 1.5rem;}
+.lp-inner{max-width:860px;margin:0 auto;}
+.lp-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:6px;}
+.lp-track{height:4px;border-radius:99px;background:rgba(255,255,255,0.08);}
+.lp-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--amber-500),var(--amber-300));width:10%;}
+.lp-parts{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;}
+.lp-part{font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:rgba(255,255,255,0.06);color:var(--text3);cursor:pointer;transition:all .15s;}
+.lp-part.done{background:var(--amber-bg);color:var(--amber-300);border:1px solid var(--amber-border);}
+.lp-part.active{background:var(--amber-400);color:#1A0800;}
+.main{max-width:860px;margin:0 auto;padding:2rem 1.5rem 5rem;}
+.sec{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1.5rem;scroll-margin-top:80px;}
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem;}
+.sec-num{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--amber-300);border:1px solid var(--amber-border);flex-shrink:0;}
+.sec-title{font-size:16px;font-weight:700;color:#fff;}
+.sec-sub{font-size:12px;color:var(--text3);margin-top:1px;}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+.vocab-card{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem;cursor:pointer;transition:border-color .15s;}
+.vocab-card:hover,.vocab-card.open{border-color:var(--amber-border);}
+.vc-top{display:flex;align-items:baseline;gap:8px;}
+.vc-word{font-size:16px;font-weight:700;color:#fff;}
+.vc-pos{font-size:10px;font-weight:600;padding:1px 7px;border-radius:99px;background:var(--amber-bg);color:var(--amber-300);}
+.vc-pron{font-size:12px;color:var(--text3);margin-top:2px;font-style:italic;}
+.vc-cn{font-size:15px;color:var(--amber-300);margin-top:4px;font-weight:600;}
+.vc-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border2);}
+.vocab-card.open .vc-detail{display:block;}
+.vc-def{font-size:13px;color:var(--text2);margin-bottom:6px;}
+.vc-ex{font-size:12px;color:var(--text3);font-style:italic;padding-left:8px;border-left:2px solid var(--amber-border);}
+.story-body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:1rem;}
+.story-body p:last-child{margin-bottom:0;}
+.story-hl{color:var(--amber-300);font-weight:600;}
+.story-box{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--r-sm);padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;font-style:italic;}
+.story-box::before{content:'"';font-size:32px;color:var(--amber-400);line-height:1;display:block;margin-bottom:.25rem;}
+.story-icon{font-size:40px;text-align:center;margin:1rem 0;}
+.quiz-list{display:flex;flex-direction:column;gap:14px;}
+.q-item{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;}
+.q-text{font-size:14px;font-weight:600;color:#fff;margin-bottom:.75rem;}
+.q-opts{display:flex;flex-direction:column;gap:6px;}
+.q-opt{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:13px;color:var(--text2);width:100%;text-align:left;transition:all .15s;}
+.q-opt:hover{border-color:var(--amber-border);background:var(--amber-bg);}
+.q-opt.correct{border-color:var(--teal-border);background:var(--teal-bg);color:#fff;}
+.q-opt.wrong{border-color:rgba(224,92,58,0.4);background:var(--coral-bg);color:#fff;}
+.q-feedback{font-size:12px;margin-top:8px;padding:6px 10px;border-radius:6px;display:none;}
+.q-feedback.show{display:block;}
+.q-feedback.good{background:var(--teal-bg);color:#5DCAA5;}
+.q-feedback.bad{background:var(--coral-bg);color:#F09B80;}
+.tf-opts{display:flex;gap:8px;}
+.tf-btn{flex:1;padding:8px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:13px;font-weight:600;color:var(--text2);transition:all .15s;}
+.tf-btn:hover{border-color:var(--amber-border);background:var(--amber-bg);}
+.tf-btn.correct{border-color:var(--teal-border);background:var(--teal-bg);color:#fff;}
+.tf-btn.wrong{border-color:rgba(224,92,58,0.4);background:var(--coral-bg);color:#fff;}
+.grammar-box{background:var(--surface2);border-left:3px solid var(--amber-400);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:1rem 1.25rem;margin-bottom:1rem;}
+.grammar-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.5rem;}
+.grammar-rule{font-size:14px;color:#fff;font-weight:600;margin-bottom:.5rem;}
+.grammar-eg{font-size:13px;color:var(--text2);margin-top:.25rem;font-style:italic;}
+.grammar-eg span{color:var(--amber-300);font-weight:600;font-style:normal;}
+.grammar-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:.75rem;}
+.grammar-table th{text-align:left;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border);}
+.grammar-table td{padding:7px 10px;color:var(--text2);border-bottom:1px solid var(--border2);}
+.grammar-table td:first-child{color:#fff;font-weight:500;}
+.hl{color:var(--amber-300);font-weight:600;}
+.sb-activity{margin-bottom:1.25rem;}
+.sb-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.75rem;}
+.sb-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:.625rem .875rem;font-size:14px;color:#fff;font-family:'Inter',sans-serif;transition:border-color .15s;outline:none;margin-bottom:.5rem;}
+.sb-input:focus{border-color:var(--amber-border);}
+.sb-check{padding:7px 18px;border-radius:99px;background:var(--amber-400);color:#1A0800;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:opacity .15s;}
+.sb-check:hover{opacity:.85;}
+.sb-result{font-size:12px;margin-top:6px;padding:6px 10px;border-radius:6px;display:none;}
+.sb-result.show{display:block;}
+.sb-result.ok{background:var(--teal-bg);color:#5DCAA5;}
+.sb-result.no{background:var(--coral-bg);color:#F09B80;}
+.sb-chip{padding:5px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--border);font-size:13px;color:var(--text2);display:inline-block;margin:3px;}
+.speak-level{margin-bottom:1.25rem;}
+.speak-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:3px 12px;border-radius:99px;margin-bottom:.875rem;}
+.speak-badge.l1{background:var(--teal-bg);color:#5DCAA5;border:1px solid var(--teal-border);}
+.speak-badge.l2{background:var(--amber-bg);color:var(--amber-300);border:1px solid var(--amber-border);}
+.speak-badge.l3{background:var(--blue-bg);color:var(--blue);border:1px solid rgba(74,158,224,0.3);}
+.speak-q{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.speak-q p{font-size:14px;font-weight:600;color:#fff;margin-bottom:.5rem;}
+.speak-hint{font-size:12px;color:var(--text3);}
+.speak-hint span{color:var(--amber-300);}
+.idea-q{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:.75rem;display:flex;gap:10px;}
+.idea-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+.idea-text{font-size:14px;color:var(--text2);line-height:1.6;}
+.idea-text strong{color:#fff;}
+.ielts-topic{background:var(--blue-bg);border:1px solid rgba(74,158,224,0.25);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:1.25rem;}
+.ielts-topic-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.25rem;}
+.ielts-topic h4{font-size:16px;font-weight:700;color:#fff;}
+.vocab-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:.75rem;}
+.chip{font-size:12px;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text2);}
+.chip.amber{background:var(--amber-bg);border-color:var(--amber-border);color:var(--amber-300);}
+.ielts-qs{display:flex;flex-direction:column;gap:8px;margin-top:1rem;}
+.ielts-q{display:flex;gap:10px;background:var(--surface2);border-radius:var(--r-sm);padding:.875rem 1rem;}
+.ielts-q-num{font-size:11px;font-weight:700;color:var(--blue);min-width:20px;}
+.ielts-q-text{font-size:13px;color:var(--text2);}
+.ielts-w2{background:rgba(74,158,224,0.08);border:1px solid rgba(74,158,224,0.2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-top:1rem;}
+.ielts-w2-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem;}
+.ielts-w2 p{font-size:14px;color:var(--text2);line-height:1.7;font-style:italic;}
+.star-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.25rem;}
+.star-word{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;background:var(--amber-bg);border:1px solid var(--amber-border);font-size:13px;font-weight:600;color:var(--amber-300);}
+.think-box{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:1rem;}
+.think-box .think-head{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.5rem;}
+.think-box p{font-size:14px;color:var(--text2);}
+.mini-quiz-q{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem;margin-bottom:.75rem;}
+.mq-text{font-size:13px;font-weight:600;color:#fff;margin-bottom:.625rem;}
+.mq-opts{display:flex;flex-direction:column;gap:5px;}
+.mq-opt{padding:7px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;font-size:12px;color:var(--text2);cursor:pointer;text-align:left;transition:all .15s;}
+.mq-opt:hover{border-color:var(--amber-border);background:var(--amber-bg);}
+.mq-opt.correct{border-color:var(--teal-border);background:var(--teal-bg);color:#fff;}
+.mq-opt.wrong{border-color:rgba(224,92,58,0.4);background:var(--coral-bg);color:#fff;}
+.lesson-nav{display:flex;gap:10px;margin-top:2rem;}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:.75rem 1.25rem;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;border:1px solid var(--border);color:var(--text2);background:var(--surface);transition:all .15s;flex:1;justify-content:center;}
+.nav-btn:hover{border-color:var(--border2);color:#fff;}
+.nav-btn.primary{background:var(--amber-400);color:#1A0800;border-color:transparent;}
+.nav-btn.primary:hover{opacity:.9;}
+.site-footer{background:#111;border-top:1px solid rgba(255,255,255,0.07);text-align:center;padding:1.5rem;font-size:12px;color:rgba(255,255,255,0.3);}
+.site-footer strong{color:var(--amber-300);}
+@media(max-width:600px){.vocab-grid{grid-template-columns:1fr;}.lesson-nav{flex-direction:column;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr">
+    <a class="logo-wrap" href="index.html">
+      <div class="logo-icon"><svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 24 C8 18,14 10,24 6 C20 10,18 14,20 18 C16 16,12 18,6 24Z" fill="white"/>
+          <path d="M20 18 C22 20,22 23,20 26 C18 24,18 21,20 18Z" fill="rgba(255,255,255,0.5)"/>
+        </svg></div>
+      <span class="logo-name">Lexilink Ideation IELTS STUDIO</span>
+    </a>
+    <div class="hdr-pipe"></div>
+    <a class="hdr-back" href="index.html"><i class="ti ti-arrow-left" aria-hidden="true"></i> Vol. 1</a>
+    <div class="hdr-spacer"></div>
+    <span class="hdr-badge">Lesson 20D</span>
+  </div>
+</header>
+<section class="lesson-hero">
+  <p class="lesson-eyebrow">Chapter 20 · Greece Gets Civilized Again</p>
+  <h1>Wine, Wit, and 'Noman'</h1>
+  <p>Odysseus's clever trick against a monster</p>
+  <div class="lesson-pills"><span class="l-pill">📖 Story + Vocabulary</span><span class="l-pill">🎤 Speaking</span><span class="l-pill">✏️ Grammar</span><span class="l-pill">⭐ CEFR A2–B1</span></div>
+</section>
+<div class="lesson-progress">
+  <div class="lp-inner">
+    <div class="lp-labels"><span>Lesson 20D of 7</span><span style="color:var(--amber-300)">Part 1 of 10</span></div>
+    <div class="lp-track"><div class="lp-fill"></div></div>
+    <div class="lp-parts">
+      <span class="lp-part active" onclick="scrollTo('p1')">1 Vocab</span><span class="lp-part" onclick="scrollTo('p2')">2 Story</span><span class="lp-part" onclick="scrollTo('p3')">3 Reading</span><span class="lp-part" onclick="scrollTo('p4')">4 Grammar</span><span class="lp-part" onclick="scrollTo('p5')">5 Builder</span><span class="lp-part" onclick="scrollTo('p6')">6 Speaking 1</span><span class="lp-part" onclick="scrollTo('p7')">7 Speaking 2</span><span class="lp-part" onclick="scrollTo('p8')">8 Ideas</span><span class="lp-part" onclick="scrollTo('p9')">9 IELTS</span><span class="lp-part" onclick="scrollTo('p10')">10 Review</span>
+    </div>
+  </div>
+</div>
+<main class="main">
+<section class="sec" id="p1">
+  <div class="sec-header">
+    <div class="sec-num">1</div>
+    <div><div class="sec-title">Vocabulary</div><div class="sec-sub">Click each word to learn more</div></div>
+  </div>
+  <div class="vocab-grid"><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">moan</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/məʊn/</div>
+      <div class="vc-cn">呻吟</div>
+      <div class="vc-detail">
+        <div class="vc-def">To make a low sound of pain or sadness.</div>
+        <div class="vc-ex">"The men moaned and wept, certain they would never escape."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">sharpen</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/ˈʃɑː.pən/</div>
+      <div class="vc-cn">削尖；磨快</div>
+      <div class="vc-detail">
+        <div class="vc-def">To make the point or edge of something sharp.</div>
+        <div class="vc-ex">"They sharpened one end of the branch into a fine point."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">coal</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/kəʊl/</div>
+      <div class="vc-cn">炭火</div>
+      <div class="vc-detail">
+        <div class="vc-def">A hot, glowing piece of burned wood or fuel.</div>
+        <div class="vc-ex">"He hardened the tip in the fire's coals."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">thirsty</span><span class="vc-pos">adjective</span></div>
+      <div class="vc-pron">/ˈθɜː.sti/</div>
+      <div class="vc-cn">口渴的</div>
+      <div class="vc-detail">
+        <div class="vc-def">Feeling a need to drink.</div>
+        <div class="vc-ex">""You must be thirsty after eating so much meat," said Odysseus."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">mouthful</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/ˈmaʊθ.fʊl/</div>
+      <div class="vc-cn">一口</div>
+      <div class="vc-detail">
+        <div class="vc-def">The amount of food or drink that fits in your mouth at once.</div>
+        <div class="vc-ex">"The Cyclops took a mouthful, then another, and another."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">drowsy</span><span class="vc-pos">adjective</span></div>
+      <div class="vc-pron">/ˈdraʊ.zi/</div>
+      <div class="vc-cn">昏昏欲睡的</div>
+      <div class="vc-detail">
+        <div class="vc-def">Feeling sleepy.</div>
+        <div class="vc-ex">"Delighted and drowsy, the giant asked for the stranger's name."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">chuckle</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/ˈtʃʌk.əl/</div>
+      <div class="vc-cn">轻笑</div>
+      <div class="vc-detail">
+        <div class="vc-def">To laugh quietly.</div>
+        <div class="vc-ex">""Well, Noman," the Cyclops chuckled."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">sprawl</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/sprɔːl/</div>
+      <div class="vc-cn">摊开身体躺下</div>
+      <div class="vc-detail">
+        <div class="vc-def">To sit or lie with your arms and legs spread out.</div>
+        <div class="vc-ex">"The giant sprawled across the cave floor and fell asleep."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">favor</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/ˈfeɪ.vər/</div>
+      <div class="vc-cn">恩惠；好意</div>
+      <div class="vc-detail">
+        <div class="vc-def">A kind or helpful act.</div>
+        <div class="vc-ex">""I'll do you a favor," the Cyclops said."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">calmly</span><span class="vc-pos">adverb</span></div>
+      <div class="vc-pron">/ˈkɑːm.li/</div>
+      <div class="vc-cn">镇静地</div>
+      <div class="vc-detail">
+        <div class="vc-def">In a way that shows no worry or excitement.</div>
+        <div class="vc-ex">""My name is Noman," Odysseus answered calmly."</div>
+      </div>
+    </div></div>
+</section>
+<section class="sec" id="p2">
+  <div class="sec-header">
+    <div class="sec-num">2</div>
+    <div><div class="sec-title">The Story</div><div class="sec-sub">Read carefully. Notice the bold words.</div></div>
+  </div>
+  <div class="story-body"><div class="story-icon">🍷</div><p>When morning came, the Cyclops woke, lit his fire, milked his goats, and — to the sailors' horror — grabbed two more men for his breakfast. After finishing his terrible meal, he rolled away the massive boulder, drove his flock outside, and then carefully rolled the stone back into place behind him, sealing Odysseus and the remaining men inside once again.</p><p>All day long, Odysseus's men <span class="story-hl">moaned</span> and wept, certain they would never escape. But Odysseus paced back and forth across the cave floor, thinking hard. Finally, his eyes fell on the pile of trees the Cyclops had gathered for firewood. One long branch, still green, stood out among the rest.</p><p>"Come on," Odysseus told his men. "Be brave. Do exactly as I say, and we will escape this place." Together they cut a long piece from the branch — about as tall as a man — and <span class="story-hl">sharpened</span> one end into a fine point. Odysseus then held the sharpened tip in the fire's <span class="story-hl">coals</span> until it hardened and turned black, before hiding the weapon under a pile of straw. All day, the men waited nervously for the Cyclops to return.</p><p>That evening, the monster came back exactly as before, driving his sheep inside and sealing the boulder shut. Once again, he grabbed two more men and devoured them, washing the meal down with goat's milk. This time, however, Odysseus stepped forward, carrying the jug of sweet wine he had brought from the ship.</p><p>"Cyclops!" he called out. "You've eaten so much meat that you must be <span class="story-hl">thirsty</span>. Milk alone won't satisfy that thirst — but I have something better. Try this wine; it's the finest you've ever tasted." The Cyclops sniffed at the jug suspiciously, then took a <span class="story-hl">mouthful</span>, then another, and another, until the entire jug was empty. Delighted and <span class="story-hl">drowsy</span>, the giant asked, "What's your name, stranger? Who is giving me such wonderful wine?"</p><p>"My name is Noman," Odysseus answered <span class="story-hl">calmly</span>.</p><p>"Well, Noman," the Cyclops <span class="story-hl">chuckled</span>, his eyes growing heavy, "since I like your wine so much, I'll do you a <span class="story-hl">favor</span> — I'll eat you last of all!" And with that promise, the enormous monster <span class="story-hl">sprawled</span> across the cave floor and fell into a deep, wine-soaked sleep, giving Odysseus and his remaining men exactly the chance they had been waiting for.</p><div class="story-icon">💤</div></div>
+</section>
+<section class="sec" id="p3">
+  <div class="sec-header">
+    <div class="sec-num">3</div>
+    <div><div class="sec-title">Reading Comprehension</div><div class="sec-sub">Choose the best answer. Get instant feedback!</div></div>
+  </div>
+  <div class="quiz-list"><div class="q-item">
+      <div class="q-text">1. What did the Cyclops do before leaving the cave in the morning?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">He ate two more men for breakfast.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">He gave the sailors food.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">He let all the sailors go free.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">2. True or False: Odysseus's men remained calm and confident while trapped in the cave all day.</div>
+      <div class="tf-opts">
+        <button class="tf-btn" onclick="tf(this,'wrong','Actually, they moaned and wept, certain they would never escape.')">True</button>
+        <button class="tf-btn" onclick="tf(this,'correct','Correct! The men moaned and wept all day.')">False</button>
+      </div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">3. What object did Odysseus and his men prepare while the Cyclops was away?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">A long wooden stake, sharpened and hardened in the fire.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">A rope ladder.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">A stone hammer.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">4. How did Odysseus get the Cyclops to trust and relax around him?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">By offering him strong, delicious wine.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">By singing him a song.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">By giving him gold.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">5. True or False: Odysseus told the Cyclops his real name.</div>
+      <div class="tf-opts">
+        <button class="tf-btn" onclick="tf(this,'wrong','Actually, he said his name was 'Noman' — a clever trick!')">True</button>
+        <button class="tf-btn" onclick="tf(this,'correct','Correct! He used the false name 'Noman.'')">False</button>
+      </div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">6. What 'favor' did the drunken Cyclops promise Odysseus?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">That he would eat Odysseus last, because he liked the wine so much.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">That he would let Odysseus go free.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">That he would share his cheese.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+</div>
+</section>
+<section class="sec" id="p4">
+  <div class="sec-header">
+    <div class="sec-num">4</div>
+    <div><div class="sec-title">Language Focus</div><div class="sec-sub">Grammar from the story — learn through meaning</div></div>
+  </div>
+  <div class="grammar-box">
+    <div class="grammar-label">📌 Sequencing a plan: 'First... then... finally...'</div>
+    <div class="grammar-rule">Sequencing words help listeners follow the exact order of a plan.</div>
+    <div class='grammar-eg'><span>First</span>, they cut a branch; <span>then</span>, they sharpened it; <span>finally</span>, they hid it under straw.</div><div class='grammar-eg'><span>First</span> he sniffed the wine, <span>then</span> he drank a mouthful, <span>then</span> another.</div><div class='grammar-eg'><span>First</span> the Cyclops relaxed, <span>then</span> he grew drowsy, and <span>finally</span> he fell asleep.</div>
+    <div class="grammar-note" style="font-size:12px;color:var(--text3);margin-top:.5rem;">💡 Sequencing words are essential for explaining any step-by-step plan clearly.</div>
+  </div><div class="grammar-box">
+    <div class="grammar-label">📌 'So + adjective + that' — result clauses</div>
+    <div class="grammar-rule">'So + adjective + that' links a quality to its result.</div>
+    <div class='grammar-eg'>The Cyclops drank <span>so much</span> wine <span>that</span> the whole jug was empty.</div><div class='grammar-eg'>He felt <span>so satisfied that</span> he offered Odysseus a strange 'favor.'</div><div class='grammar-eg'>The wine was <span>so delicious that</span> he asked for more.</div>
+    <div class="grammar-note" style="font-size:12px;color:var(--text3);margin-top:.5rem;">💡 This structure shows a cause strong enough to create a clear effect.</div>
+  </div><div class="grammar-box">
+    <div class="grammar-label">📌 Using a false name for protection</div>
+    <div class="grammar-rule">A character can hide their true identity behind a clever, misleading name.</div>
+    <div class='grammar-eg'>"My name is <span>Noman</span>," Odysseus said — a name with a hidden trick inside it.</div><div class='grammar-eg'>The Cyclops promised to eat <span>'Noman'</span> last, not knowing what the name truly meant.</div><div class='grammar-eg'>Sometimes what a character <span>says</span> means something different to the reader than to the other characters.</div>
+    <div class="grammar-note" style="font-size:12px;color:var(--text3);margin-top:.5rem;">💡 This kind of wordplay, where the audience understands more than a character does, is called dramatic irony.</div>
+  </div>
+</section>
+<section class="sec" id="p5">
+  <div class="sec-header">
+    <div class="sec-num">5</div>
+    <div><div class="sec-title">Sentence Builder</div><div class="sec-sub">Build your skills with the vocabulary</div></div>
+  </div>
+  <div class="sb-activity">
+    <div class="sb-label">🔀 Unscramble the sentence</div>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:.75rem;">Put these words in the correct order:</p>
+    <div style="margin-bottom:.75rem;"><span class="sb-chip">my</span><span class="sb-chip">name</span><span class="sb-chip">is</span><span class="sb-chip">Noman</span><span class="sb-chip">Odysseus</span><span class="sb-chip">answered</span><span class="sb-chip">calmly</span></div>
+    <input class="sb-input" id="us20D" placeholder="Type your sentence here..."/>
+    <button class="sb-check" onclick="checkUnscramble('us20D','my name is noman odysseus answered calmly','ur20D')">Check ✓</button>
+    <div class="sb-result" id="ur20D"></div>
+  </div><div class="sb-activity">
+    <div class="sb-label">✏️ Fill in the blank</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:.5rem;">1. Odysseus offered the Cyclops delicious ________ to make him relaxed and sleepy.</p>
+    <input class="sb-input" id="f1_20D" placeholder="Your answer..."/>
+    <button class="sb-check" onclick="checkFill('f1_20D','wine','rf1_20D')">Check ✓</button>
+    <div class="sb-result" id="rf1_20D"></div>
+  </div><div class="sb-activity">
+    <div class="sb-label">✏️ Fill in the blank</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:.5rem;">2. When the Cyclops asked for his name, Odysseus calmly answered '________.'</p>
+    <input class="sb-input" id="f2_20D" placeholder="Your answer..."/>
+    <button class="sb-check" onclick="checkFill('f2_20D','Noman','rf2_20D')">Check ✓</button>
+    <div class="sb-result" id="rf2_20D"></div>
+  </div><div class="sb-activity">
+    <div class="sb-label">🌐 Chinese → English Translation</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:.5rem;">3. 独眼巨人说他会把'无名氏'留到最后才吃掉。</p>
+    <input class="sb-input" id="t20D" placeholder="Type your English translation..."/>
+    <button class="sb-check" onclick="revealTranslation('t20D','The Cyclops said he would eat 'Noman' last of all.','rt20D')">Show model answer ✓</button>
+    <div class="sb-result" id="rt20D"></div>
+  </div>
+</section>
+<section class="sec" id="p6">
+  <div class="sec-header">
+    <div class="sec-num">6</div>
+    <div><div class="sec-title">Speaking — Level 1</div><div class="sec-sub">Answer in one complete sentence</div></div>
+  </div>
+  <div class="speak-level">
+    <span class="speak-badge l1">🟢 Level 1 · One sentence</span>
+<div class="speak-q"><p>What trick did Odysseus use to make the Cyclops trust him?</p><div class="speak-hint">💡 Start with: <span>"Odysseus tricked the Cyclops by..."</span></div></div><div class="speak-q"><p>What name did Odysseus give the Cyclops?</p><div class="speak-hint">💡 Start with: <span>"Odysseus told the Cyclops that his name was..."</span></div></div><div class="speak-q"><p>What weapon did the men prepare while the Cyclops was away?</p><div class="speak-hint">💡 Start with: <span>"While the Cyclops was away, the men prepared..."</span></div></div>
+  </div>
+</section>
+<section class="sec" id="p7">
+  <div class="sec-header">
+    <div class="sec-num">7</div>
+    <div><div class="sec-title">Speaking — Level 2 & 3</div><div class="sec-sub">Extend your answer. Share your opinion.</div></div>
+  </div>
+  <div class="speak-level">
+    <span class="speak-badge l2">🟡 Level 2 · 2–3 sentences</span>
+<div class="speak-q"><p>Why do you think Odysseus chose the false name 'Noman' instead of simply refusing to answer?</p><div class="speak-hint">💡 Try: <span>"I think he chose that name because..."</span></div></div><div class="speak-q"><p>Imagine you are one of the sailors, watching Odysseus calmly offer wine to the monster who ate your friends. What would you be thinking?</p><div class="speak-hint">💡 Think about: <span>fear · trust · anger · hope</span></div></div>
+  </div>
+  <div class="speak-level">
+    <span class="speak-badge l3">🔵 Level 3 · Your opinion</span>
+<div class="speak-q"><p>Do you think using a clever trick or lie is acceptable when your life is in danger? Explain your opinion with reasons.</p><div class="speak-hint">💡 Use: <span>I believe... / For example... / On the other hand...</span></div></div>
+  </div>
+</section>
+<section class="sec" id="p8">
+  <div class="sec-header">
+    <div class="sec-num">8</div>
+    <div><div class="sec-title">Ideas & Society</div><div class="sec-sub">Think about big ideas. There is no wrong answer.</div></div>
+  </div>
+  <div class="idea-q"><div class="idea-icon">🍷</div><div class="idea-text"><strong>Odysseus used cleverness, not brute strength, to gain an advantage over a much bigger, stronger enemy.</strong> Can you think of other stories, or real-life examples, where cleverness defeats strength?</div></div><div class="idea-q"><div class="idea-icon">🎭</div><div class="idea-text"><strong>The name 'Noman' is a clever trick with a hidden meaning that the Cyclops doesn't understand yet.</strong> Why do you think wordplay and hidden meanings are so powerful in storytelling?</div></div><div class="idea-q"><div class="idea-icon">🤔</div><div class="idea-text"><strong>Odysseus stayed patient for an entire day, planning carefully instead of panicking.</strong> How do you usually behave when you are in a stressful or frightening situation — do you plan, or react quickly?</div></div><div class="idea-q"><div class="idea-icon">⚖️</div><div class="idea-text"><strong>Is it ever morally acceptable to lie?</strong> Odysseus lied about his name and his ship to protect himself and his men. Discuss when, if ever, lying might be justified.</div></div>
+</section>
+<section class="sec" id="p9">
+  <div class="sec-header">
+    <div class="sec-num">9</div>
+    <div><div class="sec-title">IELTS Content Builder</div><div class="sec-sub">Planting seeds for your future IELTS exam</div></div>
+  </div>
+  <div class="ielts-topic">
+    <div class="ielts-topic-label">📘 Today's IELTS Topic</div>
+    <h4>Strategy, Deception, and Problem-Solving</h4>
+  </div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem;">Key vocabulary</p>
+  <div class="vocab-chips"><span class="chip amber">strategy</span><span class="chip amber">deception</span><span class="chip amber">resourcefulness</span><span class="chip amber">cunning</span><span class="chip">wit</span><span class="chip">outsmart an opponent</span></div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin:.875rem 0 .5rem;">Useful collocations</p>
+  <div class="vocab-chips"><span class="chip">outsmart an opponent</span><span class="chip">gain the upper hand</span><span class="chip">exploit a weakness</span><span class="chip">buy time</span></div>
+  <div class="ielts-qs"><div class="ielts-q"><div class="ielts-q-num">S1</div><div class="ielts-q-text">Do you think intelligence is more valuable than physical strength in difficult situations?</div></div><div class="ielts-q"><div class="ielts-q-num">S2</div><div class="ielts-q-text">Is deception ever a justifiable strategy for survival?</div></div><div class="ielts-q"><div class="ielts-q-num">S3</div><div class="ielts-q-text">What personal qualities help people solve problems under pressure?</div></div></div>
+  <div class="ielts-w2">
+    <div class="ielts-w2-label">✏️ IELTS Writing Task 2 — Future Practice</div>
+    <p>"Some people believe that clever strategy is always better than brute force in solving problems. Others believe that strength and direct action are more reliable. Discuss both views and give your own opinion."</p>
+  </div>
+</section>
+<section class="sec" id="p10">
+  <div class="sec-header">
+    <div class="sec-num">10</div>
+    <div><div class="sec-title">Review</div><div class="sec-sub">Remember what you learned!</div></div>
+  </div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem;">⭐ Star Words</p>
+  <div class="star-words"><span class="star-word">⭐ moan</span><span class="star-word">⭐ sharpen</span><span class="star-word">⭐ coal</span><span class="star-word">⭐ thirsty</span><span class="star-word">⭐ mouthful</span><span class="star-word">⭐ drowsy</span><span class="star-word">⭐ sprawl</span><span class="star-word">⭐ favor</span></div>
+  <div class="think-box">
+    <div class="think-head">💡 Big Idea</div>
+    <p>A clever trick — a jug of wine and a false name — gave Odysseus the small advantage he needed against an enemy far stronger than himself.</p>
+  </div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin:.875rem 0 .75rem;">🧠 Mini Quiz</p>
+  <div class="mini-quiz-q"><div class="mq-text">A. What did Odysseus and his men sharpen while the Cyclops was away?</div><div class="mq-opts"><button class="mq-opt" onclick="mq(this,'correct')">A long wooden stake</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">A sword</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">A spear made of bronze</button>
+</div></div><div class="mini-quiz-q"><div class="mq-text">B. Complete: Odysseus told the Cyclops his name was ________.</div><div class="mq-opts"><button class="mq-opt" onclick="mq(this,'correct')">Noman</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Odysseus</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Poseidon</button>
+</div></div><div class="mini-quiz-q"><div class="mq-text">C. Why did the Cyclops fall asleep so easily?</div><div class="mq-opts"><button class="mq-opt" onclick="mq(this,'correct')">He drank an entire jug of strong wine</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">He was exhausted from fighting</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Odysseus sang him a lullaby</button>
+</div></div>
+  <div class="lesson-nav">
+    <a class="nav-btn" href="ch20-c.html"><i class="ti ti-arrow-left"></i> Lesson 20C</a>
+    <a class="nav-btn primary" href="ch20-e.html">Next: Lesson 20E — The Blinding and the Escape <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><strong>Lexilink Ideation IELTS STUDIO</strong> · History ESL Course · Chapter 20 — Lesson D</footer>
+<script>
+function toggleVocab(card){card.classList.toggle('open');}
+function mcq(btn,type){
+  const item=btn.closest('.q-item');
+  item.querySelectorAll('.q-opt').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(type);
+  const fb=item.querySelector('.q-feedback');
+  fb.className='q-feedback show '+(type==='correct'?'good':'bad');
+  fb.textContent=type==='correct'?'✓ Correct! Well done!':'✗ Not quite. Try to remember the story.';
+}
+function tf(btn,type,msg){
+  const item=btn.closest('.q-item');
+  item.querySelectorAll('.tf-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(type);
+  const fb=item.querySelector('.q-feedback');
+  fb.className='q-feedback show '+(type==='correct'?'good':'bad');
+  fb.textContent=(type==='correct'?'✓ ':'✗ ')+msg;
+}
+function mq(btn,type){
+  const item=btn.closest('.mini-quiz-q');
+  item.querySelectorAll('.mq-opt').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(type);
+}
+function checkUnscramble(id,answer,rid){
+  const val=document.getElementById(id).value.trim().toLowerCase().replace(/[^a-z\s]/g,'');
+  const ans=answer.toLowerCase();
+  const r=document.getElementById(rid);
+  r.className='sb-result show '+(val===ans?'ok':'no');
+  r.textContent=val===ans?'✓ Perfect! "'+answer+'"':'✗ Try again. Check the word order.';
+}
+function checkFill(id,answer,rid){
+  const val=document.getElementById(id).value.trim().toLowerCase();
+  const r=document.getElementById(rid);
+  r.className='sb-result show '+(val===answer.toLowerCase()?'ok':'no');
+  r.textContent=val===answer.toLowerCase()?'✓ Correct!':'✗ The answer is: "'+answer+'"';
+}
+function revealTranslation(id,answer,rid){
+  const r=document.getElementById(rid);
+  r.className='sb-result show ok';
+  r.textContent='✓ Model answer: "'+answer+'"';
+}
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
+const parts=['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'];
+const partEls=document.querySelectorAll('.lp-part');
+window.addEventListener('scroll',()=>{
+  let current=0;
+  parts.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<200)current=i;});
+  partEls.forEach((el,i)=>{el.classList.remove('active','done');if(i<current)el.classList.add('done');else if(i===current)el.classList.add('active');});
+  const pct=Math.round(((current+1)/10)*100);
+  document.querySelector('.lp-fill').style.width=pct+'%';
+});
+</script>
+</body>
+</html>

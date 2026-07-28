@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Lesson 20F — Poseidon's Curse | Lexilink History Workshop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0F0800;--surface:rgba(255,255,255,0.04);--surface2:rgba(255,255,255,0.07);
+  --border:rgba(255,255,255,0.10);--border2:rgba(255,255,255,0.06);
+  --amber-300:#E8A832;--amber-400:#D4890F;--amber-500:#B8720A;
+  --amber-bg:rgba(212,137,15,0.12);--amber-border:rgba(212,137,15,0.3);
+  --text:#fff;--text2:rgba(255,255,255,0.72);--text3:rgba(255,255,255,0.45);
+  --teal:#1D9E75;--teal-bg:rgba(29,158,117,0.12);--teal-border:rgba(29,158,117,0.3);
+  --coral:#E05C3A;--coral-bg:rgba(224,92,58,0.12);
+  --blue:#4A9EE0;--blue-bg:rgba(74,158,224,0.12);
+  --r:12px;--r-sm:8px;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;}
+.site-header{background:#111;border-bottom:1px solid rgba(255,255,255,0.08);position:sticky;top:0;z-index:100;}
+.hdr{max-width:860px;margin:0 auto;padding:0 1.5rem;height:54px;display:flex;align-items:center;gap:12px;}
+.logo-wrap{display:flex;align-items:center;gap:8px;text-decoration:none;}
+.logo-icon{width:30px;height:30px;display:flex;align-items:center;justify-content:center;}
+.logo-icon svg{width:26px;height:26px;}
+.logo-name{font-size:13px;font-weight:700;color:#fff;}
+.hdr-pipe{width:1px;height:20px;background:rgba(255,255,255,0.15);}
+.hdr-back{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text3);text-decoration:none;transition:color .15s;}
+.hdr-back:hover{color:var(--text2);}
+.hdr-spacer{flex:1;}
+.hdr-badge{font-size:10px;font-weight:700;letter-spacing:.05em;padding:3px 10px;border-radius:99px;border:1px solid var(--amber-border);color:var(--amber-300);background:var(--amber-bg);}
+.lesson-hero{background:linear-gradient(135deg,#2C1600 0%,#5C3200 40%,#7A4500 100%);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.lesson-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(200,130,0,0.15),transparent);pointer-events:none;}
+.lesson-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.75rem;}
+.lesson-hero h1{font-size:clamp(22px,4vw,36px);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem;}
+.lesson-hero p{font-size:14px;color:rgba(255,255,255,0.65);max-width:520px;margin:0 auto .875rem;}
+.lesson-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.l-pill{font-size:11px;font-weight:500;padding:4px 12px;border-radius:99px;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.75);background:rgba(255,255,255,0.06);}
+.lesson-progress{background:#1A1100;border-bottom:1px solid rgba(255,255,255,0.06);padding:.75rem 1.5rem;}
+.lp-inner{max-width:860px;margin:0 auto;}
+.lp-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:6px;}
+.lp-track{height:4px;border-radius:99px;background:rgba(255,255,255,0.08);}
+.lp-fill{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--amber-500),var(--amber-300));width:10%;}
+.lp-parts{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;}
+.lp-part{font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:rgba(255,255,255,0.06);color:var(--text3);cursor:pointer;transition:all .15s;}
+.lp-part.done{background:var(--amber-bg);color:var(--amber-300);border:1px solid var(--amber-border);}
+.lp-part.active{background:var(--amber-400);color:#1A0800;}
+.main{max-width:860px;margin:0 auto;padding:2rem 1.5rem 5rem;}
+.sec{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;margin-bottom:1.5rem;scroll-margin-top:80px;}
+.sec-header{display:flex;align-items:center;gap:10px;margin-bottom:1.25rem;}
+.sec-num{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--amber-bg);color:var(--amber-300);border:1px solid var(--amber-border);flex-shrink:0;}
+.sec-title{font-size:16px;font-weight:700;color:#fff;}
+.sec-sub{font-size:12px;color:var(--text3);margin-top:1px;}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;}
+.vocab-card{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem;cursor:pointer;transition:border-color .15s;}
+.vocab-card:hover,.vocab-card.open{border-color:var(--amber-border);}
+.vc-top{display:flex;align-items:baseline;gap:8px;}
+.vc-word{font-size:16px;font-weight:700;color:#fff;}
+.vc-pos{font-size:10px;font-weight:600;padding:1px 7px;border-radius:99px;background:var(--amber-bg);color:var(--amber-300);}
+.vc-pron{font-size:12px;color:var(--text3);margin-top:2px;font-style:italic;}
+.vc-cn{font-size:15px;color:var(--amber-300);margin-top:4px;font-weight:600;}
+.vc-detail{display:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--border2);}
+.vocab-card.open .vc-detail{display:block;}
+.vc-def{font-size:13px;color:var(--text2);margin-bottom:6px;}
+.vc-ex{font-size:12px;color:var(--text3);font-style:italic;padding-left:8px;border-left:2px solid var(--amber-border);}
+.story-body p{font-size:15px;color:var(--text2);line-height:1.8;margin-bottom:1rem;}
+.story-body p:last-child{margin-bottom:0;}
+.story-hl{color:var(--amber-300);font-weight:600;}
+.story-box{background:var(--amber-bg);border:1px solid var(--amber-border);border-radius:var(--r-sm);padding:1rem 1.25rem;margin:1.25rem 0;font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;font-style:italic;}
+.story-box::before{content:'"';font-size:32px;color:var(--amber-400);line-height:1;display:block;margin-bottom:.25rem;}
+.story-icon{font-size:40px;text-align:center;margin:1rem 0;}
+.quiz-list{display:flex;flex-direction:column;gap:14px;}
+.q-item{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;}
+.q-text{font-size:14px;font-weight:600;color:#fff;margin-bottom:.75rem;}
+.q-opts{display:flex;flex-direction:column;gap:6px;}
+.q-opt{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:13px;color:var(--text2);width:100%;text-align:left;transition:all .15s;}
+.q-opt:hover{border-color:var(--amber-border);background:var(--amber-bg);}
+.q-opt.correct{border-color:var(--teal-border);background:var(--teal-bg);color:#fff;}
+.q-opt.wrong{border-color:rgba(224,92,58,0.4);background:var(--coral-bg);color:#fff;}
+.q-feedback{font-size:12px;margin-top:8px;padding:6px 10px;border-radius:6px;display:none;}
+.q-feedback.show{display:block;}
+.q-feedback.good{background:var(--teal-bg);color:#5DCAA5;}
+.q-feedback.bad{background:var(--coral-bg);color:#F09B80;}
+.tf-opts{display:flex;gap:8px;}
+.tf-btn{flex:1;padding:8px;border-radius:8px;border:1px solid var(--border);background:transparent;cursor:pointer;font-size:13px;font-weight:600;color:var(--text2);transition:all .15s;}
+.tf-btn:hover{border-color:var(--amber-border);background:var(--amber-bg);}
+.tf-btn.correct{border-color:var(--teal-border);background:var(--teal-bg);color:#fff;}
+.tf-btn.wrong{border-color:rgba(224,92,58,0.4);background:var(--coral-bg);color:#fff;}
+.grammar-box{background:var(--surface2);border-left:3px solid var(--amber-400);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:1rem 1.25rem;margin-bottom:1rem;}
+.grammar-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.5rem;}
+.grammar-rule{font-size:14px;color:#fff;font-weight:600;margin-bottom:.5rem;}
+.grammar-eg{font-size:13px;color:var(--text2);margin-top:.25rem;font-style:italic;}
+.grammar-eg span{color:var(--amber-300);font-weight:600;font-style:normal;}
+.grammar-table{width:100%;border-collapse:collapse;font-size:13px;margin-top:.75rem;}
+.grammar-table th{text-align:left;padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);border-bottom:1px solid var(--border);}
+.grammar-table td{padding:7px 10px;color:var(--text2);border-bottom:1px solid var(--border2);}
+.grammar-table td:first-child{color:#fff;font-weight:500;}
+.hl{color:var(--amber-300);font-weight:600;}
+.sb-activity{margin-bottom:1.25rem;}
+.sb-label{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.75rem;}
+.sb-input{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-sm);padding:.625rem .875rem;font-size:14px;color:#fff;font-family:'Inter',sans-serif;transition:border-color .15s;outline:none;margin-bottom:.5rem;}
+.sb-input:focus{border-color:var(--amber-border);}
+.sb-check{padding:7px 18px;border-radius:99px;background:var(--amber-400);color:#1A0800;font-size:13px;font-weight:700;border:none;cursor:pointer;transition:opacity .15s;}
+.sb-check:hover{opacity:.85;}
+.sb-result{font-size:12px;margin-top:6px;padding:6px 10px;border-radius:6px;display:none;}
+.sb-result.show{display:block;}
+.sb-result.ok{background:var(--teal-bg);color:#5DCAA5;}
+.sb-result.no{background:var(--coral-bg);color:#F09B80;}
+.sb-chip{padding:5px 10px;border-radius:99px;background:var(--surface2);border:1px solid var(--border);font-size:13px;color:var(--text2);display:inline-block;margin:3px;}
+.speak-level{margin-bottom:1.25rem;}
+.speak-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;padding:3px 12px;border-radius:99px;margin-bottom:.875rem;}
+.speak-badge.l1{background:var(--teal-bg);color:#5DCAA5;border:1px solid var(--teal-border);}
+.speak-badge.l2{background:var(--amber-bg);color:var(--amber-300);border:1px solid var(--amber-border);}
+.speak-badge.l3{background:var(--blue-bg);color:var(--blue);border:1px solid rgba(74,158,224,0.3);}
+.speak-q{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:.75rem;}
+.speak-q p{font-size:14px;font-weight:600;color:#fff;margin-bottom:.5rem;}
+.speak-hint{font-size:12px;color:var(--text3);}
+.speak-hint span{color:var(--amber-300);}
+.idea-q{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:.75rem;display:flex;gap:10px;}
+.idea-icon{font-size:20px;flex-shrink:0;margin-top:2px;}
+.idea-text{font-size:14px;color:var(--text2);line-height:1.6;}
+.idea-text strong{color:#fff;}
+.ielts-topic{background:var(--blue-bg);border:1px solid rgba(74,158,224,0.25);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:1.25rem;}
+.ielts-topic-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.25rem;}
+.ielts-topic h4{font-size:16px;font-weight:700;color:#fff;}
+.vocab-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:.75rem;}
+.chip{font-size:12px;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--text2);}
+.chip.amber{background:var(--amber-bg);border-color:var(--amber-border);color:var(--amber-300);}
+.ielts-qs{display:flex;flex-direction:column;gap:8px;margin-top:1rem;}
+.ielts-q{display:flex;gap:10px;background:var(--surface2);border-radius:var(--r-sm);padding:.875rem 1rem;}
+.ielts-q-num{font-size:11px;font-weight:700;color:var(--blue);min-width:20px;}
+.ielts-q-text{font-size:13px;color:var(--text2);}
+.ielts-w2{background:rgba(74,158,224,0.08);border:1px solid rgba(74,158,224,0.2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-top:1rem;}
+.ielts-w2-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:.5rem;}
+.ielts-w2 p{font-size:14px;color:var(--text2);line-height:1.7;font-style:italic;}
+.star-words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1.25rem;}
+.star-word{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:99px;background:var(--amber-bg);border:1px solid var(--amber-border);font-size:13px;font-weight:600;color:var(--amber-300);}
+.think-box{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem 1.25rem;margin-bottom:1rem;}
+.think-box .think-head{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--amber-300);margin-bottom:.5rem;}
+.think-box p{font-size:14px;color:var(--text2);}
+.mini-quiz-q{background:var(--surface2);border:1px solid var(--border2);border-radius:var(--r-sm);padding:1rem;margin-bottom:.75rem;}
+.mq-text{font-size:13px;font-weight:600;color:#fff;margin-bottom:.625rem;}
+.mq-opts{display:flex;flex-direction:column;gap:5px;}
+.mq-opt{padding:7px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;font-size:12px;color:var(--text2);cursor:pointer;text-align:left;transition:all .15s;}
+.mq-opt:hover{border-color:var(--amber-border);background:var(--amber-bg);}
+.mq-opt.correct{border-color:var(--teal-border);background:var(--teal-bg);color:#fff;}
+.mq-opt.wrong{border-color:rgba(224,92,58,0.4);background:var(--coral-bg);color:#fff;}
+.lesson-nav{display:flex;gap:10px;margin-top:2rem;}
+.nav-btn{display:flex;align-items:center;gap:6px;padding:.75rem 1.25rem;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;border:1px solid var(--border);color:var(--text2);background:var(--surface);transition:all .15s;flex:1;justify-content:center;}
+.nav-btn:hover{border-color:var(--border2);color:#fff;}
+.nav-btn.primary{background:var(--amber-400);color:#1A0800;border-color:transparent;}
+.nav-btn.primary:hover{opacity:.9;}
+.site-footer{background:#111;border-top:1px solid rgba(255,255,255,0.07);text-align:center;padding:1.5rem;font-size:12px;color:rgba(255,255,255,0.3);}
+.site-footer strong{color:var(--amber-300);}
+@media(max-width:600px){.vocab-grid{grid-template-columns:1fr;}.lesson-nav{flex-direction:column;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="hdr">
+    <a class="logo-wrap" href="index.html">
+      <div class="logo-icon"><svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 24 C8 18,14 10,24 6 C20 10,18 14,20 18 C16 16,12 18,6 24Z" fill="white"/>
+          <path d="M20 18 C22 20,22 23,20 26 C18 24,18 21,20 18Z" fill="rgba(255,255,255,0.5)"/>
+        </svg></div>
+      <span class="logo-name">Lexilink Ideation IELTS STUDIO</span>
+    </a>
+    <div class="hdr-pipe"></div>
+    <a class="hdr-back" href="index.html"><i class="ti ti-arrow-left" aria-hidden="true"></i> Vol. 1</a>
+    <div class="hdr-spacer"></div>
+    <span class="hdr-badge">Lesson 20F</span>
+  </div>
+</header>
+<section class="lesson-hero">
+  <p class="lesson-eyebrow">Chapter 20 · Greece Gets Civilized Again</p>
+  <h1>Poseidon's Curse</h1>
+  <p>One boastful shout — and ten years of storms</p>
+  <div class="lesson-pills"><span class="l-pill">📖 Story + Vocabulary</span><span class="l-pill">🎤 Speaking</span><span class="l-pill">✏️ Grammar</span><span class="l-pill">⭐ CEFR A2–B1</span></div>
+</section>
+<div class="lesson-progress">
+  <div class="lp-inner">
+    <div class="lp-labels"><span>Lesson 20F of 7</span><span style="color:var(--amber-300)">Part 1 of 10</span></div>
+    <div class="lp-track"><div class="lp-fill"></div></div>
+    <div class="lp-parts">
+      <span class="lp-part active" onclick="scrollTo('p1')">1 Vocab</span><span class="lp-part" onclick="scrollTo('p2')">2 Story</span><span class="lp-part" onclick="scrollTo('p3')">3 Reading</span><span class="lp-part" onclick="scrollTo('p4')">4 Grammar</span><span class="lp-part" onclick="scrollTo('p5')">5 Builder</span><span class="lp-part" onclick="scrollTo('p6')">6 Speaking 1</span><span class="lp-part" onclick="scrollTo('p7')">7 Speaking 2</span><span class="lp-part" onclick="scrollTo('p8')">8 Ideas</span><span class="lp-part" onclick="scrollTo('p9')">9 IELTS</span><span class="lp-part" onclick="scrollTo('p10')">10 Review</span>
+    </div>
+  </div>
+</div>
+<main class="main">
+<section class="sec" id="p1">
+  <div class="sec-header">
+    <div class="sec-num">1</div>
+    <div><div class="sec-title">Vocabulary</div><div class="sec-sub">Click each word to learn more</div></div>
+  </div>
+  <div class="vocab-grid"><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">taunt</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/tɔːnt/</div>
+      <div class="vc-cn">嘲弄；奚落</div>
+      <div class="vc-detail">
+        <div class="vc-def">To mock or provoke someone with insulting remarks.</div>
+        <div class="vc-ex">"Odysseus could not resist taunting the blinded Cyclops."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">hurl</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/hɜːl/</div>
+      <div class="vc-cn">猛掷</div>
+      <div class="vc-detail">
+        <div class="vc-def">To throw something with great force.</div>
+        <div class="vc-ex">"The Cyclops hurled a massive boulder toward the ship."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">afloat</span><span class="vc-pos">adjective</span></div>
+      <div class="vc-pron">/əˈfləʊt/</div>
+      <div class="vc-cn">漂浮的</div>
+      <div class="vc-detail">
+        <div class="vc-def">Staying on the surface of water; not sinking.</div>
+        <div class="vc-ex">"The ship stayed afloat despite the crashing waves."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">boast</span><span class="vc-pos">verb</span></div>
+      <div class="vc-pron">/bəʊst/</div>
+      <div class="vc-cn">吹嘘</div>
+      <div class="vc-detail">
+        <div class="vc-def">To speak with excessive pride about oneself.</div>
+        <div class="vc-ex">"Odysseus couldn't resist one final boast."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">curse</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/kɜːs/</div>
+      <div class="vc-cn">诅咒</div>
+      <div class="vc-detail">
+        <div class="vc-def">Words calling for harm to come to someone.</div>
+        <div class="vc-ex">""Curses on you, Odysseus!" the Cyclops roared."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">fury</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/ˈfjʊə.ri/</div>
+      <div class="vc-cn">狂怒</div>
+      <div class="vc-detail">
+        <div class="vc-def">Violent or extreme anger.</div>
+        <div class="vc-ex">"Poseidon's fury toward Odysseus grew even greater."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">battered</span><span class="vc-pos">adjective</span></div>
+      <div class="vc-pron">/ˈbæt.əd/</div>
+      <div class="vc-cn">屡遭打击的；破损的</div>
+      <div class="vc-detail">
+        <div class="vc-def">Damaged by repeated hits or force.</div>
+        <div class="vc-ex">"Enormous waves battered the vessel again and again."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">voyage</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/ˈvɔɪ.ɪdʒ/</div>
+      <div class="vc-cn">航行；旅程</div>
+      <div class="vc-detail">
+        <div class="vc-def">A long journey, especially by sea.</div>
+        <div class="vc-ex">"What should have been a short voyage turned into a ten-year nightmare."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">shipwreck</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/ˈʃɪp.rek/</div>
+      <div class="vc-cn">海难；沉船</div>
+      <div class="vc-detail">
+        <div class="vc-def">The destruction of a ship at sea, or the wrecked ship itself.</div>
+        <div class="vc-ex">"Odysseus faced storms and shipwrecks for ten long years."</div>
+      </div>
+    </div><div class="vocab-card" onclick="toggleVocab(this)">
+      <div class="vc-top"><span class="vc-word">pride</span><span class="vc-pos">noun</span></div>
+      <div class="vc-pron">/praɪd/</div>
+      <div class="vc-cn">骄傲；自负</div>
+      <div class="vc-detail">
+        <div class="vc-def">A feeling of deep satisfaction, or an excessive sense of one's own importance.</div>
+        <div class="vc-ex">"Even a clever hero's pride can carry a heavy price."</div>
+      </div>
+    </div></div>
+</section>
+<section class="sec" id="p2">
+  <div class="sec-header">
+    <div class="sec-num">2</div>
+    <div><div class="sec-title">The Story</div><div class="sec-sub">Read carefully. Notice the bold words.</div></div>
+  </div>
+  <div class="story-body"><div class="story-icon">🌊</div><p>Odysseus and his men rowed hard, and soon their ship pulled safely away from the shore of the Cyclops's island. But Odysseus, filled with pride at his clever escape, could not resist shouting back toward the land one final time. "Cyclops!" he called out across the water. "See what happens to those who eat the guests who come to their door? You should have known better than to fall for my tricks!"</p><p>The blind giant heard the <span class="story-hl">taunting</span> voice drifting over the waves. Furious, he tore a massive boulder from the side of the cliff and <span class="story-hl">hurled</span> it toward the sound of Odysseus's voice. The rock crashed into the sea just behind the ship, sending waves crashing against its hull and rocking it violently — but the ship stayed <span class="story-hl">afloat</span>, and Odysseus was unharmed.</p><p>His men begged him to stay silent and simply sail away. But Odysseus, unable to resist one final <span class="story-hl">boast</span>, shouted again: "Cyclops! If anyone ever asks who blinded you and ruined your beauty, tell them it was Odysseus, destroyer of cities!"</p><p>This time, the Cyclops understood everything. "<span class="story-hl">Curses</span> on you, Odysseus!" he roared. "I am the son of Poseidon, god of the sea! I will pray to my father to send winds and waves that will sink your ship, so that you will never see your home again!"</p><p>Odysseus laughed off the threat and ordered his men to row for the open water, confident that they had left the danger behind them forever. But the Cyclops's prayer did not go unanswered. Poseidon, god of the sea, heard his wounded son's request for revenge, and his <span class="story-hl">fury</span> toward Odysseus grew even greater than before.</p><p>From that day on, Poseidon sent violent winds to blow Odysseus's ship far off its intended course, and enormous waves <span class="story-hl">battered</span> the vessel again and again, tearing it apart piece by piece. What should have been a short <span class="story-hl">voyage</span> home turned into a ten-year nightmare of storms, <span class="story-hl">shipwrecks</span>, and strange encounters across the ancient world. Odysseus would face monster after monster, temptation after temptation, before he finally set foot on his home island once more — a painful reminder that even a clever hero's <span class="story-hl">pride</span> can carry a heavy price.</p><div class="story-icon">⚡</div></div>
+</section>
+<section class="sec" id="p3">
+  <div class="sec-header">
+    <div class="sec-num">3</div>
+    <div><div class="sec-title">Reading Comprehension</div><div class="sec-sub">Choose the best answer. Get instant feedback!</div></div>
+  </div>
+  <div class="quiz-list"><div class="q-item">
+      <div class="q-text">1. Why couldn't Odysseus resist shouting back at the Cyclops?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">He was filled with pride at his clever escape and wanted to taunt the giant.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">He wanted to apologize to the Cyclops.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">He forgot something on the island.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">2. True or False: The boulder the Cyclops threw destroyed Odysseus's ship completely.</div>
+      <div class="tf-opts">
+        <button class="tf-btn" onclick="tf(this,'wrong','Actually, it crashed into the sea nearby, and the ship survived.')">True</button>
+        <button class="tf-btn" onclick="tf(this,'correct','Correct! The ship stayed afloat despite the crashing waves.')">False</button>
+      </div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">3. What mistake did Odysseus make when he shouted a second time?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">He revealed his real name, which let the Cyclops curse him properly.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">He revealed the location of his home island.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">He apologized and lost his men's respect.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">4. Who was the Cyclops's father?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">Poseidon, the god of the sea.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">Zeus, the king of the gods.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">Homer, the poet.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">5. True or False: Poseidon ignored his son's prayer for revenge.</div>
+      <div class="tf-opts">
+        <button class="tf-btn" onclick="tf(this,'wrong','Actually, Poseidon answered the prayer and caused Odysseus's ten-year ordeal.')">True</button>
+        <button class="tf-btn" onclick="tf(this,'correct','Correct! Poseidon did NOT ignore the prayer — he punished Odysseus.')">False</button>
+      </div>
+      <div class="q-feedback"></div>
+    </div>
+<div class="q-item">
+      <div class="q-text">6. How long did it take Odysseus to finally reach home?</div>
+      <div class="q-opts"><button class="q-opt" onclick="mcq(this,'correct')">Ten years, full of storms and dangerous adventures.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">Ten days.</button>
+<button class="q-opt" onclick="mcq(this,'wrong')">One year.</button>
+</div>
+      <div class="q-feedback"></div>
+    </div>
+</div>
+</section>
+<section class="sec" id="p4">
+  <div class="sec-header">
+    <div class="sec-num">4</div>
+    <div><div class="sec-title">Language Focus</div><div class="sec-sub">Grammar from the story — learn through meaning</div></div>
+  </div>
+  <div class="grammar-box">
+    <div class="grammar-label">📌 'Should have + past participle' — criticizing a past action</div>
+    <div class="grammar-rule">'Should have + past participle' criticizes a past action that didn't happen the wise way.</div>
+    <div class='grammar-eg'>"You <span>should have known</span> better than to fall for my tricks."</div><div class='grammar-eg'>Odysseus <span>should have stayed</span> silent instead of boasting.</div><div class='grammar-eg'>His men <span>should have convinced</span> him to keep quiet.</div>
+    <div class="grammar-note" style="font-size:12px;color:var(--text3);margin-top:.5rem;">💡 This structure shows regret or criticism about a choice that already happened.</div>
+  </div><div class="grammar-box">
+    <div class="grammar-label">📌 Cause and effect with 'so that' and 'as a result'</div>
+    <div class="grammar-rule">These phrases connect a cause to its later result in a story.</div>
+    <div class='grammar-eg'>Odysseus revealed his name, <span>so that</span> the Cyclops could properly curse him.</div><div class='grammar-eg'>Poseidon heard the prayer; <span>as a result</span>, he sent storms against Odysseus.</div><div class='grammar-eg'>The ship was battered again and again, <span>so that</span> the voyage lasted ten years.</div>
+    <div class="grammar-note" style="font-size:12px;color:var(--text3);margin-top:.5rem;">💡 'As a result' usually begins a new sentence; 'so that' usually joins two clauses.</div>
+  </div><div class="grammar-box">
+    <div class="grammar-label">📌 'What should have been... turned into...'</div>
+    <div class="grammar-rule">This pattern contrasts an expectation with a very different reality.</div>
+    <div class='grammar-eg'><span>What should have been</span> a short voyage <span>turned into</span> a ten-year nightmare.</div><div class='grammar-eg'><span>What should have been</span> a quick trip home <span>became</span> years of danger.</div><div class='grammar-eg'><span>What began as</span> a victory <span>turned into</span> a long punishment.</div>
+    <div class="grammar-note" style="font-size:12px;color:var(--text3);margin-top:.5rem;">💡 Use this pattern to show a dramatic difference between plans and reality.</div>
+  </div>
+</section>
+<section class="sec" id="p5">
+  <div class="sec-header">
+    <div class="sec-num">5</div>
+    <div><div class="sec-title">Sentence Builder</div><div class="sec-sub">Build your skills with the vocabulary</div></div>
+  </div>
+  <div class="sb-activity">
+    <div class="sb-label">🔀 Unscramble the sentence</div>
+    <p style="font-size:13px;color:var(--text3);margin-bottom:.75rem;">Put these words in the correct order:</p>
+    <div style="margin-bottom:.75rem;"><span class="sb-chip">Poseidon</span><span class="sb-chip">sent</span><span class="sb-chip">storms</span><span class="sb-chip">and</span><span class="sb-chip">waves</span><span class="sb-chip">against</span><span class="sb-chip">Odysseus</span></div>
+    <input class="sb-input" id="us20F" placeholder="Type your sentence here..."/>
+    <button class="sb-check" onclick="checkUnscramble('us20F','poseidon sent storms and waves against odysseus','ur20F')">Check ✓</button>
+    <div class="sb-result" id="ur20F"></div>
+  </div><div class="sb-activity">
+    <div class="sb-label">✏️ Fill in the blank</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:.5rem;">1. The Cyclops was the son of ________, the god of the sea.</p>
+    <input class="sb-input" id="f1_20F" placeholder="Your answer..."/>
+    <button class="sb-check" onclick="checkFill('f1_20F','Poseidon','rf1_20F')">Check ✓</button>
+    <div class="sb-result" id="rf1_20F"></div>
+  </div><div class="sb-activity">
+    <div class="sb-label">✏️ Fill in the blank</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:.5rem;">2. Odysseus's journey home, which should have been short, turned into a ________-year nightmare.</p>
+    <input class="sb-input" id="f2_20F" placeholder="Your answer..."/>
+    <button class="sb-check" onclick="checkFill('f2_20F','ten','rf2_20F')">Check ✓</button>
+    <div class="sb-result" id="rf2_20F"></div>
+  </div><div class="sb-activity">
+    <div class="sb-label">🌐 Chinese → English Translation</div>
+    <p style="font-size:13px;color:var(--text2);margin-bottom:.5rem;">3. 波塞冬因为儿子的祈祷而更加愤怒，让奥德修斯的船只在海上漂泊了十年。</p>
+    <input class="sb-input" id="t20F" placeholder="Type your English translation..."/>
+    <button class="sb-check" onclick="revealTranslation('t20F','Poseidon grew even angrier because of his son's prayer, and he made Odysseus's ship wander at sea for ten years.','rt20F')">Show model answer ✓</button>
+    <div class="sb-result" id="rt20F"></div>
+  </div>
+</section>
+<section class="sec" id="p6">
+  <div class="sec-header">
+    <div class="sec-num">6</div>
+    <div><div class="sec-title">Speaking — Level 1</div><div class="sec-sub">Answer in one complete sentence</div></div>
+  </div>
+  <div class="speak-level">
+    <span class="speak-badge l1">🟢 Level 1 · One sentence</span>
+<div class="speak-q"><p>Why was it risky for Odysseus to shout his real name to the Cyclops?</p><div class="speak-hint">💡 Start with: <span>"It was risky because..."</span></div></div><div class="speak-q"><p>Who did the Cyclops pray to for revenge?</p><div class="speak-hint">💡 Start with: <span>"The Cyclops prayed to..."</span></div></div><div class="speak-q"><p>How long did Odysseus's journey home finally take?</p><div class="speak-hint">💡 Start with: <span>"Odysseus's journey home took..."</span></div></div>
+  </div>
+</section>
+<section class="sec" id="p7">
+  <div class="sec-header">
+    <div class="sec-num">7</div>
+    <div><div class="sec-title">Speaking — Level 2 & 3</div><div class="sec-sub">Extend your answer. Share your opinion.</div></div>
+  </div>
+  <div class="speak-level">
+    <span class="speak-badge l2">🟡 Level 2 · 2–3 sentences</span>
+<div class="speak-q"><p>Why do you think Odysseus couldn't resist boasting, even when it clearly put him and his men in danger?</p><div class="speak-hint">💡 Try: <span>"I think he boasted because..."</span></div></div><div class="speak-q"><p>Imagine you are one of Odysseus's crew, hearing him reveal his real name to an angry, powerful monster's father. How would you feel?</p><div class="speak-hint">💡 Think about: <span>fear · frustration · disbelief</span></div></div>
+  </div>
+  <div class="speak-level">
+    <span class="speak-badge l3">🔵 Level 3 · Your opinion</span>
+<div class="speak-q"><p>Do you think Odysseus's pride was his greatest strength or his greatest weakness? Explain your reasoning with examples from the story.</p><div class="speak-hint">💡 Use: <span>In my opinion... / For example... / However...</span></div></div>
+  </div>
+</section>
+<section class="sec" id="p8">
+  <div class="sec-header">
+    <div class="sec-num">8</div>
+    <div><div class="sec-title">Ideas & Society</div><div class="sec-sub">Think about big ideas. There is no wrong answer.</div></div>
+  </div>
+  <div class="idea-q"><div class="idea-icon">🗣️</div><div class="idea-text"><strong>Odysseus's pride led him to boast, even though it brought ten years of suffering.</strong> Do you think pride is usually a hero's greatest strength or greatest weakness?</div></div><div class="idea-q"><div class="idea-icon">⚡</div><div class="idea-text"><strong>A god's curse changed the entire course of Odysseus's life.</strong> In modern terms, do you think unseen consequences — like reputation, luck, or circumstance — can control our lives the way ancient people believed gods could?</div></div><div class="idea-q"><div class="idea-icon">🌊</div><div class="idea-text"><strong>Poseidon punished Odysseus not for the escape itself, but for the disrespect shown afterward.</strong> Do you think how we treat people after a conflict matters more than the conflict itself?</div></div><div class="idea-q"><div class="idea-icon">⚓</div><div class="idea-text"><strong>Ten years is an incredibly long punishment for one boastful moment.</strong> Do you think the consequences in this story are fair, or too extreme? Explain your view.</div></div>
+</section>
+<section class="sec" id="p9">
+  <div class="sec-header">
+    <div class="sec-num">9</div>
+    <div><div class="sec-title">IELTS Content Builder</div><div class="sec-sub">Planting seeds for your future IELTS exam</div></div>
+  </div>
+  <div class="ielts-topic">
+    <div class="ielts-topic-label">📘 Today's IELTS Topic</div>
+    <h4>Pride, Consequences, and Fate</h4>
+  </div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem;">Key vocabulary</p>
+  <div class="vocab-chips"><span class="chip amber">hubris</span><span class="chip amber">consequence</span><span class="chip amber">retribution</span><span class="chip amber">arrogance</span><span class="chip">fate</span><span class="chip">pay the price</span></div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin:.875rem 0 .5rem;">Useful collocations</p>
+  <div class="vocab-chips"><span class="chip">pay the price</span><span class="chip">suffer the consequences</span><span class="chip">tempt fate</span><span class="chip">learn a hard lesson</span></div>
+  <div class="ielts-qs"><div class="ielts-q"><div class="ielts-q-num">S1</div><div class="ielts-q-text">Do you think pride often leads people to make poor decisions?</div></div><div class="ielts-q"><div class="ielts-q-num">S2</div><div class="ielts-q-text">How do different cultures or religions view the idea of fate or destiny?</div></div><div class="ielts-q"><div class="ielts-q-num">S3</div><div class="ielts-q-text">Can a single moment of arrogance really affect someone for years afterward?</div></div></div>
+  <div class="ielts-w2">
+    <div class="ielts-w2-label">✏️ IELTS Writing Task 2 — Future Practice</div>
+    <p>"Some believe that people are fully responsible for the long-term consequences of their actions, no matter how small the original action seemed. Others believe that consequences are often unfairly extreme. Discuss both views and give your own opinion."</p>
+  </div>
+</section>
+<section class="sec" id="p10">
+  <div class="sec-header">
+    <div class="sec-num">10</div>
+    <div><div class="sec-title">Review</div><div class="sec-sub">Remember what you learned!</div></div>
+  </div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin-bottom:.75rem;">⭐ Star Words</p>
+  <div class="star-words"><span class="star-word">⭐ taunt</span><span class="star-word">⭐ hurl</span><span class="star-word">⭐ afloat</span><span class="star-word">⭐ boast</span><span class="star-word">⭐ curse</span><span class="star-word">⭐ fury</span><span class="star-word">⭐ battered</span><span class="star-word">⭐ voyage</span></div>
+  <div class="think-box">
+    <div class="think-head">💡 Big Idea</div>
+    <p>One moment of pride — revealing his name to boast — cost Odysseus ten years of storms and suffering, showing that even a clever hero's greatest danger can be his own ego.</p>
+  </div>
+  <p style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text3);margin:.875rem 0 .75rem;">🧠 Mini Quiz</p>
+  <div class="mini-quiz-q"><div class="mq-text">A. Why did Odysseus shout his real name to the Cyclops?</div><div class="mq-opts"><button class="mq-opt" onclick="mq(this,'correct')">Because he couldn't resist boasting about his clever escape</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Because the Cyclops asked politely</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Because he wanted to apologize</button>
+</div></div><div class="mini-quiz-q"><div class="mq-text">B. Complete: The Cyclops's father was ________, god of the sea.</div><div class="mq-opts"><button class="mq-opt" onclick="mq(this,'correct')">Poseidon</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Zeus</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Apollo</button>
+</div></div><div class="mini-quiz-q"><div class="mq-text">C. How long did Odysseus's journey home finally take?</div><div class="mq-opts"><button class="mq-opt" onclick="mq(this,'correct')">Ten years</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">Ten days</button>
+<button class="mq-opt" onclick="mq(this,'wrong')">One month</button>
+</div></div>
+  <div class="lesson-nav">
+    <a class="nav-btn" href="ch20-e.html"><i class="ti ti-arrow-left"></i> Lesson 20E</a>
+    <a class="nav-btn primary" href="ch20-g.html">Next: Lesson 20G — The First Olympic Games <i class="ti ti-arrow-right"></i></a>
+  </div>
+</section>
+</main>
+<footer class="site-footer"><strong>Lexilink Ideation IELTS STUDIO</strong> · History ESL Course · Chapter 20 — Lesson F</footer>
+<script>
+function toggleVocab(card){card.classList.toggle('open');}
+function mcq(btn,type){
+  const item=btn.closest('.q-item');
+  item.querySelectorAll('.q-opt').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(type);
+  const fb=item.querySelector('.q-feedback');
+  fb.className='q-feedback show '+(type==='correct'?'good':'bad');
+  fb.textContent=type==='correct'?'✓ Correct! Well done!':'✗ Not quite. Try to remember the story.';
+}
+function tf(btn,type,msg){
+  const item=btn.closest('.q-item');
+  item.querySelectorAll('.tf-btn').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(type);
+  const fb=item.querySelector('.q-feedback');
+  fb.className='q-feedback show '+(type==='correct'?'good':'bad');
+  fb.textContent=(type==='correct'?'✓ ':'✗ ')+msg;
+}
+function mq(btn,type){
+  const item=btn.closest('.mini-quiz-q');
+  item.querySelectorAll('.mq-opt').forEach(b=>{b.classList.remove('correct','wrong');b.disabled=true;});
+  btn.classList.add(type);
+}
+function checkUnscramble(id,answer,rid){
+  const val=document.getElementById(id).value.trim().toLowerCase().replace(/[^a-z\s]/g,'');
+  const ans=answer.toLowerCase();
+  const r=document.getElementById(rid);
+  r.className='sb-result show '+(val===ans?'ok':'no');
+  r.textContent=val===ans?'✓ Perfect! "'+answer+'"':'✗ Try again. Check the word order.';
+}
+function checkFill(id,answer,rid){
+  const val=document.getElementById(id).value.trim().toLowerCase();
+  const r=document.getElementById(rid);
+  r.className='sb-result show '+(val===answer.toLowerCase()?'ok':'no');
+  r.textContent=val===answer.toLowerCase()?'✓ Correct!':'✗ The answer is: "'+answer+'"';
+}
+function revealTranslation(id,answer,rid){
+  const r=document.getElementById(rid);
+  r.className='sb-result show ok';
+  r.textContent='✓ Model answer: "'+answer+'"';
+}
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});}
+const parts=['p1','p2','p3','p4','p5','p6','p7','p8','p9','p10'];
+const partEls=document.querySelectorAll('.lp-part');
+window.addEventListener('scroll',()=>{
+  let current=0;
+  parts.forEach((id,i)=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<200)current=i;});
+  partEls.forEach((el,i)=>{el.classList.remove('active','done');if(i<current)el.classList.add('done');else if(i===current)el.classList.add('active');});
+  const pct=Math.round(((current+1)/10)*100);
+  document.querySelector('.lp-fill').style.width=pct+'%';
+});
+</script>
+</body>
+</html>

@@ -1,321 +1,766 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IELTS Vocabulary Workbook — Lexilink Ideation IELTS Studio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
-:root{--teal:#1A7A8A;--teal-dk:#115966;--teal-lt:#D6EEF1;--teal-pl:#EEF8FA;--gold:#C9930A;--gold-lt:#FDF3D8;--sf:#FFFFFF;--bg:#F3F7F8;--bd:#DDE5E8;--tx:#1C2B33;--mu:#5A7280}
-.topbar{background:var(--teal);color:#fff;padding:.65rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(26,122,138,.2)}
-.topbar-logo{font-size:13px;font-weight:600;letter-spacing:.06em}
-.topbar-tag{font-size:11px;opacity:.7;letter-spacing:.04em}
-.hero{background:linear-gradient(150deg,var(--teal) 0%,var(--teal-dk) 100%);color:#fff;padding:4rem 2rem 3.5rem;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
-.hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;opacity:.65;margin-bottom:1rem}
-.hero-title{font-size:clamp(28px,6vw,46px);font-weight:700;line-height:1.15;margin-bottom:.75rem;position:relative}
-.hero-title span{color:#FFD97D}
-.hero-sub{font-size:16px;opacity:.82;max-width:520px;margin:0 auto 2rem;line-height:1.7;position:relative}
-.hero-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;position:relative}
-.hbadge{padding:.35rem .9rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);letter-spacing:.02em}
-.progress-strip{background:var(--sf);border-bottom:1px solid var(--bd);padding:1rem 2rem}
-.progress-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.prog-label{font-size:13px;font-weight:600;color:var(--teal);white-space:nowrap}
-.prog-track{flex:1;min-width:160px;height:6px;background:var(--teal-lt);border-radius:3px;overflow:hidden}
-.prog-fill{height:100%;background:var(--teal);border-radius:3px;transition:width .6s ease}
-.prog-text{font-size:12px;color:var(--mu);white-space:nowrap}
-.main{max-width:900px;margin:0 auto;padding:2.5rem 1rem 4rem}
-.section-label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--bd)}
-.unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem}
-.unit-card{background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.05)}
-.unit-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(26,122,138,.14);border-color:var(--teal-lt)}
-.unit-card-top{background:var(--teal);padding:1.25rem 1.25rem 1rem;color:#fff;position:relative}
-.unit-card-top .unit-num{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:.3rem}
-.unit-card-top .unit-title{font-size:17px;font-weight:600;line-height:1.3;margin-bottom:.2rem}
-.unit-card-top .unit-cn{font-size:13px;opacity:.75}
-.unit-card-top .unit-emoji{position:absolute;top:1rem;right:1.1rem;font-size:26px;opacity:.85}
-.unit-card-body{padding:1rem 1.25rem;flex:1;display:flex;flex-direction:column;gap:.6rem}
-.unit-words{display:flex;flex-wrap:wrap;gap:.3rem}
-.word-pill{font-size:11px;padding:.18rem .5rem;background:var(--teal-pl);color:var(--teal);border-radius:20px;border:1px solid var(--teal-lt);font-weight:500}
-.unit-card-footer{padding:.75rem 1.25rem;border-top:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center}
-.unit-card-footer .cta{font-size:13px;font-weight:600;color:var(--teal)}
-.unit-card-footer .word-count{font-size:12px;color:var(--mu)}
-.unit-card-footer .arrow{font-size:16px;color:var(--teal);transition:transform .15s}
-.unit-card:hover .arrow{transform:translateX(3px)}
-.unit-card-soon{background:var(--sf);border:1px solid var(--bd);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;opacity:.6;cursor:default}
-.unit-card-soon .unit-card-top{background:#8AACB2}
-.soon-badge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.2rem .55rem;border-radius:20px;margin-top:.5rem}
-.unit-card-soon .unit-card-body{color:var(--mu)}
-.unit-card-soon .unit-card-footer .cta{color:var(--mu)}
-.howto{background:var(--sf);border:1px solid var(--bd);border-radius:16px;padding:1.5rem;margin-bottom:2.5rem}
-.howto-title{font-size:15px;font-weight:600;color:var(--teal);margin-bottom:1rem}
-.howto-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
-.howto-step{display:flex;align-items:flex-start;gap:.75rem}
-.step-num{width:28px;height:28px;border-radius:50%;background:var(--teal);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.1rem}
-.step-text{font-size:13px;color:var(--mu);line-height:1.5}
-.step-text strong{color:var(--tx);display:block;margin-bottom:.1rem}
-.about{background:linear-gradient(135deg,var(--teal-pl) 0%,var(--gold-lt) 100%);border:1px solid var(--teal-lt);border-radius:16px;padding:1.5rem;margin-bottom:2.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-@media(max-width:560px){.about{grid-template-columns:1fr}}
-.about-block-title{font-size:13px;font-weight:600;color:var(--teal);margin-bottom:.6rem}
-.about-list{list-style:none;display:flex;flex-direction:column;gap:.4rem}
-.about-list li{font-size:13px;color:var(--mu);display:flex;align-items:flex-start;gap:.5rem}
-.about-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:.05rem}
-.footer{text-align:center;padding:2rem;font-size:12px;color:var(--mu);border-top:1px solid var(--bd)}
-.footer strong{color:var(--teal)}
-@media(max-width:600px){.hero{padding:3rem 1.25rem 2.5rem}.main{padding:1.5rem .75rem 3rem}.progress-strip{padding:.75rem 1.25rem}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History ESL Course — Lexilink Ideation IELTS STUDIO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brown-950: #1A0F00;
+      --brown-900: #2C1A00;
+      --brown-800: #3D2400;
+      --brown-700: #5C3800;
+      --brown-600: #7A4F00;
+      --amber-500: #B8720A;
+      --amber-400: #D4890F;
+      --amber-300: #E8A832;
+      --amber-200: #F5C96A;
+      --amber-100: #FAE0A8;
+      --amber-50:  #FEF5E0;
+      --text-on-dark: rgba(255,255,255,0.9);
+      --text-muted:   rgba(255,255,255,0.55);
+      --text-dim:     rgba(255,255,255,0.35);
+      --border-dark:  rgba(255,255,255,0.12);
+      --border-light: rgba(255,255,255,0.06);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0F0800;
+      color: var(--text-on-dark);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: #111111;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem; height: 58px;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .logo-wrap {
+      display: flex; align-items: center; gap: 10px;
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width: 30px; height: 30px; }
+    .logo-name {
+      font-size: 15px; font-weight: 700;
+      color: #fff; letter-spacing: -0.01em;
+    }
+    .header-pipe {
+      width: 1px; height: 22px;
+      background: rgba(255,255,255,0.18);
+    }
+    .header-course {
+      font-size: 13px; color: rgba(255,255,255,0.5);
+    }
+    .header-spacer { flex: 1; }
+    .header-pill {
+      font-size: 11px; font-weight: 600;
+      padding: 4px 12px; border-radius: 99px;
+      border: 1px solid rgba(212,137,15,0.5);
+      color: var(--amber-300);
+      background: rgba(212,137,15,0.08);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #2C1600 0%, #5C3200 35%, #8A5500 65%, #6B3E00 100%);
+      padding: 5rem 2rem 4.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200,130,0,0.18), transparent);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--amber-300); margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700; color: #fff;
+      letter-spacing: -0.02em; line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .hero-desc {
+      font-size: 16px; line-height: 1.7;
+      color: rgba(255,255,255,0.7);
+      max-width: 580px; margin: 0 auto 2rem;
+    }
+    .hero-pills {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px;
+    }
+    .hero-pill {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500;
+      padding: 7px 16px; border-radius: 99px;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(4px);
+    }
+
+    /* ── VOLUME TABS ── */
+    .vol-tabs {
+      background: #1A1100;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .vol-tabs-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 2rem;
+      display: flex; gap: 0; align-items: stretch;
+    }
+    .vol-tab {
+      padding: 0 24px; height: 48px;
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; font-weight: 500;
+      color: rgba(255,255,255,0.4);
+      cursor: pointer; position: relative;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .vol-tab:hover { color: rgba(255,255,255,0.65); }
+    .vol-tab.active {
+      color: #fff;
+      border-bottom-color: var(--amber-400);
+    }
+    .vol-soon {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 2px 7px; border-radius: 99px;
+      background: rgba(184,114,10,0.3);
+      color: var(--amber-300);
+      border: 1px solid rgba(184,114,10,0.4);
+    }
+
+    /* ── CONTENT AREA ── */
+    .content {
+      max-width: 1100px; margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+    }
+
+    /* ── STATS ROW ── */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 12px; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 28px; font-weight: 700;
+      color: var(--amber-300);
+    }
+    .stat-label {
+      font-size: 12px; color: var(--text-muted); margin-top: 3px;
+    }
+
+    /* ── PROGRESS CARD ── */
+    .progress-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .progress-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 10px;
+    }
+    .progress-label { font-size: 13px; font-weight: 500; color: var(--text-on-dark); }
+    .progress-pct { font-size: 13px; font-weight: 600; color: var(--amber-300); }
+    .progress-track {
+      width: 100%; height: 6px; border-radius: 99px;
+      background: rgba(255,255,255,0.08); overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .progress-fill {
+      height: 100%; border-radius: 99px;
+      background: linear-gradient(90deg, var(--amber-500), var(--amber-300));
+      width: 5%;
+    }
+    .progress-cta {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--amber-200);
+    }
+
+    /* ── START BUTTON ── */
+    .start-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%; padding: 0.875rem;
+      background: linear-gradient(135deg, var(--amber-500), var(--amber-400));
+      color: #1A0800;
+      border: none; border-radius: 10px;
+      font-size: 14px; font-weight: 700;
+      cursor: pointer; text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: opacity 0.15s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+    .start-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* ── SECTION LABELS ── */
+    .section-label {
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 0.875rem;
+    }
+
+    /* ── INTRO CARD ── */
+    .intro-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 1.125rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .intro-header {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .intro-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--amber-400); flex-shrink: 0;
+    }
+    .intro-title {
+      flex: 1; font-size: 14px; font-weight: 600; color: #fff;
+    }
+    .intro-count {
+      font-size: 12px; color: var(--text-muted);
+    }
+    .intro-lessons {
+      margin-top: 10px; padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex; flex-direction: column; gap: 2px;
+    }
+    .intro-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 8px; border-radius: 8px;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.13s;
+    }
+    .intro-row:hover { background: rgba(255,255,255,0.05); }
+    .ls-dot {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 1.5px solid rgba(255,255,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; color: var(--text-muted); flex-shrink: 0;
+    }
+    .ls-dot.active {
+      border-color: var(--amber-400);
+      background: rgba(212,137,15,0.2);
+      color: var(--amber-300);
+    }
+    .ls-code { font-size: 10px; font-weight: 600; color: var(--text-muted); min-width: 48px; }
+    .ls-name { font-size: 13px; color: rgba(255,255,255,0.7); flex: 1; }
+    .ls-arrow { font-size: 13px; color: var(--text-dim); }
+
+    /* ── CHAPTER LIST ── */
+    .chapter-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .ch-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px; overflow: hidden;
+      transition: border-color 0.15s;
+    }
+    .ch-card:hover { border-color: rgba(255,255,255,0.18); }
+    .ch-card.open { border-color: rgba(212,137,15,0.3); }
+
+    .ch-header {
+      display: flex; align-items: center; gap: 12px;
+      padding: 1rem 1.5rem;
+      cursor: pointer; user-select: none;
+      transition: background 0.13s;
+    }
+    .ch-header:hover { background: rgba(255,255,255,0.03); }
+
+    .ch-num {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700;
+      background: rgba(212,137,15,0.15);
+      color: var(--amber-300); flex-shrink: 0;
+      border: 1px solid rgba(212,137,15,0.25);
+    }
+    .ch-info { flex: 1; min-width: 0; }
+    .ch-title {
+      font-size: 14px; font-weight: 600; color: #fff;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .ch-meta {
+      font-size: 12px; color: var(--text-muted); margin-top: 1px;
+    }
+    .ch-right {
+      display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+    }
+    .mini-track {
+      width: 52px; height: 3px; border-radius: 99px;
+      background: rgba(255,255,255,0.1); overflow: hidden;
+    }
+    .mini-fill {
+      height: 100%; border-radius: 99px;
+      background: var(--amber-400);
+    }
+    .ch-chevron {
+      font-size: 15px; color: var(--text-muted);
+      transition: transform 0.2s;
+    }
+    .ch-card.open .ch-chevron { transform: rotate(180deg); }
+
+    .ch-lessons {
+      display: none; padding: 0 1.5rem 1rem;
+      flex-direction: column; gap: 2px;
+    }
+    .ch-card.open .ch-lessons { display: flex; }
+
+    .lesson-row {
+      display: flex; align-items: center; gap: 10px;
+      padding: 7px 8px; border-radius: 8px;
+      text-decoration: none; cursor: pointer;
+      transition: background 0.13s;
+    }
+    .lesson-row:hover { background: rgba(255,255,255,0.05); }
+
+    .l-tag {
+      font-size: 10px; font-weight: 600;
+      padding: 2px 9px; border-radius: 99px;
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.45);
+      min-width: 38px; text-align: center; flex-shrink: 0;
+    }
+    .lesson-row.is-active .l-tag {
+      background: rgba(212,137,15,0.2);
+      color: var(--amber-300);
+    }
+    .lesson-row.is-review .l-tag {
+      background: rgba(255,255,255,0.05);
+      color: var(--amber-200);
+    }
+
+    .l-name { flex: 1; font-size: 13px; color: rgba(255,255,255,0.6); }
+    .lesson-row.is-active .l-name { color: #fff; font-weight: 500; }
+    .l-icon { font-size: 12px; color: var(--text-dim); }
+
+    /* ── LIVE / LOCKED states ── */
+    .lesson-row.is-live .l-name { color: rgba(255,255,255,0.82); }
+    .lesson-row.is-live:hover { background: rgba(212,137,15,0.07); }
+    .lesson-row:not(.is-live):not(.is-active) { opacity: 0.38; pointer-events: none; cursor: default; }
+    .live-badge {
+      font-size: 9px; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase; padding: 2px 8px; border-radius: 99px;
+      background: rgba(29,158,117,0.18); color: #5DCAA5;
+      border: 1px solid rgba(29,158,117,0.3); flex-shrink: 0; margin-right: 2px;
+    }
+    .lesson-row.is-review .live-badge { display: none; }
+
+    /* ── LIVE CHAPTER ── */
+    .ch-card.ch-live { border-color: rgba(212,137,15,0.25); }
+    .ch-card.ch-live .ch-header:hover { background: rgba(212,137,15,0.05); }
+    .ch-num-live {
+      background: rgba(29,158,117,0.2) !important;
+      color: #5DCAA5 !important;
+      border-color: rgba(29,158,117,0.35) !important;
+    }
+    .ch-new-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: .05em;
+      text-transform: uppercase; padding: 1px 7px; border-radius: 99px;
+      background: rgba(29,158,117,0.2); color: #5DCAA5;
+      border: 1px solid rgba(29,158,117,0.3);
+      vertical-align: middle; margin-left: 6px; position: relative; top: -1px;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #111111;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 12px; color: rgba(255,255,255,0.3);
+    }
+    .site-footer strong { color: var(--amber-300); }
+
+    @media (max-width: 600px) {
+      .hero { padding: 3rem 1.5rem 3rem; }
+      .hero h1 { font-size: 28px; }
+      .vol-tab { padding: 0 14px; font-size: 13px; }
+      .content { padding: 1.5rem 1rem 4rem; }
+      .mini-track { display: none; }
+      .header-course { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="topbar">
-  <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
-  <span class="topbar-tag">IELTS Vocabulary Workbook</span>
-</div>
-
-<div class="hero">
-  <div class="hero-eyebrow">Lexilink Ideation IELTS Studio</div>
-  <div class="hero-title">IELTS Vocabulary<br><span>Workbook</span></div>
-  <div class="hero-sub">A step-by-step vocabulary programme for senior high school students. From A1 basics to IELTS-level English — one unit at a time.</div>
-  <div class="hero-badges">
-    <span class="hbadge">Beginner-friendly</span>
-    <span class="hbadge">Stories + exercises</span>
-    <span class="hbadge">Instant feedback</span>
-    <span class="hbadge">Chinese support 中文支持</span>
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo-wrap" href="#">
+      <div class="logo-icon">
+        <svg viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 24 C8 18, 14 10, 24 6 C20 10, 18 14, 20 18 C16 16, 12 18, 6 24Z" fill="white"/>
+          <path d="M20 18 C22 20, 22 23, 20 26 C18 24, 18 21, 20 18Z" fill="rgba(255,255,255,0.5)"/>
+        </svg>
+      </div>
+      <span class="logo-name">Lexilink Ideation IELTS STUDIO</span>
+    </a>
+    <div class="header-pipe"></div>
+    <span class="header-course">History ESL Course</span>
+    <div class="header-spacer"></div>
+    <span class="header-pill">ESL Edition</span>
   </div>
-</div>
+</header>
 
-<div class="progress-strip">
-  <div class="progress-inner">
-    <span class="prog-label">Course progress</span>
-    <div class="prog-track"><div class="prog-fill" style="width:80%"></div></div>
-    <span class="prog-text">16 of 20 units available</span>
+<!-- ── HERO ── -->
+<section class="hero">
+  <p class="hero-eyebrow">ESL History Course</p>
+  <h1>The Story of the World</h1>
+  <p class="hero-desc">
+    A complete ESL course based on Susan Wise Bauer's four-volume history series.
+    Each chapter combines rich historical narrative with IELTS-aligned reading,
+    vocabulary, and speaking activities.
+  </p>
+  <div class="hero-pills">
+    <span class="hero-pill">📚 4 Volumes</span>
+    <span class="hero-pill">🌍 Ancient Times → Modern Age</span>
+    <span class="hero-pill">🎤 IELTS Speaking</span>
+    <span class="hero-pill">✏️ ESL Activities</span>
+    <span class="hero-pill">🏛️ World History</span>
   </div>
-</div>
+</section>
 
-<div class="main">
-
-  <div class="section-label">Available now — 可以学习</div>
-  <div class="unit-grid">
-
-    <a class="unit-card" href="IELTS_Workbook_Units1-2.html">
-      <div class="unit-card-top">
-        <div class="unit-emoji">🏫</div>
-        <div class="unit-num">Units 1–2</div>
-        <div class="unit-title">School Life &amp; Daily Routine</div>
-        <div class="unit-cn">学校生活 · 日常生活</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">campus</span><span class="word-pill">subject</span><span class="word-pill">schedule</span><span class="word-pill">achieve</span><span class="word-pill">routine</span><span class="word-pill">punctual</span><span class="word-pill">priority</span><span class="word-pill">balanced</span><span class="word-pill">+ 12 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta">Start learning</span>
-        <span class="word-count">20 words</span>
-        <span class="arrow">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units3-4.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#C9930A,#9E7008)">
-        <div class="unit-emoji">🍜</div>
-        <div class="unit-num">Units 3–4</div>
-        <div class="unit-title">Food &amp; Health · Travel</div>
-        <div class="unit-cn">食物与健康 · 旅行</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">diet</span><span class="word-pill">cuisine</span><span class="word-pill">organic</span><span class="word-pill">protein</span><span class="word-pill">destination</span><span class="word-pill">itinerary</span><span class="word-pill">navigate</span><span class="word-pill">souvenir</span><span class="word-pill">+ 12 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#C9930A">Start learning</span>
-        <span class="word-count">20 words</span>
-        <span class="arrow" style="color:#C9930A">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units5-6.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#534AB7,#3A3380)">
-        <div class="unit-emoji">💻</div>
-        <div class="unit-num">Units 5–6</div>
-        <div class="unit-title">Technology &amp; Environment</div>
-        <div class="unit-cn">科技 · 环境</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">technology</span><span class="word-pill">device</span><span class="word-pill">software</span><span class="word-pill">innovation</span><span class="word-pill">environment</span><span class="word-pill">recycle</span><span class="word-pill">renewable</span><span class="word-pill">ecosystem</span><span class="word-pill">+ 12 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#534AB7">Start learning</span>
-        <span class="word-count">20 words</span>
-        <span class="arrow" style="color:#534AB7">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units7-8.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#0F6E56,#0A4D3D)">
-        <div class="unit-emoji">🏛️</div>
-        <div class="unit-num">Units 7–8</div>
-        <div class="unit-title">Society &amp; Culture · Science</div>
-        <div class="unit-cn">社会与文化 · 科学</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">community</span><span class="word-pill">tradition</span><span class="word-pill">diversity</span><span class="word-pill">heritage</span><span class="word-pill">science</span><span class="word-pill">experiment</span><span class="word-pill">research</span><span class="word-pill">evidence</span><span class="word-pill">+ 12 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#0F6E56">Start learning</span>
-        <span class="word-count">20 words</span>
-        <span class="arrow" style="color:#0F6E56">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units9-10.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#2D6A8A,#1A4D6E)">
-        <div class="unit-emoji">💼</div>
-        <div class="unit-num">Units 9–10</div>
-        <div class="unit-title">Work &amp; Economy</div>
-        <div class="unit-cn">工作 · 经济</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">career</span><span class="word-pill">employment</span><span class="word-pill">salary</span><span class="word-pill">economy</span><span class="word-pill">inflation</span><span class="word-pill">trade</span><span class="word-pill">budget</span><span class="word-pill">+ 66 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#2D6A8A">Start learning</span>
-        <span class="word-count">73 words</span>
-        <span class="arrow" style="color:#2D6A8A">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units11-12.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#1A7A4A,#0F5233)">
-        <div class="unit-emoji">🌏</div>
-        <div class="unit-num">Units 11–12</div>
-        <div class="unit-title">Global Issues</div>
-        <div class="unit-cn">环境与气候 · 政治与社会</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">carbon</span><span class="word-pill">ecosystem</span><span class="word-pill">drought</span><span class="word-pill">asylum</span><span class="word-pill">diplomacy</span><span class="word-pill">genocide</span><span class="word-pill">sovereignty</span><span class="word-pill">+ 62 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#1A7A4A">Start learning</span>
-        <span class="word-count">69 words</span>
-        <span class="arrow" style="color:#1A7A4A">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units13-14.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#3D5A99,#263B6E)">
-        <div class="unit-emoji">🔬</div>
-        <div class="unit-num">Units 13–14</div>
-        <div class="unit-title">Research &amp; Academic Skills</div>
-        <div class="unit-cn">研究方法 · 学术写作</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">hypothesis</span><span class="word-pill">analyse</span><span class="word-pill">criterion</span><span class="word-pill">coherent</span><span class="word-pill">cite</span><span class="word-pill">justify</span><span class="word-pill">integral</span><span class="word-pill">+ 63 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#3D5A99">Start learning</span>
-        <span class="word-count">70 words</span>
-        <span class="arrow" style="color:#3D5A99">→</span>
-      </div>
-    </a>
-
-    <a class="unit-card" href="IELTS_Workbook_Units15-16.html">
-      <div class="unit-card-top" style="background:linear-gradient(135deg,#7B4A8A,#562B6B)">
-        <div class="unit-emoji">🏙️</div>
-        <div class="unit-num">Units 15–16</div>
-        <div class="unit-title">Society &amp; Development</div>
-        <div class="unit-cn">经济与政策 · 变革与发展</div>
-      </div>
-      <div class="unit-card-body">
-        <div class="unit-words">
-          <span class="word-pill">policy</span><span class="word-pill">legislate</span><span class="word-pill">ideology</span><span class="word-pill">sustain</span><span class="word-pill">strategy</span><span class="word-pill">transition</span><span class="word-pill">advocate</span><span class="word-pill">+ 63 more</span>
-        </div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta" style="color:#7B4A8A">Start learning</span>
-        <span class="word-count">70 words</span>
-        <span class="arrow" style="color:#7B4A8A">→</span>
-      </div>
-    </a>
-
+<!-- ── VOLUME TABS ── -->
+<nav class="vol-tabs" aria-label="Volume navigation">
+  <div class="vol-tabs-inner">
+    <div class="vol-tab active" onclick="selectTab(this, 'vol1')">Vol. 1 — Ancient Times</div>
+    <div class="vol-tab" onclick="selectTab(this, 'vol2')">Vol. 2 — Middle Ages <span class="vol-soon">Coming Soon</span></div>
+    <div class="vol-tab" onclick="selectTab(this, 'vol3')">Vol. 3 — Early Modern <span class="vol-soon">Coming Soon</span></div>
+    <div class="vol-tab" onclick="selectTab(this, 'vol4')">Vol. 4 — Modern Age <span class="vol-soon">Coming Soon</span></div>
   </div>
+</nav>
 
-  <div class="section-label">Coming soon — 即将推出</div>
-  <div class="unit-grid">
+<!-- ── CONTENT ── -->
+<div class="content" id="vol1-content">
 
-    <div class="unit-card-soon">
-      <div class="unit-card-top">
-        <div class="unit-emoji">📚</div>
-        <div class="unit-num">Units 17–20</div>
-        <div class="unit-title">Advanced IELTS Vocabulary</div>
-        <div class="unit-cn">高阶学术词汇</div>
-        <div class="soon-badge">Coming soon</div>
-      </div>
-      <div class="unit-card-body">
-        <div style="font-size:13px">Advanced words from real IELTS Cambridge passages — Levels 3 and 4.</div>
-      </div>
-      <div class="unit-card-footer">
-        <span class="cta">Not yet available</span>
-        <span class="word-count">80+ words</span>
-      </div>
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">39</div>
+      <div class="stat-label">Chapters</div>
     </div>
-
-  </div>
-
-  <div class="howto">
-    <div class="howto-title">How to use this workbook &nbsp; 使用说明</div>
-    <div class="howto-steps">
-      <div class="howto-step"><div class="step-num">1</div><div class="step-text"><strong>Learn vocabulary</strong>Click each word card to see its meaning and an example sentence.</div></div>
-      <div class="howto-step"><div class="step-num">2</div><div class="step-text"><strong>Read the story</strong>All target words appear in a short, easy story. Find them!</div></div>
-      <div class="howto-step"><div class="step-num">3</div><div class="step-text"><strong>Do the exercises</strong>True/False, multiple choice, matching, and fill-in-the-blank with instant feedback.</div></div>
-      <div class="howto-step"><div class="step-num">4</div><div class="step-text"><strong>Speak &amp; write</strong>Use the words in your own sentences. Practice every day!</div></div>
+    <div class="stat-card">
+      <div class="stat-num">175</div>
+      <div class="stat-label">Lessons</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">2,400+</div>
+      <div class="stat-label">Target words</div>
     </div>
   </div>
 
-  <div class="about">
-    <div>
-      <div class="about-block-title">What you will learn 学习内容</div>
-      <ul class="about-list">
-        <li>340+ high-frequency IELTS vocabulary words</li>
-        <li>Words used in real IELTS reading and writing tasks</li>
-        <li>Common collocations and phrases</li>
-        <li>How to use words in sentences naturally</li>
-        <li>Academic vocabulary for IELTS Band 6+</li>
-      </ul>
+  <!-- Progress -->
+  <div class="progress-card">
+    <div class="progress-header">
+      <span class="progress-label">Your progress — Vol. 1</span>
+      <span class="progress-pct">5% complete</span>
     </div>
-    <div>
-      <div class="about-block-title">How this workbook is different 特色</div>
-      <ul class="about-list">
-        <li>Stories make words easier to remember</li>
-        <li>Chinese translations for every word 中文翻译</li>
-        <li>Interactive — answers checked instantly</li>
-        <li>Beginner-friendly — starts from A1 level</li>
-        <li>Free to use — no app or account needed</li>
-      </ul>
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+    <div class="progress-cta">
+      <i class="ti ti-player-play" aria-hidden="true"></i>
+      Next up: Lesson 15A — Who Were the Phoenicians?
     </div>
   </div>
 
+  <a class="start-btn" href="ch15-a.html">
+    <i class="ti ti-player-play" aria-hidden="true"></i>
+    Start Chapter 15 — The Phoenicians
+  </a>
+
+  <!-- Introduction -->
+  <p class="section-label">Introduction</p>
+
+  <div class="intro-card">
+    <div class="intro-header">
+      <div class="intro-dot"></div>
+      <span class="intro-title">How Do We Know What Happened?</span>
+      <span class="intro-count">2 lessons</span>
+    </div>
+    <div class="intro-lessons">
+      <a class="intro-row" href="lessons/intro-a.html">
+        <div class="ls-dot active">
+          <i class="ti ti-arrow-right" style="font-size:9px" aria-hidden="true"></i>
+        </div>
+        <span class="ls-code">Intro A</span>
+        <span class="ls-name">What Is History?</span>
+        <i class="ti ti-chevron-right ls-arrow" aria-hidden="true"></i>
+      </a>
+      <a class="intro-row" href="lessons/intro-b.html">
+        <div class="ls-dot"></div>
+        <span class="ls-code">Intro B</span>
+        <span class="ls-name">What Is Archaeology?</span>
+        <i class="ti ti-chevron-right ls-arrow" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Chapters -->
+  <p class="section-label">Chapters</p>
+  <div class="chapter-list" id="chapter-list"></div>
+
 </div>
 
-<div class="footer">
-  <strong>Lexilink Ideation IELTS Studio</strong><br>
-  IELTS Vocabulary Workbook &nbsp;·&nbsp; Built for senior high school students &nbsp;·&nbsp; Updated regularly
-</div>
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <strong>Lexilink Ideation IELTS STUDIO</strong> · History ESL Course · Volume 1: Ancient Times<br>
+  Based on <em>The Story of the World</em> by Susan Wise Bauer · ESL Edition for Chinese Learners · Ages 10–16
+</footer>
 
+<script>
+/* ── Volume tab switcher ── */
+function selectTab(el, vol) {
+  document.querySelectorAll('.vol-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+/* ── Chapter data ── */
+const chapters = [
+  { n:1,  title:"The Earliest People",
+    lessons:["The First Nomads","Nomad Daily Life","The First Farmers","Irrigation and the Shaduf","Jericho and Early Cities","Review + Project"],
+    progress: 20 },
+  { n:2,  title:"Egyptians Lived on the Nile River",
+    lessons:["The Nile River","Upper Egypt and Lower Egypt","King Narmer and the Double Crown","Egyptian Gods","Osiris and Isis","Review + Project"] },
+  { n:3,  title:"The First Writing",
+    lessons:["Hieroglyphs","Cuneiform","Scribes and Tablets","Review + Project"] },
+  { n:4,  title:"The Old Kingdom of Egypt",
+    lessons:["Making Mummies","Inside a Mummy","Egyptian Pyramids","Building the Pyramids","Review + Project"] },
+  { n:5,  title:"The First Sumerian Dictator",
+    lessons:["Sargon and the Akkadians","The Akkadian Empire","Review + Project"] },
+  { n:6,  title:"The Jewish People",
+    lessons:["God Speaks to Abraham","The Journey of Abraham","Joseph Goes to Egypt","Review + Project"] },
+  { n:7,  title:"Hammurabi and the Babylonians",
+    lessons:["Hammurabi's Code","Laws in Ancient Times","Review + Project"] },
+  { n:8,  title:"The Assyrians",
+    lessons:["Shamshi-Adad, King of the Whole World","The Story of Gilgamesh","Review + Project"] },
+  { n:9,  title:"The First Cities of India",
+    lessons:["The River-Road","The Mystery of Mohenjo-Daro","Review + Project"] },
+  { n:10, title:"The Far East: Ancient China",
+    lessons:["Lei Zu and the Silkworm","The Pictograms of Ancient China","Farming in Ancient China","Review + Project"] },
+  { n:11, title:"Ancient Africa",
+    lessons:["Ancient Peoples of West Africa","Anansi and Turtle","Anansi and the Make-Believe Food","Review + Project"] },
+  { n:12, title:"The Middle Kingdom of Egypt",
+    lessons:["Egypt Invades Nubia","The Hyksos Invade Egypt","Review + Project"] },
+  { n:13, title:"The New Kingdom of Egypt",
+    lessons:["The General and the Woman Pharaoh","Amenhotep and King Tut","Review + Project"] },
+  { n:14, title:"The Israelites Leave Egypt",
+    lessons:[
+      { name:"Who Were the Israelites?",  file:"ch14-a.html", live:true },
+      { name:"The Baby Moses",            file:"ch14-b.html", live:true },
+      { name:"The Exodus From Egypt",     file:"ch14-c.html", live:true },
+      { name:"Review + Project",          file:"ch14-c.html#p10", live:true },
+    ],
+    progress: 0, live: true },
+  { n:15, title:"The Phoenicians",
+    lessons:[
+      { name:"Who Were the Phoenicians?",    file:"ch15-a.html", live:true },
+      { name:"Phoenician Traders",           file:"ch15-b.html", live:true },
+      { name:"The Secret of Glass",          file:"ch15-c.html", live:true },
+      { name:"The Art of Glassblowing",      file:"ch15-d.html", live:true },
+      { name:"Purple — The Colour of Kings", file:"ch15-e.html", live:true },
+      { name:"Phoenician Colonies",          file:"ch15-f.html", live:true },
+      { name:"The Story of Dido + Review",   file:"ch15-g.html", live:true },
+    ],
+    progress: 0, live: true },
+  { n:16, title:"The Return of Assyria",
+    lessons:[
+      { name:"Ashurbanipal's Attack",    file:"ch16-a.html", live:true },
+      { name:"The Library of Nineveh",   file:"ch16-b.html", live:true },
+      { name:"Review + Project",         file:"ch16-c.html", live:true },
+    ],
+    progress: 0, live: true },
+  { n:17, title:"Babylon Takes Over Again!",
+    lessons:[
+      { name:"Babylon Rises Again",                     file:"ch17-a.html", live:true },
+      { name:"Nebuchadnezzar the Great",                 file:"ch17-b.html", live:true },
+      { name:"The King Who Thought He Was a God",        file:"ch17-c.html", live:true },
+      { name:"A Marriage for Peace",                     file:"ch17-d.html", live:true },
+      { name:"Amytis Misses Home",                       file:"ch17-e.html", live:true },
+      { name:"Building the Hanging Gardens",             file:"ch17-f.html", live:true },
+      { name:"The Seven Wonders + Review",               file:"ch17-g.html", live:true },
+    ],
+    progress: 0, live: true },
+  { n:18, title:"Life in Early Crete",
+    lessons:[
+      { name:"Bull-Jumpers of Crete",                    file:"ch18-a.html", live:true },
+      { name:"Bull-Jumping Festivals",                    file:"ch18-b.html", live:true },
+      { name:"The Minoan Navy",                           file:"ch18-c.html", live:true },
+      { name:"King Minos and the Minotaur",               file:"ch18-d.html", live:true },
+      { name:"Theseus and the Labyrinth",                 file:"ch18-e.html", live:true },
+      { name:"The Tragic Homecoming",                     file:"ch18-f.html", live:true },
+      { name:"The Mysterious End of the Minoans + Review",file:"ch18-g.html", live:true },
+    ],
+    progress: 0, live: true },
+  { n:19, title:"The Early Greeks",
+    lessons:[
+      { name:"From Ash to Ambition: The Mycenaeans Arrive", file:"ch19-a.html", live:true },
+      { name:"Ships, Colonies, and a King's Command",       file:"ch19-b.html", live:true },
+      { name:"Bronze, Shields, and Helmets",                file:"ch19-c.html", live:true },
+      { name:"Horses Into Battle: The First War Chariots",  file:"ch19-d.html", live:true },
+      { name:"Civilized Greeks and the 'Barbarians'",       file:"ch19-e.html", live:true },
+      { name:"Iron, Arrows, and the Sea People",            file:"ch19-f.html", live:true },
+      { name:"The Dark Ages Descend + Review",              file:"ch19-g.html", live:true },
+    ],
+    progress: 0, live: true },
+  { n:20, title:"Greece Gets Civilized Again",
+    lessons:[
+      { name:"Barbarians Become Greeks",           file:"ch20-a.html", live:true },
+      { name:"Homer and the Long Voyage",          file:"ch20-b.html", live:true },
+      { name:"Trapped With the Cyclops",           file:"ch20-c.html", live:true },
+      { name:"Wine, Wit, and 'Noman'",              file:"ch20-d.html", live:true },
+      { name:"The Blinding and the Escape",         file:"ch20-e.html", live:true },
+      { name:"Poseidon's Curse",                    file:"ch20-f.html", live:true },
+      { name:"The First Olympic Games + Review",    file:"ch20-g.html", live:true },
+    ],
+    progress: 0, live: true },
+  { n:21, title:"The Medes and the Persians",
+    lessons:["A New Empire","Cyrus the Great","Review + Project"] },
+  { n:22, title:"Sparta and Athens",
+    lessons:["Life in Sparta","Life in Athens","Review + Project"] },
+  { n:23, title:"The Greek Gods",
+    lessons:["The Golden Apple","Gods and Their Powers","Review + Project"] },
+  { n:24, title:"The Wars of the Greeks",
+    lessons:["Greece's War With Persia","The Greeks Fight Each Other","Review + Project"] },
+  { n:25, title:"Alexander the Great",
+    lessons:["Philip and His Son","Alexander's Invasions","The Death of Alexander","Review + Project"] },
+  { n:26, title:"The People of the Americas",
+    lessons:["The Nazca Drawings","The Heads of the Olmecs","Rabbit Shoots the Sun","Review + Project"] },
+  { n:27, title:"The Rise of Rome",
+    lessons:["Romulus and Remus","The Power of Rome","Review + Project"] },
+  { n:28, title:"The Roman Empire",
+    lessons:["The Roman Gods","The Roman Builders","The Roman Gladiators","The Gladiator School","Review + Project"] },
+  { n:29, title:"Rome's War With Carthage",
+    lessons:["The Punic Wars","Hannibal Crosses the Alps","Review + Project"] },
+  { n:30, title:"The Aryans of India",
+    lessons:["Life on the Ganges River","The Castes of Ancient India","Siddhartha","Review + Project"] },
+  { n:31, title:"The Mauryan Empire of India",
+    lessons:["The Empire United","The Jakata Tales","Review + Project"] },
+  { n:32, title:"China: Writing and the Qin",
+    lessons:["Calligraphy in China","Warring States","The First Emperor and the Great Wall","The First Emperor's Grave","Review + Project"] },
+  { n:33, title:"Confucius",
+    lessons:["China's Wise Teacher","Confucian Ideas","Review + Project"] },
+  { n:34, title:"The Rise of Julius Caesar",
+    lessons:["Caesar Is Kidnapped","The Consuls of Rome","Caesar and the Senate","Review + Project"] },
+  { n:35, title:"Caesar the Hero",
+    lessons:["Caesar Fights the Celts","Caesar Crosses the Rubicon","Caesar and Cleopatra","The Death of Caesar","Review + Project"] },
+  { n:36, title:"The First Roman Prince",
+    lessons:["Augustus Caesar","Pax Romana","Review + Project"] },
+  { n:37, title:"The Beginning of Christianity",
+    lessons:["The Birth of Jesus","Jesus Crucified and Resurrected","Review + Project"] },
+  { n:38, title:"The End of the Ancient Jewish Nation",
+    lessons:["The Destruction of the Temple","Review + Project"] },
+  { n:39, title:"Rome and the Christians",
+    lessons:["Nero, the Evil Emperor","Persecution and Spread","Review + Project"] },
+];
+
+const container = document.getElementById('chapter-list');
+
+chapters.forEach((ch, idx) => {
+  const prog = ch.progress || 0;
+  const isChLive = ch.live || false;
+  const card = document.createElement('div');
+  card.className = 'ch-card';
+  if (idx === 0) card.classList.add('open');
+  if (isChLive)  card.classList.add('ch-live');
+
+  const lessonsHtml = ch.lessons.map((lesson, li) => {
+    const isObj    = typeof lesson === 'object';
+    const name     = isObj ? lesson.name : lesson;
+    const isLive   = isObj && lesson.live;
+    const href     = isLive
+                       ? lesson.file
+                       : `lessons/ch${ch.n}-${String.fromCharCode(65+li).toLowerCase()}.html`;
+    const tag      = ch.n + String.fromCharCode(65 + li);
+    const isReview = name.startsWith('Review') || name.includes('Review');
+    const isActive = idx === 0 && li === 0;
+    let cls = 'lesson-row';
+    if (isActive)  cls += ' is-active';
+    if (isReview)  cls += ' is-review';
+    if (isLive)    cls += ' is-live';
+    const liveBadge = isLive && !isReview
+      ? `<span class="live-badge">Available</span>`
+      : '';
+    const icon = isReview ? 'ti-star' : (isLive ? 'ti-arrow-right' : 'ti-lock');
+    return `<a class="${cls}" href="${href}">
+      <span class="l-tag">${tag}</span>
+      <span class="l-name">${name}</span>
+      ${liveBadge}
+      <i class="ti ${icon} l-icon" aria-hidden="true"></i>
+    </a>`;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="ch-header" role="button"
+         aria-expanded="${idx === 0}" tabindex="0">
+      <div class="ch-num${isChLive ? ' ch-num-live' : ''}">${ch.n}</div>
+      <div class="ch-info">
+        <div class="ch-title">${ch.title}${isChLive ? ' <span class="ch-new-badge">New</span>' : ''}</div>
+        <div class="ch-meta">${ch.lessons.length} lessons${isChLive ? ' · Available now' : ''}</div>
+      </div>
+      <div class="ch-right">
+        <div class="mini-track"><div class="mini-fill" style="width:${prog}%"></div></div>
+        <i class="ti ti-chevron-down ch-chevron" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="ch-lessons">${lessonsHtml}</div>
+  `;
+
+  const hdr = card.querySelector('.ch-header');
+  const toggle = () => {
+    const wasOpen = card.classList.contains('open');
+    document.querySelectorAll('.ch-card.open').forEach(c => {
+      c.classList.remove('open');
+      c.querySelector('.ch-header').setAttribute('aria-expanded','false');
+    });
+    if (!wasOpen) {
+      card.classList.add('open');
+      hdr.setAttribute('aria-expanded','true');
+    }
+  };
+  hdr.addEventListener('click', toggle);
+  hdr.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
+
+  container.appendChild(card);
+});
+</script>
 </body>
 </html>
