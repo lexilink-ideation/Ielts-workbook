@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IELTS Vocabulary Workbook — Units 19–20 — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --gold:#C9930A;--gold-light:#FDF3D8;--gold-pale:#FFFBF0;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:var(--teal);color:#fff;padding:3rem 2rem 2.5rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.75rem}
+.cover-title{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;margin-bottom:.5rem}
+.cover-sub{font-size:15px;opacity:.8;margin-bottom:1.75rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.cover-tip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:1rem 1.25rem;max-width:500px;margin:1.5rem auto 0;font-size:13px;text-align:left;line-height:1.6}
+.cover-tip strong{display:block;margin-bottom:.3rem}
+.unit-nav{display:flex;gap:.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.unit-btn{flex:1;min-width:140px;padding:.7rem 1rem;border-radius:10px;border:1.5px solid var(--border);background:var(--surface);font-size:14px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .18s;text-align:center}
+.unit-btn:hover{border-color:var(--teal);color:var(--teal)}
+.unit-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+.unit-panel{display:none}
+.unit-panel.active{display:block}
+.unit-hdr{background:linear-gradient(135deg,var(--teal) 0%,var(--teal-dark) 100%);color:#fff;border-radius:14px;padding:1.5rem 1.75rem;margin-bottom:1.25rem;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:.75rem}
+.unit-hdr-title{font-size:20px;font-weight:600}
+.unit-hdr-meta{font-size:13px;opacity:.75;margin-top:.2rem}
+.unit-level{font-size:11px;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.3);padding:.25rem .7rem;border-radius:20px}
+.part-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.part-btn{padding:.38rem .85rem;border-radius:20px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.part-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.part-btn.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.part-panel{display:none}
+.part-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.cat-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;padding:.3rem .75rem;margin:.75rem 0 .4rem;display:inline-block}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.5rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.75rem;padding:.65rem 1rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:15px;font-weight:600;color:var(--teal);min-width:130px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .45rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.75rem 1rem;border-top:1px solid var(--border)}
+.vocab-body.open{display:block}
+.v-meaning{font-size:13px;color:var(--muted);margin-bottom:.5rem}
+.v-eg{font-size:14px;font-style:italic;padding:.5rem .75rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.story-box{background:var(--gold-pale);border:1px solid #E8D08A;border-radius:12px;padding:1.5rem}
+.story-title{font-size:16px;font-weight:600;color:var(--gold);margin-bottom:1rem}
+.story-text{font-size:14px;line-height:1.9;color:var(--text)}
+.story-text p{margin-bottom:.9rem}
+.story-text p:last-child{margin-bottom:0}
+.hw{font-weight:600;color:var(--teal);background:var(--teal-light);padding:.05rem .3rem;border-radius:4px}
+.tf-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.tf-row:last-child{border-bottom:none}
+.tf-q{font-size:14px;flex:1;min-width:200px}
+.tf-btns{display:flex;gap:.35rem;flex-shrink:0}
+.tf-btn{padding:.28rem .7rem;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;transition:all .15s}
+.tf-btn:hover{background:var(--bg)}
+.tf-btn.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.tf-btn.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.tf-btn:disabled{pointer-events:none;opacity:.55}
+.tf-result{font-size:12px;font-weight:500;flex-shrink:0}
+.mc-block{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.mc-block:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.mc-q{font-size:14px;font-weight:500;margin-bottom:.5rem}
+.mc-opts{display:grid;grid-template-columns:1fr 1fr;gap:.35rem}
+@media(max-width:500px){.mc-opts{grid-template-columns:1fr}}
+.mc-opt{padding:.45rem .75rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;cursor:pointer;text-align:left;transition:all .15s;color:var(--text)}
+.mc-opt:hover:not(:disabled){background:var(--teal-pale);border-color:var(--teal-light)}
+.mc-opt.correct{background:var(--correct-bg);border-color:var(--correct);color:var(--correct)}
+.mc-opt.wrong{background:var(--wrong-bg);border-color:var(--wrong);color:var(--wrong)}
+.mc-opt:disabled{pointer-events:none}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:20px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.75rem}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%}
+.match-def:hover:not(.done){background:var(--gold-pale);border-color:#E8D08A}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem;padding:.6rem .75rem;background:var(--teal-pale);border-radius:8px;border:1px solid var(--teal-light)}
+.chip{display:inline-block;padding:.22rem .6rem;background:var(--surface);color:var(--teal);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--teal-light);transition:all .15s}
+.chip:hover{background:var(--teal);color:#fff}
+.chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.4rem 0;border-bottom:1px solid var(--border)}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:130px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--teal)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff;border:1px solid var(--teal)}
+.btn-primary:hover{background:var(--teal-dark);border-color:var(--teal-dark)}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.speak-card{padding:.75rem 1rem;background:var(--bg);border-radius:8px;margin-bottom:.5rem;font-size:14px;border-left:3px solid var(--teal);display:flex;align-items:flex-start;gap:.6rem;color:var(--text)}
+.speak-num{font-weight:600;color:var(--teal);min-width:1.4rem;flex-shrink:0}
+.hint{font-size:12px;color:var(--muted);background:var(--gold-pale);border:1px solid #E8D08A;border-radius:8px;padding:.6rem .85rem;margin-top:.75rem;line-height:1.6}
+.hint strong{color:var(--gold);font-weight:600}
+.write-prompt{font-size:14px;color:var(--text);margin-bottom:.4rem}
+.write-prompt-cn{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.write-area{width:100%;border:1px solid var(--border);border-radius:8px;padding:.75rem;font-size:14px;font-family:inherit;color:var(--text);background:var(--surface);resize:vertical;min-height:130px;outline:none;transition:border-color .15s;line-height:1.7}
+.write-area:focus{border-color:var(--teal)}
+.write-counter{font-size:12px;color:var(--muted);margin-top:.3rem;text-align:right}
+.write-hint{font-size:12px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.review-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:560px){.review-cols{grid-template-columns:1fr}}
+.review-col-label{font-size:13px;font-weight:600;margin-bottom:.6rem}
+.review-item{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.review-item:last-child{border-bottom:none}
+.r-en{font-weight:500;color:var(--text)}
+.r-cn{color:var(--muted);font-size:12px}
+.colloc-item{padding:.35rem 0;border-bottom:1px solid var(--border);font-size:13px}
+.colloc-item:last-child{border-bottom:none}
+.c-en{font-weight:500;color:var(--teal)}
+.c-cn{color:var(--muted);font-size:12px}
+@media(max-width:600px){.card{padding:1rem}.unit-hdr{padding:1.1rem 1.25rem}.match-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">IELTS Vocabulary Workbook &mdash; Units 19&ndash;20</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Lexilink Ideation IELTS Studio</div>
+  <div class="cover-title">IELTS Vocabulary Workbook</div>
+  <div class="cover-sub">Units 19&ndash;20 &nbsp;&middot;&nbsp; Academic Vocabulary &nbsp;|&nbsp; &#23398;&#26415;&#35789;&#27719;</div>
+  <div class="cover-badges">
+    <span class="badge">Level 3 &mdash; Academic</span>
+    <span class="badge">Units 19&ndash;20</span>
+    <span class="badge">70 target words</span>
+    <span class="badge">Interactive exercises</span>
+  </div>
+  <div class="cover-tip">
+    <strong>How to use</strong>
+    Study vocabulary &rarr; Read the story &rarr; Complete the exercises. Click any word to see its meaning. Answers are checked instantly.
+  </div>
+</div>
+
+<div class="page">
+  <div class="unit-nav">
+    <button class="unit-btn active" onclick="switchUnit(0)">Unit 19 &mdash; Applied Skills &amp; Critical Expression</button>
+    <button class="unit-btn" onclick="switchUnit(1)">Unit 20 &mdash; Complex Systems &amp; Human Values</button>
+  </div>
+
+  <!-- UNIT 19 -->
+  <div class="unit-panel active" id="unit0">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 19 &nbsp;&middot;&nbsp; Applied Skills &amp; Critical Expression &nbsp; &#24212;&#29992;&#25216;&#33021;&#19982;&#25216;&#27861;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Academic Skills &middot; Projects &middot; Adaptation</div>
+      </div>
+      <span class="unit-level">Level 3 &mdash; Academic</span>
+    </div>
+    <div class="part-nav" id="pnav0">
+      <button class="part-btn active" onclick="switchPart(0,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(0,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(0,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(0,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(0,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(0,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(0,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u0p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Field Study</div>
+          <div class="story-text">
+<p>Kai had a clear <span class="hw">task</span>: spend six weeks in the mountain village of Nurala, <span class="hw">locate</span> its elders, and <span class="hw">research</span> how their oral traditions had changed over three generations. The <span class="hw">project</span> was the <span class="hw">primary</span> component of his doctoral degree. The <span class="hw">final</span> report was due in twelve weeks. He had no research assistant, no interpreter, and — he discovered on arrival — no mobile signal.</p>
+<p>He began by creating a <span class="hw">specific</span> plan. The <span class="hw">section</span> of his study dealing with language change required him to record and transcribe over forty hours of conversation. The <span class="hw">category</span> of changes he was looking at — vocabulary loss, sentence structure simplification, borrowing from dominant languages — all needed careful <span class="hw">emphasis</span> in his <span class="hw">academic</span> framework. He had to write a working <span class="hw">definition</span> of "oral tradition" that was precise enough to measure but broad enough to be meaningful. He kept his <span class="hw">topic</span> as focused as possible, knowing that every time a <span class="hw">conclusion</span> came too easily, it was usually wrong.</p>
+<p>The village was not <span class="hw">classic</span> fieldwork territory. The elders were <span class="hw">available</span> only on market days and at community meetings. Kai had to be <span class="hw">brief</span> and respectful in his requests. He <span class="hw">seek</span>ed their trust not through gifts but through consistency — showing up, listening, taking nothing for granted. He managed to <span class="hw">motivate</span> a group of younger villagers to <span class="hw">involve</span> themselves in the documentation project, turning what could have been a solitary exercise into something <span class="hw">straightforward</span>ly collaborative. What he could not <span class="hw">locate</span> in written archives, he found in memory. He began to <span class="hw">utilize</span> a recording method he had learned from a linguist in Nairobi — a structured, non-intrusive technique that allowed storytellers to speak naturally.</p>
+<p>The hardest weeks were in the middle. Rain fell without interruption for eight days. Equipment failed. One of the elder informants fell ill, and a key interview had to be postponed. Kai did not <span class="hw">abandon</span> the work, but he did have to <span class="hw">adjust</span> his schedule significantly. He <span class="hw">cease</span>d his morning recording sessions and used the time instead to <span class="hw">submit</span> partial transcripts for remote review. He felt the <span class="hw">stress</span> acutely — not just the pressure of time but the weight of responsibility. These stories mattered. He could not let his own fatigue become a reason to <span class="hw">relax</span> his standards.</p>
+<p>By the end of the sixth week, Kai had enough material to <span class="hw">create</span> something <span class="hw">primary</span> and original. The data would <span class="hw">vary</span> in quality — some recordings were excellent, others barely usable — but taken together, the collection was remarkable. He wrote the <span class="hw">final</span> section of the report by hand in the guesthouse, then <span class="hw">transfer</span>red it to his laptop the night before leaving. He had come to <span class="hw">reveal</span> something about language. In the end, the language had revealed something about him: that persistence, <span class="hw">persist</span>ence above all, was the only skill that truly <span class="hw">amend</span>ed everything that went wrong.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u0p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf0"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match0"></div><div id="match0-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips0"></div><div id="fib0"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(0)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(0)">Reset</button></div><div id="fib0-s"></div></div>
+    </div>
+    <div class="part-panel" id="u0p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk0"></div><div class="hint" id="ph0"></div></div>
+    </div>
+    <div class="part-panel" id="u0p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp0en"></p><p class="write-prompt-cn" id="wp0cn"></p><p class="write-hint" id="wp0hint"></p><textarea class="write-area" id="wr0" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc0">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u0p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&rsquo;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev0"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col0"></div></div></div></div>
+    </div>
+  </div>
+
+  <!-- UNIT 20 -->
+  <div class="unit-panel" id="unit1">
+    <div class="unit-hdr">
+      <div>
+        <div class="unit-hdr-title">Unit 20 &nbsp;&middot;&nbsp; Complex Systems &amp; Human Values &nbsp; &#22797;&#26432;&#31995;&#32479;&#19982;&#20154;&#31867;&#20215;&#20540;</div>
+        <div class="unit-hdr-meta">35 target words &nbsp;&middot;&nbsp; 7 parts &nbsp;&middot;&nbsp; Systems &middot; Society &middot; Expression</div>
+      </div>
+      <span class="unit-level">Level 3 &mdash; Academic</span>
+    </div>
+    <div class="part-nav" id="pnav1">
+      <button class="part-btn active" onclick="switchPart(1,0)">1 &middot; Vocabulary</button>
+      <button class="part-btn" onclick="switchPart(1,1)">2 &middot; Story</button>
+      <button class="part-btn" onclick="switchPart(1,2)">3 &middot; Comprehension</button>
+      <button class="part-btn" onclick="switchPart(1,3)">4 &middot; Practice</button>
+      <button class="part-btn" onclick="switchPart(1,4)">5 &middot; Speaking</button>
+      <button class="part-btn" onclick="switchPart(1,5)">6 &middot; Writing</button>
+      <button class="part-btn" onclick="switchPart(1,6)">7 &middot; Review</button>
+    </div>
+    <div class="part-panel active" id="u1p0">
+      <div class="card"><div class="card-title">Click any word to expand its meaning</div><div id="vg1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p1">
+      <div class="card">
+        <div class="card-title">Mini story &mdash; target words are highlighted</div>
+        <div class="story-box">
+          <div class="story-title">The Delta</div>
+          <div class="story-text">
+<p>The Koro River Delta was <span class="hw">dramatic</span> in every sense. Its <span class="hw">area</span> covered more than eight thousand square kilometres. <span class="hw">Layer</span> upon layer of wetland, estuary, and forest had built up over millennia. The <span class="hw">complex</span> web of species and human communities that relied on it was hard to <span class="hw">chart</span> and even harder to govern.</p>
+<p>Dr Selin had been asked to <span class="hw">accompany</span> a panel of experts tasked with assessing the delta's future. The group included an economist who specialised in <span class="hw">cooperative</span> resource management, a philosopher who studied the ethics of land use, and a legal specialist in <span class="hw">contract</span> and property rights. Their <span class="hw">adjacent</span> offices in the government building were filled with maps, reports, and conflicting proposals. The core issue was how to <span class="hw">constitute</span> a fair governance framework. On one side, a large industrial firm had drawn up a <span class="hw">contract</span> with the state to extract sand and minerals. On the other side, fishing communities wanted to <span class="hw">ensure</span> their livelihoods would not be <span class="hw">diminish</span>ed. A third group argued that the <span class="hw">dramatic</span> degradation of the wetlands was a matter of <span class="hw">equal</span> rights — that all citizens deserved a clean environment.</p>
+<p>The <span class="hw">cooperative</span> model the panel proposed would <span class="hw">orient</span> all parties around a shared set of principles. It would <span class="hw">offset</span> industrial extraction with a restoration fund. It would <span class="hw">concentrate</span> decision-making at the local level. The framework would not <span class="hw">exclude</span> any stakeholder. It would require industry to <span class="hw">accommodate</span> the fishing communities' concerns — not merely acknowledge them. The <span class="hw">comprehensive</span> agreement would <span class="hw">overlap</span> three separate legal systems — national, regional, and international — requiring careful coordination. Each <span class="hw">component</span> of the agreement would need to be drafted with precision.</p>
+<p>The <span class="hw">philosophy</span> behind the panel's approach was simple: the <span class="hw">sum</span> of individual benefits does not automatically <span class="hw">constitute</span> a collective good. A <span class="hw">contract</span> that helps each party in isolation may still harm the whole. This idea was hard to <span class="hw">denote</span> precisely in legal language, but it proved true <span class="hw">via</span> case study after case study. <span class="hw">Similar</span> dynamics had played out in deltas, river basins, and coastal zones across the world. The <span class="hw">adult</span> population of the delta region — more than three hundred thousand people — had the right to <span class="hw">affect</span> decisions about their own land. To <span class="hw">exclude</span> any group was not just unjust; it was impractical.</p>
+<p>In the end, the panel chose to <span class="hw">assemble</span> a plain-language version of its recommendations — a document that any <span class="hw">adult</span> could read and understand. They used simple language to <span class="hw">trace</span> the logic of each decision. They ensured that every <span class="hw">clause</span> in the agreement had a clear meaning. The document gave communities a genuine <span class="hw">option</span> to appeal any decision that affected them. "Complexity," said the philosopher, "is not an excuse to <span class="hw">exclude</span> people from the conversation." The <span class="hw">area</span> would be protected. The communities would be supported. The industrial activity would be carefully monitored. It was not a perfect solution — but it was, the panel agreed, a genuinely <span class="hw">cooperative</span> one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="part-panel" id="u1p2">
+      <div class="card"><div class="card-title">Section A &mdash; True or False &nbsp; &#21028;&#26029;&#23545;&#38ai;</div><div id="tf1"></div></div>
+      <div class="card"><div class="card-title">Section B &mdash; Multiple Choice &nbsp; &#36873;&#25321;&#39064;</div><div id="mc1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p3">
+      <div class="card"><div class="card-title">Activity A &mdash; Match words with meanings</div><p style="font-size:13px;color:var(--muted);margin-bottom:.25rem">Click a word on the left, then click its matching meaning on the right.</p><div id="match1"></div><div id="match1-r"></div></div>
+      <div class="card"><div class="card-title">Activity B &mdash; Fill in the blanks</div><p style="font-size:13px;color:var(--muted);margin-bottom:.75rem">Click a word from the box or type your answer.</p><div class="chips" id="chips1"></div><div id="fib1"></div><div class="btn-row"><button class="btn btn-primary" onclick="chkFib(1)">Check answers</button><button class="btn btn-ghost" onclick="rstFib(1)">Reset</button></div><div id="fib1-s"></div></div>
+    </div>
+    <div class="part-panel" id="u1p4">
+      <div class="card"><div class="card-title">Speaking practice &mdash; answer aloud</div><div id="spk1"></div><div class="hint" id="ph1"></div></div>
+    </div>
+    <div class="part-panel" id="u1p5">
+      <div class="card"><div class="card-title">Writing practice</div><p class="write-prompt" id="wp1en"></p><p class="write-prompt-cn" id="wp1cn"></p><p class="write-hint" id="wp1hint"></p><textarea class="write-area" id="wr1" placeholder="Start writing here&hellip;"></textarea><div class="write-counter" id="wc1">0 words</div></div>
+    </div>
+    <div class="part-panel" id="u1p6">
+      <div class="card"><div class="review-cols"><div><div class="review-col-label" style="color:var(--teal)">Today&rsquo;s words &#20170;&#26085;&#21333;&#35789;</div><div id="rev1"></div></div><div><div class="review-col-label" style="color:var(--gold)">Collocations &#24120;&#35265;&#25442;&#35774;</div><div id="col1"></div></div></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = [
+  // ── UNIT 19 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Academic Skills", words: [
+          {w:"academic",       p:"adj.", c:"学术的；学业的",  d:"Relating to education, scholarship, or research at a high level",                    e:"Her academic record was outstanding, with distinctions in every subject she had studied."},
+          {w:"specific",       p:"adj.", c:"明确的；具体的",  d:"Clearly defined or identified; precise and detailed rather than general",            e:"The instructions must be specific enough for anyone to follow without prior knowledge."},
+          {w:"emphasis",       p:"n.",   c:"强调；重点",      d:"Special importance or attention given to something",                                  e:"The course places strong emphasis on developing critical reading and analytical writing skills."},
+          {w:"category",       p:"n.",   c:"类别；范畴",      d:"A class or group of things sharing a common characteristic",                          e:"The survey divided responses into five broad categories based on age group."},
+          {w:"definition",     p:"n.",   c:"定义；解释",      d:"An exact statement of the meaning of a word or concept",                              e:"The report opens with a clear definition of what the authors mean by 'sustainable development'."},
+          {w:"topic",          p:"n.",   c:"话题；主题",      d:"A subject or theme of a discussion, study, or piece of writing",                     e:"She was asked to choose a topic for her dissertation that related to her field of specialisation."},
+          {w:"section",        p:"n.",   c:"章节；部分",      d:"A distinct part of something written, structured, or divided",                        e:"The methodology section of the report explains how data was collected and analysed."},
+          {w:"aspect",         p:"n.",   c:"方面；层面",      d:"A particular part or feature of something; a way in which it can be considered",     e:"There are several aspects of the problem that have not yet been fully explored."},
+          {w:"classic",        p:"adj.", c:"经典的；典型的",  d:"Judged over a period of time to be of the highest quality; typical of its kind",      e:"The case study is now considered a classic example of urban planning gone wrong."},
+          {w:"brief",          p:"adj.", c:"简短的；简要的",  d:"Of short duration; using few words to convey information",                            e:"The speaker gave a brief introduction before handing over to the panel of experts."},
+          {w:"straightforward",p:"adj.", c:"简单明了的；直截了当的", d:"Easy to understand; not complicated; honest and direct",               e:"The instructions were clear and straightforward, leaving no room for misinterpretation."},
+          {w:"conclusion",     p:"n.",   c:"结论；结尾",      d:"A judgment or decision reached after thought or investigation; the end of something", e:"The conclusion of the paper summarises the key findings and suggests directions for future study."}
+        ]
+      },
+      {
+        label: "Research & Projects", words: [
+          {w:"create",   p:"v.",   c:"创造；建立",      d:"To bring something into existence; to produce something original",                     e:"The programme was designed to create opportunities for disadvantaged young people."},
+          {w:"task",     p:"n.",   c:"任务；工作",      d:"A piece of work to be done; a duty or assignment",                                     e:"Each student was given a specific task to complete before the next class meeting."},
+          {w:"research", p:"n./v.","c":"研究；调查",     d:"Systematic investigation to establish facts or reach new conclusions",                  e:"Ongoing research into the causes of the disease has produced several promising results."},
+          {w:"project",  p:"n.",   c:"项目；工程",      d:"An individual or collaborative enterprise carefully planned to achieve a particular aim", e:"The community project was funded jointly by the local council and a national charity."},
+          {w:"seek",     p:"v.",   c:"寻求；探索",      d:"To attempt to find, obtain, or achieve something",                                       e:"The organisation seeks to reduce poverty through education and skills training."},
+          {w:"locate",   p:"v.",   c:"找到；位于",      d:"To discover the exact place or position of something; to be situated in a place",       e:"The team spent weeks trying to locate the original survey documents in the archive."},
+          {w:"motivate", p:"v.",   c:"激励；促动",      d:"To provide a reason for someone to act; to stimulate interest or effort",              e:"Understanding why a task matters is often the most effective way to motivate students."},
+          {w:"primary",  p:"adj.", c:"主要的；初级的",  d:"Most important; first in order or level",                                               e:"The primary aim of the study was to identify the main causes of student disengagement."},
+          {w:"final",    p:"adj.", c:"最终的；最后的",  d:"Coming at the end; last in a series; definitive",                                        e:"The final version of the report incorporated feedback from all three reviewers."},
+          {w:"utilize",  p:"v.",   c:"利用；使用",      d:"To make practical or effective use of something",                                       e:"The project aimed to utilize locally available materials to reduce construction costs."},
+          {w:"vary",     p:"v.",   c:"变化；不同",      d:"To change or be different in some way; to alter or modify",                             e:"The quality of submissions tended to vary widely depending on the time of year."},
+          {w:"transfer", p:"v.",   c:"转移；传递",      d:"To move or cause to move from one place or person to another",                          e:"The data was transferred from paper records to a central electronic database."}
+        ]
+      },
+      {
+        label: "Adaptation & Persistence", words: [
+          {w:"stable",        p:"adj.", c:"稳定的；牢固的",  d:"Not likely to change or fail; firmly established",                                  e:"A stable income is often considered a basic requirement for long-term financial planning."},
+          {w:"persist",       p:"v.",   c:"坚持；持续",      d:"To continue firmly in spite of difficulty or opposition",                            e:"Despite the initial lack of funding, the research team persisted with their work."},
+          {w:"abandon",       p:"v.",   c:"放弃；抛弃",      d:"To stop doing something before it is finished; to leave permanently",               e:"The company was forced to abandon the project after its lead investor withdrew."},
+          {w:"amend",         p:"v.",   c:"修正；改善",      d:"To make small changes or improvements to something",                                 e:"Parliament voted to amend the legislation to provide greater protection for workers."},
+          {w:"submit",        p:"v.",   c:"提交；递交",      d:"To present something for consideration or judgement; to yield to authority",        e:"All applications must be submitted online before midnight on the closing date."},
+          {w:"adjust",        p:"v.",   c:"调整；校准",      d:"To alter slightly to achieve a better fit or result",                               e:"She had to adjust her research plan after realising that the original method was flawed."},
+          {w:"cease",         p:"v.",   c:"停止；终止",      d:"To come to or bring to an end; to stop happening",                                  e:"Production at the plant will cease at the end of the year due to falling demand."},
+          {w:"stress",        p:"n./v.","c":"压力；强调",    d:"Mental or physical pressure; to give particular emphasis to something",             e:"Excessive stress in the workplace can have a significant impact on employee productivity."},
+          {w:"relax",         p:"v.",   c:"放松；缓和",      d:"To make or become less tense or anxious; to make a rule less strict",               e:"The government decided to relax restrictions on international travel."},
+          {w:"reveal",        p:"v.",   c:"揭示；展现",      d:"To make known something previously secret or unknown",                              e:"The investigation revealed that the company had been falsifying its financial records."},
+          {w:"involve",       p:"v.",   c:"涉及；使参与",    d:"To include something as a necessary part; to engage someone in an activity",        e:"The process involves several stages, each requiring careful planning and execution."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"Kai had a research assistant with him in the village.", a:false},
+      {q:"Kai learned his recording technique from a linguist in Nairobi.", a:true},
+      {q:"Kai abandoned the project when the rain fell for eight days.", a:false},
+      {q:"Kai transferred his handwritten notes to his laptop before leaving.", a:true},
+      {q:"The primary aim of Kai's research was to study changes in agricultural practices.", a:false}
+    ],
+    mcq: [
+      {q:"What was Kai's primary task in the village?",
+       opts:["To teach language skills to younger villagers","To research how oral traditions had changed over three generations","To submit a final report on agricultural history","To locate written archives in a regional library"],
+       ans:1},
+      {q:"How did Kai motivate younger villagers to get involved?",
+       opts:["He offered them financial payment","He showed up consistently and listened, earning their trust","He submitted a formal proposal through the local government","He located a grant that would benefit the village"],
+       ans:1},
+      {q:"Why did Kai cease his morning recording sessions?",
+       opts:["The elders refused further interviews","He was asked to submit partial transcripts instead","He needed to adjust his schedule due to continuous rain","He ran out of recording equipment"],
+       ans:2},
+      {q:"What does the story suggest is the most important skill for field research?",
+       opts:["Technical expertise with recording equipment","The ability to seek funding","Persistence — continuing despite difficulty","Creating a classic academic framework"],
+       ans:2},
+      {q:"What did the language ultimately reveal to Kai?",
+       opts:["That oral traditions were already extinct","That persistence was the skill that amended everything that went wrong","That his research conclusions were wrong","That his specific plan had failed"],
+       ans:1}
+    ],
+    match: {
+      ws:  ["abandon","persist","utilize","amend","reveal"],
+      ds:  ["to stop doing something before it is finished","to continue firmly despite difficulty","to make practical use of something","to make small changes or improvements","to make something previously unknown known"],
+      correct: [0,1,2,3,4]
+    },
+    fill: {
+      sents: [
+        {s:"The ___ aim of the project was to improve access to clean water in rural areas.", w:"primary"},
+        {s:"Students must ___ their final essays by the last Friday of term.", w:"submit"},
+        {s:"The policy was ___ after feedback showed it was not working as intended.", w:"amended"},
+        {s:"The researcher had to ___ her schedule after a key interview was cancelled.", w:"adjust"},
+        {s:"The investigation ___ that the company had been underpaying its workers for years.", w:"revealed"}
+      ],
+      bank: ["primary","submit","amended","adjust","revealed"]
+    },
+    speaking: {
+      qs: [
+        "Describe a time when you had to persist with a task despite obstacles. What kept you going?",
+        "What specific strategies do you use to manage stress when working on a long project?",
+        "If you were designing a research project on a topic you care about, what would your primary research question be?",
+        "Have you ever had to abandon something you started? Looking back, was it the right decision?",
+        "How important is it to involve local communities in research or development projects that affect them?"
+      ],
+      phrases: "<strong>Useful phrases:</strong> &ldquo;the primary aim is to&rdquo; &middot; &ldquo;it involves several stages&rdquo; &middot; &ldquo;adjust the plan according to&rdquo; &middot; &ldquo;reveal the underlying causes&rdquo; &middot; &ldquo;maintain a stable approach&rdquo;"
+    },
+    writing: {
+      en: "Some people believe that academic research should always lead to practical applications. Others argue that pursuing knowledge for its own sake is equally valuable. Discuss both views and give your own opinion.",
+      cn: "有人认为学术研究应该始终服务于实际应用，而另一些人认为为知识本身而探索同样有价值。讨论双方观点并给出你的意见。",
+      hint: "Try to use: academic, research, primary, reveal, persist, utilize, conclusion, topic"
+    },
+    review: [
+      ["academic","学术的；学业的"],["specific","明确的；具体的"],["emphasis","强调；重点"],["category","类别；范畴"],
+      ["definition","定义；解释"],["topic","话题；主题"],["section","章节；部分"],["aspect","方面；层面"],
+      ["classic","经典的；典型的"],["brief","简短的；简要的"],["straightforward","简单明了的"],["conclusion","结论；结尾"],
+      ["create","创造；建立"],["task","任务；工作"],["research","研究；调查"],["project","项目；工程"],
+      ["seek","寻求；探索"],["locate","找到；位于"],["motivate","激励；促动"],["primary","主要的；初级的"],
+      ["final","最终的；最后的"],["utilize","利用；使用"],["vary","变化；不同"],["transfer","转移；传递"],
+      ["stable","稳定的；牢固的"],["persist","坚持；持续"],["abandon","放弃；抛弃"],["amend","修正；改善"],
+      ["submit","提交；递交"],["adjust","调整；校准"],["cease","停止；终止"],["stress","压力；强调"],
+      ["relax","放松；缓和"],["reveal","揭示；展现"],["involve","涉及；使参与"]
+    ],
+    collocations: [
+      ["academic framework","学术框架"],["a specific plan","具体计划"],["place emphasis on","强调"],
+      ["by category","按类别"],["a clear definition","清晰的定义"],["the primary aim","主要目标"],
+      ["submit a report","提交报告"],["motivate students","激励学生"],["utilize resources","利用资源"],
+      ["persist with","坚持……"],["adjust to change","适应变化"],["reveal the truth","揭示真相"],
+      ["involve the community","让社区参与"],["cease operations","停止运营"],["a classic example","经典案例"]
+    ]
+  },
+
+  // ── UNIT 20 ──────────────────────────────────
+  {
+    cats: [
+      {
+        label: "Systems & Structures", words: [
+          {w:"complex",      p:"adj.", c:"复杂的；综合性的", d:"Made up of many interconnected parts; hard to understand or deal with",               e:"The relationship between diet and health is far more complex than most people realise."},
+          {w:"component",    p:"n.",   c:"组成部分；元素",   d:"A part or element of a larger whole",                                                 e:"Communication skills are a key component of any successful management training programme."},
+          {w:"comprehensive",p:"adj.", c:"全面的；综合的",    d:"Covering or including all or nearly all aspects of something",                        e:"A comprehensive review of existing research was carried out before the study began."},
+          {w:"constitute",   p:"v.",   c:"构成；组成",        d:"To make up or form something; to be equal to something",                             e:"What constitutes acceptable evidence varies between different academic disciplines."},
+          {w:"concentrate",  p:"v.",   c:"集中；聚集",        d:"To focus attention or resources on something; to gather in one place",               e:"The government decided to concentrate investment in regions with the highest unemployment rates."},
+          {w:"cooperative",  p:"adj./n.", c:"合作的；合作社", d:"Involving mutual assistance and shared effort; willing to work with others",         e:"A cooperative approach to problem-solving often produces better results than competition."},
+          {w:"contract",     p:"n.",   c:"合同；契约",        d:"A written or spoken agreement with legal force",                                      e:"The construction contract specified that all work must be completed within eighteen months."},
+          {w:"layer",        p:"n.",   c:"层；层次",          d:"A thickness of some material or a level within a complex structure",                 e:"Understanding the issue requires looking at every layer of the social and economic context."},
+          {w:"overlap",      p:"v./n.","c":"重叠；交叉",      d:"To cover part of the same area or period; to have something in common",              e:"The responsibilities of the two departments overlap in areas relating to data management."},
+          {w:"offset",       p:"v.",   c:"抵消；补偿",        d:"To counterbalance or compensate for something",                                      e:"The increase in operating costs was partly offset by improvements in efficiency."},
+          {w:"orient",       p:"v.",   c:"定位；使适应",      d:"To direct or align something towards; to adjust to a new situation",                 e:"The training programme is designed to orient new employees to the company's values."},
+          {w:"adjacent",     p:"adj.", c:"邻近的；相邻的",    d:"Next to or adjoining something else",                                                 e:"The two schools are adjacent to each other, sharing a sports field and library."}
+        ]
+      },
+      {
+        label: "Society & Human Values", words: [
+          {w:"equal",       p:"adj.", c:"平等的；相等的",   d:"Being the same in size, quantity, value, or status; treating everyone fairly",        e:"The constitution guarantees equal rights and protections for all citizens."},
+          {w:"adult",       p:"n.",   c:"成年人；成人",     d:"A person who is fully grown and legally of age",                                       e:"The course is designed for adults who wish to return to formal education."},
+          {w:"affect",      p:"v.",   c:"影响；感动",        d:"To have an effect on; to cause a change in",                                          e:"Rising sea levels will affect low-lying coastal communities across the world."},
+          {w:"aid",         p:"n./v.","c:"援助；帮助",       d:"Help or support; to give assistance",                                                 e:"International aid was dispatched to the region following the earthquake."},
+          {w:"appreciate",  p:"v.",   c:"欣赏；理解；感激",  d:"To recognise the full worth of; to be grateful for",                                  e:"Students are encouraged to appreciate the complexity of issues before forming opinions."},
+          {w:"accommodate", p:"v.",   c:"容纳；适应；迁就",  d:"To provide space for; to adapt to; to take into account the needs of others",        e:"The revised plan was designed to accommodate the concerns of all local stakeholders."},
+          {w:"ensure",      p:"v.",   c:"确保；保证",        d:"To make certain that something happens",                                              e:"Steps must be taken to ensure that no group is unfairly excluded from the process."},
+          {w:"exclude",     p:"v.",   c:"排除；排斥",        d:"To deliberately leave out or prevent from participating",                             e:"The study excluded participants who had prior experience with the treatment."},
+          {w:"diminish",    p:"v.",   c:"减少；降低",        d:"To make or become lesser, smaller, or less important",                               e:"Failure to address the issue now will only diminish our chances of solving it later."},
+          {w:"dramatic",    p:"adj.", c:"戏剧性的；显著的",  d:"Sudden and striking; causing great excitement or surprise",                           e:"The intervention led to a dramatic improvement in patient recovery rates."},
+          {w:"circumstance",p:"n.",   c:"情况；环境；条件",  d:"A fact or condition connected with an event; the conditions affecting a situation",  e:"Under normal circumstances, such a proposal would have been rejected immediately."},
+          {w:"philosophy",  p:"n.",   c:"哲学；人生观",      d:"The study of fundamental questions; a system of guiding principles or beliefs",      e:"The company's philosophy is based on the belief that quality and sustainability go hand in hand."}
+        ]
+      },
+      {
+        label: "Language, Ideas & Expression", words: [
+          {w:"area",      p:"n.",   c:"区域；领域",       d:"A region or part of a place; a subject or field",                                      e:"The research focused on a specific area of northern coastal wetlands."},
+          {w:"denote",    p:"v.",   c:"表示；象征",        d:"To be a sign or symbol of; to mean or represent",                                     e:"The asterisk in the text denotes that a footnote is available at the bottom of the page."},
+          {w:"similar",   p:"adj.", c:"相似的；类似的",   d:"Resembling without being identical; of the same kind",                                 e:"The two studies reached similar conclusions, though they used different methodologies."},
+          {w:"sum",       p:"n.",   c:"总和；金额",        d:"The total amount resulting from the addition of two or more numbers; an amount of money", e:"The sum of all individual contributions exceeded the original fundraising target."},
+          {w:"trace",     p:"v.",   c:"追溯；描绘",        d:"To find or follow the course or origin of something; to draw or copy carefully",      e:"Researchers were able to trace the origin of the outbreak to a single food processing plant."},
+          {w:"via",       p:"prep.","c":"经由；通过",      d:"By way of; through the means of",                                                     e:"The document can be accessed via the university library's online portal."},
+          {w:"accompany", p:"v.",   c:"陪伴；伴随",        d:"To go somewhere with someone; to occur at the same time as",                          e:"The report was accompanied by a set of detailed statistical appendices."},
+          {w:"chart",     p:"v./n.","c":"绘制；图表",      d:"To record or follow the development of something; a visual display of data",          e:"The report charts the progress of the project from its initial stages to completion."},
+          {w:"clause",    p:"n.",   c:"条款；从句",        d:"A section of a legal document; a grammatical unit containing a subject and verb",     e:"A key clause in the agreement requires both parties to submit to independent arbitration."},
+          {w:"assemble",  p:"v.",   c:"集合；收集",        d:"To gather together in one place; to fit together the parts of something",             e:"The committee was assembled to review all proposals before the deadline."},
+          {w:"option",    p:"n.",   c:"选项；选择权",      d:"A thing that may be chosen; a right to choose",                                       e:"Students are given several options for how to complete the final assignment."}
+        ]
+      }
+    ],
+    tf: [
+      {q:"The Koro River Delta covers more than eight thousand square kilometres.", a:true},
+      {q:"Dr Selin was the lead economist on the delta governance panel.", a:false},
+      {q:"The cooperative model proposed by the panel would exclude industrial firms.", a:false},
+      {q:"The panel produced a plain-language version of its recommendations.", a:true},
+      {q:"The philosopher argued that complexity justified limiting public participation.", a:false}
+    ],
+    mcq: [
+      {q:"What was the core issue the panel was trying to resolve?",
+       opts:["How to build a dam across the Koro River","How to constitute a fair governance framework for the delta","How to remove industrial firms from the region","How to transfer ownership of the wetlands to local communities"],
+       ans:1},
+      {q:"What does the story say about the 'sum of individual benefits'?",
+       opts:["It is always greater than the collective good","It automatically constitutes a collective good","It does not automatically constitute a collective good","It can be calculated via a simple formula"],
+       ans:2},
+      {q:"Why did the panel choose to accompany its technical report with a plain-language document?",
+       opts:["Because the technical report was too dramatic","So that any adult could read and understand the recommendations","To ensure the contract could be published via national media","To offset the complex legal clauses with simpler alternatives"],
+       ans:1},
+      {q:"What does 'constitute' mean as used in the story?",
+       opts:["To divide into separate layers","To make up or form something","To chart the progress of something","To accompany someone on a journey"],
+       ans:1},
+      {q:"What option did the document give to communities?",
+       opts:["The option to abandon the agreement","The option to appeal any decision that affected them","The option to exclude industrial firms from the contract","The option to transfer ownership of the land"],
+       ans:1}
+    ],
+    match: {
+      ws:  ["constitute","offset","denote","diminish","accommodate"],
+      ds:  ["to make up or form something; to equal","to counterbalance or compensate for something","to be a sign or symbol of; to mean","to make or become less important or smaller","to adapt or make room for the needs of others"],
+      correct: [0,1,2,3,4]
+    },
+    fill: {
+      sents: [
+        {s:"The two departments have ___ responsibilities in the area of data governance.", w:"overlapping"},
+        {s:"The organisation's ___ is that all voices deserve to be heard.", w:"philosophy"},
+        {s:"The agreement includes a ___ requiring disputes to be settled through mediation.", w:"clause"},
+        {s:"Researchers were able to ___ the tradition back to a community founded in the eighteenth century.", w:"trace"},
+        {s:"The panel was ___ to review the proposal before any decision was made.", w:"assembled"}
+      ],
+      bank: ["overlapping","philosophy","clause","trace","assembled"]
+    },
+    speaking: {
+      qs: [
+        "Think of a complex issue in your country or community. What are the different layers of the problem?",
+        "Do you think legal contracts are always necessary to ensure fair agreements, or can trust be enough?",
+        "When different groups have competing needs, how should decision-makers decide whose interests to prioritise?",
+        "Can you give an example of a dramatic change — positive or negative — that happened in your community or country?",
+        "What does it mean to truly appreciate the views of people whose circumstances are very different from your own?"
+      ],
+      phrases: "<strong>Useful phrases:</strong> &ldquo;a complex set of factors&rdquo; &middot; &ldquo;accommodate the needs of&rdquo; &middot; &ldquo;ensure equal access to&rdquo; &middot; &ldquo;trace the origin of&rdquo; &middot; &ldquo;constitute a major challenge&rdquo;"
+    },
+    writing: {
+      en: "When large development projects affect local communities, to what extent should those communities have the right to influence or block the project? Discuss and give your own opinion.",
+      cn: "当大型开发项目影响到当地社区时，这些社区应在多大程度上拥有影响或阻止项目的权利？讨论并给出你的意见。",
+      hint: "Try to use: affect, ensure, accommodate, exclude, equal, constitute, cooperative, option"
+    },
+    review: [
+      ["complex","复杂的；综合性的"],["component","组成部分"],["comprehensive","全面的；综合的"],["constitute","构成；组成"],
+      ["concentrate","集中；聚集"],["cooperative","合作的；合作社"],["contract","合同；契约"],["layer","层；层次"],
+      ["overlap","重叠；交叉"],["offset","抵消；补偿"],["orient","定位；使适应"],["adjacent","邻近的；相邻的"],
+      ["equal","平等的；相等的"],["adult","成年人；成人"],["affect","影响；感动"],["aid","援助；帮助"],
+      ["appreciate","欣赏；理解"],["accommodate","容纳；适应"],["ensure","确保；保证"],["exclude","排除；排斥"],
+      ["diminish","减少；降低"],["dramatic","戏剧性的；显著的"],["circumstance","情况；环境"],["philosophy","哲学；人生观"],
+      ["area","区域；领域"],["denote","表示；象征"],["similar","相似的；类似的"],["sum","总和；金额"],
+      ["trace","追溯；描绘"],["via","经由；通过"],["accompany","陪伴；伴随"],["chart","绘制；图表"],
+      ["clause","条款；从句"],["assemble","集合；收集"],["option","选项；选择权"]
+    ],
+    collocations: [
+      ["a complex issue","复杂问题"],["a key component","关键组成部分"],["a comprehensive review","全面审查"],
+      ["constitute a risk","构成风险"],["concentrate on","专注于"],["a cooperative approach","合作方式"],
+      ["under the contract","根据合同"],["layer upon layer","层层叠叠"],["areas of overlap","重叠领域"],
+      ["offset the cost","抵消成本"],["ensure equal access","确保平等获取"],["accommodate concerns","顾及关切"],
+      ["dramatic improvement","显著改善"],["trace the origin","追溯起源"],["via the internet","通过互联网"]
+    ]
+  }
+];
+
+// ── ENGINE ────────────────────────────────────
+let matchSel = [null, null];
+
+function switchUnit(u) {
+  document.querySelectorAll('.unit-panel').forEach((p,i)=>{ p.classList.toggle('active',i===u); });
+  document.querySelectorAll('.unit-btn').forEach((b,i)=>{ b.classList.toggle('active',i===u); });
+  buildVocab(u);
+}
+
+function buildVocab(u) {
+  const d = DATA[u]; const el = document.getElementById('vg'+u);
+  if (!el||el.dataset.built) return; el.dataset.built=1;
+  let h='';
+  d.cats.forEach(cat=>{
+    h+=`<div class="cat-label">${cat.label}</div>`;
+    cat.words.forEach(w=>{
+      h+=`<div class="vocab-item"><div class="vocab-head" onclick="toggleV(this)">
+        <span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span>
+        <span class="v-cn">${w.c}</span><span class="v-toggle">▸ expand</span></div>
+        <div class="vocab-body"><p class="v-meaning">${w.d}</p>
+        <div class="v-eg">${w.e}</div></div></div>`;
+    });
+  });
+  el.innerHTML=h;
+}
+function toggleV(h){
+  const b=h.nextElementSibling; const open=b.classList.toggle('open');
+  h.querySelector('.v-toggle').textContent=open?'▾ close':'▸ expand';
+}
+
+function buildTF(u){
+  const el=document.getElementById('tf'+u); if(!el||el.dataset.built)return; el.dataset.built=1;
+  let h='';
+  DATA[u].tf.forEach((q,i)=>{
+    h+=`<div class="tf-row"><span class="tf-q">${i+1}. ${q.q}</span>
+      <div class="tf-btns">
+        <button class="tf-btn" onclick="chkTF(this,${u},${i},true)">True</button>
+        <button class="tf-btn" onclick="chkTF(this,${u},${i},false)">False</button>
+      </div><span class="tf-result" id="tfr${u}_${i}"></span></div>`;
+  });
+  el.innerHTML=h;
+}
+function chkTF(btn,u,i,ans){
+  const correct=DATA[u].tf[i].a;
+  const row=btn.closest('.tf-row');
+  row.querySelectorAll('.tf-btn').forEach(b=>b.disabled=true);
+  const ok=(ans===correct);
+  btn.classList.add(ok?'correct':'wrong');
+  if(!ok){ row.querySelectorAll('.tf-btn').forEach(b=>{ if((b.textContent==='True')===correct) b.classList.add('correct'); }); }
+  document.getElementById('tfr'+u+'_'+i).textContent=ok?'✓ Correct':'✗ Incorrect';
+  document.getElementById('tfr'+u+'_'+i).style.color=ok?'var(--correct)':'var(--wrong)';
+}
+
+function buildMC(u){
+  const el=document.getElementById('mc'+u); if(!el||el.dataset.built)return; el.dataset.built=1;
+  let h='';
+  DATA[u].mcq.forEach((q,i)=>{
+    h+=`<div class="mc-block"><p class="mc-q">${i+1}. ${q.q}</p><div class="mc-opts">`;
+    q.opts.forEach((o,j)=>{ h+=`<button class="mc-opt" onclick="chkMC(this,${u},${i},${j})">${o}</button>`; });
+    h+=`</div></div>`;
+  });
+  el.innerHTML=h;
+}
+function chkMC(btn,u,qi,oi){
+  const correct=DATA[u].mcq[qi].ans;
+  const block=btn.closest('.mc-block');
+  block.querySelectorAll('.mc-opt').forEach(b=>b.disabled=true);
+  const ok=(oi===correct);
+  btn.classList.add(ok?'correct':'wrong');
+  if(!ok) block.querySelectorAll('.mc-opt')[correct].classList.add('correct');
+}
+
+function buildMatch(u){
+  const el=document.getElementById('match'+u); if(!el||el.dataset.built)return; el.dataset.built=1;
+  const m=DATA[u].match;
+  const defs=[...m.ds]; const defOrder=defs.map((_,i)=>i).sort(()=>Math.random()-.5);
+  let h='<div class="match-grid">';
+  m.ws.forEach((w,i)=>{ h+=`<button class="match-word" id="mw${u}_${i}" onclick="selMatch(${u},${i},'w')">${w}</button>`; });
+  defOrder.forEach(di=>{ h+=`<button class="match-def" id="md${u}_${di}" onclick="selMatch(${u},${di},'d')">${m.ds[di]}</button>`; });
+  h+='</div>';
+  el.innerHTML=h;
+}
+function selMatch(u,idx,type){
+  const S=matchSel;
+  if(type==='w'){ S[0]=idx; document.querySelectorAll(`[id^="mw${u}_"]`).forEach(b=>b.classList.remove('sel')); document.getElementById('mw'+u+'_'+idx).classList.add('sel'); }
+  else { S[1]=idx; }
+  if(S[0]!==null&&S[1]!==null){
+    const m=DATA[u].match; const wi=S[0]; const di=S[1];
+    const ok=(m.correct[wi]===di);
+    const wb=document.getElementById('mw'+u+'_'+wi); const db=document.getElementById('md'+u+'_'+di);
+    if(ok){ wb.classList.remove('sel'); wb.classList.add('done'); db.classList.add('done'); }
+    else { db.classList.add('err'); setTimeout(()=>db.classList.remove('err'),600); }
+    S[0]=null; S[1]=null;
+  }
+}
+
+function buildFib(u){
+  const el=document.getElementById('fib'+u); if(!el||el.dataset.built)return; el.dataset.built=1;
+  const f=DATA[u].fill;
+  let h='';
+  f.sents.forEach((s,i)=>{ h+=`<div class="fib-row"><span class="fib-num">${i+1}.</span> ${s.s.replace('___',`<input class="fib-input" id="fi${u}_${i}" placeholder="…">`)} </div>`; });
+  el.innerHTML=h;
+  const chips=document.getElementById('chips'+u);
+  chips.innerHTML=f.bank.map((w,i)=>`<span class="chip" id="chip${u}_${i}" onclick="useChip(${u},${i},'${w}')">${w}</span>`).join('');
+}
+function useChip(u,ci,w){
+  const chip=document.getElementById('chip'+u+'_'+ci);
+  const inputs=document.querySelectorAll(`[id^="fi${u}_"]`);
+  for(let inp of inputs){ if(!inp.value){ inp.value=w; chip.classList.add('used'); return; } }
+}
+function chkFib(u){
+  const f=DATA[u].fill; let cor=0;
+  f.sents.forEach((s,i)=>{
+    const inp=document.getElementById('fi'+u+'_'+i);
+    const ok=inp.value.trim().toLowerCase()===s.w.toLowerCase();
+    inp.classList.remove('correct','wrong'); inp.classList.add(ok?'correct':'wrong');
+    if(ok) cor++;
+  });
+  const score=document.getElementById('fib'+u+'-s');
+  score.innerHTML=`<div class="score-bar${cor===f.sents.length?' good':''}"><span class="score-num">${cor}/${f.sents.length}</span><span class="score-label">${cor===f.sents.length?'Perfect!':'Keep trying — check the highlighted answers.'}</span></div>`;
+}
+function rstFib(u){
+  const f=DATA[u].fill;
+  f.sents.forEach((_,i)=>{ const inp=document.getElementById('fi'+u+'_'+i); inp.value=''; inp.classList.remove('correct','wrong'); });
+  document.querySelectorAll(`#chips${u} .chip`).forEach(c=>c.classList.remove('used'));
+  document.getElementById('fib'+u+'-s').innerHTML='';
+}
+
+function buildSpeak(u){
+  const el=document.getElementById('spk'+u); if(el.dataset.built)return; el.dataset.built=1;
+  const s=DATA[u].speaking;
+  el.innerHTML=s.qs.map((q,i)=>`<div class="speak-card"><span class="speak-num">${i+1}.</span><span>${q}</span></div>`).join('');
+  document.getElementById('ph'+u).innerHTML=s.phrases;
+}
+function buildWrite(u){
+  const w=DATA[u].writing;
+  const en=document.getElementById('wp'+u+'en'); if(en.dataset.built)return; en.dataset.built=1;
+  en.textContent=w.en;
+  document.getElementById('wp'+u+'cn').textContent=w.cn;
+  document.getElementById('wp'+u+'hint').textContent=w.hint;
+  const ta=document.getElementById('wr'+u);
+  const ctr=document.getElementById('wc'+u);
+  ta.addEventListener('input',()=>{ const n=ta.value.trim().split(/\s+/).filter(Boolean).length; ctr.textContent=n+' word'+(n===1?'':'s'); });
+}
+function buildReview(u){
+  const el=document.getElementById('rev'+u); if(el.dataset.built)return; el.dataset.built=1;
+  const d=DATA[u];
+  el.innerHTML=d.review.map(r=>`<div class="review-item"><span class="r-en">${r[0]}</span><span class="r-cn">${r[1]}</span></div>`).join('');
+  document.getElementById('col'+u).innerHTML=d.collocations.map(c=>`<div class="colloc-item"><span class="c-en">${c[0]}</span> &nbsp;<span class="c-cn">${c[1]}</span></div>`).join('');
+}
+
+function switchPart(u, p) {
+  const panels = document.querySelectorAll(`#unit${u} .part-panel`);
+  const btns   = document.querySelectorAll(`#pnav${u} .part-btn`);
+  panels.forEach((el,i)=>el.classList.toggle('active',i===p));
+  btns.forEach((el,i)=>el.classList.toggle('active',i===p));
+  if(p===0) buildVocab(u);
+  if(p===2){ buildTF(u); buildMC(u); }
+  if(p===3){ buildMatch(u); buildFib(u); }
+  if(p===4) buildSpeak(u);
+  if(p===5) buildWrite(u);
+  if(p===6) buildReview(u);
+}
+
+// init
+buildVocab(0);
+</script>
+</body>
+</html>
