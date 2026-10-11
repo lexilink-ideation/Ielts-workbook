@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Vocabulary — Page 2 (A) — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --gold:#C9930A;--gold-light:#FDF3D8;--gold-pale:#FFFBF0;
+  --orange:#D4620A;--orange-pale:#FFF4EC;--orange-light:#F8D5B8;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:linear-gradient(135deg,#C4620A 0%,#8B3A00 100%);color:#fff;padding:2.5rem 2rem 2rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.6rem}
+.cover-title{font-size:clamp(22px,5vw,34px);font-weight:600;line-height:1.2;margin-bottom:.4rem}
+.cover-sub{font-size:14px;opacity:.8;margin-bottom:1.5rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.tab-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap;border-bottom:2px solid var(--border);padding-bottom:.75rem}
+.tab-btn{padding:.45rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.tab-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.tab-btn.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+/* Vocab list */
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.4rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.6rem;padding:.55rem .9rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:14px;font-weight:600;color:var(--teal);min-width:150px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .4rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.65rem .9rem;border-top:1px solid var(--border);background:#fff}
+.vocab-body.open{display:block}
+.v-def{font-size:13px;color:var(--muted);margin-bottom:.4rem}
+.v-eg{font-size:13px;font-style:italic;padding:.4rem .7rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+/* Matching */
+.match-round{margin-bottom:1.5rem}
+.match-round-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-pale);border:1px solid var(--orange-light);border-radius:8px;padding:.3rem .75rem;margin-bottom:.75rem;display:inline-block}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+@media(max-width:560px){.match-grid{grid-template-columns:1fr}}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%;line-height:1.4}
+.match-def:hover:not(.done){background:var(--orange-pale);border-color:var(--orange-light)}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.match-score{font-size:13px;color:var(--muted);margin-top:.5rem;padding:.4rem .75rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.match-score.perfect{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);font-weight:600}
+/* FIB */
+.fib-bank{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem;padding:.6rem .75rem;background:var(--orange-pale);border-radius:8px;border:1px solid var(--orange-light)}
+.fib-chip{display:inline-block;padding:.22rem .65rem;background:var(--surface);color:var(--orange);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--orange-light);transition:all .15s}
+.fib-chip:hover{background:var(--orange);color:#fff}
+.fib-chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.5rem 0;border-bottom:1px solid var(--border);line-height:1.7}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0;font-size:13px}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:140px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--orange)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+/* Scramble */
+.scram-block{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.scram-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.scram-num{font-size:12px;font-weight:600;color:var(--orange);margin-bottom:.4rem}
+.scram-hint{font-size:13px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.scram-pool{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:36px;padding:.4rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.scram-ans{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:40px;padding:.4rem;background:var(--orange-pale);border-radius:8px;border:2px dashed var(--orange-light)}
+.scram-ans-label{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.05em;width:100%;margin-bottom:.2rem}
+.scram-chip{padding:.28rem .65rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;user-select:none}
+.scram-chip:hover{background:var(--teal-pale);border-color:var(--teal-light)}
+.scram-chip.in-ans{background:var(--teal);color:#fff;border-color:var(--teal)}
+.scram-chip.in-ans:hover{background:var(--teal-dark)}
+.scram-result{font-size:13px;padding:.4rem .75rem;border-radius:6px;margin-top:.3rem;display:none}
+.scram-result.correct{background:var(--correct-bg);color:var(--correct);border:1px solid var(--correct);display:block}
+.scram-result.wrong{background:var(--wrong-bg);color:var(--wrong);border:1px solid var(--wrong);display:block}
+/* Shared */
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--orange);color:#fff;border:1px solid var(--orange)}
+.btn-primary:hover{background:#B5520A;border-color:#B5520A}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:18px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.progress-tag{font-size:11px;background:var(--orange-pale);color:var(--orange);border:1px solid var(--orange-light);border-radius:20px;padding:.2rem .6rem;font-weight:500;display:inline-block;margin-bottom:.75rem}
+@media(max-width:600px){.card{padding:1rem}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">Daily Vocabulary &mdash; Page 2</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Daily Vocabulary Practice &nbsp; 每日词汇练习</div>
+  <div class="cover-title">Page 2 &nbsp;&mdash;&nbsp; A-words (acceptable → action)</div>
+  <div class="cover-sub">9400-word IELTS Vocabulary Book &nbsp;&middot;&nbsp; Sequential Order</div>
+  <div class="cover-badges">
+    <span class="badge">52 words</span>
+    <span class="badge">Meaning Matching</span>
+    <span class="badge">Fill in the Blanks</span>
+    <span class="badge">Scrambled Sentences</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab(0)">📖 Vocabulary</button>
+    <button class="tab-btn" onclick="switchTab(1)">🔗 Matching</button>
+    <button class="tab-btn" onclick="switchTab(2)">✏️ Fill in Blanks</button>
+    <button class="tab-btn" onclick="switchTab(3)">🔀 Scrambled</button>
+  </div>
+
+  <!-- TAB 0: VOCABULARY -->
+  <div class="tab-panel active" id="tab0">
+    <div class="card">
+      <div class="card-title">All words — click to expand definition &nbsp; 点击查看释义</div>
+      <div class="card-sub">52 words from page 2 of the 9400-word book (words 55–106)</div>
+      <div id="vocabList"></div>
+    </div>
+  </div>
+
+  <!-- TAB 1: MATCHING -->
+  <div class="tab-panel" id="tab1">
+    <div class="card">
+      <div class="card-title">Meaning Matching &nbsp; 词义配对 &nbsp; (English → English)</div>
+      <div class="card-sub">Click a word on the left, then click its matching definition on the right.</div>
+
+      <div class="match-round" id="mr0">
+        <div class="match-round-label">Round 1 &nbsp; of 3</div>
+        <div class="match-grid" id="mg0"></div>
+        <div class="match-score" id="ms0"></div>
+      </div>
+
+      <div class="match-round" id="mr1">
+        <div class="match-round-label">Round 2 &nbsp; of 3</div>
+        <div class="match-grid" id="mg1"></div>
+        <div class="match-score" id="ms1"></div>
+      </div>
+
+      <div class="match-round" id="mr2">
+        <div class="match-round-label">Round 3 &nbsp; of 3</div>
+        <div class="match-grid" id="mg2"></div>
+        <div class="match-score" id="ms2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 2: FILL IN BLANKS -->
+  <div class="tab-panel" id="tab2">
+    <div id="fibGroup0"></div>
+    <div id="fibGroup1"></div>
+    <div id="fibGroup2"></div>
+  </div>
+
+  <!-- TAB 3: SCRAMBLED -->
+  <div class="tab-panel" id="tab3">
+    <div class="card">
+      <div class="card-title">Scrambled Sentences &nbsp; 重排句子</div>
+      <div class="card-sub">Click words from the pool to build the correct sentence. Click a placed word to return it.</div>
+      <div id="scrambleSents"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── WORD DATA ─────────────────────────────────────────────────────────
+const WORDS = [
+  {w:"acceptable",    p:"adj.",       c:"可接受的；合意的",         d:"Good enough to be agreed to or approved of; satisfying a required standard",           e:"The examiner felt that the candidate's level of English was acceptable for the role."},
+  {w:"acceptance",    p:"n.",         c:"接受；认可",               d:"The act of agreeing to receive or believe something; approval or willingness to tolerate", e:"Her acceptance of the scholarship was announced at the ceremony."},
+  {w:"access",        p:"n./vt.",     c:"通道；入口；存取",         d:"A way of approaching or entering a place; the ability to use or retrieve something",     e:"Millions of people still lack access to clean drinking water."},
+  {w:"accessible",    p:"adj.",       c:"可接近的；易接触的",       d:"Able to be reached, entered, or used; easy to approach or understand",                  e:"The new ramp made the building accessible to wheelchair users."},
+  {w:"accessory",     p:"n.",         c:"附件；同谋",               d:"An extra item that adds to something's usefulness; a person who assists in a crime",     e:"She was charged as an accessory to the robbery for driving the getaway car."},
+  {w:"accident",      p:"n.",         c:"事故；意外",               d:"An unexpected event that causes damage, injury, or harm; a matter of chance",           e:"The accident on the motorway caused traffic delays of several hours."},
+  {w:"accidental",    p:"adj.",       c:"偶然的；意外的",           d:"Happening by chance and not planned or intended",                                        e:"The discovery of penicillin was largely accidental."},
+  {w:"accidentally",  p:"adv.",       c:"偶然地；无意中",           d:"Without intention; by chance rather than on purpose",                                    e:"She accidentally deleted the entire document before saving it."},
+  {w:"acclaim",       p:"n./v.",      c:"喝彩；称赞",               d:"Enthusiastic and public approval or praise; to praise publicly and enthusiastically",   e:"The novel received widespread acclaim from critics around the world."},
+  {w:"accommodate",   p:"vt.",        c:"提供住宿；容纳；使适应",   d:"To provide a place for someone to stay; to have space for; to adapt to suit needs",    e:"The conference centre can accommodate up to five hundred delegates."},
+  {w:"accommodation", p:"n.",         c:"住宿；膳宿",               d:"A place to stay, especially a room or building; lodging or housing",                    e:"Finding affordable accommodation in the city centre proved very difficult."},
+  {w:"accompaniment", p:"n.",         c:"伴奏；伴随物",             d:"Musical support played alongside a soloist; something that goes with or accompanies",   e:"The pianist provided a gentle accompaniment to the singer's performance."},
+  {w:"accompany",     p:"vt.",        c:"陪伴；伴随；伴奏",         d:"To go somewhere with someone; to exist alongside or be present with something",         e:"A detailed map should accompany any application for planning permission."},
+  {w:"accomplish",    p:"vt.",        c:"完成；实现",               d:"To achieve or successfully complete something through effort",                           e:"It is difficult to accomplish meaningful reform without broad public support."},
+  {w:"accomplishment",p:"n.",         c:"成就；完成；才能",         d:"Something achieved successfully; a skill or ability one has developed",                 e:"Winning three Olympic medals was a remarkable accomplishment."},
+  {w:"accord",        p:"n./v.",      c:"一致；协议；授予",         d:"Agreement or harmony; a formal agreement between parties; to grant or give",            e:"The two countries reached a peace accord after months of negotiations."},
+  {w:"accordance",    p:"n.",         c:"一致；符合",               d:"Agreement or conformity with a rule, standard, or someone's wishes",                   e:"All exports must be handled in accordance with international trade regulations."},
+  {w:"according",     p:"adv./adj.",  c:"按照；据……所说",           d:"As stated or reported by; in a manner that corresponds to",                             e:"According to the latest data, unemployment has fallen for the third consecutive month."},
+  {w:"accordingly",   p:"adv.",       c:"因此；相应地",             d:"In a way that is appropriate to the situation; as a result; therefore",                 e:"The budget was cut, and spending was reduced accordingly."},
+  {w:"account",       p:"n./v.",      c:"账目；叙述；说明",         d:"A record of money received and spent; a description or explanation of events",          e:"Witnesses gave conflicting accounts of what happened at the scene."},
+  {w:"accountant",    p:"n.",         c:"会计师",                   d:"A professional who maintains and inspects financial accounts",                           e:"The company hired an accountant to review its tax records."},
+  {w:"accounting",    p:"n.",         c:"会计学；会计",             d:"The practice or profession of maintaining financial records and preparing reports",       e:"She studied accounting at university before joining the finance department."},
+  {w:"accrue",        p:"v.",         c:"产生；积累",               d:"To increase or accumulate naturally over time; to come about as a natural result",      e:"Interest will accrue on any unpaid balance at an annual rate of five percent."},
+  {w:"accrued",       p:"adj.",       c:"增值的；应付的",           d:"Accumulated over a period of time; due but not yet paid",                               e:"The accrued interest on the loan had to be settled before the account could be closed."},
+  {w:"accumulate",    p:"v.",         c:"积累；积聚",               d:"To gradually gather or build up a large amount of something over time",                 e:"Over decades, the organisation accumulated a vast archive of historical documents."},
+  {w:"accumulation",  p:"n.",         c:"积累；积聚的事物",         d:"The process of gathering things; a mass of collected items or amounts",                 e:"The accumulation of evidence eventually led to the suspect's conviction."},
+  {w:"accumulative",  p:"adj.",       c:"积累的；渐增的",           d:"Increasing gradually by successive additions; growing over time",                       e:"The accumulative effect of daily exercise became visible after several months."},
+  {w:"accuracy",      p:"n.",         c:"准确性；精确度",           d:"The quality of being correct, precise, and free from error",                           e:"The accuracy of the data collected in the survey was later called into question."},
+  {w:"accurate",      p:"adj.",       c:"准确的；精确的",           d:"Correct in every detail; exactly right; free from errors or mistakes",                 e:"Historians must rely on accurate records when reconstructing past events."},
+  {w:"accurately",    p:"adv.",       c:"准确地；精确地",           d:"In an exact and correct way; without mistakes or errors",                               e:"The machine can measure temperature accurately to within one tenth of a degree."},
+  {w:"accusation",    p:"n.",         c:"控告；指控",               d:"A charge or claim that someone has done something wrong or illegal",                   e:"The politician strongly denied the accusation of taking bribes."},
+  {w:"accuse",        p:"vt.",        c:"控告；指责",               d:"To charge a person with wrongdoing; to blame someone for a fault or crime",             e:"The report stopped short of accusing any individual directly."},
+  {w:"accustom",      p:"vt.",        c:"使习惯；使适应",           d:"To make someone familiar or comfortable with something through repeated exposure",      e:"It takes time to accustom yourself to working in a completely different environment."},
+  {w:"ache",          p:"n./vi.",     c:"疼痛；酸痛",               d:"A continuous dull pain in a part of the body; to feel such persistent pain",           e:"After the long hike, every muscle in her body began to ache."},
+  {w:"achieve",       p:"vt.",        c:"完成；达到；实现",         d:"To successfully reach a goal or complete a task through effort and skill",               e:"Consistent practice is the most effective way to achieve fluency in a language."},
+  {w:"achievement",   p:"n.",         c:"成就；成绩；完成",         d:"A thing done successfully with effort and skill; the process of achieving something",   e:"Earning a place at a top university was the greatest achievement of his school career."},
+  {w:"aching",        p:"adj.",       c:"疼痛的；渴望的",           d:"Causing or experiencing a continuous dull pain; filled with longing",                  e:"She sat down to rest her aching feet after hours of walking."},
+  {w:"acid",          p:"n./adj.",    c:"酸；酸性的；尖刻的",       d:"A corrosive substance with a pH below seven; having a sharp, sour taste or tone",      e:"The acid in the rain gradually damaged the surface of the stone statues."},
+  {w:"acidity",       p:"n.",         c:"酸度；酸性",               d:"The level of acid present in a substance; the state or quality of being acidic",       e:"High acidity in the soil prevented certain crops from growing in the region."},
+  {w:"acknowledge",   p:"vt.",        c:"承认；致谢；确认收到",     d:"To accept or admit the existence of something; to express gratitude or confirm receipt", e:"The company eventually acknowledged that its product had serious safety flaws."},
+  {w:"acknowledgment",p:"n.",         c:"承认；致谢；回执",         d:"Recognition of something as true; an expression of thanks; a confirmation of receipt", e:"The acknowledgment of her contribution was printed in the book's preface."},
+  {w:"acquaint",      p:"vt.",        c:"使熟悉；使了解",           d:"To make someone familiar with a person, place, or piece of information",               e:"New employees are given a tour to acquaint them with the office facilities."},
+  {w:"acquaintance",  p:"n.",         c:"相识；熟人；了解",         d:"A person one knows slightly but not well; familiarity with something gained through experience", e:"She was introduced to a business acquaintance at the networking event."},
+  {w:"acquainted",    p:"adj.",       c:"熟悉的；认识的",           d:"Familiar with or having knowledge of something or someone",                            e:"He was not acquainted with the local customs when he first arrived."},
+  {w:"acquire",       p:"vt.",        c:"获得；取得",               d:"To come to have or obtain something, especially through effort or experience",          e:"It takes years of practice to acquire a deep understanding of music theory."},
+  {w:"acquisition",   p:"n.",         c:"获得；获得物",             d:"The process of obtaining something; something that has been obtained or bought",        e:"The museum's latest acquisition was a rare seventeenth-century painting."},
+  {w:"acre",          p:"n.",         c:"英亩",                     d:"A unit of land area equal to approximately 4,047 square metres; a piece of land",       e:"The farm covered over three hundred acres of rolling countryside."},
+  {w:"acrobat",       p:"n.",         c:"杂技演员；特技演员",       d:"A performer who does gymnastic or balancing acts requiring great skill and agility",    e:"The acrobat balanced on a thin wire high above the audience without any safety net."},
+  {w:"acrobatics",    p:"n.",         c:"杂技；体操",               d:"Gymnastic feats and exercises requiring skill, balance, and agility",                  e:"The display of acrobatics left the audience breathless with admiration."},
+  {w:"across",        p:"prep./adv.", c:"横过；越过；在对面",       d:"From one side to the other; at or to the other side of; throughout",                   e:"The effects of the new tax policy were felt across all sectors of the economy."},
+  {w:"act",           p:"n./v.",      c:"行为；法令；表演；行动",   d:"A thing done; a section of a play; a formal law; to take action or perform",           e:"The government acted swiftly to contain the outbreak before it spread further."},
+  {w:"action",        p:"n.",         c:"行动；措施；战斗；作用",   d:"The process of doing something to achieve an aim; combat; the way something works",    e:"The charity called for immediate action to address the shortage of clean water."}
+];
+
+// ─── MATCHING DATA ──────────────────────────────────────────────────────
+const MATCH_ROUNDS = [
+  {
+    pairs: [
+      ["access",         "a way of approaching a place; the ability to use or retrieve something"],
+      ["accidental",     "happening by chance and not planned or intended"],
+      ["accommodate",    "to provide space or lodging for; to adapt to suit different needs"],
+      ["accomplishment", "something achieved successfully; a skill one has developed"],
+      ["accord",         "agreement or harmony; a formal agreement between parties"],
+      ["accuracy",       "the quality of being correct and precise in every detail"],
+      ["achieve",        "to successfully reach a goal through effort and skill"],
+      ["action",         "the process of doing something to achieve an aim"]
+    ]
+  },
+  {
+    pairs: [
+      ["acceptable",    "good enough to be approved of; meeting a required standard"],
+      ["acclaim",       "enthusiastic and public approval or praise for someone's work"],
+      ["accompany",     "to go somewhere with someone; to exist alongside something"],
+      ["account",       "a record of money or events; an explanation of something"],
+      ["accumulate",    "to gradually gather or build up a large amount over time"],
+      ["acquaintance",  "a person one knows slightly; familiarity gained through experience"],
+      ["acquire",       "to come to have or obtain something through effort"],
+      ["across",        "from one side to the other; throughout a wide area"]
+    ]
+  },
+  {
+    pairs: [
+      ["accessory",    "an extra item that enhances something; a person who assists in a crime"],
+      ["accident",     "an unexpected event that causes damage or injury"],
+      ["accrue",       "to increase or accumulate naturally over a period of time"],
+      ["accuse",       "to charge a person with wrongdoing; to blame for a fault"],
+      ["ache",         "a continuous dull pain; to feel persistent discomfort"],
+      ["acknowledge",  "to accept that something exists or is true; to express thanks"],
+      ["acid",         "a corrosive substance with a low pH; sharp or biting in tone"],
+      ["act",          "a thing done; a section of a play; to take action"]
+    ]
+  }
+];
+
+// ─── FILL IN BLANKS DATA ────────────────────────────────────────────────
+// Root-family deduplication applied:
+// acceptable & acceptance kept (adj/n, different uses)
+// access & accessible kept (n/vt vs adj, different uses)
+// accident kept (not accidental/accidentally)
+// accommodate kept (not accommodation)
+// accompany kept (not accompaniment)
+// accomplish kept (not accomplishment)
+// accord & accordingly kept (most distinct from root family)
+// account kept (not accountant/accounting)
+// accrue kept (not accrued)
+// accumulate kept (not accumulation/accumulative)
+// accurate kept (not accuracy/accurately)
+// accuse kept (not accusation)
+// ache kept (not aching)
+// achieve kept (not achievement)
+// acid kept (not acidity)
+// acknowledge kept (not acknowledgment)
+// acquaintance kept (not acquaint/acquainted)
+// acquire kept (not acquisition)
+// acrobat kept (not acrobatics)
+const FIB = [
+  {s:"The committee decided that a compromise solution would be ___ to all parties involved.",         w:"acceptable"},
+  {s:"Her ___ of the prestigious award was met with a standing ovation from the audience.",            w:"acceptance"},
+  {s:"Millions of people in rural areas still lack ___ to basic healthcare services.",                 w:"access"},
+  {s:"The new ramp made the entrance ___ to visitors who use wheelchairs or mobility aids.",           w:"accessible"},
+  {s:"She was convicted as an ___ to the crime for providing the stolen vehicle.",                     w:"accessory"},
+  {s:"The ___ on the construction site was caused by a failure to follow safety procedures.",          w:"accident"},
+  {s:"The novel received widespread ___ from critics and readers around the world.",                   w:"acclaim"},
+  {s:"The venue was not large enough to ___ all the delegates attending the international conference.", w:"accommodate"},
+  {s:"A detailed map and budget breakdown must ___ any application for planning permission.",           w:"accompany"},
+  {s:"It is difficult to ___ meaningful change without the support of senior leadership.",              w:"accomplish"},
+  {s:"The two nations finally signed a peace ___ after more than a year of diplomatic talks.",         w:"accord"},
+  {s:"The budget was significantly cut, and all spending plans were adjusted ___.",                    w:"accordingly"},
+  {s:"Witnesses gave conflicting ___ of what had happened during the incident.",                       w:"account"},
+  {s:"Interest will ___ on any unpaid balance at an annual rate of five percent.",                     w:"accrue"},
+  {s:"Over decades, the library managed to ___ a vast collection of rare manuscripts.",                w:"accumulate"},
+  {s:"Historians must rely on ___ records when drawing conclusions about the distant past.",           w:"accurate"},
+  {s:"The report stopped short of directly ___ any individual of financial misconduct.",               w:"accusing"},
+  {s:"It takes time to ___ yourself to working in a completely different cultural environment.",        w:"accustom"},
+  {s:"After the long hike, every muscle in her body began to ___ with exhaustion.",                   w:"ache"},
+  {s:"Consistent daily practice is the most effective way to ___ fluency in a foreign language.",     w:"achieve"},
+  {s:"The factory was fined for releasing ___ waste directly into the nearby river.",                  w:"acid"},
+  {s:"The company was slow to ___ that its product had serious design flaws.",                         w:"acknowledge"},
+  {s:"She was introduced to a business ___ she had briefly met at a conference the previous year.",    w:"acquaintance"},
+  {s:"It takes years of dedicated study to ___ a deep understanding of constitutional law.",           w:"acquire"},
+  {s:"The estate covered more than three hundred ___ of farmland and ancient woodland.",               w:"acres"},
+  {s:"The ___ performed a breathtaking sequence of flips and handstands above the crowd.",             w:"acrobat"},
+  {s:"The impact of the economic crisis was felt ___ all sectors of society.",                         w:"across"},
+  {s:"The government decided to ___ swiftly to contain the outbreak before it spread further.",        w:"act"},
+  {s:"The charity called for immediate ___ to address the growing shortage of clean water.",           w:"action"}
+];
+// Split into 3 practice rounds
+const FIB_GROUPS = [FIB.slice(0, 10), FIB.slice(10, 20), FIB.slice(20)];
+const FIB_LABELS = [
+  'Practice 1 &nbsp;·&nbsp; acceptable → accomplish',
+  'Practice 2 &nbsp;·&nbsp; accord → accustom',
+  'Practice 3 &nbsp;·&nbsp; ache → action'
+];
+
+// ─── SCRAMBLED SENTENCES DATA ───────────────────────────────────────────
+const SCRAMBLE = [
+  {
+    hint:"Tip: starts with 'The new facility…' (uses: accommodate, accomplish)",
+    words:["The","new","facility","was","designed","to","accommodate","hundreds","of","students","and","help","them","accomplish","their","academic","goals"],
+    answer:"The new facility was designed to accommodate hundreds of students and help them accomplish their academic goals."
+  },
+  {
+    hint:"Tip: starts with 'Businesses that…' (uses: acknowledge, acquire)",
+    words:["Businesses","that","acknowledge","their","weaknesses","are","better","positioned","to","acquire","the","skills","needed","for","long-term","success"],
+    answer:"Businesses that acknowledge their weaknesses are better positioned to acquire the skills needed for long-term success."
+  },
+  {
+    hint:"Tip: starts with 'The investigators…' (uses: accurate, accuse)",
+    words:["The","investigators","needed","accurate","evidence","before","they","could","officially","accuse","anyone","of","financial","fraud"],
+    answer:"The investigators needed accurate evidence before they could officially accuse anyone of financial fraud."
+  },
+  {
+    hint:"Tip: starts with 'Nations that…' (uses: accumulate, accord)",
+    words:["Nations","that","accumulate","large","trade","surpluses","are","encouraged","to","act","in","accord","with","international","financial","guidelines"],
+    answer:"Nations that accumulate large trade surpluses are encouraged to act in accord with international financial guidelines."
+  },
+  {
+    hint:"Tip: starts with 'She worked…' (uses: achieve, acclaim)",
+    words:["She","worked","tirelessly","to","achieve","the","recognition","she","deserved","and","finally","received","widespread","acclaim","for","her","research"],
+    answer:"She worked tirelessly to achieve the recognition she deserved and finally received widespread acclaim for her research."
+  },
+  {
+    hint:"Tip: starts with 'Coordinated action…' (uses: action, across)",
+    words:["Coordinated","action","was","taken","across","multiple","departments","to","resolve","the","crisis","before","it","escalated","further"],
+    answer:"Coordinated action was taken across multiple departments to resolve the crisis before it escalated further."
+  },
+  {
+    hint:"Tip: starts with 'The journalist…' (uses: account, accuse)",
+    words:["The","journalist","published","a","detailed","account","of","how","the","minister","had","been","accused","of","accepting","illegal","payments"],
+    answer:"The journalist published a detailed account of how the minister had been accused of accepting illegal payments."
+  }
+];
+
+// ─── ENGINE ─────────────────────────────────────────────────────────────
+// Build vocab list
+function buildVocab() {
+  const el = document.getElementById('vocabList');
+  if (el.dataset.built) return; el.dataset.built = 1;
+  el.innerHTML = WORDS.map((w,i) =>
+    `<div class="vocab-item">
+      <div class="vocab-head" onclick="toggleV(this)">
+        <span class="v-word">${w.w}</span>
+        <span class="v-pos">${w.p}</span>
+        <span class="v-cn">${w.c}</span>
+        <span class="v-toggle">▸</span>
+      </div>
+      <div class="vocab-body">
+        <p class="v-def">${w.d}</p>
+        <div class="v-eg">${w.e}</div>
+      </div>
+    </div>`
+  ).join('');
+}
+function toggleV(h) {
+  const b = h.nextElementSibling; const open = b.classList.toggle('open');
+  h.querySelector('.v-toggle').textContent = open ? '▾' : '▸';
+}
+
+// Build matching
+function buildMatch() {
+  const built = document.getElementById('mg0').dataset;
+  if (built.built) return; built.built = 1;
+  MATCH_ROUNDS.forEach((round, ri) => {
+    const pairs = round.pairs;
+    const shuffledDefs = pairs.map((_,i)=>i).sort(()=>Math.random()-.5);
+    const grid = document.getElementById('mg'+ri);
+    grid.innerHTML = pairs.map((_,i)=>
+      `<button class="match-word" id="mw${ri}_${i}" onclick="selMatchW(${ri},${i})">${pairs[i][0]}</button>`
+    ).join('') + shuffledDefs.map(di=>
+      `<button class="match-def" id="md${ri}_${di}" onclick="selMatchD(${ri},${di})">${pairs[di][1]}</button>`
+    ).join('');
+  });
+}
+let mSel = [{w:null,d:null},{w:null,d:null},{w:null,d:null}];
+let mScore = [0,0,0];
+function selMatchW(ri, wi) {
+  mSel[ri].w = wi;
+  document.querySelectorAll(`[id^="mw${ri}_"]`).forEach(b=>b.classList.remove('sel'));
+  document.getElementById('mw'+ri+'_'+wi).classList.add('sel');
+  tryMatch(ri);
+}
+function selMatchD(ri, di) {
+  mSel[ri].d = di;
+  tryMatch(ri);
+}
+function tryMatch(ri) {
+  const s = mSel[ri];
+  if (s.w === null || s.d === null) return;
+  const ok = (s.w === s.d);
+  const wb = document.getElementById('mw'+ri+'_'+s.w);
+  const db = document.getElementById('md'+ri+'_'+s.d);
+  if (ok) {
+    wb.classList.remove('sel'); wb.classList.add('done');
+    db.classList.add('done');
+    mScore[ri]++;
+    const total = MATCH_ROUNDS[ri].pairs.length;
+    const sc = document.getElementById('ms'+ri);
+    sc.textContent = `${mScore[ri]} / ${total} matched`;
+    if (mScore[ri] === total) { sc.classList.add('perfect'); sc.textContent = `✓ All ${total} matched!`; }
+  } else {
+    db.classList.add('err'); setTimeout(()=>db.classList.remove('err'), 600);
+  }
+  mSel[ri] = {w:null, d:null};
+  if (!ok) { wb.classList.remove('sel'); }
+}
+
+// Build FIB — 3 rounds of ~10 words each
+function buildFib() {
+  if (document.getElementById('fibGroup0').dataset.built) return;
+  FIB_GROUPS.forEach((grp, gi) => {
+    const el = document.getElementById('fibGroup'+gi);
+    el.dataset.built = 1;
+    const shuffledIdx = grp.map((_,i) => i).sort(() => Math.random() - 0.5);
+    el.innerHTML = `
+      <div class="card">
+        <div class="card-title">Fill in the Blanks &nbsp; 填词练习</div>
+        <div class="card-sub">${FIB_LABELS[gi]}</div>
+        <div class="fib-bank" id="fibBank${gi}">
+          ${shuffledIdx.map(i => `<span class="fib-chip" id="fc${gi}_${i}" onclick="useChip(${gi},${i},'${grp[i].w}')">${grp[i].w}</span>`).join('')}
+        </div>
+        <div id="fibSents${gi}">
+          ${grp.map((f,i) => `<div class="fib-row"><span class="fib-num">${i+1}.</span> ${f.s.replace('___', `<input class="fib-input" id="fi${gi}_${i}" placeholder="…">`)}</div>`).join('')}
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="checkFibGroup(${gi})">Check answers</button>
+          <button class="btn btn-ghost" onclick="resetFibGroup(${gi})">Reset</button>
+        </div>
+        <div id="fibScore${gi}"></div>
+      </div>`;
+  });
+}
+function useChip(gi, li, w) {
+  const chip = document.getElementById(`fc${gi}_${li}`);
+  const inputs = document.querySelectorAll(`[id^="fi${gi}_"]`);
+  for (const inp of inputs) { if (!inp.value) { inp.value = w; chip.classList.add('used'); return; } }
+}
+function checkFibGroup(gi) {
+  const grp = FIB_GROUPS[gi]; let cor = 0;
+  grp.forEach((f,i) => {
+    const inp = document.getElementById(`fi${gi}_${i}`);
+    const ok = inp.value.trim().toLowerCase() === f.w.toLowerCase();
+    inp.classList.remove('correct','wrong'); inp.classList.add(ok?'correct':'wrong');
+    if (ok) cor++;
+  });
+  const sc = document.getElementById('fibScore'+gi);
+  sc.innerHTML = `<div class="score-bar${cor===grp.length?' good':''}"><span class="score-num">${cor}/${grp.length}</span><span class="score-label">${cor===grp.length?'Perfect! All correct!':'Keep trying — incorrect answers highlighted in red.'}</span></div>`;
+}
+function resetFibGroup(gi) {
+  FIB_GROUPS[gi].forEach((_,i) => { const inp = document.getElementById(`fi${gi}_${i}`); inp.value=''; inp.classList.remove('correct','wrong'); });
+  document.querySelectorAll(`[id^="fc${gi}_"]`).forEach(c => c.classList.remove('used'));
+  document.getElementById('fibScore'+gi).innerHTML = '';
+}
+
+// Build scramble
+function buildScramble() {
+  const el = document.getElementById('scrambleSents'); if (el.dataset.built) return; el.dataset.built = 1;
+  el.innerHTML = SCRAMBLE.map((s,i) => {
+    const shuffled = [...s.words].sort(()=>Math.random()-.5);
+    return `<div class="scram-block" id="sb${i}">
+      <div class="scram-num">Sentence ${i+1}</div>
+      <div class="scram-hint">${s.hint}</div>
+      <div class="scram-pool" id="sp${i}">
+        ${shuffled.map((w,j)=>`<span class="scram-chip" data-word="${w}" data-idx="${j}" onclick="moveToAns(${i},this)">${w}</span>`).join('')}
+      </div>
+      <div class="scram-ans" id="sa${i}">
+        <span class="scram-ans-label">Your sentence ↓ (click a word to put it back)</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="checkScram(${i})">Check</button>
+        <button class="btn btn-ghost" onclick="resetScram(${i})">Reset</button>
+      </div>
+      <div class="scram-result" id="sr${i}"></div>
+    </div>`;
+  }).join('');
+}
+function moveToAns(si, chip) {
+  const ans = document.getElementById('sa'+si);
+  chip.classList.add('in-ans');
+  chip.onclick = () => moveToPool(si, chip);
+  ans.appendChild(chip);
+}
+function moveToPool(si, chip) {
+  const pool = document.getElementById('sp'+si);
+  chip.classList.remove('in-ans');
+  chip.onclick = () => moveToAns(si, chip);
+  pool.appendChild(chip);
+}
+function checkScram(si) {
+  const ans = document.getElementById('sa'+si);
+  const chips = ans.querySelectorAll('.scram-chip');
+  const built = Array.from(chips).map(c=>c.dataset.word).join(' ');
+  const correct = SCRAMBLE[si].answer;
+  const normalize = s => s.trim().replace(/[.!?,]+$/, '').trim().toLowerCase();
+  const ok = normalize(built) === normalize(correct);
+  const res = document.getElementById('sr'+si);
+  res.className = 'scram-result ' + (ok ? 'correct' : 'wrong');
+  res.textContent = ok ? '✓ Correct!' : '✗ Not quite. Try again, or check: ' + correct;
+}
+function resetScram(si) {
+  const pool = document.getElementById('sp'+si);
+  const ans  = document.getElementById('sa'+si);
+  const chips = ans.querySelectorAll('.scram-chip');
+  chips.forEach(chip => {
+    chip.classList.remove('in-ans');
+    chip.onclick = () => moveToAns(si, chip);
+    pool.appendChild(chip);
+  });
+  document.getElementById('sr'+si).className = 'scram-result';
+  document.getElementById('sr'+si).textContent = '';
+}
+
+// Tab switching
+function switchTab(t) {
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>p.classList.toggle('active',i===t));
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===t));
+  if (t===0) buildVocab();
+  if (t===1) buildMatch();
+  if (t===2) buildFib();
+  if (t===3) buildScramble();
+}
+
+// Init
+buildVocab();
+</script>
+</body>
+</html>
