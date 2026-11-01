@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Vocabulary — Page 6 (A) — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --gold:#C9930A;--gold-light:#FDF3D8;--gold-pale:#FFFBF0;
+  --orange:#D4620A;--orange-pale:#FFF4EC;--orange-light:#F8D5B8;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:linear-gradient(135deg,#C4620A 0%,#8B3A00 100%);color:#fff;padding:2.5rem 2rem 2rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.6rem}
+.cover-title{font-size:clamp(22px,5vw,34px);font-weight:600;line-height:1.2;margin-bottom:.4rem}
+.cover-sub{font-size:14px;opacity:.8;margin-bottom:1.5rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.tab-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap;border-bottom:2px solid var(--border);padding-bottom:.75rem}
+.tab-btn{padding:.45rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.tab-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.tab-btn.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.4rem;transition:box-shadow .15s}
+.vocab-item:hover{box-shadow:0 2px 8px rgba(26,122,138,.1)}
+.vocab-head{display:flex;align-items:center;gap:.6rem;padding:.55rem .9rem;background:var(--bg);cursor:pointer;user-select:none;transition:background .15s}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:14px;font-weight:600;color:var(--teal);min-width:150px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .4rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.65rem .9rem;border-top:1px solid var(--border);background:#fff}
+.vocab-body.open{display:block}
+.v-def{font-size:13px;color:var(--muted);margin-bottom:.4rem}
+.v-eg{font-size:13px;font-style:italic;padding:.4rem .7rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.match-round{margin-bottom:1.5rem}
+.match-round-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-pale);border:1px solid var(--orange-light);border-radius:8px;padding:.3rem .75rem;margin-bottom:.75rem;display:inline-block}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+@media(max-width:560px){.match-grid{grid-template-columns:1fr}}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word:hover:not(:disabled){background:var(--teal-light)}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%;line-height:1.4}
+.match-def:hover:not(.done){background:var(--orange-pale);border-color:var(--orange-light)}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.match-score{font-size:13px;color:var(--muted);margin-top:.5rem;padding:.4rem .75rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.match-score.perfect{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);font-weight:600}
+.fib-bank{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem;padding:.6rem .75rem;background:var(--orange-pale);border-radius:8px;border:1px solid var(--orange-light)}
+.fib-chip{display:inline-block;padding:.22rem .65rem;background:var(--surface);color:var(--orange);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--orange-light);transition:all .15s}
+.fib-chip:hover{background:var(--orange);color:#fff}
+.fib-chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.5rem 0;border-bottom:1px solid var(--border);line-height:1.7}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0;font-size:13px}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:140px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--orange)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.scram-block{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.scram-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.scram-num{font-size:12px;font-weight:600;color:var(--orange);margin-bottom:.4rem}
+.scram-hint{font-size:13px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.scram-pool{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:36px;padding:.4rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.scram-ans{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:40px;padding:.4rem;background:var(--orange-pale);border-radius:8px;border:2px dashed var(--orange-light)}
+.scram-ans-label{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.05em;width:100%;margin-bottom:.2rem}
+.scram-chip{padding:.28rem .65rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;user-select:none}
+.scram-chip:hover{background:var(--teal-pale);border-color:var(--teal-light)}
+.scram-chip.in-ans{background:var(--teal);color:#fff;border-color:var(--teal)}
+.scram-chip.in-ans:hover{background:var(--teal-dark)}
+.scram-result{font-size:13px;padding:.4rem .75rem;border-radius:6px;margin-top:.3rem;display:none}
+.scram-result.correct{background:var(--correct-bg);color:var(--correct);border:1px solid var(--correct);display:block}
+.scram-result.wrong{background:var(--wrong-bg);color:var(--wrong);border:1px solid var(--wrong);display:block}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--orange);color:#fff;border:1px solid var(--orange)}
+.btn-primary:hover{background:#B5520A;border-color:#B5520A}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:18px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+.progress-tag{font-size:11px;background:var(--orange-pale);color:var(--orange);border:1px solid var(--orange-light);border-radius:20px;padding:.2rem .6rem;font-weight:500;display:inline-block;margin-bottom:.75rem}
+@media(max-width:600px){.card{padding:1rem}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">Daily Vocabulary &mdash; Page 6</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+
+<div class="cover">
+  <div class="cover-eyebrow">Daily Vocabulary Practice &nbsp; 每日词汇练习</div>
+  <div class="cover-title">Page 6 &nbsp;&mdash;&nbsp; A-words (allegiance &rarr; amiable)</div>
+  <div class="cover-sub">9400-word IELTS Vocabulary Book &nbsp;&middot;&nbsp; Sequential Order</div>
+  <div class="cover-badges">
+    <span class="badge">54 words</span>
+    <span class="badge">Meaning Matching</span>
+    <span class="badge">Fill in the Blanks</span>
+    <span class="badge">Scrambled Sentences</span>
+  </div>
+</div>
+
+<div class="page">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab(0)">&#128214; Vocabulary</button>
+    <button class="tab-btn" onclick="switchTab(1)">&#128279; Matching</button>
+    <button class="tab-btn" onclick="switchTab(2)">&#9999;&#65039; Fill in Blanks</button>
+    <button class="tab-btn" onclick="switchTab(3)">&#128256; Scrambled</button>
+  </div>
+
+  <div class="tab-panel active" id="tab0">
+    <div class="card">
+      <div class="card-title">All words &mdash; click to expand definition &nbsp; 点击查看释义</div>
+      <div class="card-sub">54 words from page 6 of the 9400-word book (words 269&ndash;322)</div>
+      <div id="vocabList"></div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab1">
+    <div class="card">
+      <div class="card-title">Meaning Matching &nbsp; 词义配对 &nbsp; (English &rarr; English)</div>
+      <div class="card-sub">Click a word on the left, then click its matching definition on the right.</div>
+      <div class="match-round" id="mr0">
+        <div class="match-round-label">Round 1 &nbsp; of 3</div>
+        <div class="match-grid" id="mg0"></div>
+        <div class="match-score" id="ms0"></div>
+      </div>
+      <div class="match-round" id="mr1">
+        <div class="match-round-label">Round 2 &nbsp; of 3</div>
+        <div class="match-grid" id="mg1"></div>
+        <div class="match-score" id="ms1"></div>
+      </div>
+      <div class="match-round" id="mr2">
+        <div class="match-round-label">Round 3 &nbsp; of 3</div>
+        <div class="match-grid" id="mg2"></div>
+        <div class="match-score" id="ms2"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-panel" id="tab2">
+    <div id="fibGroup0"></div>
+    <div id="fibGroup1"></div>
+    <div id="fibGroup2"></div>
+  </div>
+
+  <div class="tab-panel" id="tab3">
+    <div class="card">
+      <div class="card-title">Scrambled Sentences &nbsp; 重排句子</div>
+      <div class="card-sub">Click words from the pool to build the correct sentence. Click a placed word to return it.</div>
+      <div id="scrambleSents"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── WORD DATA ─────────────────────────────────────────────────────────
+const WORDS = [
+  {w:"allegiance",    p:"n.",          c:"忠贞，效忠",           d:"Loyalty or commitment to a country, group, or cause",                              e:"Citizens took a solemn oath of allegiance to the newly formed republic."},
+  {w:"allergic",      p:"adj.",        c:"过敏的，变态的",       d:"Having a hypersensitive reaction to a substance; strongly disliking something",     e:"She is allergic to penicillin and must avoid it in all medical treatments."},
+  {w:"allergy",       p:"n.",          c:"反感，过敏症",         d:"A damaging immune response to a particular substance; a strong aversion",          e:"His allergy to dust made working in the old archive building extremely uncomfortable."},
+  {w:"alleviate",     p:"vt.",         c:"减轻，缓和",           d:"To make pain, suffering, or difficulty less severe",                               e:"Regular exercise can help alleviate the symptoms of mild depression."},
+  {w:"alliance",      p:"n.",          c:"联盟，同盟",           d:"A formal agreement between countries or groups for mutual benefit",                e:"The two nations formed a military alliance to counter the growing regional threat."},
+  {w:"allied",        p:"adj.",        c:"联合的，联姻的",       d:"Joined by an alliance; connected or related to another",                           e:"Allied forces launched the operation at dawn, coordinating across multiple fronts."},
+  {w:"allocate",      p:"vt.",         c:"分配，配给",           d:"To distribute resources or responsibilities for a specific purpose",               e:"The government decided to allocate more funding to public health programmes."},
+  {w:"allocation",    p:"n.",          c:"分配，配额",           d:"The action or process of distributing something; the share assigned to someone",   e:"Each department submitted a budget request ahead of the annual allocation meeting."},
+  {w:"allot",         p:"v.",          c:"分配，拨给",           d:"To give or apportion something as a share or task",                                e:"Each team was allotted exactly thirty minutes to present their research findings."},
+  {w:"allotment",     p:"n.",          c:"分配，份额",           d:"A portion or share distributed to someone; a small plot of land for growing food", e:"His weekly allotment of screen time was strictly monitored by his parents."},
+  {w:"allow",         p:"vt.",         c:"允许，准许，考虑到",   d:"To permit something to happen; to make provision for something",                  e:"The new regulations allow companies to operate more flexibly across borders."},
+  {w:"allowance",     p:"n.",          c:"津贴，补贴，许可量",   d:"A sum of money paid regularly for a purpose; a permitted amount",                 e:"University students may qualify for a living allowance to help cover their expenses."},
+  {w:"alloy",         p:"n.",          c:"合金",                 d:"A metal made by combining two or more metallic elements to achieve new properties", e:"Steel is an alloy of iron and carbon, prized for its strength and durability."},
+  {w:"allude",        p:"vi.",         c:"暗指，间接提到",       d:"To refer to something indirectly or briefly without naming it explicitly",          e:"The speaker chose to allude to the controversy rather than address it head-on."},
+  {w:"alluvial",      p:"adj.",        c:"冲积的，淤积的",       d:"Relating to deposits of fertile soil or sediment left by flowing water",           e:"The alluvial plains of the river delta are among the most productive agricultural lands."},
+  {w:"ally",          p:"n./vt.",      c:"同盟者，使结盟",       d:"A country, group, or person that provides support or cooperates with another",     e:"Without a reliable ally in the region, the nation struggled to advance its diplomatic aims."},
+  {w:"almond",        p:"n.",          c:"杏仁，杏树",           d:"An oval edible nut with a hard shell; the tree that produces this nut",            e:"She added crushed almonds to the salad for extra flavour and nutritional value."},
+  {w:"almost",        p:"adv.",        c:"几乎，差不多",         d:"Very nearly but not quite; all but",                                               e:"Scientists have almost completed their analysis of the newly discovered mineral deposits."},
+  {w:"alone",         p:"adj./adv.",   c:"单独的，仅仅",         d:"Without other people present; only; by oneself",                                  e:"She chose to tackle the challenge alone, refusing any assistance from her colleagues."},
+  {w:"along",         p:"adv./prep.",  c:"向前，沿着",           d:"Moving forward; beside or following the length of something",                     e:"Researchers walked along the riverbank collecting water samples at regular intervals."},
+  {w:"alongside",     p:"adv./prep.",  c:"在旁，靠近",           d:"Next to and level with; in cooperation with someone or something",                e:"Scientists worked alongside engineers to develop the new sustainable building material."},
+  {w:"aloud",         p:"adv.",        c:"出声地，大声地",       d:"Using the voice so that others can hear; not silently",                            e:"Reading aloud helps young learners develop their pronunciation and reading fluency."},
+  {w:"alphabet",      p:"n.",          c:"字母表，入门",         d:"The letters used in writing a language, arranged in a fixed order",               e:"The Latin alphabet, used in English, consists of twenty-six letters."},
+  {w:"alphabetical",  p:"adj.",        c:"按字母顺序的",         d:"Arranged in the order of the letters of the alphabet",                            e:"The bibliography must be arranged in strict alphabetical order by the author's surname."},
+  {w:"alpine",        p:"adj.",        c:"高山的，阿尔卑斯山的", d:"Relating to high mountains or the Alps; living or growing at high altitudes",      e:"Alpine ecosystems are particularly vulnerable to the effects of climate change."},
+  {w:"also",          p:"adv.",        c:"也，此外，同样地",     d:"In addition; as well; too",                                                       e:"The policy also aims to reduce carbon emissions from the transport sector."},
+  {w:"alter",         p:"v.",          c:"改变，更改",           d:"To change or cause to change in character, form, or function",                    e:"Rapid urbanisation has dramatically altered the natural landscape of many coastal areas."},
+  {w:"alternate",     p:"adj./v.",     c:"交替的，轮流交替",     d:"Occurring in turns; every other one; to do things in turns repeatedly",           e:"Doctors recommend that patients alternate between rest and gentle activity during recovery."},
+  {w:"alternation",   p:"n.",          c:"轮流，交替",           d:"The action of alternating; the occurrence of things one after another in turns",  e:"The alternation of wet and dry seasons shapes the region's distinctive agricultural patterns."},
+  {w:"alternative",   p:"n./adj.",     c:"替代方案，二选一的",   d:"A choice between two or more possibilities; available as another option",         e:"The committee proposed an alternative route that would avoid the conservation zone entirely."},
+  {w:"although",      p:"conj.",       c:"尽管，虽然",           d:"In spite of the fact that; even though",                                          e:"Although the results were disappointing, the research team remained committed to the project."},
+  {w:"altitude",      p:"n.",          c:"高度，海拔",           d:"The height of something above sea level or above the ground",                     e:"At this altitude, reduced oxygen levels make physical exertion significantly more demanding."},
+  {w:"altogether",    p:"adv.",        c:"完全，总共，总而言之", d:"Completely; taking everything into account; in total",                             e:"The new initiative will affect altogether five thousand households across the metropolitan area."},
+  {w:"aluminum",      p:"n.",          c:"铝（美式拼写）",       d:"A lightweight, silvery-white metallic element widely used in manufacturing",       e:"Aluminum cans are highly recyclable and help reduce industrial waste significantly."},
+  {w:"always",        p:"adv.",        c:"总是，始终，永远",     d:"At all times; on every occasion; forever",                                        e:"High-quality research always requires careful methodology and rigorous peer review."},
+  {w:"amalgamate",    p:"v.",          c:"合并，混合",           d:"To combine or unite two or more organisations or groups into one",                e:"The two universities decided to amalgamate their medical schools to improve research capacity."},
+  {w:"amateur",       p:"n./adj.",     c:"业余爱好者，业余的",   d:"A person who does something for pleasure rather than professionally; not expert",  e:"Despite being an amateur, she produced paintings of remarkable technical quality."},
+  {w:"amaze",         p:"vt.",         c:"使惊奇，使惊叹",       d:"To cause great surprise or astonishment in someone",                               e:"The speed of technological development continues to amaze even experienced researchers."},
+  {w:"amazement",     p:"n.",          c:"惊奇，诧异",           d:"A feeling of great surprise or wonder",                                            e:"To the amazement of all observers, the young competitor broke the world record."},
+  {w:"ambassador",    p:"n.",          c:"大使，代表",           d:"A senior diplomat representing their country abroad; a promoter of a cause",       e:"The newly appointed ambassador presented her credentials to the host government on arrival."},
+  {w:"amber",         p:"n./adj.",     c:"琥珀，琥珀色的",       d:"A hard yellowish-brown fossilised resin used in jewellery; a yellowish-brown colour",e:"The traffic lights turned to amber, prompting drivers to slow down and prepare to stop."},
+  {w:"ambient",       p:"adj.",        c:"周围的，环境的",       d:"Relating to the immediate surroundings; denoting a background level of sound or light",e:"The architects designed the building to maximise ambient natural light throughout the day."},
+  {w:"ambiguity",     p:"n.",          c:"模棱两可，歧义",       d:"The quality of being open to more than one interpretation; uncertainty or inexactness",e:"The ambiguity in the contract led to a lengthy legal dispute between the two companies."},
+  {w:"ambiguous",     p:"adj.",        c:"含糊的，模棱两可的",   d:"Open to more than one interpretation; not clearly expressed or defined",           e:"The report's ambiguous conclusions made it difficult for policymakers to act decisively."},
+  {w:"ambition",      p:"n.",          c:"雄心，抱负",           d:"A strong desire to achieve something significant; the drive to succeed",           e:"Her ambition to become a surgeon drove her to study harder than any of her peers."},
+  {w:"ambitious",     p:"adj.",        c:"有抱负的，雄心勃勃的", d:"Having a strong desire to succeed; requiring great effort, skill, or resources",   e:"The company set itself ambitious targets for reducing carbon emissions over the next decade."},
+  {w:"ambivalent",    p:"adj.",        c:"矛盾的，态度不明确的", d:"Having mixed or contradictory feelings about someone or something; uncertain",     e:"Many citizens feel ambivalent about the proposed development, seeing both benefits and risks."},
+  {w:"ambulance",     p:"n.",          c:"救护车",               d:"A vehicle equipped for taking sick or injured people to hospital in an emergency",  e:"Emergency services dispatched an ambulance to the scene within three minutes of the call."},
+  {w:"amend",         p:"v.",          c:"修正，修订",           d:"To make minor changes to improve or correct something, especially a law or text",  e:"Parliament voted to amend the bill to include stronger environmental protections."},
+  {w:"amendment",     p:"n.",          c:"修正案，修改",         d:"A minor change or addition made to improve a law, document, or plan",              e:"The proposed amendment to the constitution was passed by a narrow majority in parliament."},
+  {w:"amends",        p:"n.",          c:"赔偿，补偿",           d:"Reparation or compensation for a loss, wrongdoing, or injury",                    e:"He tried to make amends for his earlier behaviour by volunteering at the local charity."},
+  {w:"America",       p:"n.",          c:"美洲，美国",           d:"The continent of the Americas; colloquially the United States of America",         e:"America remains one of the world's largest economies, though its global share is shifting."},
+  {w:"American",      p:"adj./n.",     c:"美洲的，美国人",       d:"Relating to the Americas or the United States; a citizen of the United States",   e:"American universities attract hundreds of thousands of international students every year."},
+  {w:"amiable",       p:"adj.",        c:"和蔼可亲的，友善的",   d:"Having a pleasant and friendly manner; easy to get along with",                   e:"The new department head was known for his amiable personality and open-door management style."}
+];
+
+// ─── MATCHING DATA ──────────────────────────────────────────────────────
+const MATCH_ROUNDS = [
+  {
+    pairs: [
+      ["allegiance",  "loyalty or commitment to a country, group, or cause"],
+      ["alleviate",   "to make pain or difficulty less severe"],
+      ["alliance",    "a formal agreement between countries for mutual benefit"],
+      ["allocate",    "to distribute resources or duties for a specific purpose"],
+      ["allude",      "to refer to something indirectly without naming it explicitly"],
+      ["alluvial",    "relating to fertile deposits of soil left by flowing water"],
+      ["ally",        "a country or person that cooperates and provides support"],
+      ["alter",       "to change something in character, form, or function"]
+    ]
+  },
+  {
+    pairs: [
+      ["alternative", "a choice between two or more possibilities; another option"],
+      ["altitude",    "the height of something above sea level"],
+      ["amalgamate",  "to combine two organisations or groups into one"],
+      ["ambiguous",   "open to more than one interpretation; unclear"],
+      ["ambition",    "a strong desire to achieve something significant"],
+      ["ambivalent",  "having mixed or contradictory feelings about something"],
+      ["amendment",   "a minor change made to improve a law or document"],
+      ["amiable",     "having a pleasant and friendly manner; easy to like"]
+    ]
+  },
+  {
+    pairs: [
+      ["allergy",     "a hypersensitive immune reaction to a particular substance"],
+      ["allowance",   "a sum of money paid regularly; a permitted amount"],
+      ["alloy",       "a metal made by combining two or more metallic elements"],
+      ["alphabet",    "the letters of a language arranged in a fixed order"],
+      ["alpine",      "relating to high mountains or growing at high altitudes"],
+      ["ambassador",  "a senior diplomat representing their country abroad"],
+      ["amateur",     "a person who does something for pleasure, not professionally"],
+      ["ambient",     "relating to the surroundings; background level of light or sound"]
+    ]
+  }
+];
+
+// ─── FILL IN BLANKS DATA ────────────────────────────────────────────────
+// Root-family rule applied:
+// allergic/allergy → allergy (noun form kept)
+// alliance/allied → alliance
+// allocate/allocation → allocate
+// allot/allotment → allot
+// alphabet/alphabetical → alphabetical (more IELTS-distinctive)
+// alter/alternate/alternation/alternative → alter + alternative (distinct meanings); skip alternation
+// amaze/amazement → amaze
+// ambiguity/ambiguous → ambiguous (adj more useful in writing)
+// ambition/ambitious → ambition
+// amend/amendment/amends → amendment (most IELTS-specific)
+// America/American → skipped (too basic/cultural)
+const FIB = [
+  {s:"Citizens are expected to show ___ to their country, especially during times of national crisis.",        w:"allegiance"},
+  {s:"She developed a severe ___ to pollen that made spring months particularly difficult every year.",        w:"allergy"},
+  {s:"The new medication was found to significantly ___ the chronic pain experienced by elderly patients.",    w:"alleviate"},
+  {s:"The two countries formed a military ___ to defend against potential threats from neighbouring states.",  w:"alliance"},
+  {s:"The committee decided to ___ the limited budget equally among the four research departments.",           w:"allocate"},
+  {s:"Each student will be ___ted a specific role in the group project to ensure fair participation.",         w:"allot"},
+  {s:"The generous monthly ___ provided by her employer helped her manage living costs in the expensive city.",w:"allowance"},
+  {s:"Brass is an ___ made by combining copper and zinc, widely used in musical instruments and fittings.",   w:"alloy"},
+  {s:"The professor chose to ___ to the scandal indirectly rather than address it openly during the lecture.",w:"allude"},
+  {s:"Farmers in the region rely on the fertile ___ soil deposited by the river during the annual floods.",   w:"alluvial"},
+  {s:"Japan became a close ___ of the United States in the post-war period, forming a key strategic partnership.",w:"ally"},
+  {s:"The scientists were ___ certain that the new compound could break down plastic waste effectively.",      w:"almost"},
+  {s:"She chose to work ___ on the project, preferring solitude and self-direction to group collaboration.",  w:"alone"},
+  {s:"Reading ___ regularly helps young learners develop their pronunciation and reading fluency.",            w:"aloud"},
+  {s:"The entries must be arranged in strict ___ order to make the glossary easier to navigate.",             w:"alphabetical"},
+  {s:"___ ecosystems are particularly vulnerable to rapid temperature rises caused by climate change.",        w:"Alpine"},
+  {s:"Rapid urbanisation has dramatically ___d the natural landscape of many coastal regions.",               w:"alter"},
+  {s:"Solar energy offers a clean ___ to fossil fuels in the generation of electricity for homes.",           w:"alternative"},
+  {s:"___ unemployment rates remain high, the economy showed signs of gradual recovery in the third quarter.",w:"Although"},
+  {s:"At this ___, the reduced oxygen levels make physical exertion significantly more demanding.",            w:"altitude"},
+  {s:"The final cost, ___, came to far less than the initial estimates had suggested to the committee.",      w:"altogether"},
+  {s:"Aircraft fuselages are often constructed from ___ because of its exceptional strength-to-weight ratio.",w:"aluminum"},
+  {s:"The two rival companies agreed to ___ in order to strengthen their position in the competitive market.", w:"amalgamate"},
+  {s:"Despite being an ___, she produced documentary photographs of extraordinary quality and insight.",       w:"amateur"},
+  {s:"The young scientist's breakthrough discovery never ceased to ___ her colleagues in the laboratory.",    w:"amaze"},
+  {s:"The country appointed a new ___ to strengthen diplomatic relations with its trading partners in Asia.", w:"ambassador"},
+  {s:"The ___ lighting in the restaurant created a warm, relaxing atmosphere ideal for evening dining.",      w:"ambient"},
+  {s:"The contract was deliberately ___, leaving the responsibilities of each party open to conflicting readings.",w:"ambiguous"},
+  {s:"Her ___ to become the youngest CEO in the company's history drove her to work exceptionally hard.",     w:"ambition"},
+  {s:"Many voters feel ___ about the proposed changes, seeing both potential benefits and serious drawbacks.", w:"ambivalent"},
+  {s:"The proposed ___ to the constitution would extend voting rights to citizens over the age of sixteen.",  w:"amendment"},
+  {s:"The new manager's ___ manner quickly won the trust and cooperation of her entire department.",          w:"amiable"}
+];
+const FIB_GROUPS = [FIB.slice(0,11), FIB.slice(11,22), FIB.slice(22)];
+const FIB_LABELS = [
+  'Practice 1 &nbsp;&middot;&nbsp; allegiance &rarr; ally',
+  'Practice 2 &nbsp;&middot;&nbsp; almost &rarr; aluminum',
+  'Practice 3 &nbsp;&middot;&nbsp; amalgamate &rarr; amiable'
+];
+
+// ─── SCRAMBLED SENTENCES DATA ───────────────────────────────────────────
+const SCRAMBLE = [
+  {
+    hint:"Tip: starts with 'The soldiers…' (uses: allegiance, alliance)",
+    words:["The","soldiers","pledged","their","allegiance","to","the","alliance","and","vowed","to","defend","it","against","all","enemies"],
+    answer:"The soldiers pledged their allegiance to the alliance and vowed to defend it against all enemies."
+  },
+  {
+    hint:"Tip: starts with 'Acclimatising…' (uses: alleviate, altitude)",
+    words:["Acclimatising","slowly","can","help","alleviate","the","discomfort","caused","by","high","altitude","during","mountain","expeditions"],
+    answer:"Acclimatising slowly can help alleviate the discomfort caused by high altitude during mountain expeditions."
+  },
+  {
+    hint:"Tip: starts with 'The council…' (uses: allocate, alternative)",
+    words:["The","council","voted","to","allocate","funds","for","an","alternative","transport","system","to","reduce","traffic","congestion"],
+    answer:"The council voted to allocate funds for an alternative transport system to reduce traffic congestion."
+  },
+  {
+    hint:"Tip: starts with 'Driven…' (uses: ambition, amalgamate)",
+    words:["Driven","by","ambition","the","two","founders","decided","to","amalgamate","their","companies","into","a","single","powerful","enterprise"],
+    answer:"Driven by ambition the two founders decided to amalgamate their companies into a single powerful enterprise."
+  },
+  {
+    hint:"Tip: starts with 'The amendment…' (uses: amendment, ambiguous)",
+    words:["The","amendment","was","necessary","to","clarify","the","ambiguous","wording","that","had","caused","confusion","in","the","original","legislation"],
+    answer:"The amendment was necessary to clarify the ambiguous wording that had caused confusion in the original legislation."
+  },
+  {
+    hint:"Tip: starts with 'The amiable…' (uses: amiable, ambassador)",
+    words:["The","amiable","ambassador","charmed","foreign","officials","with","her","warm","personality","and","skilful","diplomacy"],
+    answer:"The amiable ambassador charmed foreign officials with her warm personality and skilful diplomacy."
+  },
+  {
+    hint:"Tip: starts with 'The amateur…' (uses: amateur, amaze)",
+    words:["The","amateur","photographer","continued","to","amaze","professionals","with","the","quality","and","creativity","of","her","landscape","shots"],
+    answer:"The amateur photographer continued to amaze professionals with the quality and creativity of her landscape shots."
+  }
+];
+
+// ─── ENGINE ─────────────────────────────────────────────────────────────
+function buildVocab() {
+  const el = document.getElementById('vocabList');
+  if (el.dataset.built) return; el.dataset.built = 1;
+  el.innerHTML = WORDS.map((w,i) =>
+    `<div class="vocab-item">
+      <div class="vocab-head" onclick="toggleV(this)">
+        <span class="v-word">${w.w}</span>
+        <span class="v-pos">${w.p}</span>
+        <span class="v-cn">${w.c}</span>
+        <span class="v-toggle">&#9656;</span>
+      </div>
+      <div class="vocab-body">
+        <p class="v-def">${w.d}</p>
+        <div class="v-eg">${w.e}</div>
+      </div>
+    </div>`
+  ).join('');
+}
+function toggleV(h) {
+  const b = h.nextElementSibling; const open = b.classList.toggle('open');
+  h.querySelector('.v-toggle').textContent = open ? '▾' : '▸';
+}
+
+function buildMatch() {
+  const built = document.getElementById('mg0').dataset;
+  if (built.built) return; built.built = 1;
+  MATCH_ROUNDS.forEach((round, ri) => {
+    const pairs = round.pairs;
+    const shuffledDefs = pairs.map((_,i)=>i).sort(()=>Math.random()-.5);
+    const grid = document.getElementById('mg'+ri);
+    grid.innerHTML = pairs.map((_,i)=>`<button class="match-word" id="mw${ri}_${i}" onclick="selMatchW(${ri},${i})">${pairs[i][0]}</button>`).join('')
+      + shuffledDefs.map(di=>`<button class="match-def" id="md${ri}_${di}" onclick="selMatchD(${ri},${di})">${pairs[di][1]}</button>`).join('');
+  });
+}
+let mSel = [{w:null,d:null},{w:null,d:null},{w:null,d:null}];
+let mScore = [0,0,0];
+function selMatchW(ri, wi) {
+  mSel[ri].w = wi;
+  document.querySelectorAll(`[id^="mw${ri}_"]`).forEach(b=>b.classList.remove('sel'));
+  document.getElementById('mw'+ri+'_'+wi).classList.add('sel');
+  tryMatch(ri);
+}
+function selMatchD(ri, di) {
+  mSel[ri].d = di;
+  tryMatch(ri);
+}
+function tryMatch(ri) {
+  const s = mSel[ri];
+  if (s.w === null || s.d === null) return;
+  const ok = (s.w === s.d);
+  const wb = document.getElementById('mw'+ri+'_'+s.w);
+  const db = document.getElementById('md'+ri+'_'+s.d);
+  if (ok) {
+    wb.classList.remove('sel'); wb.classList.add('done');
+    db.classList.add('done');
+    mScore[ri]++;
+    const total = MATCH_ROUNDS[ri].pairs.length;
+    const sc = document.getElementById('ms'+ri);
+    sc.textContent = `${mScore[ri]} / ${total} matched`;
+    if (mScore[ri] === total) { sc.classList.add('perfect'); sc.textContent = `✓ All ${total} matched!`; }
+  } else {
+    db.classList.add('err'); setTimeout(()=>db.classList.remove('err'), 600);
+  }
+  mSel[ri] = {w:null, d:null};
+  if (!ok) { wb.classList.remove('sel'); }
+}
+
+function buildFib() {
+  if (document.getElementById('fibGroup0').dataset.built) return;
+  FIB_GROUPS.forEach((grp, gi) => {
+    const el = document.getElementById('fibGroup'+gi);
+    el.dataset.built = 1;
+    const shuffledIdx = grp.map((_,i) => i).sort(() => Math.random() - 0.5);
+    el.innerHTML = `
+      <div class="card">
+        <div class="card-title">Fill in the Blanks &nbsp; 填词练习</div>
+        <div class="card-sub">${FIB_LABELS[gi]}</div>
+        <div class="fib-bank" id="fibBank${gi}">
+          ${shuffledIdx.map(i => `<span class="fib-chip" id="fc${gi}_${i}" onclick="useChip(${gi},${i},'${grp[i].w}')">${grp[i].w}</span>`).join('')}
+        </div>
+        <div id="fibSents${gi}">
+          ${grp.map((f,i) => `<div class="fib-row"><span class="fib-num">${i+1}.</span> ${f.s.replace('___', `<input class="fib-input" id="fi${gi}_${i}" placeholder="…">`)}</div>`).join('')}
+        </div>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="checkFibGroup(${gi})">Check answers</button>
+          <button class="btn btn-ghost" onclick="resetFibGroup(${gi})">Reset</button>
+        </div>
+        <div id="fibScore${gi}"></div>
+      </div>`;
+  });
+}
+function useChip(gi, li, w) {
+  const chip = document.getElementById(`fc${gi}_${li}`);
+  const inputs = document.querySelectorAll(`[id^="fi${gi}_"]`);
+  for (const inp of inputs) { if (!inp.value) { inp.value = w; chip.classList.add('used'); return; } }
+}
+function checkFibGroup(gi) {
+  const grp = FIB_GROUPS[gi]; let cor = 0;
+  grp.forEach((f,i) => {
+    const inp = document.getElementById(`fi${gi}_${i}`);
+    const ok = inp.value.trim().toLowerCase() === f.w.toLowerCase();
+    inp.classList.remove('correct','wrong'); inp.classList.add(ok?'correct':'wrong');
+    if (ok) cor++;
+  });
+  const sc = document.getElementById('fibScore'+gi);
+  sc.innerHTML = `<div class="score-bar${cor===grp.length?' good':''}"><span class="score-num">${cor}/${grp.length}</span><span class="score-label">${cor===grp.length?'Perfect! All correct!':'Keep trying — incorrect answers highlighted in red.'}</span></div>`;
+}
+function resetFibGroup(gi) {
+  FIB_GROUPS[gi].forEach((_,i) => { const inp = document.getElementById(`fi${gi}_${i}`); inp.value=''; inp.classList.remove('correct','wrong'); });
+  document.querySelectorAll(`[id^="fc${gi}_"]`).forEach(c => c.classList.remove('used'));
+  document.getElementById('fibScore'+gi).innerHTML = '';
+}
+
+function buildScramble() {
+  const el = document.getElementById('scrambleSents'); if (el.dataset.built) return; el.dataset.built = 1;
+  el.innerHTML = SCRAMBLE.map((s,i) => {
+    const shuffled = [...s.words].sort(()=>Math.random()-.5);
+    return `<div class="scram-block" id="sb${i}">
+      <div class="scram-num">Sentence ${i+1}</div>
+      <div class="scram-hint">${s.hint}</div>
+      <div class="scram-pool" id="sp${i}">
+        ${shuffled.map((w,j)=>`<span class="scram-chip" data-word="${w}" data-idx="${j}" onclick="moveToAns(${i},this)">${w}</span>`).join('')}
+      </div>
+      <div class="scram-ans" id="sa${i}">
+        <span class="scram-ans-label">Your sentence ↓ (click a word to put it back)</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="checkScram(${i})">Check</button>
+        <button class="btn btn-ghost" onclick="resetScram(${i})">Reset</button>
+      </div>
+      <div class="scram-result" id="sr${i}"></div>
+    </div>`;
+  }).join('');
+}
+function moveToAns(si, chip) {
+  chip.classList.add('in-ans');
+  chip.onclick = () => moveToPool(si, chip);
+  document.getElementById('sa'+si).appendChild(chip);
+}
+function moveToPool(si, chip) {
+  chip.classList.remove('in-ans');
+  chip.onclick = () => moveToAns(si, chip);
+  document.getElementById('sp'+si).appendChild(chip);
+}
+function checkScram(si) {
+  const ans = document.getElementById('sa'+si);
+  const built = Array.from(ans.querySelectorAll('.scram-chip')).map(c=>c.dataset.word).join(' ');
+  const correct = SCRAMBLE[si].answer;
+  const normalize = s => s.trim().replace(/[.!?,]+$/, '').trim().toLowerCase();
+  const ok = normalize(built) === normalize(correct);
+  const res = document.getElementById('sr'+si);
+  res.className = 'scram-result ' + (ok ? 'correct' : 'wrong');
+  res.textContent = ok ? '✓ Correct!' : '✗ Not quite. Try again, or check: ' + correct;
+}
+function resetScram(si) {
+  const pool = document.getElementById('sp'+si);
+  const ans  = document.getElementById('sa'+si);
+  ans.querySelectorAll('.scram-chip').forEach(chip => {
+    chip.classList.remove('in-ans');
+    chip.onclick = () => moveToAns(si, chip);
+    pool.appendChild(chip);
+  });
+  const res = document.getElementById('sr'+si);
+  res.className = 'scram-result'; res.textContent = '';
+}
+
+function switchTab(t) {
+  document.querySelectorAll('.tab-panel').forEach((p,i)=>p.classList.toggle('active',i===t));
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===t));
+  if (t===0) buildVocab();
+  if (t===1) buildMatch();
+  if (t===2) buildFib();
+  if (t===3) buildScramble();
+}
+
+buildVocab();
+</script>
+</body>
+</html>
