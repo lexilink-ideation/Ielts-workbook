@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Vocabulary — Page 9 (A) — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --orange:#D4620A;--orange-pale:#FFF4EC;--orange-light:#F8D5B8;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:linear-gradient(135deg,#C4620A 0%,#8B3A00 100%);color:#fff;padding:2.5rem 2rem 2rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.6rem}
+.cover-title{font-size:clamp(22px,5vw,34px);font-weight:600;line-height:1.2;margin-bottom:.4rem}
+.cover-sub{font-size:14px;opacity:.8;margin-bottom:1.5rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.tab-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap;border-bottom:2px solid var(--border);padding-bottom:.75rem}
+.tab-btn{padding:.45rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.tab-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.tab-btn.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.4rem}
+.vocab-head{display:flex;align-items:center;gap:.6rem;padding:.55rem .9rem;background:var(--bg);cursor:pointer;user-select:none}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:14px;font-weight:600;color:var(--teal);min-width:150px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .4rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.65rem .9rem;border-top:1px solid var(--border);background:#fff}
+.vocab-body.open{display:block}
+.v-def{font-size:13px;color:var(--muted);margin-bottom:.4rem}
+.v-eg{font-size:13px;font-style:italic;padding:.4rem .7rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.match-round{margin-bottom:1.5rem}
+.match-round-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-pale);border:1px solid var(--orange-light);border-radius:8px;padding:.3rem .75rem;margin-bottom:.75rem;display:inline-block}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+@media(max-width:560px){.match-grid{grid-template-columns:1fr}}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%;line-height:1.4}
+.match-def:hover:not(.done){background:var(--orange-pale);border-color:var(--orange-light)}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.match-score{font-size:13px;color:var(--muted);margin-top:.5rem;padding:.4rem .75rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.match-score.perfect{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);font-weight:600}
+.fib-bank{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem;padding:.6rem .75rem;background:var(--orange-pale);border-radius:8px;border:1px solid var(--orange-light)}
+.fib-chip{display:inline-block;padding:.22rem .65rem;background:var(--surface);color:var(--orange);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--orange-light);transition:all .15s}
+.fib-chip:hover{background:var(--orange);color:#fff}
+.fib-chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.5rem 0;border-bottom:1px solid var(--border);line-height:1.7}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0;font-size:13px}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:140px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--orange)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.scram-block{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.scram-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.scram-num{font-size:12px;font-weight:600;color:var(--orange);margin-bottom:.4rem}
+.scram-hint{font-size:13px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.scram-pool{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:36px;padding:.4rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.scram-ans{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:40px;padding:.4rem;background:var(--orange-pale);border-radius:8px;border:2px dashed var(--orange-light)}
+.scram-ans-label{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.05em;width:100%;margin-bottom:.2rem}
+.scram-chip{padding:.28rem .65rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;user-select:none}
+.scram-chip:hover{background:var(--teal-pale);border-color:var(--teal-light)}
+.scram-chip.in-ans{background:var(--teal);color:#fff;border-color:var(--teal)}
+.scram-chip.in-ans:hover{background:var(--teal-dark)}
+.scram-result{font-size:13px;padding:.4rem .75rem;border-radius:6px;margin-top:.3rem;display:none}
+.scram-result.correct{background:var(--correct-bg);color:var(--correct);border:1px solid var(--correct);display:block}
+.scram-result.wrong{background:var(--wrong-bg);color:var(--wrong);border:1px solid var(--wrong);display:block}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--orange);color:#fff;border:1px solid var(--orange)}
+.btn-primary:hover{background:#B5520A;border-color:#B5520A}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:18px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+@media(max-width:600px){.card{padding:1rem}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">Daily Vocabulary &mdash; Page 9</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+<div class="cover">
+  <div class="cover-eyebrow">Daily Vocabulary Practice &nbsp; 每日词汇练习</div>
+  <div class="cover-title">Page 9 &nbsp;&mdash;&nbsp; A-words (appoint &rarr; arm)</div>
+  <div class="cover-sub">9400-word IELTS Vocabulary Book &nbsp;&middot;&nbsp; Sequential Order</div>
+  <div class="cover-badges">
+    <span class="badge">54 words</span>
+    <span class="badge">Meaning Matching</span>
+    <span class="badge">Fill in the Blanks</span>
+    <span class="badge">Scrambled Sentences</span>
+  </div>
+</div>
+<div class="page">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab(0)">&#128214; Vocabulary</button>
+    <button class="tab-btn" onclick="switchTab(1)">&#128279; Matching</button>
+    <button class="tab-btn" onclick="switchTab(2)">&#9999;&#65039; Fill in Blanks</button>
+    <button class="tab-btn" onclick="switchTab(3)">&#128256; Scrambled</button>
+  </div>
+  <div class="tab-panel active" id="tab0">
+    <div class="card">
+      <div class="card-title">All words &mdash; click to expand &nbsp; 点击查看释义</div>
+      <div class="card-sub">54 words from page 9 of the 9400-word book (words 430&ndash;483)</div>
+      <div id="vocabList"></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab1">
+    <div class="card">
+      <div class="card-title">Meaning Matching &nbsp; 词义配对</div>
+      <div class="card-sub">Click a word on the left, then its matching definition on the right.</div>
+      <div class="match-round" id="mr0"><div class="match-round-label">Round 1 of 3</div><div class="match-grid" id="mg0"></div><div class="match-score" id="ms0"></div></div>
+      <div class="match-round" id="mr1"><div class="match-round-label">Round 2 of 3</div><div class="match-grid" id="mg1"></div><div class="match-score" id="ms1"></div></div>
+      <div class="match-round" id="mr2"><div class="match-round-label">Round 3 of 3</div><div class="match-grid" id="mg2"></div><div class="match-score" id="ms2"></div></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab2">
+    <div id="fibGroup0"></div><div id="fibGroup1"></div><div id="fibGroup2"></div>
+  </div>
+  <div class="tab-panel" id="tab3">
+    <div class="card">
+      <div class="card-title">Scrambled Sentences &nbsp; 重排句子</div>
+      <div class="card-sub">Click words to build the correct sentence. Click a placed word to return it.</div>
+      <div id="scrambleSents"></div>
+    </div>
+  </div>
+</div>
+<script>
+const WORDS = [
+  {w:"appoint",       p:"vt.",          c:"任命，委派；指定",      d:"To officially choose someone for a position; to fix a time or place",              e:"The board voted to appoint a new chief executive following the sudden resignation."},
+  {w:"appointment",   p:"n.",           c:"约会；职位",            d:"A formal arrangement to meet someone; an official position or job",                 e:"The dentist's appointment was rescheduled due to an unexpected emergency at the clinic."},
+  {w:"appraisal",     p:"n.",           c:"评价，估价，鉴定",      d:"An assessment of the value, quality, or nature of something",                      e:"The annual performance appraisal gave employees structured feedback on their progress."},
+  {w:"appraise",      p:"v.",           c:"评价，鉴定",            d:"To assess the value, quality, or significance of something formally",               e:"An expert was hired to appraise the collection of paintings before the auction."},
+  {w:"appreciable",   p:"adj.",         c:"可察觉的，明显的",      d:"Large or important enough to be noticeable; considerable",                         e:"There was an appreciable improvement in air quality after the new regulations came into force."},
+  {w:"appreciably",   p:"adv.",         c:"相当大地，明显地",      d:"To a noticeable or significant degree; considerably",                               e:"Productivity rose appreciably after the company introduced flexible working hours."},
+  {w:"appreciate",    p:"vt.",          c:"感激；欣赏；评价",      d:"To be grateful for something; to recognise and enjoy the qualities of something",   e:"We truly appreciate the time and effort the volunteer team has dedicated to this project."},
+  {w:"appreciation",  p:"n.",           c:"欣赏；感激；增值",      d:"Gratitude; recognition of value or quality; an increase in monetary value",        e:"She expressed her deep appreciation for the support she had received during recovery."},
+  {w:"appreciative",  p:"adj.",         c:"感激的，赞赏的",        d:"Feeling or showing gratitude or warm approval of something",                        e:"The audience was highly appreciative of the orchestra's moving final performance."},
+  {w:"apprehension",  p:"n.",           c:"理解；忧惧；拘捕",      d:"Anxiety or fear about a future event; understanding; the act of arresting someone", e:"A sense of apprehension gripped the committee as they awaited the investigation results."},
+  {w:"apprentice",    p:"n./vt.",       c:"学徒；使当学徒",        d:"A person learning a skilled trade under an experienced employer",                   e:"The young apprentice worked alongside the master carpenter for three years before qualifying."},
+  {w:"apprize",       p:"v.",           c:"通知，告知",            d:"To formally inform or notify someone of something",                                 e:"The officer was duty-bound to apprize the suspect of their legal rights upon arrest."},
+  {w:"approach",      p:"v./n.",        c:"接近；方法；途径",      d:"To come near to; a way of dealing with a situation; a path leading to a place",    e:"The government's approach to reducing youth unemployment focused on vocational training."},
+  {w:"appropriate",   p:"adj./v.",      c:"合适的；挪用；拨款",    d:"Suitable for a particular purpose; to take something for one's own use",            e:"It is appropriate for researchers to disclose potential conflicts of interest in publications."},
+  {w:"approval",      p:"n.",           c:"批准；赞同，认可",      d:"Official agreement or permission; a favourable opinion of something",               e:"The planning committee granted approval for the new housing development after lengthy debate."},
+  {w:"approve",       p:"v.",           c:"赞成；批准",            d:"To agree with or officially sanction something; to regard something favourably",    e:"The city council unanimously voted to approve the new urban development plan."},
+  {w:"approximate",   p:"adj./v.",      c:"近似的；接近",          d:"Close to the actual but not entirely accurate; to be close to something in value",  e:"The approximate cost of the renovation was estimated at half a million pounds."},
+  {w:"approximately", p:"adv.",         c:"大约，近似地",          d:"Used to show something is almost but not exactly as stated; roughly",               e:"The final cost of the project was approximately twice what had originally been budgeted."},
+  {w:"approximation", p:"n.",           c:"近似值，粗略估计",      d:"A value or estimate that is close to but not exactly correct",                     e:"The figure given is only an approximation and may vary once full data is collected."},
+  {w:"April",         p:"n.",           c:"四月",                 d:"The fourth month of the year, between March and May",                               e:"The annual conference is scheduled to take place in April, subject to venue availability."},
+  {w:"apt",           p:"adj.",         c:"聪明的；合适的；易于的",d:"Appropriate or suitable; having a tendency to do something; quick to learn",        e:"Her apt description of the problem immediately clarified the issue for the entire team."},
+  {w:"aptitude",      p:"n.",           c:"才智，天资，倾向",      d:"A natural ability or tendency to do something well; innate talent",                 e:"The candidate demonstrated a natural aptitude for languages, acquiring vocabulary with ease."},
+  {w:"aquarium",      p:"n.",           c:"水族馆，养鱼缸",        d:"A tank of water for keeping live fish; a building exhibiting aquatic life",         e:"The city's new aquarium displays over three hundred species of marine life to visitors."},
+  {w:"aquatic",       p:"adj.",         c:"水的，水生的，水上的",  d:"Relating to water; living, growing, or done in or near water",                     e:"Many aquatic species are threatened by water pollution and rising ocean temperatures."},
+  {w:"Arab",          p:"n.",           c:"阿拉伯人",              d:"A member of the Arab people, originally from the Arabian Peninsula",                e:"The exhibition explored the rich cultural contributions of Arab scholars to medieval science."},
+  {w:"Arabian",       p:"adj.",         c:"阿拉伯的",              d:"Relating to Arabia, its people, or their culture and traditions",                   e:"The Arabian Peninsula is home to some of the world's largest oil reserves."},
+  {w:"Arabic",        p:"adj./n.",      c:"阿拉伯语的；阿拉伯语",  d:"Relating to the Arabic language or Arab culture; the Semitic language spoken by Arabs",e:"Arabic numerals, originally developed in India, are now used universally in mathematics."},
+  {w:"arable",        p:"adj.",         c:"可耕的，适于耕种的",    d:"Relating to land that is suitable or used for growing crops",                      e:"The region's well-irrigated arable land makes it one of the country's most productive farming zones."},
+  {w:"arbitrary",     p:"adj.",         c:"任意的，专断的",        d:"Based on random choice or personal whim rather than reason; autocratic",            e:"Critics argued that the decision to close the facility was arbitrary and lacked clear rationale."},
+  {w:"arbitrate",     p:"v.",           c:"仲裁，调解",            d:"To act as an independent third party to settle a dispute between parties",          e:"An independent panel was appointed to arbitrate between the two disputing companies."},
+  {w:"arbitration",   p:"n.",           c:"仲裁，公断",            d:"The process of settling a dispute using an impartial third party outside court",   e:"After months of failed talks, both companies agreed to settle the matter through arbitration."},
+  {w:"arbitrator",    p:"n.",           c:"仲裁员，公断人",        d:"An independent person appointed to settle a dispute between parties",               e:"The arbitrator delivered a binding ruling that both parties were legally obliged to accept."},
+  {w:"arboreal",      p:"adj.",         c:"树的，树栖的",          d:"Relating to trees; living in or among trees",                                       e:"Many primate species are arboreal, spending the majority of their lives in the forest canopy."},
+  {w:"arc",           p:"n.",           c:"弧，弓形物；弧光",      d:"A curved line or shape forming part of a circle; a curved path",                   e:"The bridge was designed in a graceful arc that blended harmoniously with the river landscape."},
+  {w:"arch",          p:"n./v.",        c:"拱门；拱起",            d:"A curved structure spanning an opening; to form or cause to form an arch shape",    e:"The entrance to the palace was framed by a grand stone arch dating from the eighteenth century."},
+  {w:"archaeologist", p:"n.",           c:"考古学家",              d:"A scientist who studies human history and prehistory through excavation of sites",  e:"Archaeologists uncovered a previously unknown settlement dating back over three thousand years."},
+  {w:"archaeology",   p:"n.",           c:"考古学",                d:"The study of human history through excavation and analysis of material remains",    e:"Archaeology has transformed our understanding of ancient civilisations and their daily lives."},
+  {w:"archaic",       p:"adj.",         c:"古老的，陈旧的",        d:"Very old-fashioned; no longer in common everyday use; belonging to an early period", e:"The use of archaic language in legal documents can make them difficult for citizens to understand."},
+  {w:"architect",     p:"n.",           c:"建筑师，设计师",        d:"A person who designs buildings; someone who creates or oversees a complex plan",    e:"The renowned architect was commissioned to design the city's new cultural centre."},
+  {w:"architecture",  p:"n.",           c:"建筑，建筑学；建筑风格",d:"The art and science of designing buildings; the style in which buildings are constructed",e:"The city's diverse architecture reflects centuries of cultural influence and historical change."},
+  {w:"archives",      p:"n.",           c:"档案，档案室，案卷",    d:"A collection of historical documents or records; the place where they are stored",  e:"The national archives hold millions of government documents dating back several centuries."},
+  {w:"arctic",        p:"adj./n.",      c:"北极的；北极",          d:"Relating to the region around the North Pole; extremely cold",                     e:"Temperatures in arctic regions have been rising at twice the global average due to climate change."},
+  {w:"ardent",        p:"adj.",         c:"热情的，热心的，热烈的",d:"Very enthusiastic or passionate about a cause, belief, or activity",                e:"She was an ardent supporter of environmental reform, dedicating decades to advocacy work."},
+  {w:"arduous",       p:"adj.",         c:"艰巨的，艰苦的",        d:"Requiring a lot of effort and endurance; difficult and tiring",                    e:"The arduous climb to base camp took three days and tested every team member's physical limits."},
+  {w:"area",          p:"n.",           c:"面积；地区；领域",      d:"A region or part of a place; a subject or range of activity or interest",           e:"The report identified several key areas of concern, including housing affordability and health."},
+  {w:"arena",         p:"n.",           c:"竞技场，比赛场所；领域",d:"A place for public entertainment or sport; a sphere of intense activity or debate",  e:"The political arena in modern democracies is shaped by competing ideologies and media influence."},
+  {w:"argue",         p:"v.",           c:"辩论，争论，主张",      d:"To give reasons for or against something; to exchange opposing views",              e:"The defence lawyer argued convincingly that the evidence did not support the charges."},
+  {w:"argument",      p:"n.",           c:"争论，辩论；理由；论证",d:"A heated exchange of views; a reason given in support of an idea or position",      e:"His well-structured argument convinced the panel that the proposed changes were beneficial."},
+  {w:"arise",         p:"vi.",          c:"出现，发生；起来",      d:"To emerge or come to attention; to get up; to result or originate from something",  e:"Conflicts often arise when communication breaks down between departments with different goals."},
+  {w:"aristocracy",   p:"n.",           c:"贵族阶层；贵族政治",    d:"The highest social class; government by a privileged elite or nobility",           e:"The French aristocracy wielded enormous political influence in the centuries before the Revolution."},
+  {w:"aristocrat",    p:"n.",           c:"贵族，贵族成员",        d:"A member of the aristocracy; a person with aristocratic manner or bearing",        e:"The novel's protagonist was a fallen aristocrat struggling to maintain his family's estate."},
+  {w:"aristocratic",  p:"adj.",         c:"贵族的，贵族式的",      d:"Relating to the aristocracy; having the refinement or manner associated with nobility",e:"The building's aristocratic facade concealed a surprisingly modern and functional interior."},
+  {w:"arithmetic",    p:"n./adj.",      c:"算术，四则运算；算术的",d:"The branch of mathematics dealing with basic number operations; relating to such maths",e:"Strong arithmetic skills are essential for students studying economics and the natural sciences."},
+  {w:"arm",           p:"n./v.",        c:"手臂；武器；武装",      d:"A limb of the body; a weapon; to equip with weapons or resources for a purpose",   e:"The government voted to arm the border patrol with additional surveillance equipment."}
+];
+
+const MATCH_ROUNDS = [
+  {pairs:[
+    ["appointment",  "a formal arrangement to meet; an official position or job"],
+    ["appraisal",    "an assessment of the value or quality of something"],
+    ["appreciate",   "to be grateful for; to recognise the good qualities of something"],
+    ["apprehension", "anxiety about the future; understanding; an act of arrest"],
+    ["apprentice",   "a person learning a skilled trade under an experienced employer"],
+    ["approach",     "a way of dealing with a situation; to come near to something"],
+    ["appropriate",  "suitable for a particular purpose; to take for one's own use"],
+    ["approve",      "to officially agree with or sanction something"]
+  ]},
+  {pairs:[
+    ["arbitrary",    "based on random choice rather than reason; autocratic"],
+    ["arbitration",  "settling a dispute using an impartial third party outside court"],
+    ["archaeology",  "the study of human history through excavation of material remains"],
+    ["archaic",      "very old-fashioned; no longer in common everyday use"],
+    ["architecture", "the art of designing buildings; the style in which they are built"],
+    ["archives",     "a collection of historical documents; the place where they are stored"],
+    ["ardent",       "very enthusiastic or passionate about a cause or belief"],
+    ["arduous",      "requiring great effort and endurance; difficult and tiring"]
+  ]},
+  {pairs:[
+    ["aptitude",     "a natural ability or tendency to do something well"],
+    ["aquatic",      "relating to water; living or done in or near water"],
+    ["arable",       "relating to land that is suitable for growing crops"],
+    ["arena",        "a place for public sport or debate; a sphere of intense activity"],
+    ["argument",     "a heated exchange of views; a reason supporting an idea"],
+    ["arise",        "to emerge or come to attention; to result from something"],
+    ["aristocracy",  "the highest social class; government by a privileged elite"],
+    ["arithmetic",   "the branch of mathematics dealing with basic number operations"]
+  ]}
+];
+
+const FIB = [
+  {s:"The dentist's ___ was rescheduled to the following week due to an unexpected emergency.",              w:"appointment"},
+  {s:"The annual performance ___ gave employees clear and structured feedback on their strengths.",          w:"appraisal"},
+  {s:"There was an ___ improvement in air quality after the new emissions regulations came into force.",     w:"appreciable"},
+  {s:"We truly ___ the time and effort the volunteer team has dedicated to this important community project.",w:"appreciate"},
+  {s:"A sense of ___ gripped the committee as they awaited the results of the independent investigation.",  w:"apprehension"},
+  {s:"The young ___ worked alongside the master carpenter for three years before qualifying independently.", w:"apprentice"},
+  {s:"The government's ___ to reducing youth unemployment focused on expanding vocational training schemes.",w:"approach"},
+  {s:"It is ___ for researchers to disclose any potential conflicts of interest before publishing findings.",w:"appropriate"},
+  {s:"The city council voted to ___ the new urban development plan after lengthy public consultation.",      w:"approve"},
+  {s:"The final cost of the project was ___ twice what had originally been budgeted for the renovation.",   w:"approximately"},
+  {s:"The candidate demonstrated a natural ___ for languages, picking up vocabulary and grammar with ease.",w:"aptitude"},
+  {s:"The city's new ___ displays over three hundred species of marine life from across the world's oceans.",w:"aquarium"},
+  {s:"Many ___ species are threatened by water pollution, habitat loss, and rising water temperatures.",    w:"aquatic"},
+  {s:"___ numerals, originally developed in India, are now used universally in mathematics and science.",   w:"Arabic"},
+  {s:"The region's well-irrigated ___ land makes it one of the country's most productive farming zones.",   w:"arable"},
+  {s:"Critics argued that the decision to close the facility was ___, with no clear evidence provided.",    w:"arbitrary"},
+  {s:"After months of failed talks, the two companies agreed to settle the contract dispute through ___.",  w:"arbitration"},
+  {s:"Many primate species are ___, spending the majority of their lives high in the forest canopy.",       w:"arboreal"},
+  {s:"The entrance to the palace was framed by a grand stone ___ dating from the eighteenth century.",      w:"arch"},
+  {s:"___ has transformed our understanding of ancient civilisations through careful excavation and analysis.",w:"Archaeology"},
+  {s:"The use of ___ language in legal documents can make them difficult for ordinary citizens to interpret.",w:"archaic"},
+  {s:"The city's diverse ___ reflects centuries of cultural influence, from Gothic cathedrals to modernist towers.",w:"architecture"},
+  {s:"The national ___ hold millions of government documents dating back several centuries, open to researchers.",w:"archives"},
+  {s:"Temperatures in ___ regions have been rising at twice the global average rate due to climate change.",w:"arctic"},
+  {s:"She was an ___ supporter of environmental reform, dedicating decades of her career to advocacy work.",w:"ardent"},
+  {s:"The ___ climb to base camp took three full days and tested the physical limits of every team member.",w:"arduous"},
+  {s:"The report identified several key ___ of concern, including housing affordability and healthcare access.",w:"areas"},
+  {s:"The political ___ in modern democracies is shaped by competing ideologies, interest groups, and media.",w:"arena"},
+  {s:"His well-structured ___ convinced the panel that the proposed reforms would benefit the organisation.",w:"argument"},
+  {s:"Conflicts often ___ when communication breaks down between teams with different priorities and timelines.",w:"arise"},
+  {s:"The French ___ wielded enormous political and social power in the centuries before the Revolution.",   w:"aristocracy"},
+  {s:"Strong mental ___ skills are essential for students studying economics, engineering, and the sciences.",w:"arithmetic"}
+];
+const FIB_GROUPS = [FIB.slice(0,11), FIB.slice(11,22), FIB.slice(22)];
+const FIB_LABELS = [
+  'Practice 1 &nbsp;&middot;&nbsp; appointment &rarr; aptitude',
+  'Practice 2 &nbsp;&middot;&nbsp; aquarium &rarr; architecture',
+  'Practice 3 &nbsp;&middot;&nbsp; archives &rarr; arithmetic'
+];
+
+const SCRAMBLE = [
+  {
+    hint:"Tip: starts with 'She adopted…' (uses: approach, appointment)",
+    words:["She","adopted","a","systematic","approach","to","preparing","for","the","appointment","reviewing","every","document","the","night","before"],
+    answer:"She adopted a systematic approach to preparing for the appointment reviewing every document the night before."
+  },
+  {
+    hint:"Tip: starts with 'The apprentice…' (uses: apprentice, appreciate)",
+    words:["The","apprentice","quickly","learned","to","appreciate","the","value","of","patience","when","working","alongside","experienced","craftspeople"],
+    answer:"The apprentice quickly learned to appreciate the value of patience when working alongside experienced craftspeople."
+  },
+  {
+    hint:"Tip: starts with 'The team…' (uses: apprehension, archaeology)",
+    words:["The","team","felt","a","mixture","of","excitement","and","apprehension","as","the","archaeology","dig","uncovered","remains","far","older","than","expected"],
+    answer:"The team felt a mixture of excitement and apprehension as the archaeology dig uncovered remains far older than expected."
+  },
+  {
+    hint:"Tip: starts with 'The workers…' (uses: arbitrary, arbitration)",
+    words:["The","workers","considered","the","decision","arbitrary","and","took","the","dispute","to","formal","arbitration","to","resolve","it","fairly"],
+    answer:"The workers considered the decision arbitrary and took the dispute to formal arbitration to resolve it fairly."
+  },
+  {
+    hint:"Tip: starts with 'Despite…' (uses: arduous, ardent)",
+    words:["Despite","the","arduous","conditions","the","ardent","researchers","refused","to","abandon","their","fieldwork","in","the","remote","mountain","region"],
+    answer:"Despite the arduous conditions the ardent researchers refused to abandon their fieldwork in the remote mountain region."
+  },
+  {
+    hint:"Tip: starts with 'A heated…' (uses: argument, arise)",
+    words:["A","heated","argument","was","likely","to","arise","if","either","party","refused","to","compromise","during","the","final","round","of","negotiations"],
+    answer:"A heated argument was likely to arise if either party refused to compromise during the final round of negotiations."
+  },
+  {
+    hint:"Tip: starts with 'The old…' (uses: archives, architecture)",
+    words:["The","old","archives","contained","original","blueprints","that","revealed","the","remarkable","architecture","of","the","building","as","originally","designed"],
+    answer:"The old archives contained original blueprints that revealed the remarkable architecture of the building as originally designed."
+  }
+];
+
+function buildVocab(){const el=document.getElementById('vocabList');if(el.dataset.built)return;el.dataset.built=1;el.innerHTML=WORDS.map(w=>`<div class="vocab-item"><div class="vocab-head" onclick="toggleV(this)"><span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span><span class="v-cn">${w.c}</span><span class="v-toggle">&#9656;</span></div><div class="vocab-body"><p class="v-def">${w.d}</p><div class="v-eg">${w.e}</div></div></div>`).join('');}
+function toggleV(h){const b=h.nextElementSibling;const open=b.classList.toggle('open');h.querySelector('.v-toggle').textContent=open?'▾':'▸';}
+function buildMatch(){const built=document.getElementById('mg0').dataset;if(built.built)return;built.built=1;MATCH_ROUNDS.forEach((round,ri)=>{const pairs=round.pairs;const sd=pairs.map((_,i)=>i).sort(()=>Math.random()-.5);const grid=document.getElementById('mg'+ri);grid.innerHTML=pairs.map((_,i)=>`<button class="match-word" id="mw${ri}_${i}" onclick="selMatchW(${ri},${i})">${pairs[i][0]}</button>`).join('')+sd.map(di=>`<button class="match-def" id="md${ri}_${di}" onclick="selMatchD(${ri},${di})">${pairs[di][1]}</button>`).join('');});}
+let mSel=[{w:null,d:null},{w:null,d:null},{w:null,d:null}],mScore=[0,0,0];
+function selMatchW(ri,wi){mSel[ri].w=wi;document.querySelectorAll(`[id^="mw${ri}_"]`).forEach(b=>b.classList.remove('sel'));document.getElementById('mw'+ri+'_'+wi).classList.add('sel');tryMatch(ri);}
+function selMatchD(ri,di){mSel[ri].d=di;tryMatch(ri);}
+function tryMatch(ri){const s=mSel[ri];if(s.w===null||s.d===null)return;const ok=(s.w===s.d);const wb=document.getElementById('mw'+ri+'_'+s.w);const db=document.getElementById('md'+ri+'_'+s.d);if(ok){wb.classList.remove('sel');wb.classList.add('done');db.classList.add('done');mScore[ri]++;const total=MATCH_ROUNDS[ri].pairs.length;const sc=document.getElementById('ms'+ri);sc.textContent=`${mScore[ri]} / ${total} matched`;if(mScore[ri]===total){sc.classList.add('perfect');sc.textContent=`✓ All ${total} matched!`;}}else{db.classList.add('err');setTimeout(()=>db.classList.remove('err'),600);}mSel[ri]={w:null,d:null};if(!ok)wb.classList.remove('sel');}
+function buildFib(){if(document.getElementById('fibGroup0').dataset.built)return;FIB_GROUPS.forEach((grp,gi)=>{const el=document.getElementById('fibGroup'+gi);el.dataset.built=1;const si=grp.map((_,i)=>i).sort(()=>Math.random()-.5);el.innerHTML=`<div class="card"><div class="card-title">Fill in the Blanks &nbsp; 填词练习</div><div class="card-sub">${FIB_LABELS[gi]}</div><div class="fib-bank" id="fibBank${gi}">${si.map(i=>`<span class="fib-chip" id="fc${gi}_${i}" onclick="useChip(${gi},${i},'${grp[i].w}')">${grp[i].w}</span>`).join('')}</div><div id="fibSents${gi}">${grp.map((f,i)=>`<div class="fib-row"><span class="fib-num">${i+1}.</span> ${f.s.replace('___',`<input class="fib-input" id="fi${gi}_${i}" placeholder="…">`)}</div>`).join('')}</div><div class="btn-row"><button class="btn btn-primary" onclick="checkFibGroup(${gi})">Check answers</button><button class="btn btn-ghost" onclick="resetFibGroup(${gi})">Reset</button></div><div id="fibScore${gi}"></div></div>`;});}
+function useChip(gi,li,w){const chip=document.getElementById(`fc${gi}_${li}`);const inputs=document.querySelectorAll(`[id^="fi${gi}_"]`);for(const inp of inputs){if(!inp.value){inp.value=w;chip.classList.add('used');return;}}}
+function checkFibGroup(gi){const grp=FIB_GROUPS[gi];let cor=0;grp.forEach((f,i)=>{const inp=document.getElementById(`fi${gi}_${i}`);const ok=inp.value.trim().toLowerCase()===f.w.toLowerCase();inp.classList.remove('correct','wrong');inp.classList.add(ok?'correct':'wrong');if(ok)cor++;});const sc=document.getElementById('fibScore'+gi);sc.innerHTML=`<div class="score-bar${cor===grp.length?' good':''}"><span class="score-num">${cor}/${grp.length}</span><span class="score-label">${cor===grp.length?'Perfect! All correct!':'Keep trying — incorrect answers in red.'}</span></div>`;}
+function resetFibGroup(gi){FIB_GROUPS[gi].forEach((_,i)=>{const inp=document.getElementById(`fi${gi}_${i}`);inp.value='';inp.classList.remove('correct','wrong');});document.querySelectorAll(`[id^="fc${gi}_"]`).forEach(c=>c.classList.remove('used'));document.getElementById('fibScore'+gi).innerHTML='';}
+function buildScramble(){const el=document.getElementById('scrambleSents');if(el.dataset.built)return;el.dataset.built=1;el.innerHTML=SCRAMBLE.map((s,i)=>{const shuffled=[...s.words].sort(()=>Math.random()-.5);return`<div class="scram-block" id="sb${i}"><div class="scram-num">Sentence ${i+1}</div><div class="scram-hint">${s.hint}</div><div class="scram-pool" id="sp${i}">${shuffled.map((w,j)=>`<span class="scram-chip" data-word="${w}" data-idx="${j}" onclick="moveToAns(${i},this)">${w}</span>`).join('')}</div><div class="scram-ans" id="sa${i}"><span class="scram-ans-label">Your sentence ↓ (click to return)</span></div><div class="btn-row"><button class="btn btn-primary" onclick="checkScram(${i})">Check</button><button class="btn btn-ghost" onclick="resetScram(${i})">Reset</button></div><div class="scram-result" id="sr${i}"></div></div>`;}).join('');}
+function moveToAns(si,chip){chip.classList.add('in-ans');chip.onclick=()=>moveToPool(si,chip);document.getElementById('sa'+si).appendChild(chip);}
+function moveToPool(si,chip){chip.classList.remove('in-ans');chip.onclick=()=>moveToAns(si,chip);document.getElementById('sp'+si).appendChild(chip);}
+function checkScram(si){const ans=document.getElementById('sa'+si);const built=Array.from(ans.querySelectorAll('.scram-chip')).map(c=>c.dataset.word).join(' ');const correct=SCRAMBLE[si].answer;const normalize=s=>s.trim().replace(/[.!?,]+$/,'').trim().toLowerCase();const ok=normalize(built)===normalize(correct);const res=document.getElementById('sr'+si);res.className='scram-result '+(ok?'correct':'wrong');res.textContent=ok?'✓ Correct!':'✗ Not quite. Try again, or check: '+correct;}
+function resetScram(si){const pool=document.getElementById('sp'+si);const ans=document.getElementById('sa'+si);ans.querySelectorAll('.scram-chip').forEach(chip=>{chip.classList.remove('in-ans');chip.onclick=()=>moveToAns(si,chip);pool.appendChild(chip);});const res=document.getElementById('sr'+si);res.className='scram-result';res.textContent='';}
+function switchTab(t){document.querySelectorAll('.tab-panel').forEach((p,i)=>p.classList.toggle('active',i===t));document.querySelectorAll('.tab-btn').forEach((b,i)=>b.classList.toggle('active',i===t));if(t===0)buildVocab();if(t===1)buildMatch();if(t===2)buildFib();if(t===3)buildScramble();}
+buildVocab();
+</script>
+</body>
+</html>

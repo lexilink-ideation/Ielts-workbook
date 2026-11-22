@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Vocabulary — Page 12 (A) — Lexilink Ideation IELTS Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:#F3F7F8;color:#1C2B33;line-height:1.6;min-height:100vh}
+:root{
+  --teal:#1A7A8A;--teal-dark:#115966;--teal-light:#D6EEF1;--teal-pale:#EEF8FA;
+  --orange:#D4620A;--orange-pale:#FFF4EC;--orange-light:#F8D5B8;
+  --surface:#FFFFFF;--bg:#F3F7F8;--border:#DDE5E8;--text:#1C2B33;--muted:#5A7280;
+  --correct-bg:#E1F5EE;--correct:#0F6E56;--wrong-bg:#FCEBEB;--wrong:#A32D2D;
+}
+.page{max-width:860px;margin:0 auto;padding:0 1rem 4rem}
+.topbar{background:var(--teal);color:#fff;padding:.6rem 1.5rem;font-size:12px;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(26,122,138,.18)}
+.topbar-logo{font-weight:600;letter-spacing:.08em}
+.topbar-home{font-size:12px;color:#fff;opacity:.85;text-decoration:none;border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:.25rem .8rem;transition:all .15s;display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap}
+.topbar-home:hover{opacity:1;background:rgba(255,255,255,.15)}
+.topbar-left{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;min-width:0}
+.cover{background:linear-gradient(135deg,#C4620A 0%,#8B3A00 100%);color:#fff;padding:2.5rem 2rem 2rem;text-align:center;border-radius:0 0 20px 20px;margin-bottom:2rem}
+.cover-eyebrow{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;opacity:.7;margin-bottom:.6rem}
+.cover-title{font-size:clamp(22px,5vw,34px);font-weight:600;line-height:1.2;margin-bottom:.4rem}
+.cover-sub{font-size:14px;opacity:.8;margin-bottom:1.5rem}
+.cover-badges{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:.3rem .8rem;border-radius:20px;font-size:12px;font-weight:500;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25)}
+.tab-nav{display:flex;gap:.4rem;margin-bottom:1.25rem;flex-wrap:wrap;border-bottom:2px solid var(--border);padding-bottom:.75rem}
+.tab-btn{padding:.45rem 1rem;border-radius:8px;border:1px solid var(--border);background:var(--surface);font-size:13px;font-weight:500;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.tab-btn:hover{background:var(--teal-pale);color:var(--teal);border-color:var(--teal-light)}
+.tab-btn.active{background:var(--orange);color:#fff;border-color:var(--orange)}
+.tab-panel{display:none}.tab-panel.active{display:block}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.5rem;margin-bottom:1rem;box-shadow:0 1px 4px rgba(0,0,0,.04)}
+.card-title{font-size:14px;font-weight:600;color:var(--teal);margin-bottom:1rem}
+.card-sub{font-size:13px;color:var(--muted);margin-bottom:.75rem}
+.vocab-item{border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:.4rem}
+.vocab-head{display:flex;align-items:center;gap:.6rem;padding:.55rem .9rem;background:var(--bg);cursor:pointer;user-select:none}
+.vocab-head:hover{background:var(--teal-pale)}
+.v-word{font-size:14px;font-weight:600;color:var(--teal);min-width:150px}
+.v-pos{font-size:11px;color:var(--muted);background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:.1rem .4rem;flex-shrink:0}
+.v-cn{font-size:13px;color:var(--muted);flex:1}
+.v-toggle{font-size:11px;color:var(--muted);margin-left:auto;flex-shrink:0}
+.vocab-body{display:none;padding:.65rem .9rem;border-top:1px solid var(--border);background:#fff}
+.vocab-body.open{display:block}
+.v-def{font-size:13px;color:var(--muted);margin-bottom:.4rem}
+.v-eg{font-size:13px;font-style:italic;padding:.4rem .7rem;background:var(--teal-pale);border-left:3px solid var(--teal);border-radius:0 8px 8px 0;color:var(--text)}
+.match-round{margin-bottom:1.5rem}
+.match-round-label{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--orange);background:var(--orange-pale);border:1px solid var(--orange-light);border-radius:8px;padding:.3rem .75rem;margin-bottom:.75rem;display:inline-block}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+@media(max-width:560px){.match-grid{grid-template-columns:1fr}}
+.match-word{padding:.5rem .75rem;background:var(--teal-pale);border:1px solid var(--teal-light);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;color:var(--teal);transition:all .15s;text-align:left;width:100%}
+.match-word.sel{background:var(--teal);color:#fff;border-color:var(--teal)}
+.match-word.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def{padding:.5rem .75rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;text-align:left;width:100%;line-height:1.4}
+.match-def:hover:not(.done){background:var(--orange-pale);border-color:var(--orange-light)}
+.match-def.done{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);pointer-events:none}
+.match-def.err{background:var(--wrong-bg);border-color:var(--wrong)}
+.match-score{font-size:13px;color:var(--muted);margin-top:.5rem;padding:.4rem .75rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.match-score.perfect{background:var(--correct-bg);border-color:var(--correct);color:var(--correct);font-weight:600}
+.fib-bank{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.85rem;padding:.6rem .75rem;background:var(--orange-pale);border-radius:8px;border:1px solid var(--orange-light)}
+.fib-chip{display:inline-block;padding:.22rem .65rem;background:var(--surface);color:var(--orange);border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--orange-light);transition:all .15s}
+.fib-chip:hover{background:var(--orange);color:#fff}
+.fib-chip.used{opacity:.3;pointer-events:none}
+.fib-row{font-size:14px;display:flex;flex-wrap:wrap;align-items:center;gap:.3rem;padding:.5rem 0;border-bottom:1px solid var(--border);line-height:1.7}
+.fib-row:last-child{border-bottom:none}
+.fib-num{font-weight:500;color:var(--muted);min-width:1.4rem;flex-shrink:0;font-size:13px}
+.fib-input{border:none;border-bottom:2px solid var(--border);background:transparent;font-size:14px;color:var(--text);padding:.1rem .2rem;width:140px;outline:none;font-family:inherit;transition:border-color .15s}
+.fib-input:focus{border-color:var(--orange)}
+.fib-input.correct{border-color:var(--correct);color:var(--correct)}
+.fib-input.wrong{border-color:var(--wrong);color:var(--wrong)}
+.scram-block{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}
+.scram-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.scram-num{font-size:12px;font-weight:600;color:var(--orange);margin-bottom:.4rem}
+.scram-hint{font-size:13px;color:var(--muted);margin-bottom:.6rem;font-style:italic}
+.scram-pool{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:36px;padding:.4rem;background:var(--bg);border-radius:8px;border:1px solid var(--border)}
+.scram-ans{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.5rem;min-height:40px;padding:.4rem;background:var(--orange-pale);border-radius:8px;border:2px dashed var(--orange-light)}
+.scram-ans-label{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.05em;width:100%;margin-bottom:.2rem}
+.scram-chip{padding:.28rem .65rem;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:13px;cursor:pointer;color:var(--text);transition:all .15s;user-select:none}
+.scram-chip:hover{background:var(--teal-pale);border-color:var(--teal-light)}
+.scram-chip.in-ans{background:var(--teal);color:#fff;border-color:var(--teal)}
+.scram-chip.in-ans:hover{background:var(--teal-dark)}
+.scram-result{font-size:13px;padding:.4rem .75rem;border-radius:6px;margin-top:.3rem;display:none}
+.scram-result.correct{background:var(--correct-bg);color:var(--correct);border:1px solid var(--correct);display:block}
+.scram-result.wrong{background:var(--wrong-bg);color:var(--wrong);border:1px solid var(--wrong);display:block}
+.btn{padding:.45rem 1.1rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .15s;font-family:inherit}
+.btn-primary{background:var(--orange);color:#fff;border:1px solid var(--orange)}
+.btn-primary:hover{background:#B5520A;border-color:#B5520A}
+.btn-ghost{background:var(--surface);color:var(--muted);border:1px solid var(--border)}
+.btn-ghost:hover{background:var(--bg)}
+.btn-row{display:flex;gap:.5rem;margin-top:.75rem;flex-wrap:wrap}
+.score-bar{display:flex;align-items:center;gap:.75rem;padding:.6rem 1rem;background:var(--bg);border-radius:8px;margin-top:.75rem;border:1px solid var(--border)}
+.score-bar.good{background:var(--correct-bg);border-color:var(--correct)}
+.score-num{font-size:18px;font-weight:600;color:var(--teal)}
+.score-label{font-size:13px;color:var(--muted)}
+@media(max-width:600px){.card{padding:1rem}}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-left">
+    <span class="topbar-logo">Lexilink Ideation IELTS Studio</span>
+    <span style="font-size:11px;opacity:.8">Daily Vocabulary &mdash; Page 12</span>
+  </div>
+  <a class="topbar-home" href="index.html">&larr; Home &#39064;&#39029;</a>
+</div>
+<div class="cover">
+  <div class="cover-eyebrow">Daily Vocabulary Practice &nbsp; 每日词汇练习</div>
+  <div class="cover-title">Page 12 &nbsp;&mdash;&nbsp; A-words (attentive &rarr; awake)</div>
+  <div class="cover-sub">9400-word IELTS Vocabulary Book &nbsp;&middot;&nbsp; Sequential Order</div>
+  <div class="cover-badges">
+    <span class="badge">54 words</span>
+    <span class="badge">Meaning Matching</span>
+    <span class="badge">Fill in the Blanks</span>
+    <span class="badge">Scrambled Sentences</span>
+  </div>
+</div>
+<div class="page">
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab(0)">&#128214; Vocabulary</button>
+    <button class="tab-btn" onclick="switchTab(1)">&#128279; Matching</button>
+    <button class="tab-btn" onclick="switchTab(2)">&#9999;&#65039; Fill in Blanks</button>
+    <button class="tab-btn" onclick="switchTab(3)">&#128256; Scrambled</button>
+  </div>
+  <div class="tab-panel active" id="tab0">
+    <div class="card">
+      <div class="card-title">All words &mdash; click to expand &nbsp; 点击查看释义</div>
+      <div class="card-sub">54 words from page 12 of the 9400-word book (words 592&ndash;645)</div>
+      <div id="vocabList"></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab1">
+    <div class="card">
+      <div class="card-title">Meaning Matching &nbsp; 词义配对</div>
+      <div class="card-sub">Click a word on the left, then its matching definition on the right.</div>
+      <div class="match-round" id="mr0"><div class="match-round-label">Round 1 of 3</div><div class="match-grid" id="mg0"></div><div class="match-score" id="ms0"></div></div>
+      <div class="match-round" id="mr1"><div class="match-round-label">Round 2 of 3</div><div class="match-grid" id="mg1"></div><div class="match-score" id="ms1"></div></div>
+      <div class="match-round" id="mr2"><div class="match-round-label">Round 3 of 3</div><div class="match-grid" id="mg2"></div><div class="match-score" id="ms2"></div></div>
+    </div>
+  </div>
+  <div class="tab-panel" id="tab2">
+    <div id="fibGroup0"></div><div id="fibGroup1"></div><div id="fibGroup2"></div>
+  </div>
+  <div class="tab-panel" id="tab3">
+    <div class="card">
+      <div class="card-title">Scrambled Sentences &nbsp; 重排句子</div>
+      <div class="card-sub">Click words to build the correct sentence. Click a placed word to return it.</div>
+      <div id="scrambleSents"></div>
+    </div>
+  </div>
+</div>
+<script>
+const WORDS = [
+  {w:"attentive",    p:"adj.",       c:"专心的；体贴的，周到的",    d:"Paying close attention; caring and considerate towards others' needs",                                                              e:"An attentive audience listened carefully to every word of the scientist's keynote presentation."},
+  {w:"attentively",  p:"adv.",       c:"专心地；体贴地",           d:"In a careful and focused manner; with close attention",                                                                              e:"The students listened attentively as the lecturer outlined the key themes of the examination."},
+  {w:"attic",        p:"n.",         c:"阁楼，顶楼",               d:"A space or room inside a roof of a building, often used for storage",                                                               e:"Boxes of old documents and photographs were discovered when they cleared out the attic."},
+  {w:"attitude",     p:"n.",         c:"态度，看法；姿势",          d:"A settled way of thinking or feeling about something; a position of the body",                                                    e:"A positive attitude towards criticism allows professionals to continuously improve their performance."},
+  {w:"attorney",     p:"n.",         c:"律师；代理人",             d:"A person appointed to act for another in business or legal matters; a lawyer",                                                     e:"The company retained a senior attorney to advise on the complex merger and acquisition process."},
+  {w:"attract",      p:"vt.",        c:"吸引，引起",               d:"To cause someone to come to a place or take interest; to draw towards by appeal",                                                  e:"The new cultural district attracted thousands of visitors during its opening weekend last summer."},
+  {w:"attraction",   p:"n.",         c:"吸引力；景点；魅力",        d:"The action of attracting; a place or feature that draws interest; a force drawing things together",                              e:"The ancient ruins remain the main tourist attraction in the region, drawing millions each year."},
+  {w:"attractive",   p:"adj.",       c:"吸引人的；有魅力的",        d:"Pleasing in appearance or manner; having qualities that appeal or interest",                                                      e:"The investment package was made attractive by offering significant tax breaks for the first five years."},
+  {w:"attributable", p:"adj.",       c:"可归因于…的",              d:"Able to be regarded as caused by or belonging to a particular source",                                                             e:"The fall in productivity was largely attributable to outdated equipment and poor working conditions."},
+  {w:"attribute",    p:"v./n.",      c:"归因于；属性，特征",        d:"To regard something as caused by; a quality or characteristic belonging to something",                                             e:"Researchers attribute the region's economic success to sustained investment in education and infrastructure."},
+  {w:"attribution",  p:"n.",         c:"归因；归属；赋予",          d:"The act of ascribing something to a cause or source; identifying the creator of a work",                                         e:"The attribution of the painting to a Flemish master significantly raised its auction value."},
+  {w:"attributive",  p:"adj.",       c:"定语的；属性的",           d:"In grammar, an adjective placed before the noun it modifies; relating to attribution",                                            e:"In English, attributive adjectives come before the noun they describe, as in 'red car'."},
+  {w:"auction",      p:"n./v.",      c:"拍卖；公开拍卖",           d:"A public sale in which items are sold to the highest bidder; to sell by this method",                                             e:"The estate was put up for auction after the family decided to sell the entire property."},
+  {w:"audible",      p:"adj.",       c:"听得到的，可听见的",        d:"Loud enough to be heard; perceptible to the ear",                                                                                 e:"The presenter spoke in a clear, audible voice that reached every corner of the large hall."},
+  {w:"audience",     p:"n.",         c:"观众，听众；读者群；会见",  d:"A group of people watching or listening to a performance; a formal meeting with an important person",                            e:"The audience gave a standing ovation at the end of the orchestra's magnificent final performance."},
+  {w:"audio-visual", p:"adj.",       c:"视听的，声像的",           d:"Relating to both sound and sight; using both audio and visual elements in communication",                                         e:"The training course made extensive use of audio-visual materials to reinforce key learning points."},
+  {w:"audit",        p:"n./v.",      c:"审计，审查；对…进行审计",   d:"An official examination of accounts or processes; to conduct such an examination",                                               e:"The external auditors were brought in to conduct a thorough audit of the company's annual accounts."},
+  {w:"audition",     p:"n./v.",      c:"试音，试镜；试演",          d:"A trial performance to assess suitability for a role; to perform in such a trial",                                              e:"Hundreds of aspiring performers came to audition for the lead role in the new musical production."},
+  {w:"auditorium",   p:"n.",         c:"礼堂，观众席；大会堂",      d:"The part of a theatre or concert hall where the audience sits; a large building for public events",                             e:"The new auditorium seats over a thousand people and has state-of-the-art acoustic systems installed."},
+  {w:"augment",      p:"vt.",        c:"增加，扩大，提高",          d:"To make something greater by adding to it; to enlarge or supplement",                                                            e:"The charity augmented its fundraising income by launching a new range of merchandise and events."},
+  {w:"august",       p:"adj.",       c:"威严的，令人敬畏的",        d:"Respected and impressive; having great dignity or authority",                                                                    e:"The august institution had shaped national policy for over two centuries before the reforms began."},
+  {w:"aunt",         p:"n.",         c:"姑，姨，伯母，婶母",        d:"The sister of one's parent; the wife of one's uncle",                                                                            e:"Her aunt, a retired professor, encouraged her to pursue a career in medical research."},
+  {w:"aural",        p:"adj.",       c:"听觉的，耳的",             d:"Relating to the ear or the sense of hearing",                                                                                     e:"The language course included regular aural exercises to improve listening comprehension skills."},
+  {w:"auspice",      p:"n.",         c:"主持，赞助；吉兆",          d:"Protection, patronage, or support; a sign or omen, especially one regarded as favourable",                                      e:"The conference was held under the auspices of the United Nations Environment Programme."},
+  {w:"Australia",    p:"n.",         c:"澳大利亚",                 d:"A country and continent in the Southern Hemisphere, known for its unique biodiversity",                                           e:"Australia implemented a comprehensive carbon pricing policy before eventually repealing it."},
+  {w:"Australian",   p:"adj./n.",    c:"澳大利亚的；澳大利亚人",    d:"Relating to Australia, its people, or its culture; a citizen or native of Australia",                                            e:"Australian researchers have made significant contributions to the field of marine ecology."},
+  {w:"authentic",    p:"adj.",       c:"真实的，真正的；可信的",    d:"Genuine; not copied or false; based on reliable facts or truthful representation",                                               e:"The museum verified that the sculpture was authentic, dating back to the third century BCE."},
+  {w:"author",       p:"n./v.",      c:"作者，著作人；创作",        d:"A person who writes books or articles; to be the creator or originator of something",                                            e:"The author spent seven years researching the material before completing the definitive historical account."},
+  {w:"authoritative",p:"adj.",       c:"权威的，有权威的",          d:"Commanding respect because of knowledge and reliability; having official approval or power",                                    e:"The panel published an authoritative report on the economic impact of migration on host countries."},
+  {w:"authority",    p:"n.",         c:"权力，权威；当局；授权",    d:"The power to give orders or make decisions; a person or body with official power; expertise",                                   e:"Local authorities introduced new bylaws to restrict vehicle access in the historic city centre."},
+  {w:"authorization",p:"n.",         c:"授权，批准",               d:"Official permission or approval to do something; the act of giving authority",                                                   e:"The project could not proceed without formal authorization from the board of directors."},
+  {w:"authorize",    p:"vt.",        c:"授权，批准，许可",          d:"To give official permission for something; to empower someone to act in a certain way",                                         e:"Only the chief financial officer is authorized to approve expenditure above a specified threshold."},
+  {w:"autobiography",p:"n.",         c:"自传",                     d:"An account of one's own life written by oneself",                                                                                 e:"Her autobiography offered a candid account of growing up in poverty before achieving national recognition."},
+  {w:"automate",     p:"vt.",        c:"使自动化",                 d:"To make a process operate automatically using technology, without human intervention",                                            e:"The factory automated its production line to reduce costs and improve consistency of output."},
+  {w:"automatic",    p:"adj.",       c:"自动的；无意识的；必然的",  d:"Working by itself without human control; happening as a natural reflex or consequence",                                           e:"Drivers who run a red light face an automatic fine under the new traffic enforcement system."},
+  {w:"automation",   p:"n.",         c:"自动化；自动操作",          d:"The use of machines or technology to perform tasks previously done by humans",                                                   e:"Automation in manufacturing has led to significant gains in productivity but also displaced many workers."},
+  {w:"automobile",   p:"n.",         c:"汽车",                     d:"A self-propelled vehicle, especially a car, used for road transport",                                                             e:"The automobile industry is undergoing rapid transformation as electric vehicles gain market share."},
+  {w:"autonomous",   p:"adj.",       c:"自治的；有自主权的",        d:"Having the freedom to act independently; self-governing; operating without outside control",                                    e:"The autonomous region manages its own education and healthcare systems separately from the central state."},
+  {w:"autonomy",     p:"n.",         c:"自治，自主权；自律",        d:"The right or condition of self-governance; independence of action or thought",                                                  e:"Regional leaders argued that greater autonomy would allow them to respond more effectively to local needs."},
+  {w:"autumn",       p:"n.",         c:"秋天，秋季",               d:"The season between summer and winter; a period of maturity or decline",                                                          e:"Autumn is traditionally when universities begin their new academic year in the northern hemisphere."},
+  {w:"auxiliary",    p:"adj./n.",    c:"辅助的；辅助人员",          d:"Providing supplementary support; a person or group providing extra help",                                                        e:"Auxiliary staff were brought in to manage the surge in demand during the peak holiday season."},
+  {w:"avail",        p:"v./n.",      c:"有用，有益；用处，效益",    d:"To be of use or benefit; usefulness in achieving a purpose",                                                                    e:"All efforts to mediate between the two sides availed nothing, and the talks collapsed completely."},
+  {w:"availability", p:"n.",         c:"可用性；可得到性",          d:"The quality of being obtainable or accessible when needed; having time free for something",                                     e:"The availability of affordable housing in major cities has become a critical policy challenge."},
+  {w:"available",    p:"adj.",       c:"可得到的；有空的；可使用的", d:"Obtainable or accessible; free and ready to use; not otherwise occupied",                                                       e:"Fresh drinking water was not available to the affected communities for more than three days."},
+  {w:"avalanche",    p:"n.",         c:"雪崩；大量涌现",           d:"A mass of snow and ice suddenly sliding down a mountain; an overwhelming outpouring",                                            e:"An avalanche of complaints flooded the customer service centre following the system failure."},
+  {w:"avenge",       p:"vt.",        c:"为…报仇，报复",            d:"To inflict harm in return for an injury or wrong done to oneself or another",                                                   e:"The protagonist's drive to avenge his family's loss forms the central conflict of the novel."},
+  {w:"avenue",       p:"n.",         c:"大街，林荫道；途径，手段",  d:"A broad road or path, often lined with trees; a way of approaching or achieving something",                                    e:"Diplomatic channels remained the most viable avenue for resolving the ongoing territorial dispute."},
+  {w:"average",      p:"n./adj./v.", c:"平均数；一般的；平均",      d:"A mean calculated from a set of values; typical or usual; to work out the mean",                                                e:"The average household income in the region rose by three per cent over the previous financial year."},
+  {w:"averagely",    p:"adv.",       c:"平均地；一般地",           d:"In an average manner; to an ordinary or typical degree",                                                                         e:"Students performed averagely across the board, with no standout results in any particular subject."},
+  {w:"avert",        p:"vt.",        c:"避免，防止；转移（目光）",  d:"To prevent something unpleasant from happening; to turn one's eyes away from something",                                       e:"Prompt action by negotiators helped to avert a potential breakdown in the peace talks."},
+  {w:"aviation",     p:"n.",         c:"航空，飞行；航空工业",      d:"The activity of operating and flying aircraft; the aircraft industry as a whole",                                               e:"The aviation sector has been under pressure to reduce its carbon footprint through cleaner technology."},
+  {w:"avoid",        p:"vt.",        c:"避免，避开，逃避",          d:"To keep away from or prevent something from happening; to refrain from doing",                                                  e:"Researchers advised people to avoid prolonged exposure to blue light from screens before sleeping."},
+  {w:"await",        p:"vt.",        c:"等待，期待；等候",          d:"To wait for something to happen; to be ready and waiting for someone or something",                                             e:"The project team awaited the results of the feasibility study before proceeding with any expenditure."},
+  {w:"awake",        p:"adj./v.",    c:"醒着的；唤醒，唤起",        d:"Not asleep; to emerge from sleep; to become aware of or alert to something",                                                   e:"She lay awake at night reviewing the data, convinced that a key variable had been overlooked."}
+];
+
+const MATCH_ROUNDS = [
+  {pairs:[
+    ["attentive",    "paying close attention; caring and considerate towards others"],
+    ["attitude",     "a settled way of thinking or feeling about something; body position"],
+    ["attorney",     "a person appointed to act in legal or business matters; a lawyer"],
+    ["attractive",   "pleasing in appearance; having qualities that appeal or interest"],
+    ["attribute",    "to regard as caused by a source; a quality belonging to something"],
+    ["auction",      "a public sale where items are sold to the highest bidder"],
+    ["audible",      "loud enough to be heard; perceptible to the ear"],
+    ["audience",     "a group watching or listening to a performance; a formal meeting"]
+  ]},
+  {pairs:[
+    ["auditorium",   "the part of a theatre where the audience sits; a hall for public events"],
+    ["augment",      "to make something greater by adding to it; to enlarge or supplement"],
+    ["authentic",    "genuine; not copied; based on reliable facts or truthful representation"],
+    ["authority",    "power to give orders; an official body; expertise in a subject"],
+    ["authorize",    "to give official permission for something; to empower someone to act"],
+    ["autobiography","an account of one's own life written by oneself"],
+    ["automation",   "the use of technology to perform tasks previously done by humans"],
+    ["autonomy",     "the right or condition of self-governance; independence of action"]
+  ]},
+  {pairs:[
+    ["available",    "obtainable or accessible; free and ready to use; not occupied"],
+    ["avalanche",    "snow suddenly sliding down a mountain; an overwhelming outpouring"],
+    ["avenue",       "a broad tree-lined road; a way of approaching or achieving something"],
+    ["average",      "a mean calculated from values; typical or usual; to work out the mean"],
+    ["avert",        "to prevent something unpleasant; to turn one's eyes away"],
+    ["aviation",     "the activity of flying aircraft; the aircraft industry as a whole"],
+    ["avoid",        "to keep away from something; to refrain from doing something"],
+    ["await",        "to wait for something to happen; to be ready for someone"]
+  ]}
+];
+
+const FIB = [
+  {s:"An ___ audience listened carefully to every word of the scientist's keynote presentation.",                           w:"attentive"},
+  {s:"Boxes of old documents and photographs were discovered when they cleared out the ___.",                              w:"attic"},
+  {s:"A positive ___ towards criticism allows professionals to continuously improve their performance.",                    w:"attitude"},
+  {s:"The company retained a senior ___ to advise on the complex merger and acquisition process.",                         w:"attorney"},
+  {s:"The new cultural district ___ thousands of visitors during its opening weekend last summer.",                        w:"attracted"},
+  {s:"The ancient ruins remain the main tourist ___ in the region, drawing millions of visitors each year.",              w:"attraction"},
+  {s:"The investment package was made ___ by offering significant tax breaks for the first five years.",                   w:"attractive"},
+  {s:"Researchers ___ the region's economic success to sustained investment in education and infrastructure.",             w:"attribute"},
+  {s:"The external auditors were brought in to conduct a thorough ___ of the company's annual accounts.",                 w:"audit"},
+  {s:"Hundreds of aspiring performers came to ___ for the lead role in the new musical production.",                      w:"audition"},
+  {s:"The new ___ seats over a thousand people and has state-of-the-art acoustic systems installed.",                     w:"auditorium"},
+  {s:"The charity ___ its fundraising income by launching a new range of merchandise and community events.",              w:"augmented"},
+  {s:"The museum verified that the sculpture was ___, dating back to the third century BCE.",                             w:"authentic"},
+  {s:"Local ___ introduced new bylaws to restrict vehicle access in the historic city centre.",                           w:"authorities"},
+  {s:"Only the chief financial officer is ___ to approve expenditure above a specified threshold.",                       w:"authorized"},
+  {s:"Her ___ offered a candid account of growing up in poverty before achieving national recognition.",                  w:"autobiography"},
+  {s:"___ in manufacturing has led to significant gains in productivity but also displaced many workers.",                w:"Automation"},
+  {s:"The ___ industry is undergoing rapid transformation as electric vehicles gain increasing market share.",             w:"automobile"},
+  {s:"Regional leaders argued that greater ___ would allow them to respond more effectively to local needs.",             w:"autonomy"},
+  {s:"___ is traditionally when universities begin their new academic year in the northern hemisphere.",                  w:"Autumn"},
+  {s:"___ staff were brought in to manage the surge in demand during the peak holiday season.",                           w:"Auxiliary"},
+  {s:"The ___ of affordable housing in major cities has become a critical policy challenge for governments.",             w:"availability"},
+  {s:"Fresh drinking water was not ___ to the affected communities for more than three days.",                            w:"available"},
+  {s:"An ___ of complaints flooded the customer service centre following the widespread system failure.",                 w:"avalanche"},
+  {s:"Diplomatic channels remained the most viable ___ for resolving the ongoing territorial dispute.",                  w:"avenue"},
+  {s:"The ___ household income in the region rose by three per cent over the previous financial year.",                   w:"average"},
+  {s:"Prompt action by negotiators helped to ___ a potential breakdown in the fragile peace talks.",                     w:"avert"},
+  {s:"The ___ sector has been under pressure to reduce its carbon footprint through cleaner technology.",                 w:"aviation"},
+  {s:"Researchers advised people to ___ prolonged exposure to blue light from screens before sleeping.",                 w:"avoid"},
+  {s:"The project team ___ the results of the feasibility study before proceeding with any expenditure.",                w:"awaited"},
+  {s:"She lay ___ at night reviewing the data, convinced that a key variable had been overlooked.",                      w:"awake"}
+];
+
+const FIB_GROUPS = [
+  {label:"Practice 1 · attentive → audition", slice:[0,11]},
+  {label:"Practice 2 · auditorium → autumn", slice:[11,20]},
+  {label:"Practice 3 · auxiliary → awake", slice:[20,31]}
+];
+
+const SCRAMBLE = [
+  {hint:"Use: attract · audience",     sentence:"The innovative exhibition attracted a diverse audience from across the country."},
+  {hint:"Use: attribute · authority",  sentence:"Scholars attribute much of the authority of the ancient text to its careful preservation."},
+  {hint:"Use: auction · auditorium",   sentence:"A charity auction was held in the auditorium following the annual awards ceremony."},
+  {hint:"Use: authentic · autobiography", sentence:"Her autobiography offered an authentic account of growing up in difficult circumstances."},
+  {hint:"Use: autonomy · authority",   sentence:"Regional authorities sought greater autonomy from the central government in economic planning."},
+  {hint:"Use: aviation · avert",       sentence:"Better training in the aviation sector has helped avert many potential accidents."},
+  {hint:"Use: avoid · avenue",         sentence:"Every available avenue was explored to avoid a lengthy and costly legal dispute."}
+];
+
+/* ── engine ── */
+let activeTab=0;
+function switchTab(i){document.querySelectorAll('.tab-btn').forEach((b,j)=>{b.classList.toggle('active',i===j)});document.querySelectorAll('.tab-panel').forEach((p,j)=>{p.classList.toggle('active',i===j)});activeTab=i;if(i===0&&!document.getElementById('tab0').dataset.built)buildVocab();if(i===1&&!document.getElementById('tab1').dataset.built)buildMatch();if(i===2&&!document.getElementById('tab2').dataset.built)buildFib();if(i===3&&!document.getElementById('tab3').dataset.built)buildScramble();}
+function buildVocab(){const el=document.getElementById('vocabList');el.innerHTML=WORDS.map((w,i)=>`<div class="vocab-item"><div class="vocab-head" onclick="toggleV(${i})"><span class="v-word">${w.w}</span><span class="v-pos">${w.p}</span><span class="v-cn">${w.c}</span><span class="v-toggle" id="vt${i}">▼</span></div><div class="vocab-body" id="vb${i}"><div class="v-def">${w.d}</div><div class="v-eg">${w.e}</div></div></div>`).join('');document.getElementById('tab0').dataset.built=1;}
+function toggleV(i){const b=document.getElementById(`vb${i}`),t=document.getElementById(`vt${i}`);b.classList.toggle('open');t.textContent=b.classList.contains('open')?'▲':'▼';}
+function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+let matchState={};
+function buildMatch(){MATCH_ROUNDS.forEach((r,ri)=>{const pairs=r.pairs,words=shuffle(pairs.map(p=>p[0])),defs=shuffle(pairs.map(p=>p[1]));matchState[ri]={sel:null,done:0,pairs:Object.fromEntries(pairs),errors:0};const g=document.getElementById(`mg${ri}`);const ws=words.map(w=>`<button class="match-word" id="mw${ri}_${w}" onclick="matchClick('w','${ri}','${w}')">${w}</button>`);const ds=defs.map((d,di)=>`<button class="match-def" id="md${ri}_${di}" data-def="${d.replace(/'/g,"&#39;")}" onclick="matchClick('d','${ri}','${di}')">${d}</button>`);g.innerHTML='<div>'+ws.join('')+'</div><div>'+ds.join('')+'</div>';});document.getElementById('tab1').dataset.built=1;}
+function matchClick(type,ri,key){const st=matchState[ri];if(type==='w'){document.querySelectorAll(`[id^="mw${ri}_"]`).forEach(b=>b.classList.remove('sel'));const b=document.getElementById(`mw${ri}_${key}`);if(!b.classList.contains('done')){b.classList.add('sel');st.sel=key;}}else{if(!st.sel)return;const wb=document.getElementById(`mw${ri}_${st.sel}`);const db=document.getElementById(`md${ri}_${key}`);const def=db.dataset.def;const correct=st.pairs[st.sel]===def;if(correct){wb.classList.remove('sel');wb.classList.add('done');db.classList.add('done');st.done++;const sc=document.getElementById(`ms${ri}`);sc.textContent=`${st.done}/${Object.keys(st.pairs).length} matched`;if(st.done===Object.keys(st.pairs).length){sc.textContent='✓ Round complete! '+(st.errors===0?'Perfect!':st.errors+' error(s)');sc.classList.add('perfect');}st.sel=null;}else{db.classList.add('err');st.errors++;setTimeout(()=>{db.classList.remove('err');wb.classList.remove('sel');st.sel=null;},700);}}}
+function buildFib(){FIB_GROUPS.forEach((g,gi)=>{const items=FIB.slice(g.slice[0],g.slice[1]);const bank=shuffle(items.map(f=>f.w));const el=document.getElementById(`fibGroup${gi}`);el.innerHTML=`<div class="card"><div class="card-title">${g.label}</div><div class="fib-bank">${bank.map(w=>`<span class="fib-chip" id="fi${gi}_${w}" onclick="useChip(${gi},'${w}')">${w}</span>`).join('')}</div>${items.map((f,i)=>{const parts=f.s.split('___');return `<div class="fib-row"><span class="fib-num">${g.slice[0]+i+1}.</span>${parts[0]}<input class="fib-input" id="ff${gi}_${i}" data-ans="${f.w}" data-gi="${gi}" placeholder="…" oninput="fibCheck(this)" autocomplete="off">${parts[1]}</div>`;}).join('')}<div class="btn-row"><button class="btn btn-primary" onclick="fibReveal(${gi})">Show Answers</button><button class="btn btn-ghost" onclick="fibReset(${gi})">Reset</button></div></div>`;});document.getElementById('tab2').dataset.built=1;}
+function useChip(gi,w){const chips=document.querySelectorAll(`[id^="fi${gi}_"]`);const inputs=document.querySelectorAll(`[data-gi="${gi}"]`);for(const inp of inputs){if(!inp.value&&inp.dataset.ans===w){inp.value=w;fibCheck(inp);const chip=document.getElementById(`fi${gi}_${w}`);if(chip)chip.classList.add('used');return;}}}
+function fibCheck(inp){const ans=inp.dataset.ans;inp.classList.remove('correct','wrong');if(inp.value.trim().toLowerCase()===ans.toLowerCase()){inp.classList.add('correct');const gi=parseInt(inp.dataset.gi);const chip=document.getElementById(`fi${gi}_${ans}`);if(chip)chip.classList.add('used');}}
+function fibReveal(gi){document.querySelectorAll(`[data-gi="${gi}"]`).forEach(inp=>{inp.value=inp.dataset.ans;inp.classList.add('correct');const chip=document.getElementById(`fi${gi}_${inp.dataset.ans}`);if(chip)chip.classList.add('used');});}
+function fibReset(gi){document.querySelectorAll(`[data-gi="${gi}"]`).forEach(inp=>{inp.value='';inp.classList.remove('correct','wrong');});document.querySelectorAll(`[id^="fi${gi}_"]`).forEach(c=>c.classList.remove('used'));}
+let scramState={};
+function buildScramble(){const el=document.getElementById('scrambleSents');el.innerHTML=SCRAMBLE.map((s,si)=>{const words=shuffle(s.sentence.replace(/[.!?]$/,'').split(' '));scramState[si]={pool:[...words],ans:[],sentence:s.sentence};return `<div class="scram-block"><div class="scram-num">Sentence ${si+1}</div><div class="scram-hint">${s.hint}</div><div class="scram-pool" id="sp${si}">${words.map((w,wi)=>`<span class="scram-chip" id="sc${si}_${wi}" onclick="scramMove(${si},${wi},'pool')">${w}</span>`).join('')}</div><div class="scram-ans" id="sa${si}"><span class="scram-ans-label">YOUR ANSWER</span></div><div class="btn-row"><button class="btn btn-primary" onclick="scramCheck(${si})">Check</button><button class="btn btn-ghost" onclick="scramReset(${si})">Reset</button></div><div class="scram-result" id="sr${si}"></div></div>`;}).join('');document.getElementById('tab3').dataset.built=1;}
+function scramMove(si,wi,from){const chip=document.getElementById(`sc${si}_${wi}`);if(from==='pool'){chip.classList.add('in-ans');chip.onclick=()=>scramMove(si,wi,'ans');document.getElementById(`sa${si}`).appendChild(chip);}else{chip.classList.remove('in-ans');chip.onclick=()=>scramMove(si,wi,'pool');document.getElementById(`sp${si}`).appendChild(chip);}}
+function scramCheck(si){const ans=Array.from(document.getElementById(`sa${si}`).querySelectorAll('.scram-chip')).map(c=>c.textContent).join(' ');const normalize=s=>s.trim().replace(/[.!?,]+$/,'').trim().toLowerCase();const res=document.getElementById(`sr${si}`);if(normalize(ans)===normalize(SCRAMBLE[si].sentence)){res.className='scram-result correct';res.textContent='✓ Correct!';}else{res.className='scram-result wrong';res.textContent='✗ Not quite. Try again.';}}
+function scramReset(si){const pool=document.getElementById(`sp${si}`),ans=document.getElementById(`sa${si}`);[...ans.querySelectorAll('.scram-chip')].forEach(c=>{c.classList.remove('in-ans');const wi=parseInt(c.id.split('_')[1]);c.onclick=()=>scramMove(si,wi,'pool');pool.appendChild(c);});document.getElementById(`sr${si}`).className='scram-result';}
+switchTab(0);
+</script>
+</body>
+</html>
